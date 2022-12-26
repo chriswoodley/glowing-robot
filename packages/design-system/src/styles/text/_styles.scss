@@ -1,0 +1,42 @@
+@use "module" as text;
+
+// headings
+
+h1 {
+  @include text.typography(text.$step-5);
+}
+
+h2 {
+  @include text.typography(text.$step-4);
+}
+
+h3 {
+  @include text.typography(text.$step-3);
+}
+
+h4 {
+  @include text.typography(text.$step-2);
+}
+
+h5 {
+  @include text.typography(text.$step-1);
+}
+
+h6 {
+  @include text.typography(text.$step-0);
+}
+
+// body
+
+p,
+ul,
+ol,
+dl {
+  @include text.typography(text.$step-0);
+}
+
+// inline text
+
+small {
+  @include text.typography(text.$step-small);
+}

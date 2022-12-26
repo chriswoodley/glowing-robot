@@ -1,0 +1,14 @@
+@custom-media --viewport-medium (width <= 50rem);
+
+:root {
+  --mainColor: #12345678;
+}
+
+body {
+  color: var(--mainColor);
+  font-family: system-ui;
+  overflow-wrap: break-word;
+  @media (--viewport-medium) {
+    --mainColor: pink;
+  }
+}

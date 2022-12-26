@@ -1,0 +1,24 @@
+/* stylelint-disable max-line-length */
+@use "sass:map";
+@use "text/module" as text;
+
+:root {
+  $min-fs-with-unit: text.$min-fs + text.$unit;
+  $max-fs-with-unit: text.$max-fs + text.$unit;
+  $min-viewport-with-unit: text.$min-viewport + text.$unit;
+  $max-viewport-with-unit: text.$max-viewport + text.$unit;
+
+  font-size: min(max(#{$min-fs-with-unit}, calc(#{$min-fs-with-unit} + (#{text.$max-fs} - #{text.$min-fs}) * ((100vw - #{$min-viewport-with-unit}) / (#{text.$max-viewport} - #{text.$min-viewport})))), #{$max-fs-with-unit});
+  line-height: text.$line-height;
+  text-rendering: optimizelegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Safari resize fix */
+  min-height: 0;
+}
+
+:root,
+body {
+  height: 100%;
+}

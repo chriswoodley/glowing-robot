@@ -1,0 +1,192 @@
+import { Canvas, Meta, Story } from '@storybook/addon-docs';
+
+<Meta title="Atoms/Text" />
+
+# Text
+
+Use HTML text content elements to organize blocks or sections of content placed between the 
+opening <a href="/en-US/docs/Web/HTML/Element/body"><code>&lt;body&gt;</code></a> and closing 
+<code>&lt;/body&gt;</code> tags. Important for 
+<a href="/en-US/docs/Glossary/Accessibility">accessibility</a> and 
+<a href="/en-US/docs/Glossary/SEO">SEO</a>, these elements identify the purpose or structure of 
+that content.
+
+<Canvas>
+  <Story name="blockquote">
+    <figure>
+        <blockquote cite="https://www.huxley.net/bnw/four.html">
+            <p>Words can be like X-rays, if you use them properly—they’ll go through anything. You read and you’re pierced.</p>
+        </blockquote>
+        <figcaption>—Aldous Huxley, <cite>Brave New World</cite></figcaption>
+    </figure>
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story name="dd">
+    <p>Cryptids of Cornwall:</p>
+    <dl>
+      <dt>Beast of Bodmin</dt>
+      <dd>A large feline inhabiting Bodmin Moor.</dd>
+      <dt>Morgawr</dt>
+      <dd>A sea serpent.</dd>
+      <dt>Owlman</dt>
+      <dd>A giant owl-like creature.</dd>
+    </dl>
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story name="dl">
+    <p>Cryptids of Cornwall:</p>
+    <dl>
+      <dt>Beast of Bodmin</dt>
+      <dd>A large feline inhabiting Bodmin Moor.</dd>
+      <dt>Morgawr</dt>
+      <dd>A sea serpent.</dd>
+      <dt>Owlman</dt>
+      <dd>A giant owl-like creature.</dd>
+    </dl>
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story name="dt">
+    <p>Please use the following paint colors for the new house:</p>
+    <dl>
+      <dt>Denim (semigloss finish)</dt>
+      <dd>Ceiling</dd>
+      <dt>Denim (eggshell finish)</dt>
+      <dt>Evening Sky (eggshell finish)</dt>
+      <dd>Layered on the walls</dd>
+    </dl>
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story name="figcaption">
+    <figure>
+      <img src="https://interactive-examples.mdn.mozilla.net/media/cc0-images/elephant-660-480.jpg" alt="Elephant at sunset" />
+      <figcaption>An elephant at sunset</figcaption>
+    </figure>
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story name="figure">
+    <figure>
+      <img src="https://interactive-examples.mdn.mozilla.net/media/cc0-images/elephant-660-480.jpg" alt="Elephant at sunset" />
+      <figcaption>An elephant at sunset</figcaption>
+    </figure>
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story name="hr">
+    <p>1: The first rule of Fight Club is: You do not talk about Fight Club.</p>
+    <hr />
+    <p>2: The second rule of Fight Club is: Always bring cupcakes.</p>
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story name="li">
+    <p>Apollo astronauts:</p>
+    <ul>
+      <li>Neil Armstrong</li>
+      <li>Alan Bean</li>
+      <li>Peter Conrad</li>
+      <li>Edgar Mitchell</li>
+      <li>Alan Shepard</li>
+    </ul>
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story name="menu">
+    <div class="news">
+      <a href="#">NASA’s Webb Delivers Deepest Infrared Image of Universe Yet</a>
+      <menu>
+        <li><button id="save">Save for later</button></li>
+        <li><button id="share">Share this news</button></li>
+      </menu>
+    </div>
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story name="ol">
+    <ol>
+      <li>Mix flour, baking powder, sugar, and salt.</li>
+      <li>In another bowl, mix eggs, milk, and oil.</li>
+      <li>Stir both mixtures together.
+        <ol>
+          <li>Mix flour, baking powder, sugar, and salt.</li>
+          <li>In another bowl, mix eggs, milk, and oil.</li>
+          <li>Stir both mixtures together.
+            <ol>
+              <li>Mix flour, baking powder, sugar, and salt.</li>
+              <li>In another bowl, mix eggs, milk, and oil.</li>
+              <li>Stir both mixtures together.</li>
+              <li>Fill muffin tray 3/4 full.</li>
+              <li>Bake for 20 minutes.</li>
+            </ol>
+          </li>
+          <li>Fill muffin tray 3/4 full.</li>
+          <li>Bake for 20 minutes.</li>
+        </ol>
+      </li>
+      <li>Fill muffin tray 3/4 full.</li>
+      <li>Bake for 20 minutes.</li>
+    </ol>
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story name="p">
+    <p>Geckos are a group of usually small, usually nocturnal lizards. They are found on every continent except Antarctica.</p>
+    <p>Some species live in houses where they hunt insects attracted by artificial light.</p>
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story name="pre">
+    <pre>
+      L          T
+        A       A
+          C    V
+          R A
+          DOU
+          LOU
+          REUSE
+          QUE TU
+          PORTES
+        ET QUI T'
+        ORNE O CI
+        VILISÉ
+        OTE-  TU VEUX
+        LA    BIEN
+        SI      RESPI
+                RER       - Apollinaire
+    </pre>
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story name="ul">
+    <ul>
+      <li>Milk</li>
+      <li>Cheese
+        <ul>
+          <li>Blue cheese</li>
+          <li>Feta
+            <ul>
+              <li>Blue cheese</li>
+              <li>Feta</li>
+            </ul>
+          </li>
+        </ul>
+      </li>
+    </ul>
+  </Story>
+</Canvas>

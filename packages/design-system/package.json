@@ -1,0 +1,52 @@
+{
+  "name": "@cw/design-system",
+  "version": "1.0.0",
+  "main": "dist/main.js",
+  "license": "MIT",
+  "sideEffects": [
+    "**/*.css",
+    "**/*.scss"
+  ],
+  "peerDependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  },
+  "devDependencies": {
+    "@babel/cli": "^7.19.3",
+    "@babel/core": "^7.20.2",
+    "@babel/preset-env": "^7.20.2",
+    "@babel/preset-react": "^7.18.6",
+    "@storybook/addon-actions": "^6.5.13",
+    "@storybook/addon-essentials": "^6.5.13",
+    "@storybook/addon-interactions": "^6.5.13",
+    "@storybook/addon-links": "^6.5.13",
+    "@storybook/builder-webpack5": "^6.5.13",
+    "@storybook/manager-webpack5": "^6.5.13",
+    "@storybook/react": "^6.5.13",
+    "@storybook/testing-library": "^0.0.13",
+    "babel-loader": "^8.3.0",
+    "css-loader": "^6.7.2",
+    "mini-css-extract-plugin": "^2.7.0",
+    "postcss-loader": "^7.0.1",
+    "pretty": "^2.0.0",
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "sanitize.css": "^13.0.0",
+    "sass": "^1.56.1",
+    "sass-loader": "^13.2.0",
+    "stylelint": "^14.15.0",
+    "stylelint-config-recommended-scss": "^8.0.0",
+    "stylelint-config-standard": "^29.0.0",
+    "stylelint-config-standard-scss": "^6.1.0",
+    "stylelint-webpack-plugin": "^3.3.0",
+    "webpack": "^5.75.0",
+    "webpack-cli": "^5.0.0"
+  },
+  "scripts": {
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook",
+    "build": "webpack --mode production --env production",
+    "start": "webpack --mode production --env production --watch",
+    "lint:styles": "stylelint \"**/*.scss\""
+  }
+}

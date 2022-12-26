@@ -1,0 +1,27 @@
+@use "sass:math";
+
+@function get-vertical-rhythm-multiplier($value) {
+  $num-of-vertical-rhythm-units: 1;
+  $multiplier: 1;
+
+  @while $value * $multiplier < $num-of-vertical-rhythm-units {
+    $multiplier: $multiplier + 1;
+  }
+
+  @return $multiplier;
+}
+
+@function calc-line-height($line-height, $font-size) {
+  $line-height-value: math.div($line-height, $font-size);
+  $vertical-rhythm-multiplier: get-vertical-rhythm-multiplier($line-height-value);
+
+  @return $line-height-value * $vertical-rhythm-multiplier;
+}
+
+@function calc-top-margin($line-height, $font-size, $unit) {
+  @if $line-height > $font-size {
+    @return calc-line-height($line-height, $font-size) + $unit;
+  } @else {
+    @return (($line-height - $font-size) + $line-height) + $unit;
+  }
+}

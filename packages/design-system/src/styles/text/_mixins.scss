@@ -1,0 +1,9 @@
+@use "variables" as v;
+@use "functions" as f;
+
+@mixin typography($font-size) {
+  font-size: $font-size + v.$unit;
+  line-height: f.calc-line-height(v.$line-height, $font-size);
+  margin-top: f.calc-top-margin(v.$line-height, $font-size, v.$unit);
+  margin-bottom: v.$line-height + v.$unit;
+}

@@ -1,0 +1,20 @@
+{
+  "name": "@cw/platform",
+  "version": "1.0.0",
+  "private": "true",
+  "license": "MIT",
+  "workspaces": [
+    "packages/*",
+    "apps/*"
+  ],
+  "scripts": {
+    "custom:start": "yarn --cwd apps/custom start",
+    "custom:build": "yarn --cwd apps/custom build",
+    "design-system:start": "yarn --cwd packages/design-system start",
+    "design-system:storybook": "yarn --cwd packages/design-system storybook",
+    "dev:custom": "npm-run-all --parallel design-system:start design-system:storybook custom:start"
+  },
+  "devDependencies": {
+    "npm-run-all": "^4.1.5"
+  }
+}
