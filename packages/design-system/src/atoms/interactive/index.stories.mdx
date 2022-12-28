@@ -1,0 +1,40 @@
+import { Canvas, Meta, Story } from '@storybook/addon-docs';
+
+<Meta title="Atoms/Interactive" />
+
+# Interactive
+
+HTML offers a selection of elements which help to create interactive user interface objects.
+
+<Canvas>
+  <Story name="details">
+    <details>
+      <summary>Details</summary>
+      Something small enough to escape casual notice.
+    </details>
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story name="dialog">
+    <dialog open>
+      <p>Greetings, one and all!</p>
+      <form method="dialog">
+        <button>OK</button>
+      </form>
+    </dialog>
+  </Story>
+</Canvas>
+
+<Canvas>
+  <Story name="summary">
+    <details>
+      <summary>
+        I have keys but no doors. I have space but no room. You can enter but can’t leave.
+        What am I?
+      </summary>
+      A keyboard.
+    </details>
+  </Story>
+</Canvas>
+
