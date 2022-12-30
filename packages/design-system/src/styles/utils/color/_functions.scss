@@ -1,1 +1,33 @@
-// functions
+@use "sass:color";
+@use "sass:math";
+
+/* https://www.w3.org/TR/WCAG20/#relativeluminancedef */
+@function linear-channel-value($channel) {
+  /* stylelint-disable-next-line number-max-precision */
+  $linear-cutoff-point: 0.03928;
+
+  @if $channel <= $linear-cutoff-point {
+    @return math.div($channel, 12.92);
+  }
+
+  @return math.pow(math.div($channel + 0.055, 1.055), 2.4);
+}
+
+/* https://www.w3.org/TR/WCAG20/#relativeluminancedef */
+@function luminance($color) {
+  $max-light: 255;
+  $r: linear-channel-value(math.div(color.red($color), $max-light));
+  $g: linear-channel-value(math.div(color.green($color), $max-light));
+  $b: linear-channel-value(math.div(color.blue($color), $max-light));
+
+  @return 0.2126 * $r + 0.7152 * $g + 0.0722 * $b;
+}
+
+/* https://www.w3.org/TR/WCAG20/#contrast-ratiodef */
+@function contrast-ratio($color1, $color2) {
+  $offset: 0.05;
+  $l1: luminance($color1) + $offset;
+  $l2: luminance($color2) + $offset;
+
+  @return math.div($l1, $l2);
+}
