@@ -1,0 +1,23 @@
+@use "variables" as v;
+@use "../color/module" as c;
+
+@function focus-ring-shadow(
+  $ring-inset: true,
+  $ring-offset-width: v.$focus-ring-offset-width,
+  $ring-offset-color: v.$focus-ring-offset-color,
+  $ring-color: v.$focus-ring-color
+) {
+  @debug(c.contrast-ratio($ring-offset-color, $ring-color));
+
+  @if $ring-inset {
+    $focus-ring-offset-shadow: v.$focus-ring-inset 0 0 0 $ring-offset-width $ring-offset-color;
+    $focus-ring-shadow: v.$focus-ring-inset 0 0 0 calc(2px + $ring-offset-width) $ring-color;
+
+    @return #{$focus-ring-offset-shadow}, #{$focus-ring-shadow};
+  }
+
+  $focus-ring-offset-shadow: 0 0 0 $ring-offset-width $ring-offset-color;
+  $focus-ring-shadow: 0 0 0 calc(2px + $ring-offset-width) $ring-color;
+
+  @return #{$focus-ring-offset-shadow}, #{$focus-ring-shadow};
+}
