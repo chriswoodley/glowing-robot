@@ -1,0 +1,31 @@
+$transition-durations: (
+  "fast": 0.2s,
+  "normal": 0.35s,
+  "slow": 0.5s
+);
+$transition-timing-functions: (
+  /* quad */
+  "weak": (
+    "easeIn": cubic-bezier(0.55, 0.085, 0.68, 0.53),
+    "easeOut": cubic-bezier(0.25, 0.46, 0.45, 0.94),
+    "easeInOut": cubic-bezier(0.455, 0.03, 0.515, 0.955)
+  ),
+  /* cubic */
+  "normal": (
+    "easeIn": cubic-bezier(0.55, 0.055, 0.675, 0.19),
+    "easeOut": cubic-bezier(0.215, 0.61, 0.355, 1),
+    "easeInOut": cubic-bezier(0.645, 0.045, 0.355, 1)
+  ),
+  /* quart */
+  "strong": (
+    "easeIn": cubic-bezier(0.895, 0.03, 0.685, 0.22),
+    "easeOut": cubic-bezier(0.165, 0.84, 0.44, 1),
+    "easeInOut": cubic-bezier(0.77, 0, 0.175, 1)
+  )
+);
+$transition-delays: (
+  "none": 0s,
+  "short": 0.1s,
+  "normal": 0.2s,
+  "long": 0.3s
+);

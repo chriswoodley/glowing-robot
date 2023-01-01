@@ -4,7 +4,9 @@
 @use "utils/module" as utils;
 
 * {
-  @include utils.focus-ring;
+  @include utils.focus-ring(
+    $background-color: #fff
+  );
 }
 
 :root {
