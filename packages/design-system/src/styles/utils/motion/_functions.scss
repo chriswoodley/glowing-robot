@@ -1,0 +1,17 @@
+@use "sass:string";
+@use "variables" as v;
+@use "../lang/module" as l;
+
+@function transition(
+  $property,
+  $duration: "normal",
+  $easing: "normal" "easeInOut",
+  $delay: "none"
+) {
+  $transition: string.unquote($property);
+  $transition: $transition l.map-deep-get(v.$transition-durations, $duration);
+  $transition: $transition l.map-deep-get(v.$transition-delays, $delay);
+  $transition: $transition l.map-deep-get(v.$transition-timing-functions, $easing...);
+
+  @return $transition;
+}

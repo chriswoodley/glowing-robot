@@ -1,4 +1,5 @@
 @use "sass:map";
+@use "sass:math";
 
 @function map-deep-get($map, $keys...) {
   @each $key in $keys {
@@ -10,7 +11,7 @@
 
 @function strip-unit($number) {
   @if type-of($number) == "number" and not unitless($number) {
-    @return $number / ($number * 0 + 1);
+    @return math.div($number, ($number * 0 + 1));
   }
 
   @return $number;

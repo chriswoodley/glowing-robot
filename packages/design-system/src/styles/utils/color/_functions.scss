@@ -1,10 +1,12 @@
 @use "sass:color";
 @use "sass:math";
+@use "../lang/module" as l;
+@use "variables" as v;
 
-/* https://www.w3.org/TR/WCAG20/#relativeluminancedef */
+/* https://www.w3.org/TR/WCAG22/#dfn-relative-luminance */
 @function linear-channel-value($channel) {
   /* stylelint-disable-next-line number-max-precision */
-  $linear-cutoff-point: 0.03928;
+  $linear-cutoff-point: 0.04045;
 
   @if $channel <= $linear-cutoff-point {
     @return math.div($channel, 12.92);
@@ -13,7 +15,7 @@
   @return math.pow(math.div($channel + 0.055, 1.055), 2.4);
 }
 
-/* https://www.w3.org/TR/WCAG20/#relativeluminancedef */
+/* https://www.w3.org/TR/WCAG22/#dfn-relative-luminance */
 @function luminance($color) {
   $max-light: 255;
   $r: linear-channel-value(math.div(color.red($color), $max-light));
@@ -30,4 +32,24 @@
   $l2: luminance($color2) + $offset;
 
   @return math.div($l1, $l2);
+}
+
+@function validate-color-contrast(
+  $background,
+  $foreground,
+  $type: "text",
+  $level: "AA",
+  $size: "normal"
+) {
+  $current-ratio: contrast-ratio($background, $foreground);
+  $ratio: l.map-deep-get(v.$contrast-ratios, $type, $level, $size);
+
+  @if $current-ratio < $ratio {
+    $message: "The color #{$background} and the color #{$foreground} has a contrast ratio of";
+    $message: "#{$message} #{$current-ratio} and does not meet the ratio of #{$ratio}.";
+
+    @error $message;
+  }
+
+  @return true;
 }

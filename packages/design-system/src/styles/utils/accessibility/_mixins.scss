@@ -1,37 +1,58 @@
 @use "variables" as v;
 @use "functions" as f;
+@use "../motion/module" as m;
+@use "../lang/module" as l;
 
+/*
+  $background-color refers to the color behind the current element. It is required
+  to validate the ring color contrast against it.
+*/
 @mixin focus-ring(
-  $ring-inset: true,
+  $background-color,
+  $ring-inset: false,
   $ring-offset-width: v.$focus-ring-offset-width,
   $ring-offset-color: v.$focus-ring-offset-color,
   $ring-color: v.$focus-ring-color
 ) {
-  /*
-    Provide basic, default focus styles.
-  */
-  &:focus {
-    outline: inherit;
-    transition: 0.25s box-shadow;
-  }
+  $is-valid-focus-ring-contrast: f.validate-focus-ring-contrast(
+    $background-color,
+    $ring-color,
+    $ring-offset-color,
+    $ring-offset-width
+  );
 
-  /*
-    Optionally: If :focus-visible is supported on this
-    platform, provide enhanced focus styles for keyboard
-    focus.
-  */
-  &:focus-visible {
-    $ring: f.focus-ring-shadow($ring-inset, $ring-offset-width, $ring-offset-color, $ring-color);
+  @if $is-valid-focus-ring-contrast {
+    /*
+      Provide basic, default focus styles.
+    */
+    &:focus {
+      outline: inherit;
+      transition: m.transition(box-shadow, $duration: "fast", $easing: "strong" "easeInOut");
+    }
 
-    box-shadow: $ring;
-    outline: 1px solid transparent;
-  }
+    /*
+      Optionally: If :focus-visible is supported on this
+      platform, provide enhanced focus styles for keyboard
+      focus.
+    */
+    &:focus-visible {
+      $ring: f.focus-ring-shadow(
+        $ring-inset,
+        $ring-offset-width,
+        $ring-offset-color,
+        $ring-color
+      );
 
-  /*
-    Remove default focus styles for mouse users ONLY if
-    :focus-visible is supported on this platform.
-  */
-  &:focus:not(:focus-visible) {
-    outline: none;
+      box-shadow: $ring;
+      outline: 1px solid transparent;
+    }
+
+    /*
+      Remove default focus styles for mouse users ONLY if
+      :focus-visible is supported on this platform.
+    */
+    &:focus:not(:focus-visible) {
+      outline: none;
+    }
   }
 }
