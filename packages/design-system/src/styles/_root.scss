@@ -1,6 +1,13 @@
 /* stylelint-disable max-line-length */
 @use "sass:map";
 @use "text/module" as text;
+@use "utils/module" as utils;
+
+* {
+  @include utils.focus-ring(
+    $background-color: #fff
+  );
+}
 
 :root {
   $min-fs-with-unit: text.$min-fs + text.$unit;

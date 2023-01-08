@@ -7,15 +7,15 @@ $unit: rem;
 $browser-default-font-size: 16;
 
 // min & max font-sizes in rems
-$min-fs: math.div(16, $browser-default-font-size);
-$max-fs: math.div(18, $browser-default-font-size);
+$min-fs: math.div(16, $browser-default-font-size) !default;
+$max-fs: math.div(18, $browser-default-font-size) !default;
 
 // min & max viewport widths in rems
-$min-viewport: math.div(1024, $browser-default-font-size);
-$max-viewport: math.div(1440, $browser-default-font-size);
+$min-viewport: math.div(1024, $browser-default-font-size) !default;
+$max-viewport: math.div(1440, $browser-default-font-size) !default;
 
 // typography scale in rem's
-$scale: 1.2;
+$scale: 1.2 !default;
 $step-0: 1;
 $step-1: $step-0 * $scale;
 $step-2: $step-1 * $scale;
@@ -26,4 +26,4 @@ $step-small: math.div($step-0, $scale);
 
 // vertical rhythm (always unit less)
 // e.g. 16 * 1.5 === 24px
-$line-height: 1.5;
+$line-height: 1.5 !default;
