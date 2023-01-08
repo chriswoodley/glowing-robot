@@ -1,0 +1,45 @@
+@use "sass:list";
+@use "variables" as v;
+@use "../color/module" as c;
+@use "../lang/module" as l;
+
+// https://www.w3.org/TR/WCAG22/#focus-appearance
+@function validate-focus-ring-contrast(
+  $background-color,
+  $ring-color,
+  $ring-offset-color,
+  $ring-offset-width
+) {
+  $ring-offset-width: l.strip-unit($ring-offset-width);
+  $results: (
+    c.validate-color-contrast($background-color, $ring-color, $type: "ui"),
+  );
+
+  @if not $ring-offset-width == 0 {
+    $results: list.append($results, c.validate-color-contrast($ring-offset-color, $ring-color, $type: "ui"));
+  }
+
+  @return not list.index($results, false);
+}
+
+// https://www.w3.org/TR/WCAG22/#focus-appearance
+@function focus-ring-shadow(
+  $ring-inset: false,
+  $ring-offset-width: v.$focus-ring-offset-width,
+  $ring-offset-color: v.$focus-ring-offset-color,
+  $ring-color: v.$focus-ring-color
+) {
+  $offset-width: #{l.strip-unit($ring-offset-width)}px;
+
+  @if $ring-inset {
+    $focus-ring-offset-shadow: inset 0 0 0 $offset-width $ring-offset-color;
+    $focus-ring-shadow: inset 0 0 0 calc(2px + $offset-width) $ring-color;
+
+    @return #{$focus-ring-offset-shadow}, #{$focus-ring-shadow};
+  }
+
+  $focus-ring-offset-shadow: 0 0 0 $offset-width $ring-offset-color;
+  $focus-ring-shadow: 0 0 0 calc(2px + $offset-width) $ring-color;
+
+  @return #{$focus-ring-offset-shadow}, #{$focus-ring-shadow};
+}

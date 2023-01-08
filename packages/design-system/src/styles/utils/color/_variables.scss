@@ -1,1 +1,21 @@
-// variables
+$contrast-ratios: (
+  "text": (
+    // https://www.w3.org/TR/WCAG22/#contrast-minimum
+    "AA": (
+      "normal": 4.5,
+      "large": 3
+    ),
+    // https://www.w3.org/TR/WCAG22/#contrast-enhanced
+    "AAA": (
+      "normal": 7,
+      "large": 4.5
+    )
+  ),
+  // https://www.w3.org/TR/WCAG22/#non-text-contrast
+  "ui": (
+    "AA": (
+      "normal": 3,
+      "large": 3
+    ),
+  )
+);
