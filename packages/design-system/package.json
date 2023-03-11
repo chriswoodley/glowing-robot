@@ -59,5 +59,8 @@
     "start": "webpack --mode production --env production --watch",
     "lint:js": "eslint . --ext js,md,mdx",
     "lint:styles": "stylelint \"**/*.scss\""
+  },
+  "dependencies": {
+    "styled-components": "^5.3.8"
   }
 }
