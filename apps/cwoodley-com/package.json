@@ -1,0 +1,10 @@
+
+{
+  "name": "@cw/site",
+  "version": "0.1.0",
+  "private": true,
+  "workspaces": [
+    "frontend",
+    "backend"
+  ]
+}
