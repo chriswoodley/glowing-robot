@@ -5,7 +5,7 @@
   "license": "MIT",
   "workspaces": [
     "packages/*",
-    "apps/*"
+    "apps/**/*"
   ],
   "scripts": {
     "custom:start": "yarn --cwd apps/custom start",
