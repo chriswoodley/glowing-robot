@@ -1,3 +1,7 @@
+@use "sass:map";
+@use "sass:color";
+@use "sass:meta";
+
 $contrast-ratios: (
   "text": (
     // https://www.w3.org/TR/WCAG22/#contrast-minimum
@@ -19,3 +23,21 @@ $contrast-ratios: (
     ),
   )
 );
+$black: #000;
+$white: #fff;
+$grayscale: ();
+
+@for $index from 1 through 8 {
+  $amount: $index * 10%;
+  $key: $index * 100;
+  $grayscale: map.merge($grayscale, ($key: color.mix($black, $white, $amount)));
+}
+
+/* stylelint-disable selector-pseudo-class-no-unknown */
+/* stylelint-disable property-no-unknown */
+@each $index, $value in $grayscale {
+  :export {
+    gray#{$index}: $value;
+  }
+}
+/* stylelint-enable */

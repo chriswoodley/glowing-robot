@@ -1,0 +1,7 @@
+@use "module" as image-module;
+
+img,
+svg {
+  display: block;
+  vertical-align: middle;
+}

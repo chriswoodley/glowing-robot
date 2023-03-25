@@ -3,10 +3,12 @@ module.exports = {
   env: {
     browser: true,
     node: true,
-    jest: true
+    jest: true,
+    es6: true
   },
   parser: "@babel/eslint-parser",
   parserOptions: {
+    ecmaVersion: 9,
     sourceType: "module",
     ecmaFeatures: {
       jsx: true,
@@ -30,7 +32,20 @@ module.exports = {
       files: "*.js",
       extends: [
         "plugin:jsx-a11y/recommended",
-      ]
+      ],
+      rules: {
+        semi: [ "error", "always" ],
+        "semi-spacing": [ "error", { "before": false, "after": true } ],
+        "arrow-parens": [ "error", "always" ],
+        "arrow-spacing": "error",
+        "space-in-parens": [ "error", "never" ],
+        "space-before-function-paren": [ "error", "never" ],
+        "padded-blocks": [ "error", "never" ],
+        "no-trailing-spaces": "error",
+        "array-bracket-spacing": [ "error", "always" ],
+        "object-curly-spacing": [ "error", "always" ],
+        "eol-last": [ "error", "always" ]
+      }
     },
     {
       files: '*.mdx',
@@ -43,4 +58,4 @@ module.exports = {
       }
     }
   ]
-}
+};

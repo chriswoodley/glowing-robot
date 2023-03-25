@@ -25,7 +25,7 @@ module.exports = {
       include: path.resolve(__dirname, '../src/'),
       use: [
         'style-loader',
-        { loader: 'css-loader', options: { importLoaders: 1, sourceMap: true } },
+        { loader: 'css-loader', options: { importLoaders: 1, sourceMap: true, modules: true } },
         { loader: 'postcss-loader', options: { sourceMap: true } },
         { loader: 'sass-loader', options: { sourceMap: true } }
       ],
@@ -37,6 +37,8 @@ module.exports = {
       organisms: path.resolve(__dirname, "../src/organisms/"),
       templates: path.resolve(__dirname, "../src/templates/"),
       styles: path.resolve(__dirname, "../src/styles/"),
+      utils: path.resolve(__dirname, "../src/utils/"),
+      hooks: path.resolve(__dirname, "../src/hooks/"),
     }
 
     config.stats = {

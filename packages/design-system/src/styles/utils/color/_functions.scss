@@ -53,3 +53,11 @@
 
   @return true;
 }
+
+@function tint($hue, $amount: 50%) {
+  @return mix($hue, v.$white, $amount);
+}
+
+@function shade($hue, $amount: 50%) {
+  @return mix($hue, v.$black, $amount);
+}
