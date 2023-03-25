@@ -22,6 +22,8 @@ module.exports = {
       organisms: path.resolve(__dirname, "src/organisms/"),
       templates: path.resolve(__dirname, "src/templates/"),
       styles: path.resolve(__dirname, "src/styles/"),
+      utils: path.resolve(__dirname, "src/utils"),
+      hooks: path.resolve(__dirname, "src/hooks")
     }
   },
   module: {
@@ -40,7 +42,7 @@ module.exports = {
         test: /\.(sa|sc|c)ss$/,
         use: [
           MiniCssExtractPlugin.loader,
-          { loader: 'css-loader', options: { importLoaders: 1 } },
+          { loader: 'css-loader', options: { importLoaders: 1, modules: true } },
           'postcss-loader',
           'sass-loader',
         ],

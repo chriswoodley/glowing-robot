@@ -1,19 +1,19 @@
 module.exports = (api) => {
-  const plugins = []
+  const plugins = [];
 
   return {
     presets: [
       [
-        '@babel/preset-env', 
-        { 
+        '@babel/preset-env',
+        {
           debug: false
         }
       ],
       [
-        '@babel/preset-react', 
+        '@babel/preset-react',
         { // Enable development transform of React with new automatic runtime
-          development: api.env('development'), 
-          runtime: 'automatic' 
+          development: api.env('development'),
+          runtime: 'automatic'
         }
       ],
     ],
