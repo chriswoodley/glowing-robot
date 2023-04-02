@@ -1,26 +1,30 @@
+@use "sass:map";
+@use "../lang/_module.scss" as l;
+
 $transition-durations: (
-  "fast": 0.2s,
-  "normal": 0.35s,
-  "slow": 0.5s
+  "none": 0s,
+  "fast": 0.15s,
+  "normal": 0.25s,
+  "slow": 0.35s
 );
 $transition-timing-functions: (
-  /* quad */
   "weak": (
     "easeIn": cubic-bezier(0.55, 0.085, 0.68, 0.53),
     "easeOut": cubic-bezier(0.25, 0.46, 0.45, 0.94),
-    "easeInOut": cubic-bezier(0.455, 0.03, 0.515, 0.955)
+    "easeInOut": cubic-bezier(0.455, 0.03, 0.515, 0.955),
+    "easeInOutBack": cubic-bezier(0.56, -0.22, 0.47, 1.235)
   ),
-  /* cubic */
   "normal": (
     "easeIn": cubic-bezier(0.55, 0.055, 0.675, 0.19),
     "easeOut": cubic-bezier(0.215, 0.61, 0.355, 1),
-    "easeInOut": cubic-bezier(0.645, 0.045, 0.355, 1)
+    "easeInOut": cubic-bezier(0.645, 0.045, 0.355, 1),
+    "easeInOutBack": cubic-bezier(0.68, -0.55, 0.265, 1.55)
   ),
-  /* quart */
   "strong": (
     "easeIn": cubic-bezier(0.895, 0.03, 0.685, 0.22),
     "easeOut": cubic-bezier(0.165, 0.84, 0.44, 1),
-    "easeInOut": cubic-bezier(0.77, 0, 0.175, 1)
+    "easeInOut": cubic-bezier(0.77, 0, 0.175, 1),
+    "easeInOutBack": cubic-bezier(0.83, -0.6, 0.145, 1.645)
   )
 );
 $transition-delays: (
@@ -29,3 +33,36 @@ $transition-delays: (
   "normal": 0.2s,
   "long": 0.3s
 );
+
+/* stylelint-disable selector-pseudo-class-no-unknown */
+/* stylelint-disable property-no-unknown */
+/* stylelint-disable property-case */
+@each $key, $value in $transition-durations {
+  $speed: l.capitalize($key);
+
+  :export {
+    transition#{$speed}Duration: $value;
+  }
+}
+
+@each $key, $value in $transition-delays {
+  $time: l.capitalize($key);
+
+  :export {
+    transition#{$time}Delay: $value;
+  }
+}
+
+@each $key, $value in $transition-timing-functions {
+  $map: map.get($transition-timing-functions, $key);
+  $strength: l.capitalize($key);
+
+  @each $nestedKey, $nestedValue in $map {
+    $timing: l.capitalize($nestedKey);
+
+    :export {
+      transition#{$strength}#{$timing}: $nestedValue;
+    }
+  }
+}
+/* stylelint-enable */
