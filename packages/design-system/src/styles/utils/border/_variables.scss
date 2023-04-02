@@ -1,0 +1,35 @@
+@use "sass:map";
+@use "sass:color";
+@use "sass:meta";
+
+$border-sizes: ();
+
+@for $index from 1 through 3 {
+  $size: $index * 1px;
+  $key: $index * 100;
+  $border-sizes: map.merge($border-sizes, ($key: $size));
+}
+
+$border-radius: ();
+
+@for $index from 3 through 8 {
+  $size: $index * 1px;
+  $key: $index * 100;
+  $border-radius: map.merge($border-radius, ($key: $size));
+}
+
+/* stylelint-disable selector-pseudo-class-no-unknown */
+/* stylelint-disable property-no-unknown */
+/* stylelint-disable property-case */
+@each $index, $value in $border-sizes {
+  :export {
+    borderSize#{$index}: $value;
+  }
+}
+
+@each $index, $value in $border-radius {
+  :export {
+    borderRadius#{$index}: $value;
+  }
+}
+/* stylelint-enable */

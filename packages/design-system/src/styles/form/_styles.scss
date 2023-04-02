@@ -1,1 +1,22 @@
-@use "module" as form-module;
+@use "module" as form;
+
+button {
+  background-color: form.$button-background-color;
+  border-radius: form.$button-border-radius;
+  border: form.$button-border;
+  color: form.$button-text-color;
+  cursor: pointer;
+  height: form.$button-height;
+  padding: form.$button-padding;
+  text-align: center;
+  user-select: none;
+  vertical-align: middle;
+
+  &:hover {
+    background-color: form.$button-hover-background-color;
+  }
+
+  &:active {
+    background-color: form.$button-active-background-color;
+  }
+}
