@@ -5,7 +5,7 @@ import {
   transitionFastDuration,
   transitionNormalDuration,
   transitionNormalEaseInOutBack
-} from 'styles/utils/motion/_variables.scss';
+} from 'styles/utils/motion/_export.scss';
 import hamburgerButtonTheme from './index.theme';
 
 const StyledLine = styled.div`

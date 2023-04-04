@@ -32,17 +32,3 @@ $grayscale: ();
   $key: $index * 100;
   $grayscale: map.merge($grayscale, ($key: color.mix($black, $white, $amount)));
 }
-
-/* stylelint-disable selector-pseudo-class-no-unknown */
-/* stylelint-disable property-no-unknown */
-@each $index, $value in $grayscale {
-  :export {
-    gray#{$index}: $value;
-  }
-}
-
-:export {
-  black: $black;
-  white: $white;
-}
-/* stylelint-enable */

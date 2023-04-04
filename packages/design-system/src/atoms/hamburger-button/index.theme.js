@@ -1,4 +1,4 @@
-import colors from 'styles/utils/color/_variables.scss';
+import colors from 'styles/utils/color/_export.scss';
 
 export default {
   standard: {
