@@ -25,7 +25,7 @@ module.exports = {
       include: path.resolve(__dirname, '../src/'),
       use: [
         'style-loader',
-        { loader: 'css-loader', options: { importLoaders: 1, sourceMap: true, modules: true } },
+        { loader: 'css-loader', options: { importLoaders: 1, sourceMap: true } },
         { loader: 'postcss-loader', options: { sourceMap: true } },
         { loader: 'sass-loader', options: { sourceMap: true } }
       ],

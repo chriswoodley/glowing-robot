@@ -3,11 +3,11 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import useVerticalRhythmUnit from 'hooks/use-vertical-rhythm-unit';
 import useMaxHeight from 'hooks/use-max-height';
-import colorVariables from 'styles/utils/color/_variables.scss';
+import colors from 'styles/utils/color/_export.scss';
 
 const StyledAspectRatioContainer = styled.div`
   aspect-ratio: ${(props) => props.ratio};
-  background-color: ${colorVariables.gray100};
+  background-color: ${colors.gray100};
   max-height: ${(props) => props.maxHeight};
   overflow: hidden;
 `;
@@ -39,7 +39,6 @@ AspectRatioContainer.propTypes = {
   style: PropTypes.object,
   ratio: PropTypes.string,
   size: PropTypes.oneOf([ 'xs', 'sm', 'md', 'lg', 'xl' ]),
-  theme: PropTypes.object,
   variant: PropTypes.oneOf([ 'standard' ]),
   children: PropTypes.oneOfType([
     PropTypes.node,

@@ -42,10 +42,19 @@ module.exports = {
         test: /\.(sa|sc|c)ss$/,
         use: [
           MiniCssExtractPlugin.loader,
-          { loader: 'css-loader', options: { importLoaders: 1, modules: true } },
+          { loader: 'css-loader', options: { importLoaders: 1 } },
           'postcss-loader',
           'sass-loader',
         ],
+        exclude: /_export.(sa|sc|c)ss$/
+      },
+      {
+        test: /\.(sa|sc|c)ss$/,
+        use: [
+          { loader: 'css-loader', options: { module: true } },
+          'sass-loader',
+        ],
+        include: /_export.(sa|sc|c)ss$/
       },
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,

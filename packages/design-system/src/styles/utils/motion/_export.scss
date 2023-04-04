@@ -1,0 +1,36 @@
+@use "sass:map";
+@use "../lang/_module.scss" as l;
+@use "variables" as v;
+
+/* stylelint-disable selector-pseudo-class-no-unknown */
+/* stylelint-disable property-no-unknown */
+/* stylelint-disable property-case */
+@each $key, $value in v.$transition-durations {
+  $speed: l.capitalize($key);
+
+  :export {
+    transition#{$speed}Duration: $value;
+  }
+}
+
+@each $key, $value in v.$transition-delays {
+  $time: l.capitalize($key);
+
+  :export {
+    transition#{$time}Delay: $value;
+  }
+}
+
+@each $key, $value in v.$transition-timing-functions {
+  $map: map.get(v.$transition-timing-functions, $key);
+  $strength: l.capitalize($key);
+
+  @each $nestedKey, $nestedValue in $map {
+    $timing: l.capitalize($nestedKey);
+
+    :export {
+      transition#{$strength}#{$timing}: $nestedValue;
+    }
+  }
+}
+/* stylelint-enable */

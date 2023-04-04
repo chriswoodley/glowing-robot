@@ -1,0 +1,15 @@
+@use "variables" as v;
+
+/* stylelint-disable selector-pseudo-class-no-unknown */
+/* stylelint-disable property-no-unknown */
+:export {
+  black: v.$black;
+  white: v.$white;
+}
+
+@each $index, $value in v.$grayscale {
+  :export {
+    gray#{$index}: $value;
+  }
+}
+/* stylelint-enable */
