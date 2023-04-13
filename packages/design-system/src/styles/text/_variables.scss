@@ -27,3 +27,9 @@ $step-small: math.div($step-0, $scale);
 // vertical rhythm (always unit less)
 // e.g. 16 * 1.5 === 24px
 $line-height: 1.5 !default;
+
+// Links
+$link-color: inherit !default;
+$link-hover-color: inherit !default;
+$link-active-color: inherit !default;
+$link-visited-color: inherit !default;

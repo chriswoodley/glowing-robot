@@ -18,7 +18,8 @@ h4 {
   @include text.typography(text.$step-2);
 }
 
-h5 {
+h5,
+.text-large {
   @include text.typography(text.$step-1);
 }
 
@@ -37,6 +38,29 @@ dl {
 
 // inline text
 
-small {
+small,
+.text-small {
   @include text.typography(text.$step-small);
+}
+
+a {
+  color: text.$link-color;
+  text-decoration: none;
+
+  &:hover {
+    color: text.$link-hover-color;
+  }
+
+  &:active {
+    color: text.$link-active-color;
+  }
+
+  &:visited {
+    color: text.$link-visited-color;
+  }
+
+  &:hover,
+  &:active {
+    text-decoration: underline;
+  }
 }

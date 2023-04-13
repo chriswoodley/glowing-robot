@@ -23,7 +23,8 @@ module.exports = {
       templates: path.resolve(__dirname, "src/templates/"),
       styles: path.resolve(__dirname, "src/styles/"),
       utils: path.resolve(__dirname, "src/utils"),
-      hooks: path.resolve(__dirname, "src/hooks")
+      hooks: path.resolve(__dirname, "src/hooks"),
+      icons: path.resolve(__dirname, "src/icons/"),
     }
   },
   module: {
@@ -57,7 +58,14 @@ module.exports = {
         include: /_export.(sa|sc|c)ss$/
       },
       {
-        test: /\.(png|svg|jpg|jpeg|gif)$/i,
+        test: /\.svg$/,
+        loader: 'svg-sprite-loader',
+        options: {
+          symbolId: 'svg[contenthash:6]'
+        },
+      },
+      {
+        test: /\.(png|jpg|jpeg|gif)$/i,
         type: 'asset/resource',
       },
       {
