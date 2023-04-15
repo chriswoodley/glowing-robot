@@ -91,11 +91,11 @@ module.exports = {
           chunks: "all",
           enforce: true,
         },
-        vendor: {
-          test: /[\\/]node_modules[\\/]/,
-          name: 'vendors',
-          chunks: 'all',
-        },
+        // vendor: {
+        //   test: /[\\/]node_modules[\\/]/,
+        //   name: 'vendors',
+        //   chunks: 'all',
+        // },
       },
     },
   },
