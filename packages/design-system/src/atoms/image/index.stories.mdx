@@ -1,15 +1,15 @@
 import { Meta, Story, Canvas, ArgsTable } from "@storybook/addon-docs/blocks";
-import LazyCoverImage from "./index.js";
+import Image from "./index.js";
 
 <Meta
-  title="Atoms/Lazy Cover Image"
-  component={LazyCoverImage}
+  title="Atoms/Image"
+  component={Image}
   argTypes={{}}
 />
 
 # Lazy Cover Image
 
-A `<LazyCoverImage>` lazily loads and displays an image that will cover its parent container. 
+A `<Image>` lazily loads and displays an image that will cover its parent container. 
 It is meant to be used with `<Suspense>`. Optionally, it can be used with `<AspectRatioContainer>`.
 
 <Canvas>
@@ -20,8 +20,8 @@ It is meant to be used with `<Suspense>`. Optionally, it can be used with `<Aspe
       alt: 'my bp station'
     }}
   >
-    {(args) => <LazyCoverImage {...args} />}
+    {(args) => <Image {...args} />}
   </Story>
 </Canvas>
 
-<ArgsTable of={LazyCoverImage} />
+<ArgsTable of={Image} />
