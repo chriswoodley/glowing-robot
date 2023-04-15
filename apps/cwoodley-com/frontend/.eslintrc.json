@@ -1,3 +1,24 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": [
+    "eslint:recommended",
+    "next/core-web-vitals"
+  ],
+  "overrides": [
+    {
+      "files": "*.js",
+      "rules": {
+        "semi": [ "error", "always" ],
+        "semi-spacing": [ "error", { "before": false, "after": true } ],
+        "arrow-parens": [ "error", "always" ],
+        "arrow-spacing": "error",
+        "space-in-parens": [ "error", "never" ],
+        "space-before-function-paren": [ "error", "never" ],
+        "padded-blocks": [ "error", "never" ],
+        "no-trailing-spaces": "error",
+        "array-bracket-spacing": [ "error", "always" ],
+        "object-curly-spacing": [ "error", "always" ],
+        "eol-last": [ "error", "always" ]
+      }
+    }
+  ]
 }
