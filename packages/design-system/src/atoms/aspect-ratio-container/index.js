@@ -10,7 +10,7 @@ const StyledAspectRatioContainer = styled.div`
   background-color: ${colors.gray100};
   max-height: ${(props) => props.maxHeight};
   overflow: hidden;
-  position: 'relative';
+  position: relative;
 `;
 
 function AspectRatioContainer({

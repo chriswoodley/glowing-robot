@@ -1,5 +1,6 @@
 import 'styles/index.scss';
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
+import { Title, Subtitle, Description, Primary, Controls, Stories } from '@storybook/blocks';
 import pretty from 'pretty';
 
 
@@ -25,6 +26,16 @@ export const parameters = {
     },
   },
   docs: {
-    transformSource: input => pretty(input)
+    transformSource: input => pretty(input),
+    page: () => (
+      <>
+        <Title />
+        <Subtitle />
+        <Description />
+        <Primary />
+        <Controls />
+        <Stories />
+      </>
+    ),
   }
 }

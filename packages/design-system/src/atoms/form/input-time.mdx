@@ -1,0 +1,32 @@
+import { Meta, Unstyled, Source } from '@storybook/blocks';
+
+<Meta title="Atoms/Form/Input: Time" />
+
+# Input: Time
+
+<Unstyled>
+  <input
+    type="time"
+    id="appt"
+    name="appt"
+    min="09:00"
+    max="18:00"
+    required
+  />
+
+  <Source
+    code={`
+      <input
+        type="time"
+        id="appt"
+        name="appt"
+        min="09:00"
+        max="18:00"
+        required
+      />
+    `}
+    language="html"
+    dark
+    format
+  />
+</Unstyled>

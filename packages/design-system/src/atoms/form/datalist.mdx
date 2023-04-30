@@ -1,0 +1,34 @@
+import { Meta, Unstyled, Source } from '@storybook/blocks';
+
+<Meta title="Atoms/Form/Datalist" />
+
+# Datalist
+
+<Unstyled>
+  <label htmlFor="ice-cream-choice">Choose a flavor:</label>
+  <input list="ice-cream-flavors" id="ice-cream-choice" name="ice-cream-choice" />
+  <datalist id="ice-cream-flavors">
+    <option value="Chocolate" />
+    <option value="Coconut" />
+    <option value="Mint" />
+    <option value="Strawberry" />
+    <option value="Vanilla" />
+  </datalist>
+
+  <Source
+    code={`
+      <label for="ice-cream-choice">Choose a flavor:</label>
+      <input list="ice-cream-flavors" id="ice-cream-choice" name="ice-cream-choice" />
+      <datalist id="ice-cream-flavors">
+        <option value="Chocolate" />
+        <option value="Coconut" />
+        <option value="Mint" />
+        <option value="Strawberry" />
+        <option value="Vanilla" />
+      </datalist>
+    `}
+    language="html"
+    dark
+    format
+  />
+</Unstyled>
