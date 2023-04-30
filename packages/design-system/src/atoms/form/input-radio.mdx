@@ -1,0 +1,71 @@
+import { Meta, Unstyled, Source } from '@storybook/blocks';
+
+<Meta title="Atoms/Form/Input: Radio" />
+
+# Input: Radio
+
+<Unstyled>
+  <div>
+    <input
+      type="radio"
+      id="huey"
+      name="drone"
+      value="huey"
+      checked
+    />
+    <label htmlFor="huey">Huey</label>
+  </div>
+  <div>
+    <input
+      type="radio"
+      id="dewey"
+      name="drone"
+      value="dewey"
+    />
+    <label htmlFor="dewey">Dewey</label>
+  </div>
+  <div>
+    <input
+      type="radio"
+      id="louie"
+      name="drone"
+      value="louie"
+    />
+    <label htmlFor="louie">Louie</label>
+  </div>
+  <Source
+    code={`
+      <div>
+        <input
+          type="radio"
+          id="huey"
+          name="drone"
+          value="huey"
+          checked
+        />
+        <label for="huey">Huey</label>
+      </div>
+      <div>
+        <input
+          type="radio"
+          id="dewey"
+          name="drone"
+          value="dewey"
+        />
+        <label for="dewey">Dewey</label>
+      </div>
+      <div>
+        <input
+          type="radio"
+          id="louie"
+          name="drone"
+          value="louie"
+        />
+        <label for="louie">Louie</label>
+      </div>
+    `}
+    language="html"
+    dark
+    format
+  />
+</Unstyled>

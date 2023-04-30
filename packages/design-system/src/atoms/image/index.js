@@ -1,86 +1,155 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import { createResource } from 'utils/suspense';
-
-/**
- * Notes:
- * images should be optimized for width/height and quality and makes the assumption the developer
- * has already done that
- *
- * lqip-modern: package that will create a base64 datauri blurred image placeholder. will also
- * calculate the intrinsic width/height of the image
- *
- * width and height should be applied when not using Object Fit: cover
- * on the other hand, sizes and srcset should be supplied when using object fit cover
- * experiment with base64 srcset
- *
- * need to find a library that will create images at different sizes? sharp? jimp? does it work
- * in webpack builds without a loader?
- *
- * Instead of making the assumption the user should use suspense. lets include it for them so
- * that we can display the lqip automatically
- * *
- * Don't assume the user wants the image to fill (Object fit cover)
- *
- * Responsive Images
- * when the user provides a sizes prop
- * this will create a srcset based on preset device widths or breakpoints
- *
- * This component makes the assumption the user has already optimized the image either manually,
- * or remotely using a 3rd party service like cloudinary
- */
 
 const StyledImage = styled.img`
-  ${({ fill }) => {
+  ${({ fill, placeholder }) => {
     if (fill) {
       return `
         height: 100%;
         width: 100%;
         object-fit: cover;
         position: absolute;
+        background-size: cover;
+        background-image: url(${placeholder});
+      `;
+    } else {
+      return `
+        background-size: cover;
+        background-image: url(${placeholder});
       `;
     }
   }} 
 `;
 
-const cache = new Map();
+const colorPlaceholderImageCache = new Map();
+const generateColorPlaceholder = ({ width, height, color }) => {
+  const key = `${width},${width},${color}`;
 
-function loadImage(source) {
-  let resource = cache.get(source);
+  if (!colorPlaceholderImageCache.has(key)) {
+    colorPlaceholderImageCache.set(key, `data:image/svg+xml;base64,${window.btoa(
+      `<svg viewBox="0 0 ${width} ${height}" xmlns="http://www.w3.org/2000/svg">
+        <rect width="${width}" height="${height}" fill="${color}"></rect>
+      </svg>`)
+    }`);
+  }
 
-  if (resource) return resource;
+  return colorPlaceholderImageCache.get(key);
+};
 
-  resource = createResource(
-    () =>
-      new Promise((resolve, reject) => {
-        const img = new window.Image();
-        img.src = source;
-        img.onload = () => resolve(source);
-        img.onerror = () => reject(new Error(`Failed to load image ${source}`));
-      })
-  );
 
-  cache.set(source, resource);
-
-  return resource;
-}
-
-export default function Image({ src, alt, fill, sizes }) {
-  loadImage(src).read();
+function SuspenseImage({
+  alt,
+  crossOrigin,
+  decoding,
+  height,
+  loading,
+  sizes,
+  src,
+  srcSet,
+  width,
+}) {
+  // TODO: look into using intersect observer. once image is within a threshold of the viewport
+  // start reading. because loading="lazy" doesn't work with new window.Image()
+  loadImage({ src }).read();
 
   return (
-    <StyledImage src={src} alt={alt} decoding="async" loading="lazy" />
+    <StyledImage
+      alt={alt}
+      crossOrigin={crossOrigin}
+      decoding={decoding}
+      height={height}
+      loading={loading}
+      sizes={sizes}
+      src={src}
+      srcSet={srcSet}
+      width={width}
+    />
+  );
+}
+
+SuspenseImage.propTypes = {
+  alt: PropTypes.string.isRequired,
+  crossOrigin: PropTypes.string,
+  height: PropTypes.string.isRequired,
+  sizes: PropTypes.string,
+  src: PropTypes.string.isRequired,
+  srcSet: PropTypes.string,
+  width: PropTypes.string.isRequired,
+  decoding: PropTypes.string,
+  loading: PropTypes.string,
+};
+
+SuspenseImage.defaultProps = {
+  decoding: 'async',
+  loading: 'lazy',
+};
+
+export default function Image({
+  alt,
+  crossOrigin,
+  decoding,
+  height,
+  loading,
+  sizes,
+  src,
+  srcSet,
+  width,
+  placeholder
+}) {
+   let fallback = generateColorPlaceholder({ width, height, color: '#eeeeee' });
+
+  Object.keys(placeholder).forEach((key) => {
+    const data = placeholder[key];
+
+    if (data) {
+      if (key === 'color') {
+        fallback = generateColorPlaceholder({ width, height, color: data });
+      }
+
+      if ([ 'dataURL', 'URL' ].includes(key)) {
+        fallback = data;
+      }
+    }
+  });
+
+  return (
+    <StyledImage
+      alt={alt}
+      crossOrigin={crossOrigin}
+      decoding={decoding}
+      height={height}
+      loading={loading}
+      sizes={sizes}
+      src={src}
+      srcSet={srcSet}
+      width={width}
+      placeholder={fallback}
+    />
   );
 }
 
 Image.propTypes = {
-  src: PropTypes.string.isRequired,
   alt: PropTypes.string.isRequired,
-  fill: PropTypes.bool,
-  sizes: PropTypes.string
+  crossOrigin: PropTypes.string,
+  height: PropTypes.string.isRequired,
+  sizes: PropTypes.string,
+  src: PropTypes.string.isRequired,
+  srcSet: PropTypes.string,
+  width: PropTypes.string.isRequired,
+  decoding: PropTypes.string,
+  loading: PropTypes.string,
+  placeholder: PropTypes.shape({
+    color: PropTypes.string,
+    dataURL: PropTypes.string,
+    URL: PropTypes.string,
+  }),
+  fill: PropTypes.bool
 };
 
 Image.defaultProps = {
-  fill: false,
+  decoding: 'async',
+  loading: 'lazy',
+  placeholder: {},
+  fill: false
 };

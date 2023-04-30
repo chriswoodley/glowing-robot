@@ -5,6 +5,7 @@ import colors from 'styles/utils/color/_export.scss';
 export default {
   title: 'Atoms/Hamburger Button',
   component: HamburgerButton,
+  tags: [ 'autodocs' ],
 };
 
 const Template = (args) => <HamburgerButton {...args} />;

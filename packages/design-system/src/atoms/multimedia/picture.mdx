@@ -1,0 +1,35 @@
+import { Meta, Unstyled, Source } from '@storybook/blocks';
+
+<Meta title="Atoms/Multimedia/Picture" />
+
+# Picture
+
+<Unstyled>
+  <picture>
+    <source 
+      srcSet="https://interactive-examples.mdn.mozilla.net/media/cc0-images/surfer-240-200.jpg"
+      media="(orientation: portrait)" 
+    />
+    <img 
+      src="https://interactive-examples.mdn.mozilla.net/media/cc0-images/painted-hand-298-332.jpg" 
+      alt="" 
+    />
+  </picture>
+  <Source
+    code={`
+      <picture>
+        <source 
+          srcSet="https://interactive-examples.mdn.mozilla.net/media/cc0-images/surfer-240-200.jpg"
+          media="(orientation: portrait)" 
+        />
+        <img 
+          src="https://interactive-examples.mdn.mozilla.net/media/cc0-images/painted-hand-298-332.jpg" 
+          alt="" 
+        />
+      </picture>
+    `}
+    language="html"
+    dark
+    format
+  />
+</Unstyled>

@@ -1,0 +1,30 @@
+import { Meta, Unstyled, Source } from '@storybook/blocks';
+
+<Meta title="Atoms/Interactive/Dialog" />
+
+# Dialog
+
+<Unstyled>
+  <dialog open>
+    <p>Greetings, one and all!</p>
+    <form method="dialog">
+      <button>OK</button>
+    </form>
+  </dialog>
+</Unstyled>
+
+<div style={{marginTop: 220}}>
+  <Source
+    code={`
+      <dialog open>
+        <p>Greetings, one and all!</p>
+        <form method="dialog">
+          <button>OK</button>
+        </form>
+      </dialog>
+    `}
+    language="html"
+    dark
+    format
+  />
+</div>

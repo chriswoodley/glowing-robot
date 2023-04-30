@@ -1,0 +1,30 @@
+import { Meta, Unstyled, Source } from '@storybook/blocks';
+
+<Meta title="Atoms/Form/Input: Tel" />
+
+# Input: Tel
+
+<Unstyled>
+  <input
+    type="tel"
+    id="phone"
+    name="phone"
+    pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+    required
+  />
+  
+  <Source
+    code={`
+      <input
+        type="tel"
+        id="phone"
+        name="phone"
+        pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+        required
+      />
+    `}
+    language="html"
+    dark
+    format
+  />
+</Unstyled>

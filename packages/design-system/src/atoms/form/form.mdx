@@ -1,0 +1,44 @@
+import { Meta, Unstyled, Source } from '@storybook/blocks';
+
+<Meta title="Atoms/Form/Form" />
+
+# Form
+
+HTML provides a number of elements which can be used together to create forms which the user can 
+fill out and submit to the website or application.
+
+<Unstyled>
+  <form action="" method="get" className="form-example">
+    <div className="form-example">
+      <label htmlFor="name">Enter your name: </label>
+      <input type="text" name="name" id="name" required />
+    </div>
+    <div className="form-example">
+      <label htmlFor="email">Enter your email: </label>
+      <input type="email" name="email" id="email" required />
+    </div>
+    <div className="form-example">
+      <input type="submit" value="Subscribe!" />
+    </div>
+  </form>
+
+  <Source
+    code={`
+      <form action="" method="get" class="form-example">
+        <div class="form-example">
+          <label for="name">Enter your name: </label>
+          <input type="text" name="name" id="name" required />
+        </div>
+        <div class="form-example">
+          <label for="email">Enter your email: </label>
+          <input type="email" name="email" id="email" required />
+        </div>
+        <div class="form-example">
+          <input type="submit" value="Subscribe!" />
+        </div>
+      </form>
+    `}
+    language="html"
+    dark format
+  />
+</Unstyled>

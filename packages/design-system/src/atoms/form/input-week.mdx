@@ -1,0 +1,32 @@
+import { Meta, Unstyled, Source } from '@storybook/blocks';
+
+<Meta title="Atoms/Form/Input: Week" />
+
+# Input: Week
+
+<Unstyled>
+  <input
+    type="week"
+    name="week"
+    id="camp-week"
+    min="2018-W18"
+    max="2018-W26"
+    required
+  />
+
+  <Source
+    code={`
+      <input
+        type="week"
+        name="week"
+        id="camp-week"
+        min="2018-W18"
+        max="2018-W26"
+        required
+      />
+    `}
+    language="html"
+    dark
+    format
+  />
+</Unstyled>
