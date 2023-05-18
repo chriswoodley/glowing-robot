@@ -1,0 +1,37 @@
+@use "sass:math";
+@use "sass:map";
+@use "../utils/lang/module" as lang;
+
+// unit of measurement
+$unit: rem;
+
+// always 16px for every browser
+$browser-default-font-size: 16;
+
+// vertical rhythm (always unit less)
+// e.g. 16 * 1.5 === 24px
+$line-height: 1.5 !default;
+
+// min & max font-sizes in rems
+$min-fs: math.div(16, $browser-default-font-size) !default;
+$max-fs: math.div(18, $browser-default-font-size) !default;
+
+// Common numbers between 768 and 1600 that are divisible by both 12 and 16 are:
+// 768, 816, 864, 912, 960, 1008, 1056, 1104, 1152, 1200, 1248, 1296, 1344, 1392, 1440, 1488, 1536
+// because 12 and 16 column grid convention...
+
+$breakpoints-in-px: (
+  "sm": 816,
+  "md": 1008,
+  "lg": 1200,
+  "xl": 1440
+) !default;
+$breakpoints: ();
+
+@each $key, $width in $breakpoints-in-px {
+  $breakpoints: map.merge($breakpoints, ($key: math.div($width, $browser-default-font-size) * 1rem));
+}
+
+// min & max viewport widths in rems
+$min-viewport: lang.strip-unit(map.get($breakpoints, "sm"));
+$max-viewport: lang.strip-unit(map.get($breakpoints, "xl"));

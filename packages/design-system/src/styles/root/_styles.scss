@@ -1,0 +1,32 @@
+/* stylelint-disable max-line-length */
+@use "sass:map";
+@use "module" as root;
+@use "../text/module" as text;
+@use "../utils/module" as utils;
+
+* {
+  @include utils.focus-ring(
+    $background-color: #fff
+  );
+}
+
+:root {
+  $min-fs-with-unit: root.$min-fs + root.$unit;
+  $max-fs-with-unit: root.$max-fs + root.$unit;
+  $min-viewport-with-unit: root.$min-viewport + root.$unit;
+  $max-viewport-with-unit: root.$max-viewport + root.$unit;
+
+  font-size: min(max(#{$min-fs-with-unit}, calc(#{$min-fs-with-unit} + (#{root.$max-fs} - #{root.$min-fs}) * ((100vw - #{$min-viewport-with-unit}) / (#{root.$max-viewport} - #{root.$min-viewport})))), #{$max-fs-with-unit});
+  line-height: root.$line-height;
+  text-rendering: optimizelegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Safari resize fix */
+  min-height: 0;
+}
+
+:root,
+body {
+  height: 100%;
+}

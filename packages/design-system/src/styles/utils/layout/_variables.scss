@@ -1,0 +1,12 @@
+@use "sass:map";
+@use "sass:math";
+@use "../../root/module" as root;
+
+$layout-columns: 12;
+$layout-column-gap: root.$line-height * 1rem;
+$layout: ();
+
+@each $size, $width in root.$breakpoints-in-px {
+  $new-width: calc(($width * 1px) - 48px);
+  $layout: map.merge($layout, ($size: $new-width));
+}
