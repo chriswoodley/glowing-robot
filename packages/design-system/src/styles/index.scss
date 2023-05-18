@@ -1,7 +1,8 @@
 @use "reset";
-@use "root";
+@use "root/styles";
 @use "text/styles" as text;
 @use "multimedia/styles" as multimedia;
 @use "form/styles" as form;
 @use "table/styles" as table;
 @use "interactive/styles" as interactive;
+@use "utils/styles" as utils;

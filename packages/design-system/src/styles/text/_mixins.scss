@@ -1,9 +1,9 @@
-@use "variables" as v;
+@use "../root/module" as root;
 @use "functions" as f;
 
 @mixin typography($font-size) {
-  font-size: $font-size + v.$unit;
-  line-height: f.calc-line-height(v.$line-height, $font-size);
-  margin-top: f.calc-top-margin(v.$line-height, $font-size, v.$unit);
-  margin-bottom: v.$line-height + v.$unit;
+  font-size: $font-size + root.$unit;
+  line-height: f.calc-line-height(root.$line-height, $font-size);
+  margin-top: f.calc-top-margin(root.$line-height, $font-size, root.$unit);
+  margin-bottom: root.$line-height + root.$unit;
 }

@@ -1,0 +1,368 @@
+@use "sass:math";
+@use "sass:map";
+@use "module" as layout;
+@use "../../root/module" as root;
+
+// Grid System
+
+.layout {
+  max-width: 90%;
+  margin-left: auto;
+  margin-right: auto;
+
+  &--full-width {
+    max-width: 100% !important;
+  }
+
+  @each $size, $width in layout.$layout {
+    @include root.respond-to($size) {
+      max-width: $width;
+
+      &--#{$size}-full-width {
+        max-width: 100% !important;
+      }
+    }
+  }
+}
+
+.layout_row {
+  display: block;
+
+  @include root.respond-to("sm") {
+    display: flex;
+    margin-left: math.div(layout.$layout-column-gap, -2);
+    margin-right: math.div(layout.$layout-column-gap, -2);
+    margin-top: math.div(layout.$layout-column-gap, -2);
+
+    &:not(:last-child) {
+      margin-bottom: math.div(layout.$layout-column-gap, 2);
+    }
+  }
+
+  @each $size, $width in root.$breakpoints {
+    @include root.respond-to($size) {
+      // column wrapping
+      &--#{$size}-wrap {
+        flex-wrap: wrap;
+      }
+
+      // column alignments
+      &--#{$size}-middle {
+        align-items: center;
+      }
+
+      &--#{$size}-bottom {
+        align-items: end;
+      }
+
+      &--#{$size}-top {
+        align-items: start;
+      }
+
+      &--#{$size}-center {
+        justify-content: center;
+      }
+
+      &--#{$size}-right {
+        justify-content: start;
+      }
+
+      &--#{$size}-left {
+        justify-content: end;
+      }
+    }
+  }
+}
+
+.layout_column {
+  padding: math.div(layout.$layout-column-gap, 2);
+
+  // equal widths by default
+  @include root.respond-to("sm") {
+    flex: 1 1 0;
+  }
+
+  @each $size, $width in root.$breakpoints {
+    // conforms to content width
+    &--#{$size}-auto {
+      flex: none;
+    }
+
+    @for $index from 1 through layout.$layout-columns {
+      @include root.respond-to($size) {
+        // specific column widths
+        &--#{$size}-#{$index} {
+          flex: none;
+          width: math.div($index, layout.$layout-columns) * 100%;
+        }
+
+        &--#{$size}-offset-#{$index} {
+          margin-left: math.div($index, layout.$layout-columns) * 100%;
+        }
+
+        // specific column order
+        &--#{$size}-order-#{$index} {
+          order: $index;
+        }
+      }
+    }
+  }
+}
+
+// Layout Display Utilities
+
+.flex {
+  display: flex;
+
+  @each $size, $width in root.$breakpoints {
+    @include root.respond-to($size) {
+      &--#{$size} {
+        display: flex;
+      }
+    }
+  }
+
+  $directions: (
+    row,
+    row-reverse,
+    column,
+    column-reverse
+  );
+
+  @each $direction in $directions {
+    &--#{$direction} {
+      flex-direction: $direction;
+    }
+
+    @each $size, $width in root.$breakpoints {
+      @include root.respond-to($size) {
+        &--#{$size}-#{$direction} {
+          flex-direction: $direction;
+        }
+      }
+    }
+  }
+
+  $wraps: (
+    nowrap,
+    wrap,
+    wrap-reverse
+  );
+
+  @each $wrap in $wraps {
+    &--#{$wrap} {
+      flex-wrap: $wrap;
+    }
+
+    @each $size, $width in root.$breakpoints {
+      @include root.respond-to($size) {
+        &--#{$size}-#{$wrap} {
+          flex-wrap: $wrap;
+        }
+      }
+    }
+  }
+
+  $alignments: (
+    start,
+    end,
+    center
+  );
+
+  @each $alignment in $alignments {
+    &--justify-content-#{$alignment} {
+      justify-content: $alignment;
+    }
+
+    &--align-items-#{$alignment} {
+      align-items: $alignment;
+    }
+
+    @each $size, $width in root.$breakpoints {
+      @include root.respond-to($size) {
+        &--#{$size}-justify-content-#{$alignment} {
+          justify-content: $alignment;
+        }
+
+        &--#{$size}-align-items-#{$alignment} {
+          align-items: $alignment;
+        }
+      }
+    }
+  }
+
+  $spacing: (
+    space-between,
+    space-around,
+    space-evenly
+  );
+
+  @each $space in $spacing {
+    &--justify-content-#{$space} {
+      justify-content: $space;
+    }
+
+    &--align-content-#{$space} {
+      align-content: $space;
+    }
+
+    @each $size, $width in root.$breakpoints {
+      @include root.respond-to($size) {
+        &--#{$size}-justify-content-#{$space} {
+          justify-content: $space;
+        }
+
+        &--#{$size}-align-content-#{$space} {
+          align-content: $space;
+        }
+      }
+    }
+  }
+
+  &_item {
+    flex: 1 1 auto;
+
+    &--grow-0 {
+      flex-grow: 0;
+    }
+
+    &--grow {
+      flex-grow: 1;
+    }
+
+    &--shrink-0 {
+      flex-shrink: 0;
+    }
+
+    &--shrink {
+      flex-shrink: 1;
+    }
+
+    &--none {
+      flex: none;
+    }
+
+    @each $size, $width in root.$breakpoints {
+      @include root.respond-to($size) {
+        &--#{$size}-grow-0 {
+          flex-grow: 0;
+        }
+
+        &--#{$size}-grow {
+          flex-grow: 1;
+        }
+
+        &--#{$size}-shrink-0 {
+          flex-shrink: 0;
+        }
+        &--#{$size}-shrink {
+          flex-shrink: 1;
+        }
+        &--#{$size}-none {
+          flex: none;
+        }
+      }
+    }
+
+    &--basis-auto {
+      flex-basis: auto;
+    }
+
+    @each $size, $width in root.$breakpoints {
+      @include root.respond-to($size) {
+        &--#{$size}-basis-auto {
+          flex-basis: auto;
+        }
+      }
+    }
+
+    @for $index from 0 through layout.$layout-columns {
+      &--basis-#{$index} {
+        flex-basis: math.div($index, layout.$layout-columns) * 100%;
+      }
+
+      @each $size, $width in root.$breakpoints {
+        @include root.respond-to($size) {
+          &--#{$size}-basis-#{$index} {
+            flex-basis: math.div($index, layout.$layout-columns) * 100%;
+          }
+        }
+      }
+    }
+
+    &--order-first {
+      order: -999;
+    }
+
+    &--order-last {
+      order: 999;
+    }
+
+    @each $size, $width in root.$breakpoints {
+      @include root.respond-to($size) {
+        &--#{$size}-order-first {
+          order: -999;
+        }
+
+        &--#{$size}-order-last {
+          order: 999;
+        }
+      }
+    }
+
+    @for $index from 1 through layout.$layout-columns {
+      &--order-#{$index} {
+        order: $index;
+      }
+
+      @each $size, $width in root.$breakpoints {
+        @include root.respond-to($size) {
+          &--#{$size}-order-#{$index} {
+            order: $index;
+          }
+        }
+      }
+    }
+  }
+}
+
+// in that case we need other display classes for more control
+.block {
+  display: block;
+
+  @each $size, $width in root.$breakpoints {
+    @include root.respond-to($size) {
+      display: block;
+    }
+  }
+}
+
+.inline {
+  display: inline;
+
+  @each $size, $width in root.$breakpoints {
+    @include root.respond-to($size) {
+      display: inline;
+    }
+  }
+}
+
+.inline-block {
+  display: inline-block;
+
+  @each $size, $width in root.$breakpoints {
+    @include root.respond-to($size) {
+      display: inline-block;
+    }
+  }
+}
+
+.inline-flex {
+  display: inline-flex;
+
+  @each $size, $width in root.$breakpoints {
+    @include root.respond-to($size) {
+      display: inline-flex;
+    }
+  }
+}

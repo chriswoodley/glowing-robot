@@ -1,0 +1,12 @@
+@use "variables";
+
+@mixin respond-to($breakpoint) {
+  @if map-has-key(variables.$breakpoints, $breakpoint) {
+    @media (min-width: map-get(variables.$breakpoints-in-px, $breakpoint) * 1px) {
+      @content;
+    }
+  } @else {
+    /* stylelint-disable-next-line max-line-length */
+    @error "No value could be retrieved from `#{$breakpoint}`. Available breakpoints are: #{map-keys(variables.$breakpoints)}.";
+  }
+}

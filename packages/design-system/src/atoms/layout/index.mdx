@@ -1,0 +1,84 @@
+import { Meta, Unstyled, Source } from '@storybook/blocks';
+
+<Meta title="Atoms/Layout/Layout" />
+
+# Layout
+
+A Layout is the top level container that holds a collection of layout rows and columns. It is
+used to define the width of your page for various device viewport widths.
+
+<Unstyled>
+  <div className="layout">
+    <div className="box">content</div>
+  </div>
+</Unstyled>
+
+<Source
+  code={`
+    <div class="layout">
+      <div class="box">content</div>
+    </div>
+  `}
+  language="html"
+  dark
+  format
+/>
+
+## Layout widths
+
+On mobile screens the default width is `90%` of the viewport. The layout is automatically positioned
+centered within the viewport on all screen sizes. The following table describes how the layout width
+is changed for each breakpoint.
+
+<table>
+  <caption>Breakpoints and Layout Sizes</caption>
+  <thead>
+    <tr>
+      <th>< 816</th>
+      <th>>= 816</th>
+      <th>>= 1008</th>
+      <th>>= 1200</th>
+      <th>>= 1440</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>90%</td>
+      <td>768px</td>
+      <td>960px</td>
+      <td>1152px</td>
+      <td>1392px</td>
+    </tr>
+  </tbody>
+</table>
+
+These are common numbers between 768 and 1440 that are divisible by both 12 and 16.
+Why 12 and 16? Those numbers represent the number of common column configurations that can be 
+divided up into even width columns in a fixed width layout. e.g. 60px vs 60.333px. The numbers have been mapped to
+viewport sizes and it happens to be good enough to handle most common screen sizes.
+
+
+
+### Full Width Layouts
+
+You may apply full width of `100%` for mobile, `sm`, `md`, `lg`, and `xl` screen sizes. For mobile
+devices you can add the following modifier `.layout .layout--full-width`. For other screen sizes...
+`.layout .layout--sm-full-width`. Below is an example making a full width layout only on `md` screen
+sizes and up.
+
+<Unstyled>
+  <div className="layout layout--md-full-width">
+    <div className="box">content</div>
+  </div>
+</Unstyled>
+
+<Source
+  code={`
+    <div class="layout layout--md-full-width">
+      <div class="box">content</div>
+    </div>
+  `}
+  language="html"
+  dark
+  format
+/>

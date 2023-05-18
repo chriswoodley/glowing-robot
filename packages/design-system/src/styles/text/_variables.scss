@@ -1,18 +1,11 @@
 @use "sass:math";
+@use "sass:map";
 
-// unit of measurement
-$unit: rem;
+// left off at moving stuff to root. ie lineheight, min/max fontsize and breakpoints
+// due to import loop
 
-// always 16px for every browser
-$browser-default-font-size: 16;
-
-// min & max font-sizes in rems
-$min-fs: math.div(16, $browser-default-font-size) !default;
-$max-fs: math.div(18, $browser-default-font-size) !default;
-
-// min & max viewport widths in rems
-$min-viewport: math.div(1024, $browser-default-font-size) !default;
-$max-viewport: math.div(1440, $browser-default-font-size) !default;
+// next step is to update the rest of the scss files to use root variables instead of text variables
+// for those things
 
 // typography scale in rem's
 $scale: 1.2 !default;
@@ -23,10 +16,6 @@ $step-3: $step-2 * $scale;
 $step-4: $step-3 * $scale;
 $step-5: $step-4 * $scale;
 $step-small: math.div($step-0, $scale);
-
-// vertical rhythm (always unit less)
-// e.g. 16 * 1.5 === 24px
-$line-height: 1.5 !default;
 
 // Links
 $link-color: inherit !default;

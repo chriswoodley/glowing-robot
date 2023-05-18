@@ -1,7 +1,8 @@
-import { ThemeProvider } from 'styled-components'
-import GlobalStyle from '../components/global-styles'
+import { ThemeProvider } from 'styled-components';
+import GlobalStyle from '../components/global-styles';
+import '@cw/design-system/dist/styles.css';
 
-const theme = {}
+const theme = {};
 
 export default function App({ Component, pageProps }) {
   return <>
@@ -9,5 +10,5 @@ export default function App({ Component, pageProps }) {
     <GlobalStyle />
     <Component {...pageProps} />
   </ThemeProvider>
-</>
+</>;
 }
