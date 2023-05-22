@@ -1,0 +1,236 @@
+import { Meta, Unstyled, Source } from '@storybook/blocks';
+
+<Meta title="Atoms/Layout/Flex" />
+
+# Flex
+
+`.flex` is a utility css class to apply `display: flex` to your element. It can be applied to
+mobile screens, `sm`, `md`, `lg`, and `xl` screens. The example below applies `display: flex` to 
+medium screen size and up.
+
+<Unstyled>
+  <div className="flex--md">
+    <div className="box">1</div>
+    <div className="box">2</div>
+    <div className="box">3</div>
+  </div>
+</Unstyled>
+
+<Source
+  code={`
+    <div class="flex--md">
+      <div class="box">1</div>
+      <div class="box">2</div>
+      <div class="box">3</div>
+    </div>
+  `}
+  language="html"
+  dark
+  format
+/>
+
+## Flex Direction
+
+By default, flex items will be laid out in a row. We can change this behavior by using one 
+of these classes: `.flex--row`, `.flex--column`, `.flex--row-reverse`, and `.flex--column-reverse`.
+To apply them at a specific screen size: `.flex--sm-row`, `.flex--lg-column`, 
+`.flex--md-row-reverse`, and `.flex--sm-column-reverse`.
+
+<Unstyled>
+  <div className="flex--md flex--lg-row-reverse">
+    <div className="box">1</div>
+    <div className="box">2</div>
+    <div className="box">3</div>
+  </div>
+</Unstyled>
+
+<Source
+  code={`
+    <div class="flex--md flex--lg-row-reverse">
+      <div class="box">1</div>
+      <div class="box">2</div>
+      <div class="box">3</div>
+    </div>
+  `}
+  language="html"
+  dark
+  format
+/>
+
+## Flex Item Wrapping
+
+By default, flex items do not wrap when they all cannot fit in the same row. This can cause a layout
+to overflow horizontally. We can change this behavior by applying the following classes:
+`.flex--nowrap`, `.flex--wrap`, `.flex--wrap-reverse` on mobile screens. Same is true for 
+other screen sizes e.g. `.flex-sm--wrap`.
+
+<Unstyled>
+  <div className="flex flex--wrap">
+    <div className="box" style={{width: '40%'}}>1</div>
+    <div className="box" style={{width: '40%'}}>2</div>
+    <div className="box" style={{width: '40%'}}>3</div>
+  </div>
+</Unstyled>
+
+<Source
+  code={`
+    <div class="flex flex--wrap">
+      <div class="box" style={{width: '40%'}}>1</div>
+      <div class="box" style={{width: '40%'}}>2</div>
+      <div class="box" style={{width: '40%'}}>3</div>
+    </div>
+  `}
+  language="html"
+  dark
+  format
+/>
+
+## Flex Alignments
+
+By default flex row and flex column aligns the items to the start of its implied axis. For example:
+If your displaying items in a row, the items will be aligned left. If you are displaying the items
+as columns they will be aligned to the top. We can change this behavior by applying one or more of
+the following classes: `.flex--justify-content-start`,`.flex--justify-content-end`,
+`.flex--justify-content-center`, `.flex--align-items-start`, `.flex--align-items-center`, 
+and `.flex--align-items-end`, the behavior of these classes depend on whether youre displaying items
+in a row or as columns. Like the other utility classes, they can be adapted to various screen sizes.
+e.g. `.flex--md-justify-content-center`.
+
+<Unstyled>
+  <div className="flex flex--justify-content-center">
+    <div className="box">1</div>
+    <div className="box">2</div>
+    <div className="box">3</div>
+  </div>
+</Unstyled>
+
+<Source
+  code={`
+    <div class="flex flex--justify-content-center">
+    <div class="box">1</div>
+    <div class="box">2</div>
+    <div class="box">3</div>
+  </div>
+  `}
+  language="html"
+  dark
+  format
+/>
+
+<Unstyled>
+  <div className="flex flex--sm-justify-content-end">
+    <div className="box">1</div>
+    <div className="box">2</div>
+    <div className="box">3</div>
+  </div>
+</Unstyled>
+
+<Source
+  code={`
+    <div class="flex flex--sm-justify-content-end">
+    <div class="box">1</div>
+    <div class="box">2</div>
+    <div class="box">3</div>
+  </div>
+  `}
+  language="html"
+  dark
+  format
+/>
+
+`.flex--justify-content-start` is the default behavior but classes are provided to override 
+alignments for various screen sizes.
+
+<Unstyled>
+  <div className="flex flex--md-justify-content-start">
+    <div className="box">1</div>
+    <div className="box">2</div>
+    <div className="box">3</div>
+  </div>
+</Unstyled>
+
+<Source
+  code={`
+    <div class="flex flex--md-justify-content-start">
+    <div class="box">1</div>
+    <div class="box">2</div>
+    <div class="box">3</div>
+  </div>
+  `}
+  language="html"
+  dark
+  format
+/>
+
+# Flex Spacing
+
+Control the spacing between and around your flex items using these classes: 
+`.flex--justify-content-space-between`, `.flex--align-content-space-between`,
+`.flex--justify-content-space-around`, `.flex--align-content-space-around`,
+`.flex--justify-content-space-evenly`, and `.flex--align-content-space-evenly`. `justify-content`
+classes are used for items across the x-axis, while `align-content` classes are used for items
+across the y-axis. These classes are also available in the other screen screen size flavors. e.g.
+`.flex--xl-justify-content-space-between`.
+
+<Unstyled>
+  <div className="flex flex--md-justify-content-space-between">
+    <div className="box">1</div>
+    <div className="box">2</div>
+    <div className="box">3</div>
+  </div>
+</Unstyled>
+
+<Source
+  code={`
+    <div class="flex flex--md-justify-content-space-around">
+    <div class="box">1</div>
+    <div class="box">2</div>
+    <div class="box">3</div>
+  </div>
+  `}
+  language="html"
+  dark
+  format
+/>
+
+<Unstyled>
+  <div className="flex flex--md-justify-content-space-around">
+    <div className="box">1</div>
+    <div className="box">2</div>
+    <div className="box">3</div>
+  </div>
+</Unstyled>
+
+<Source
+  code={`
+    <div class="flex flex--md-justify-content-space-around">
+    <div class="box">1</div>
+    <div class="box">2</div>
+    <div class="box">3</div>
+  </div>
+  `}
+  language="html"
+  dark
+  format
+/>
+
+<Unstyled>
+  <div className="flex flex--md-justify-content-space-evenly">
+    <div className="box">1</div>
+    <div className="box">2</div>
+    <div className="box">3</div>
+  </div>
+</Unstyled>
+
+<Source
+  code={`
+    <div class="flex flex--md-justify-content-space-evenly">
+    <div class="box">1</div>
+    <div class="box">2</div>
+    <div class="box">3</div>
+  </div>
+  `}
+  language="html"
+  dark
+  format
+/>

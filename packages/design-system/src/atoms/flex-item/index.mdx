@@ -1,0 +1,187 @@
+import { Meta, Unstyled, Source } from '@storybook/blocks';
+
+<Meta title="Atoms/Layout/Flex Item" />
+
+# Flex Item
+
+`.flex_item` is a utility css class to apply flex properties to your flex item controlling flex
+basis and order. `.flex_item` should be a child of a `.flex` container. A `.flex_item` layout 
+behavior can be modified with the following classes: `.flex_item--grow-0`, `.flex_item--grow-1`,
+`.flex_item--shrink-0`, `.flex_item--shrink-1`, `.flex_item--none`, `.flex_item--basis-auto`,
+`.flex_item--basis-{1-12}`, `.flex_item--order-first`, `.flex_item--order-last`,
+`.flex_item--order-{1-12}`. These modifiers can be applied to mobile screens,
+`sm`, `md`, `lg`, and `xl` screens.
+
+Each `.flex_item` will grow and shink automatically to fill the remaining space. This is the default
+behavior.
+
+<Unstyled>
+  <div className="flex--md">
+    <div className="flex_item">
+      <div className="box">1</div>
+    </div>
+    <div className="flex_item">
+      <div className="box">2</div>
+    </div>
+    <div className="flex_item">
+      <div className="box">3</div>
+    </div>
+  </div>
+</Unstyled>
+
+<Source
+  code={`
+    <div class="flex--md">
+      <div class="flex_item">
+        <div class="box">1</div>
+      </div>
+      <div class="flex_item">
+        <div class="box">2</div>
+      </div>
+      <div class="flex_item">
+        <div class="box">3</div>
+      </div>
+    </div>
+  `}
+  language="html"
+  dark
+  format
+/>
+
+## Flex Grow, Shrink, None
+
+<Unstyled>
+  <div className="flex--md">
+    <div className="flex_item flex_item--grow-0">
+      <div className="box">1</div>
+    </div>
+    <div className="flex_item flex_item--none">
+      <div className="box">2</div>
+    </div>
+    <div className="flex_item flex_item--shrink-0">
+      <div className="box">3</div>
+    </div>
+  </div>
+</Unstyled>
+
+<Source
+  code={`
+    <div class="flex--md">
+      <div class="flex_item flex_item--grow-0">
+        <div class="box">1</div>
+      </div>
+      <div class="flex_item flex_item--none">
+        <div class="box">2</div>
+      </div>
+      <div class="flex_item flex_item--shrink-0">
+        <div class="box">3</div>
+      </div>
+    </div>
+  `}
+  language="html"
+  dark
+  format
+/>
+
+## Flex Basis
+
+<Unstyled>
+  <div className="flex--md">
+    <div className="flex_item flex_item--basis-2">
+      <div className="box">1</div>
+    </div>
+    <div className="flex_item flex_item--basis-10">
+      <div className="box">2</div>
+    </div>
+    <div className="flex_item flex_item--basis-2">
+      <div className="box">3</div>
+    </div>
+  </div>
+</Unstyled>
+
+<Source
+  code={`
+    <div class="flex--md">
+      <div class="flex_item flex_item--basis-2">
+      <div class="box">1</div>
+    </div>
+    <div class="flex_item flex_item--basis-10">
+      <div class="box">2</div>
+    </div>
+    <div class="flex_item flex_item--basis-2">
+      <div class="box">3</div>
+    </div>
+    </div>
+  `}
+  language="html"
+  dark
+  format
+/>
+
+## Flex Order
+
+<Unstyled>
+  <div className="flex--md">
+    <div className="flex_item flex_item--basis-4 flex_item--order-last">
+      <div className="box">1</div>
+    </div>
+    <div className="flex_item flex_item--basis-8 flex_item--order-first">
+      <div className="box">2</div>
+    </div>
+    <div className="flex_item flex_item--basis-2">
+      <div className="box">3</div>
+    </div>
+  </div>
+</Unstyled>
+
+<Source
+  code={`
+    <div class="flex--md">
+      <div class="flex_item flex_item--basis-4 flex_item--order-last">
+        <div class="box">1</div>
+      </div>
+      <div class="flex_item flex_item--basis-8 flex_item--order-first">
+        <div class="box">2</div>
+      </div>
+      <div class="flex_item flex_item--basis-2">
+        <div class="box">3</div>
+      </div>
+    </div>
+  `}
+  language="html"
+  dark
+  format
+/>
+
+<Unstyled>
+  <div className="flex--md">
+    <div className="flex_item flex_item--basis-4 flex_item--order-3">
+      <div className="box">1</div>
+    </div>
+    <div className="flex_item flex_item--basis-8 flex_item--order-1">
+      <div className="box">2</div>
+    </div>
+    <div className="flex_item flex_item--basis-2 flex_item--order-2">
+      <div className="box">3</div>
+    </div>
+  </div>
+</Unstyled>
+
+<Source
+  code={`
+    <div class="flex--md">
+      <div class="flex_item flex_item--basis-4 flex_item--order-3">
+        <div class="box">1</div>
+      </div>
+      <div class="flex_item flex_item--basis-8 flex_item--order-1">
+        <div class="box">2</div>
+      </div>
+      <div class="flex_item flex_item--basis-2 flex_item--order-2">
+        <div class="box">3</div>
+      </div>
+    </div>
+  `}
+  language="html"
+  dark
+  format
+/>
