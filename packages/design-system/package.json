@@ -36,6 +36,7 @@
     "mini-css-extract-plugin": "^2.7.5",
     "postcss": "^8.4.23",
     "postcss-loader": "^7.2.4",
+    "postcss-sort-media-queries": "^5.1.0",
     "pretty": "^2.0.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",

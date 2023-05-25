@@ -1,0 +1,102 @@
+@use "module" as m;
+@use "../../root/module" as root;
+
+@each $key, $side in m.$horizontal-sides {
+  @each $index, $size in m.$horizontal-space-sizes {
+    .m#{$key}-#{$index} {
+      margin-#{$side}: $size;
+    }
+
+    .p#{$key}-#{$index} {
+      padding-#{$side}: $size;
+    }
+
+    @each $bp, $width in root.$breakpoints {
+      @include root.respond-to($bp) {
+        .m#{$key}-#{$index}--#{$bp} {
+          margin-#{$side}: $size;
+        }
+
+        .p#{$key}-#{$index}--#{$bp} {
+          padding-#{$side}: $size;
+        }
+      }
+    }
+  }
+}
+
+@each $index, $size in m.$horizontal-space-sizes {
+  .mx-#{$index} {
+    margin-left: $size;
+    margin-right: $size;
+  }
+
+  .px-#{$index} {
+    padding-left: $size;
+    padding-right: $size;
+  }
+
+  @each $bp, $width in root.$breakpoints {
+    @include root.respond-to($bp) {
+      .mx-#{$index}--#{$bp} {
+        margin-left: $size;
+        margin-right: $size;
+      }
+
+      .px-#{$index}--#{$bp} {
+        padding-left: $size;
+        padding-right: $size;
+      }
+    }
+  }
+}
+
+@each $key, $side in m.$vertical-sides {
+  @each $index, $size in m.$vertical-space-sizes {
+    .m#{$key}-#{$index} {
+      margin-#{$side}: $size;
+    }
+
+    .p#{$key}-#{$index} {
+      padding-#{$side}: $size;
+    }
+
+    @each $bp, $width in root.$breakpoints {
+      @include root.respond-to($bp) {
+        .m#{$key}-#{$index}--#{$bp} {
+          margin-#{$side}: $size;
+        }
+
+        .p#{$key}-#{$index}--#{$bp} {
+          padding-#{$side}: $size;
+        }
+      }
+    }
+  }
+}
+
+@each $index, $size in m.$vertical-space-sizes {
+  .my-#{$index} {
+    margin-top: $size;
+    margin-bottom: $size;
+  }
+
+  .py-#{$index} {
+    padding-top: $size;
+    padding-bottom: $size;
+  }
+
+  @each $bp, $width in root.$breakpoints {
+    @include root.respond-to($bp) {
+      .my-#{$index}--#{$bp} {
+        margin-top: $size;
+        margin-bottom: $size;
+      }
+
+      .py-#{$index}--#{$bp} {
+        padding-top: $size;
+        padding-bottom: $size;
+      }
+    }
+  }
+}
