@@ -1733,6 +1733,7 @@ __metadata:
     mini-css-extract-plugin: ^2.7.5
     postcss: ^8.4.23
     postcss-loader: ^7.2.4
+    postcss-sort-media-queries: ^5.1.0
     pretty: ^2.0.0
     prop-types: ^15.8.1
     react: ^18.2.0
@@ -12644,6 +12645,17 @@ __metadata:
   languageName: node
   linkType: hard
 
+"postcss-sort-media-queries@npm:^5.1.0":
+  version: 5.1.0
+  resolution: "postcss-sort-media-queries@npm:5.1.0"
+  dependencies:
+    sort-css-media-queries: 2.2.0
+  peerDependencies:
+    postcss: ^8.4.23
+  checksum: 56958d00eedac17dc555eb8c956c5c9078b142d3453b8eb7ab738905dff684b0ec9f1c7b2ea67325002866f99d0f1380a87688a2a25e0b6d1541ee181d703cdf
+  languageName: node
+  linkType: hard
+
 "postcss-value-parser@npm:^4.0.2, postcss-value-parser@npm:^4.1.0, postcss-value-parser@npm:^4.2.0":
   version: 4.2.0
   resolution: "postcss-value-parser@npm:4.2.0"
@@ -14139,6 +14151,13 @@ __metadata:
     ip: ^2.0.0
     smart-buffer: ^4.2.0
   checksum: 259d9e3e8e1c9809a7f5c32238c3d4d2a36b39b83851d0f573bfde5f21c4b1288417ce1af06af1452569cd1eb0841169afd4998f0e04ba04656f6b7f0e46d748
+  languageName: node
+  linkType: hard
+
+"sort-css-media-queries@npm:2.2.0":
+  version: 2.2.0
+  resolution: "sort-css-media-queries@npm:2.2.0"
+  checksum: c090c9a27be40f3e50f5f9bc9d85a8af0e2c5152565eca34bdb028d952749bce169bc5abef21a5a385ca6221a0869640c9faf58f082ac46de9085ebdb506291f
   languageName: node
   linkType: hard
 
