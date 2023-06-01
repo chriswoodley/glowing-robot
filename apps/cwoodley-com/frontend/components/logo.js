@@ -1,34 +1,20 @@
 import React, { useEffect } from 'react';
 import { Image } from '@cw/design-system';
 import logo from 'public/logo.svg';
-import styled from 'styled-components';
-
-/**
- * TODO: do we want flex utility classes instead of doing it inline like this?
- */
-const LogoContainer = styled.div`
-  display: flex;
-  align-items: center;
-`;
 
 function Logo() {
-    useEffect(() => {
-      return () => {
-      };
-    }, []);
-
-
   return (
-    <LogoContainer>
+    <div className='flex flex--align-items-center'>
       <Image
         src={logo.src}
         alt='Chris Woodley'
         width="96"
         height="96"
+        className="flex_item"
       />
 
-      Chris Woodley
-    </LogoContainer>
+      <h1 className="flex_item display-none block--md ml-3--md my-0--md">Chris Woodley</h1>
+    </div>
   );
 }
 
