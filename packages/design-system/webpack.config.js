@@ -52,7 +52,7 @@ module.exports = {
       {
         test: /\.(sa|sc|c)ss$/,
         use: [
-          { loader: 'css-loader', options: { module: true } },
+          { loader: 'css-loader' },
           'sass-loader',
         ],
         include: /_export.(sa|sc|c)ss$/
@@ -90,12 +90,7 @@ module.exports = {
           type: "css/mini-extract",
           chunks: "all",
           enforce: true,
-        },
-        // vendor: {
-        //   test: /[\\/]node_modules[\\/]/,
-        //   name: 'vendors',
-        //   chunks: 'all',
-        // },
+        }
       },
     },
   },

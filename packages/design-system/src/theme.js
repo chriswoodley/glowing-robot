@@ -1,5 +1,10 @@
-import HamburgerButton from 'atoms/hamburger-button/index.theme';
+import hamburgerButton from 'atoms/hamburger-button/index.theme';
+import merge from 'lodash/merge';
 
-export default {
-  HamburgerButton
+const designSystemTheme = {
+  hamburgerButton,
 };
+
+export function applyTheme(theme = {}) {
+  return merge(designSystemTheme, theme);
+}
