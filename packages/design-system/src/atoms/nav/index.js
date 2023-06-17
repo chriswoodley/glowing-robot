@@ -22,16 +22,15 @@ export function Nav({
   const isHorizontal = type === 'horizontal';
   const isVerticalCenter = type === 'vertical center';
   const classes = classNames(
-    'display-none',
     'p-0',
     'mx-0',
     {
-    'block--md': isDefault,
-    'flex--md': isHorizontal || isVerticalCenter,
-    'flex--md-row': isHorizontal,
-    'flex--md-column': isVerticalCenter,
-    'flex--md-align-items-center': isVerticalCenter,
-    'flex--md-align-items-end': isHorizontal,
+    'block': isDefault,
+    'flex': isHorizontal || isVerticalCenter,
+    'flex--row': isHorizontal,
+    'flex--column': isVerticalCenter,
+    'flex--align-items-center': isHorizontal || isVerticalCenter,
+    'flex--align-items-end': isHorizontal,
     },
     className
   );
