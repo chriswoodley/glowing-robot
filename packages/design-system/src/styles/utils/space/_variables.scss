@@ -2,7 +2,7 @@
 @use "sass:math";
 @use "../../root/module" as root;
 
-$num-of-space-units: 5;
+$num-of-space-units: 12;
 $horizontal-space-sizes: ();
 $vertical-space-sizes: ();
 $vertical-sides: (
@@ -15,11 +15,13 @@ $horizontal-sides: (
 );
 
 @for $index from 0 through $num-of-space-units {
-  $size: $index * math.div(root.$line-height, $num-of-space-units) * 1rem;
-  $horizontal-space-sizes: map.merge($horizontal-space-sizes, ($index: $size));
+  $size: $index * math.div(root.$line-height, $num-of-space-units);
+  $half-size: math.div($size, 2) * 1rem;
+  $horizontal-space-sizes: map.merge($horizontal-space-sizes, ($index: $half-size));
 }
 
 @for $index from 0 through $num-of-space-units {
-  $size: ($index * root.$line-height) * 1rem;
-  $vertical-space-sizes: map.merge($vertical-space-sizes, ($index: $size));
+  $size: ($index * root.$line-height);
+  $half-size: math.div($size, 2) * 1rem;
+  $vertical-space-sizes: map.merge($vertical-space-sizes, ($index: $half-size));
 }

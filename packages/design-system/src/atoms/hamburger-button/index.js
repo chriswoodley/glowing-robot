@@ -1,12 +1,14 @@
 import React, { useCallback, useState } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
-import {
-  transitionFastDuration,
-  transitionNormalDuration,
-  transitionNormalEaseInOutBack
-} from 'styles/utils/motion/_export.scss';
+import motion from 'styles/utils/motion/_export.scss';
 import hamburgerButtonTheme from './index.theme';
+
+const {
+  transitionNormalDuration,
+  transitionNormalEaseInOutBack,
+  transitionFastDuration
+} = motion;
 
 const StyledLine = styled.div`
   height: 3px;

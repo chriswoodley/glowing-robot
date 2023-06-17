@@ -1,4 +1,3 @@
-import React from 'react';
 import AspectRatioContainer from './index';
 
 export default {
@@ -8,7 +7,6 @@ export default {
   argTypes: {},
 };
 
-const Template = (args) => <AspectRatioContainer {...args} />;
-
-export const Primary = Template.bind({});
-Primary.args = {};
+export const Primary = {
+  args: {}
+};
