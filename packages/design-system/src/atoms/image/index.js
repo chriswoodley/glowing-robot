@@ -50,7 +50,7 @@ const generateColorPlaceholder = ({ width, height, color }) => {
   return colorPlaceholderImageCache.get(key);
 };
 
-export default function Image({
+function Image({
   alt,
   crossOrigin,
   decoding,
@@ -118,3 +118,5 @@ Image.defaultProps = {
   placeholder: {},
   fill: false
 };
+
+export default Image;

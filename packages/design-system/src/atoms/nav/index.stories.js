@@ -1,10 +1,10 @@
 import React from 'react';
-import { Nav } from 'atoms/nav';
-import { NavItem } from 'atoms/nav-item';
-import { NavLink } from 'atoms/nav-link';
+import Nav from 'atoms/nav';
+import NavItem from 'atoms/nav-item';
+import NavLink from 'atoms/nav-link';
+import navTheme from 'atoms/nav/theme';
 import { StandardNavItem } from 'atoms/nav-item/index.stories';
 import { StandardNavLink } from 'atoms/nav-link/index.stories';
-import navTheme from 'atoms/nav/theme';
 
 export default {
   title: 'Atoms/Nav',

@@ -1,4 +1,4 @@
-import Image from './index';
+import Image from 'atoms/image';
 
 export default {
   title: 'Atoms/Image',

@@ -8,7 +8,7 @@ const NavbarContainer = styled.div`
 
 `;
 
-export function Navbar({
+function Navbar({
   theme,
   variant,
   id,
@@ -79,3 +79,5 @@ Navbar.defaultProps = {
   theme: navTheme,
   variant: 'standard',
 };
+
+export default Navbar;

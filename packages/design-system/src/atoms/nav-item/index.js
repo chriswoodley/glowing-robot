@@ -8,7 +8,7 @@ const StyledLi = styled.li`
   display: block;
 `;
 
-export function NavItem({
+function NavItem({
   theme,
   variant,
   children,
@@ -48,3 +48,5 @@ NavItem.defaultProps = {
   theme: navItemTheme,
   variant: 'standard',
 };
+
+export default NavItem;

@@ -1,4 +1,4 @@
-import { NavItem } from 'atoms/nav-item';
+import NavItem from 'atoms/nav-item';
 import navItemTheme from 'atoms/nav-item/theme';
 
 export default {

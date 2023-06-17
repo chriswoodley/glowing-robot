@@ -24,7 +24,7 @@ const StyledA = styled.a`
   }
 `;
 
-export function NavLink({
+function NavLink({
   theme,
   variant,
   size,
@@ -93,3 +93,5 @@ NavLink.defaultProps = {
   theme: navLinkTheme,
   variant: 'standard'
 };
+
+export default NavLink;
