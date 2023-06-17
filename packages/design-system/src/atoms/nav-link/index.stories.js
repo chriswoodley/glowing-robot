@@ -1,4 +1,4 @@
-import { NavLink } from 'atoms/nav-link';
+import NavLink from 'atoms/nav-link';
 import navLinkTheme from 'atoms/nav-link/theme';
 
 export default {

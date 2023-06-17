@@ -1,4 +1,4 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import { Image } from '@cw/design-system';
 import logo from 'public/logo.svg';
 

@@ -55,7 +55,7 @@ const StyledButton = styled.button`
   }
 `;
 
-export function HamburgerButton({ onClick, theme, variant, ...props }) {
+function HamburgerButton({ onClick, theme, variant, ...props }) {
   const [ isActive, setIsActive ] = useState(false);
   const variantTheme = theme[variant];
 
@@ -105,3 +105,5 @@ HamburgerButton.defaultProps = {
   theme: hamburgerButtonTheme,
   variant: 'standard'
 };
+
+export default HamburgerButton;

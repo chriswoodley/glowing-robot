@@ -1,4 +1,4 @@
-import AspectRatioContainer from './index';
+import AspectRatioContainer from 'atoms/aspect-ratio-container';
 
 export default {
   title: 'Atoms/Aspect Ratio Container',

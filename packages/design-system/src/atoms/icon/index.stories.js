@@ -1,4 +1,4 @@
-import Icon from './index';
+import Icon from 'atoms/icon';
 
 export default {
   title: 'Atoms/Icon',

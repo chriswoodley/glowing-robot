@@ -1,12 +1,12 @@
 import React from 'react';
-import { Nav } from 'atoms/nav';
-import { NavItem } from 'atoms/nav-item';
-import { NavLink } from 'atoms/nav-link';
+import Nav from 'atoms/nav';
+import NavItem from 'atoms/nav-item';
+import NavLink from 'atoms/nav-link';
+import navbarTheme from 'organisms/navbar/theme';
+import Navbar from 'organisms/navbar';
 import { StandardHorizontalNav } from 'atoms/nav/index.stories';
 import { StandardNavItem } from 'atoms/nav-item/index.stories';
 import { StandardNavLink } from 'atoms/nav-link/index.stories';
-import navbarTheme from 'organisms/navbar/theme';
-import { Navbar } from 'organisms/navbar';
 
 export default {
   title: 'Organisms/Navbar',

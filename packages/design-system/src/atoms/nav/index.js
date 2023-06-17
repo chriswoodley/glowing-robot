@@ -8,7 +8,7 @@ const StyledUl = styled.ul`
   list-style: none;
 `;
 
-export function Nav({
+function Nav({
   theme,
   variant,
   children,
@@ -71,3 +71,5 @@ Nav.defaultProps = {
   variant: 'standard',
   type: 'default'
 };
+
+export default Nav;

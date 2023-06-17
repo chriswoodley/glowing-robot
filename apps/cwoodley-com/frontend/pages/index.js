@@ -1,5 +1,5 @@
 import Head from 'next/head';
-import Logo from '../components/logo';
+import Header from 'components/header';
 
 export default function Home() {
   return (
@@ -9,8 +9,10 @@ export default function Home() {
         <meta name="description" content="Chris Woodley" />
       </Head>
 
+      <Header />
+
       <main>
-        <Logo />
+        main content here
       </main>
     </>
   );

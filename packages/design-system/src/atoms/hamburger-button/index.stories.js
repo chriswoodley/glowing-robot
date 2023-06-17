@@ -1,4 +1,4 @@
-import { HamburgerButton } from './index';
+import HamburgerButton from 'atoms/hamburger-button';
 import colors from 'styles/utils/color/_export.scss';
 
 export default {
