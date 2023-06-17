@@ -10,6 +10,7 @@ export default {
 export const Standard = {
   args: {
     variant: 'standard',
+    'aria-label': 'Open Navigation',
     theme: {
       standard: {
         default: {

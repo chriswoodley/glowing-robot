@@ -17,6 +17,7 @@
     "@babel/eslint-parser": "^7.22.5",
     "@babel/preset-env": "^7.22.5",
     "@babel/preset-react": "^7.22.5",
+    "@storybook/addon-a11y": "^7.0.22",
     "@storybook/addon-actions": "^7.0.22",
     "@storybook/addon-essentials": "^7.0.22",
     "@storybook/addon-interactions": "^7.0.22",
