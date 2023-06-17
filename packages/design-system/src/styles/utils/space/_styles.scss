@@ -1,6 +1,33 @@
+@use "sass:math";
 @use "module" as m;
 @use "../../root/module" as root;
 
+// space all around
+@for $index from 0 through m.$num-of-space-units {
+  $size: math.div($index * root.$line-height, 2) * 1rem;
+
+  .m-#{$index} {
+    margin: $size;
+  }
+
+  .p-#{$index} {
+    padding: $size;
+  }
+
+  @each $bp, $width in root.$breakpoints {
+    @include root.respond-to($bp) {
+      .m-#{$index}--#{$bp} {
+        margin: $size;
+      }
+
+      .p-#{$index}--#{$bp} {
+        padding: $size;
+      }
+    }
+  }
+}
+
+// x axis space
 @each $key, $side in m.$horizontal-sides {
   @each $index, $size in m.$horizontal-space-sizes {
     .m#{$key}-#{$index} {
@@ -51,6 +78,7 @@
   }
 }
 
+// y axis space
 @each $key, $side in m.$vertical-sides {
   @each $index, $size in m.$vertical-space-sizes {
     .m#{$key}-#{$index} {

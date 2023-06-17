@@ -1,4 +1,3 @@
-import React from 'react';
 import Icon from './index';
 
 export default {
@@ -8,10 +7,9 @@ export default {
   argTypes: {},
 };
 
-const Template = (args) => <Icon {...args} />;
-
-export const Primary = Template.bind({});
-Primary.args = {
-  glyph: 'github',
-  title: 'My Repository'
+export const Primary = {
+  args: {
+    glyph: 'github',
+    title: 'My Repository'
+  }
 };
