@@ -55,7 +55,13 @@ const StyledButton = styled.button`
   }
 `;
 
-function HamburgerButton({ onClick, theme, variant, ...props }) {
+function HamburgerButton({
+  onClick,
+  theme,
+  variant,
+  className,
+  ...props
+}) {
   const [ isActive, setIsActive ] = useState(false);
   const variantTheme = theme[variant];
 
@@ -80,6 +86,7 @@ function HamburgerButton({ onClick, theme, variant, ...props }) {
       isActive={isActive}
       theme={variantTheme}
       aria-label={props['aria-label']}
+      className={className}
     >
       <StyledLine />
       <StyledLine />
@@ -90,6 +97,7 @@ function HamburgerButton({ onClick, theme, variant, ...props }) {
 
 HamburgerButton.propTypes = {
   'aria-label': PropTypes.string.isRequired,
+  className: PropTypes.string,
   onClick: PropTypes.func,
   variant: PropTypes.oneOf([ 'standard' ]),
   theme: PropTypes.shape({

@@ -8,10 +8,11 @@ import Logo from './logo';
 
 function Header() {
   return (
-    <header>
+    <header className="py-2">
       <Navbar
         nav={<MainNav />}
         brand={<Logo />}
+        className="layout"
       />
     </header>
   );

@@ -5,28 +5,30 @@ import {
   NavItem,
   HamburgerButton
 } from '@cw/design-system';
-import Link from 'next/link';
+import NavLink from './nav-link';
 
 function MainNav() {
   return (
-    <>
+    <div className='flex flex--align-items-center flex--justify-contend-end'>
+      <div>
+        <HamburgerButton
+          aria-label="Open Main Navigation"
+          className="display-none--md"
+        />
+      </div>
+
       <Nav
-        className="display-none flex--md"
+        className="display-none flex--md my-0"
         aria-label="Main Navigation"
       >
         <NavItem>
-          <Link href="/Projects" className="py-1 px-6">Projects</Link>
+          <NavLink href="/Projects" className="py-1 px-3">Projects</NavLink>
         </NavItem>
         <NavItem>
-          <Link href="/about">About</Link>
+          <NavLink href="/about" className="py-1 pl-3">About</NavLink>
         </NavItem>
       </Nav>
-
-      <HamburgerButton
-        className="display--md-none"
-        aria-label="Open Main Navigation"
-      />
-    </>
+    </div>
   );
 }
 

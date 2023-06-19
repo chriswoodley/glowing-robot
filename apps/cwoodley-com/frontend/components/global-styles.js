@@ -1,6 +1,11 @@
 import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyle = createGlobalStyle`
+  body {
+    background-color: ${({ theme }) => theme.body.standard.default.backgroundColor};
+    color: ${({ theme }) => theme.body.standard.default.color};
+  }
+
   h1,
   h2,
   h3,
