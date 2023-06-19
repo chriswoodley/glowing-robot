@@ -55,6 +55,8 @@ const StyledButton = styled.button`
   }
 `;
 
+// Ignore "React does not recognize the `isActive` prop on a DOM element" for now...
+// possible styled components v5 to v6-rc regression as it wasn't happening with v5
 function HamburgerButton({
   onClick,
   theme,

@@ -16,6 +16,15 @@ const GlobalStyle = createGlobalStyle`
     font-weight: ${({ theme }) => theme.headings.serif.default.weight};
     color: ${({ theme }) => theme.headings.serif.default.color};
   }
+
+  // TODO: this should be a part of design system utils
+  // bootstrap includes this as a utility class...
+  .text-decoration-none {
+    text-decoration: none;
+    &:hover {
+      text-decoration: none;
+    }
+  }
 `;
 
 export default GlobalStyle;

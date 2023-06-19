@@ -38,7 +38,8 @@ NavItem.propTypes = {
   }),
   children: PropTypes.oneOfType([
     PropTypes.arrayOf(PropTypes.element),
-    PropTypes.element
+    PropTypes.element,
+    PropTypes.string
   ]),
   id: PropTypes.string,
   className: PropTypes.string
