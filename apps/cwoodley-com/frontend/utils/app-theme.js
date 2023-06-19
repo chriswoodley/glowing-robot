@@ -44,6 +44,31 @@ for (let index = 6; index < 9; index++) {
   colors.blueYonder[key] = by.mix(black, amount).hex();
 }
 
+const body = {
+  standard: {
+    default: {
+      backgroundColor: colors.blueYonder[800],
+      color: '#ffffff'
+    }
+  }
+};
+
+const mainNavLink = {
+  standard: {
+    default: {
+      color: colors.blueYonder[400]
+    }
+  }
+};
+
+const hamburgerButton = {
+  standard: {
+    default: {
+      color: colors.blueYonder[400]
+    }
+  }
+};
+
 const headings = {
   serif: {
     default: {
@@ -72,7 +97,10 @@ const headings = {
 };
 
 const appTheme = {
-  headings
+  body,
+  mainNavLink,
+  headings,
+  hamburgerButton
 };
 
 export default appTheme;

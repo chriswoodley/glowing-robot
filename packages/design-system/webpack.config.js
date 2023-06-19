@@ -41,21 +41,33 @@ module.exports = {
       },
       {
         test: /\.(sa|sc|c)ss$/,
+        exclude: /_export.(sa|sc|c)ss$/,
         use: [
           MiniCssExtractPlugin.loader,
-          { loader: 'css-loader', options: { importLoaders: 1 } },
+          {
+            loader: 'css-loader',
+            options: {
+              importLoaders: 1
+            }
+          },
           'postcss-loader',
           'sass-loader',
         ],
-        exclude: /_export.(sa|sc|c)ss$/
       },
       {
-        test: /\.(sa|sc|c)ss$/,
+        test: /_export.(sa|sc|c)ss$/,
         use: [
-          { loader: 'css-loader' },
+          'style-loader',
+          {
+            loader: 'css-loader',
+            options: {
+              modules: {
+                mode: 'local'
+              }
+            }
+          },
           'sass-loader',
         ],
-        include: /_export.(sa|sc|c)ss$/
       },
       {
         test: /\.svg$/,

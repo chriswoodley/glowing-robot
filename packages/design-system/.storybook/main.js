@@ -69,40 +69,45 @@ module.exports = {
     config.module.rules.push({
       test: /\.(sa|sc|c)ss$/,
       exclude: /_export.(sa|sc|c)ss$/,
-      use: ['style-loader', {
-        loader: 'css-loader',
-        options: {
-          importLoaders: 1,
-          sourceMap: true
+      use: [
+        'style-loader', 
+        {
+          loader: 'css-loader',
+          options: {
+            importLoaders: 1,
+            sourceMap: true
+          }
+        },
+        {
+          loader: 'postcss-loader',
+          options: {
+            sourceMap: true
+          }
+        },
+        {
+          loader: 'sass-loader',
+          options: {
+            sourceMap: true
+          }
         }
-      }, {
-        loader: 'postcss-loader',
-        options: {
-          sourceMap: true
-        }
-      }, {
-        loader: 'sass-loader',
-        options: {
-          sourceMap: true
-        }
-      }]
+      ]
     });
 
     // CSS Modules for exports
     config.module.rules.push({
       test: /_export.(sa|sc|c)ss$/,
-      use: [{
-        loader: "style-loader"
-      }, {
-        loader: 'css-loader',
-        options: {
-          modules: {
-            mode: 'local'
+      use: [
+        'style-loader', 
+        {
+          loader: 'css-loader',
+          options: {
+            modules: {
+              mode: 'local'
+            }
           }
-        }
-      }, {
-        loader: 'sass-loader'
-      }]
+        },
+        'sass-loader'
+      ]
     });
 
     // Alias'
