@@ -1,5 +1,3 @@
-import React from 'react';
-// import PropTypes from 'prop-types';
 import {
   Nav,
   NavItem,
@@ -7,13 +5,22 @@ import {
 } from '@cw/design-system';
 import NavLink from './nav-link';
 
-function MainNav() {
+function MainNav({
+  onMobileNav,
+  isMobileNavActive
+}) {
   return (
-    <div className='flex flex--align-items-center flex--justify-contend-end'>
-      <div>
+    <div
+      className='flex flex--align-items-center flex--justify-contend-end'
+    >
+      <div
+        style={{ height: 49.34 }}
+      >
         <HamburgerButton
           aria-label="Open Main Navigation"
           className="display-none--md"
+          onClick={onMobileNav}
+          isActive={isMobileNavActive}
         />
       </div>
 
@@ -22,16 +29,24 @@ function MainNav() {
         aria-label="Main Navigation"
       >
         <NavItem>
-          <NavLink href="/Projects" className="py-1 px-3">Projects</NavLink>
+          <NavLink
+            href="/projects"
+            className="py-1 px-3 text-large"
+          >
+            Projects
+          </NavLink>
         </NavItem>
         <NavItem>
-          <NavLink href="/about" className="py-1 pl-3">About</NavLink>
+          <NavLink
+            href="/about"
+            className="py-1 pl-3 text-large"
+          >
+            About
+          </NavLink>
         </NavItem>
       </Nav>
     </div>
   );
 }
-
-MainNav.propTypes = {};
 
 export default MainNav;

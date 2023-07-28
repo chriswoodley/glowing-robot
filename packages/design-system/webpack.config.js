@@ -70,13 +70,6 @@ module.exports = {
         ],
       },
       {
-        test: /\.svg$/,
-        loader: 'svg-sprite-loader',
-        options: {
-          symbolId: 'svg[contenthash:6]'
-        },
-      },
-      {
         test: /\.(png|jpg|jpeg|gif)$/i,
         type: 'asset/resource',
       },
@@ -118,6 +111,6 @@ module.exports = {
       commonjs2: 'ReactDOM',
       amd: 'ReactDOM',
       root: 'ReactDOM',
-    },
+    }
   }
 };

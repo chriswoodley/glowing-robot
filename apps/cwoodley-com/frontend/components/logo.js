@@ -1,7 +1,14 @@
-import React from 'react';
+'use client';
+
+import { styled } from 'styled-components';
 import { Image } from '@cw/design-system';
 import logo from 'public/logo.svg';
 import NavLink from './nav-link';
+import { colors } from '../utils/app-theme';
+
+const LogoText = styled.h1`
+  color: ${colors.coolGrey[400]};
+`;
 
 function Logo() {
   return (
@@ -18,7 +25,11 @@ function Logo() {
         className="flex_item"
       />
 
-      <h1 className="flex_item display-none block--md ml-3--md my-0--md">Chris Woodley</h1>
+      <LogoText
+        className="flex_item display-none block--md ml-3--md my-0--md"
+      >
+        Chris Woodley
+      </LogoText>
     </NavLink>
   );
 }

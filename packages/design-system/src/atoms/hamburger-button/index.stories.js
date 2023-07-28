@@ -5,9 +5,6 @@ export default {
   title: 'Atoms/Hamburger Button',
   component: HamburgerButton,
   tags: [ 'autodocs' ],
-};
-
-export const Standard = {
   args: {
     variant: 'standard',
     'aria-label': 'Open Navigation',
@@ -18,5 +15,13 @@ export const Standard = {
         }
       }
     }
+  }
+};
+
+export const Default = {};
+
+export const Active = {
+  args: {
+    isActive: true
   }
 };

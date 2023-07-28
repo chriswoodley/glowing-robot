@@ -4,17 +4,15 @@ import styled from 'styled-components';
 import navTheme from 'atoms/nav/theme';
 import classNames from 'classnames';
 
-const NavbarContainer = styled.div`
-
-`;
+const NavbarContainer = styled.div``;
 
 function Navbar({
-  theme,
-  variant,
-  id,
-  className,
   brand,
-  nav
+  className,
+  id,
+  nav,
+  theme = navTheme,
+  variant = 'standard',
 }) {
   const variantTheme = theme[variant];
   const classes = classNames(
@@ -73,11 +71,6 @@ Navbar.propTypes = {
   ]),
   id: PropTypes.string,
   className: PropTypes.string
-};
-
-Navbar.defaultProps = {
-  theme: navTheme,
-  variant: 'standard',
 };
 
 export default Navbar;

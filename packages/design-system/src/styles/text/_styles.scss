@@ -1,4 +1,5 @@
 @use "module" as text;
+@use "../root/module" as root;
 
 // headings
 
@@ -62,5 +63,41 @@ a {
   &:hover,
   &:active {
     text-decoration: underline;
+  }
+}
+
+.text-center {
+  text-align: center;
+
+  @each $size, $width in root.$breakpoints {
+    @include root.respond-to($size) {
+      &--#{$size} {
+        text-align: center;
+      }
+    }
+  }
+}
+
+.text-right {
+  text-align: right;
+
+  @each $size, $width in root.$breakpoints {
+    @include root.respond-to($size) {
+      &--#{$size} {
+        text-align: right;
+      }
+    }
+  }
+}
+
+.text-left {
+  text-align: left;
+
+  @each $size, $width in root.$breakpoints {
+    @include root.respond-to($size) {
+      &--#{$size} {
+        text-align: left;
+      }
+    }
   }
 }

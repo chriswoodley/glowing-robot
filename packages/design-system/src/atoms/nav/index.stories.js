@@ -10,13 +10,15 @@ export default {
   title: 'Atoms/Nav',
   component: Nav,
   tags: [ 'autodocs' ],
+  args: {
+    theme: navTheme,
+    type: 'default',
+    variant: 'standard',
+  }
 };
 
 export const StandardDefaultNav = {
   args: {
-    type: 'default',
-    theme: navTheme,
-    variant: 'standard',
     'aria-label': 'main navigation',
   },
   render(args) {

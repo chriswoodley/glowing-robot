@@ -1,25 +1,35 @@
 import { useState, useEffect } from 'react';
 
 function getRootElementLineHeight(element) {
-  const rootEl = element.querySelector(':root');
-  const styles = window.getComputedStyle(rootEl);
+  if (typeof window !== 'undefined' && element) {
+    const rootEl = element.querySelector(':root');
+    const styles = window.getComputedStyle(rootEl);
 
-  return Number(styles.lineHeight.replace('px', ''));
+    return Number(styles.lineHeight.replace('px', ''));
+  }
 }
 
 export default function useVerticalRhythmUnit() {
-  const [ verticalRhythmUnit, setVerticalRhythmUnit ] = useState(getRootElementLineHeight(document));
+  const theDocument = typeof window !== 'undefined' ? document : undefined;
+  const [ verticalRhythmUnit, setVerticalRhythmUnit ] = useState(getRootElementLineHeight(theDocument));
 
   useEffect(() => {
     const resizeListener = (event) => {
-      const lineHeight = getRootElementLineHeight(event.target.document);
-      setVerticalRhythmUnit(lineHeight);
+      const lineHeight = getRootElementLineHeight(event?.target?.document);
+
+      if (lineHeight !== undefined) {
+        setVerticalRhythmUnit(lineHeight);
+      }
     };
 
-    window.addEventListener('resize', resizeListener);
+    if (typeof window !== 'undefined') {
+      window.addEventListener('resize', resizeListener);
+    }
 
     return () => {
-      window.removeEventListener('resize', resizeListener);
+      if (typeof window !== 'undefined') {
+        window.removeEventListener('resize', resizeListener);
+      }
     };
   }, []);
 

@@ -9,11 +9,11 @@ const StyledLi = styled.li`
 `;
 
 function NavItem({
-  theme,
-  variant,
   children,
-  id,
   className,
+  id,
+  theme = navItemTheme,
+  variant = 'standard',
 }) {
   const variantTheme = theme[variant];
   const classes = classNames('flex_item', className);
@@ -43,11 +43,6 @@ NavItem.propTypes = {
   ]),
   id: PropTypes.string,
   className: PropTypes.string
-};
-
-NavItem.defaultProps = {
-  theme: navItemTheme,
-  variant: 'standard',
 };
 
 export default NavItem;

@@ -1,0 +1,8 @@
+@use "variables" as v;
+
+/* stylelint-disable selector-pseudo-class-no-unknown */
+/* stylelint-disable property-no-unknown */
+:export {
+  buttonBorderSize: v.$button-border-size;
+}
+/* stylelint-enable */

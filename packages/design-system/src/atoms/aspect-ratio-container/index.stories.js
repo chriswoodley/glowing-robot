@@ -4,9 +4,9 @@ export default {
   title: 'Atoms/Aspect Ratio Container',
   component: AspectRatioContainer,
   tags: [ 'autodocs' ],
-  argTypes: {},
+  args: {
+    ratio: '1/1'
+  },
 };
 
-export const Primary = {
-  args: {}
-};
+export const Default = {};

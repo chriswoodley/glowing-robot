@@ -25,15 +25,15 @@ const StyledA = styled.a`
 `;
 
 function NavLink({
-  theme,
-  variant,
-  size,
   children,
-  href,
-  rel,
-  target,
-  id,
   className,
+  href,
+  id,
+  rel,
+  size = 'default',
+  target,
+  theme = navLinkTheme,
+  variant = 'standard'
 }) {
   const variantTheme = theme[variant];
   const classes = classNames(
@@ -86,12 +86,6 @@ NavLink.propTypes = {
   ]),
   id: PropTypes.string,
   className: PropTypes.string
-};
-
-NavLink.defaultProps = {
-  size: 'default',
-  theme: navLinkTheme,
-  variant: 'standard'
 };
 
 export default NavLink;
