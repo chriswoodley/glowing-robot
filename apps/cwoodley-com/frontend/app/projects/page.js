@@ -146,7 +146,7 @@ function ProjectsPage() {
               width="1263"
               height="929"
               fill
-              />
+            />
           </AspectRatioContainer>
         </ContentOverlay>
       </Link>
