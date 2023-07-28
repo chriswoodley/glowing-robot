@@ -27,24 +27,20 @@
 
 .layout_row {
   display: block;
-
-  @each $size, $width in root.$breakpoints {
-    @include root.respond-to($size) {
-      &--#{$size} {
-        display: flex;
-        margin-left: math.div(layout.$layout-column-gap, -2);
-        margin-right: math.div(layout.$layout-column-gap, -2);
-        margin-top: math.div(layout.$layout-column-gap, -2);
-
-        &:not(:last-child) {
-          margin-bottom: math.div(layout.$layout-column-gap, 2);
-        }
-      }
-    }
+  margin-left: math.div(layout.$layout-column-gap, -2);
+  margin-right: math.div(layout.$layout-column-gap, -2);
+  
+  &:not(:last-child) {
+    margin-top: math.div(layout.$layout-column-gap, -2);
   }
 
   @each $size, $width in root.$breakpoints {
     @include root.respond-to($size) {
+      // when to flex
+      &--#{$size} {
+        display: flex;
+      }
+
       // column wrapping
       &--#{$size}-wrap {
         flex-wrap: wrap;
@@ -73,6 +69,15 @@
 
       &--#{$size}-left {
         justify-content: end;
+      }
+      
+      // flex direction
+      &--#{$size}-column {
+        flex-direction: column;
+      }
+      
+      &--#{$size}-row {
+        flex-direction: row;
       }
     }
   }
