@@ -35,6 +35,10 @@ ul,
 ol,
 dl {
   @include text.typography(text.$step-0);
+
+  &:first-child {
+    margin-top: 0;
+  }
 }
 
 // inline text
