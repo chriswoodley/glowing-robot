@@ -3,20 +3,21 @@ import PropTypes from 'prop-types';
 import styled from 'styled-components';
 
 const StyledImage = styled.img`
-  ${({ fill, placeholder }) => {
-    if (fill) {
+  ${({ $fill, $placeholder }) => {
+    if ($fill) {
       return `
         height: 100%;
         width: 100%;
         object-fit: cover;
+        object-position: top;
         position: absolute;
         background-size: cover;
-        background-image: url(${placeholder});
+        background-image: url(${$placeholder});
       `;
     } else {
       return `
         background-size: cover;
-        background-image: url(${placeholder});
+        background-image: url(${$placeholder});
       `;
     }
   }} 
@@ -52,15 +53,17 @@ const generateColorPlaceholder = ({ width, height, color }) => {
 
 function Image({
   alt,
+  className,
   crossOrigin,
-  decoding,
+  decoding = 'async',
+  fill = false,
   height,
-  loading,
+  loading = 'lazy',
+  placeholder = {},
   sizes,
   src,
   srcSet,
   width,
-  placeholder
 }) {
   let fallback = generateColorPlaceholder({ width, height, color: '#eeeeee' });
 
@@ -89,12 +92,15 @@ function Image({
       src={src}
       srcSet={srcSet}
       width={width}
-      placeholder={fallback}
+      className={className}
+      $placeholder={fallback}
+      $fill={fill}
     />
   );
 }
 
 Image.propTypes = {
+  className: PropTypes.string,
   alt: PropTypes.string.isRequired,
   crossOrigin: PropTypes.string,
   height: PropTypes.string.isRequired,
@@ -110,13 +116,6 @@ Image.propTypes = {
     URL: PropTypes.string,
   }),
   fill: PropTypes.bool
-};
-
-Image.defaultProps = {
-  decoding: 'async',
-  loading: 'lazy',
-  placeholder: {},
-  fill: false
 };
 
 export default Image;

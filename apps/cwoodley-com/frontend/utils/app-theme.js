@@ -1,4 +1,28 @@
+`use client`;
+
 import Color from 'color';
+import { Merriweather, Source_Sans_3, Source_Code_Pro } from 'next/font/google';
+
+const merriweather = Merriweather({
+  subsets: [ 'latin' ],
+  weight: [ '300', '400', '700', '900' ],
+  style: [ 'normal', 'italic' ],
+  display: 'swap',
+});
+
+const sourceSansPro = Source_Sans_3({
+  subsets: [ 'latin' ],
+  weight: [ '200', '300', '400', '600', '700', '900' ],
+  style: [ 'normal', 'italic' ],
+  display: 'swap',
+});
+
+const sourceSansCode = Source_Code_Pro({
+  subsets: [ 'latin' ],
+  weight: [ '200', '300', '400', '600', '700', '900' ],
+  style: [ 'normal', 'italic' ],
+  display: 'swap',
+});
 
 const coolGrey = '#8592A6';
 const blueYonder = '#5374A6';
@@ -48,15 +72,35 @@ const body = {
   standard: {
     default: {
       backgroundColor: colors.blueYonder[800],
-      color: '#ffffff'
+      color: '#ffffff',
+      family: sourceSansPro.style.fontFamily,
+      weight: '300'
     }
-  }
+  },
+  monospaced: {
+    default: {
+      backgroundColor: colors.blueYonder[800],
+      color: '#ffffff',
+      family: sourceSansCode.style.fontFamily,
+      weight: '300'
+    }
+  },
+
 };
 
 const mainNavLink = {
   standard: {
     default: {
-      color: colors.blueYonder[400]
+      color: colors.coolGrey[400],
+      weight: '400'
+    }
+  }
+};
+
+const mainNavOverlay = {
+  standard: {
+    default: {
+      backgroundColor: colors.blueYonder[800]
     }
   }
 };
@@ -69,28 +113,37 @@ const hamburgerButton = {
   }
 };
 
+const footer = {
+  standard: {
+    default: {
+      backgroundColor: colors.coolGrey[400],
+      color: colors.blueYonder[700]
+    }
+  }
+};
+
 const headings = {
   serif: {
     default: {
       color: colors.blueYonder[400],
-      family: "'Merriweather', serif",
+      family: merriweather.style.fontFamily,
       weight: "400"
     },
     reversed: {
       color: "#fff",
-      family: "'Merriweather', serif",
+      family: merriweather.style.fontFamily,
       weight: "400"
     }
   },
   sans: {
     default: {
       color: "#000",
-      family: "'Source Sans Pro', sans-serif",
+      family: sourceSansPro.style.fontFamily,
       weight: "400"
     },
     reversed: {
       color: "#fff",
-      family: "'Source Sans Pro', sans-serif",
+      family: sourceSansPro.style.fontFamily,
       weight: "400"
     }
   }
@@ -99,8 +152,12 @@ const headings = {
 const appTheme = {
   body,
   mainNavLink,
+  mainNavOverlay,
   headings,
-  hamburgerButton
+  hamburgerButton,
+  footer
 };
+
+export { colors };
 
 export default appTheme;

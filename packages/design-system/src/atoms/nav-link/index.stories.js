@@ -5,15 +5,18 @@ export default {
   title: 'Atoms/Nav Link',
   component: NavLink,
   tags: [ 'autodocs' ],
+  args: {
+    size: 'default',
+    theme: navLinkTheme,
+    variant: 'standard'
+  }
 };
 
 export const StandardNavLink = {
   args: {
-    variant: 'standard',
     children: 'Nav Link',
     href: 'https://google.com',
     target: '_blank',
     rel: 'noopener',
-    theme: navLinkTheme
   }
 };

@@ -6,9 +6,9 @@ import useMaxHeight from 'hooks/use-max-height';
 import colors from 'styles/utils/color/_export.scss';
 
 const StyledAspectRatioContainer = styled.div`
-  aspect-ratio: ${(props) => props.ratio};
+  aspect-ratio: ${({ $ratio }) => $ratio};
   background-color: ${colors.gray100};
-  max-height: ${(props) => props.maxHeight};
+  max-height: ${({ $maxHeight }) => $maxHeight};
   overflow: hidden;
   position: relative;
 `;
@@ -18,7 +18,7 @@ function AspectRatioContainer({
   style,
   size,
   children,
-  ratio
+  ratio = '1/1'
 }) {
   const unit = useVerticalRhythmUnit();
   const maxHeight = useMaxHeight({ unit, size });
@@ -27,8 +27,8 @@ function AspectRatioContainer({
     <StyledAspectRatioContainer
       style={style}
       className={className}
-      maxHeight={maxHeight}
-      ratio={ratio}
+      $maxHeight={maxHeight}
+      $ratio={ratio}
     >
       {children}
     </StyledAspectRatioContainer>
@@ -45,10 +45,6 @@ AspectRatioContainer.propTypes = {
     PropTypes.node,
     PropTypes.arrayOf(PropTypes.node)
   ])
-};
-
-AspectRatioContainer.defaultProps = {
-  ratio: '1/1'
 };
 
 export default AspectRatioContainer;

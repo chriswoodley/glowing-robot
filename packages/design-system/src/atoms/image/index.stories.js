@@ -4,10 +4,15 @@ export default {
   title: 'Atoms/Image',
   component: Image,
   tags: [ 'autodocs' ],
-  argTypes: {},
+  args: {
+    decoding: 'async',
+    fill: false,
+    loading: 'lazy',
+    placeholder: {},
+  }
 };
 
-export const Primary = {
+export const Default = {
   args: {
     src: 'https://cwoodley.com/img/mybpstation-com.jpg',
     width: '805',

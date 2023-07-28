@@ -1,8 +1,8 @@
-import React, { useCallback, useState } from 'react';
+import React, { useCallback } from 'react';
 import PropTypes from 'prop-types';
 import styled from 'styled-components';
 import motion from 'styles/utils/motion/_export.scss';
-import hamburgerButtonTheme from './index.theme';
+import hamburgerButtonTheme from 'atoms/hamburger-button/theme';
 
 const {
   transitionNormalDuration,
@@ -18,7 +18,7 @@ const StyledLine = styled.div`
 
 const StyledButton = styled.button`
   border: 0;
-  background: transparent;
+  background-color: transparent;
   padding: 0;
   width: 64px;
   
@@ -33,59 +33,52 @@ const StyledButton = styled.button`
 
   & > :nth-child(1) {
     transition: all ${transitionNormalDuration} ${transitionNormalEaseInOutBack};
-    transform: ${({ isActive }) => isActive
+    transform: ${({ $isActive }) => $isActive
       ? 'rotate(45deg)'
       : 'rotate(0deg)'};
   }
   
   & > :nth-child(2) {
     transition: all ${transitionFastDuration} ease-in-out;
-    margin-top: ${({ isActive }) => isActive ? '0' : '20px'};
-    opacity: ${({ isActive }) => isActive
+    margin-top: ${({ $isActive }) => $isActive ? '0' : '20px'};
+    opacity: ${({ $isActive }) => $isActive
       ? 0
       : 1};
   }
   
   & > :nth-child(3) {
     transition: all ${transitionNormalDuration} ${transitionNormalEaseInOutBack};
-    margin-top: ${({ isActive }) => isActive ? '-5px' : '20px'};
-    transform: ${({ isActive }) => isActive
+    margin-top: ${({ $isActive }) => $isActive ? '-5px' : '20px'};
+    transform: ${({ $isActive }) => $isActive
       ? 'rotate(-45deg)'
       : 'rotate(0deg)'};
   }
 `;
 
-// Ignore "React does not recognize the `isActive` prop on a DOM element" for now...
-// possible styled components v5 to v6-rc regression as it wasn't happening with v5
 function HamburgerButton({
   onClick,
-  theme,
-  variant,
+  theme = hamburgerButtonTheme,
+  variant = 'standard',
   className,
+  isActive = false,
   ...props
 }) {
-  const [ isActive, setIsActive ] = useState(false);
   const variantTheme = theme[variant];
 
   const handleOnClick = useCallback((event) => {
-      event.preventDefault();
+    event.preventDefault();
 
-      setIsActive((prevIsActive) => {
-        const active = !prevIsActive;
+    if (onClick) {
+      onClick(event, !isActive);
+    }
+  }, [ onClick, isActive ]);
 
-        if (onClick) {
-          onClick(event, active);
-        }
-
-        return !prevIsActive;
-      });
-  }, [ onClick ]);
 
   return (
     <StyledButton
       type="button"
       onClick={handleOnClick}
-      isActive={isActive}
+      $isActive={isActive}
       theme={variantTheme}
       aria-label={props['aria-label']}
       className={className}
@@ -99,6 +92,7 @@ function HamburgerButton({
 
 HamburgerButton.propTypes = {
   'aria-label': PropTypes.string.isRequired,
+  isActive: PropTypes.bool.isRequired,
   className: PropTypes.string,
   onClick: PropTypes.func,
   variant: PropTypes.oneOf([ 'standard' ]),
@@ -109,11 +103,6 @@ HamburgerButton.propTypes = {
       })
     })
   })
-};
-
-HamburgerButton.defaultProps = {
-  theme: hamburgerButtonTheme,
-  variant: 'standard'
 };
 
 export default HamburgerButton;

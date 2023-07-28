@@ -1,23 +1,28 @@
-import React from 'react';
-// import PropTypes from 'prop-types';
+import { forwardRef } from 'react';
 import {
   Navbar,
 } from '@cw/design-system';
 import MainNav from './main-nav';
 import Logo from './logo';
 
-function Header() {
+const Header = forwardRef(function Header({
+  onMobileNav,
+  isMobileNavActive
+}, ref) {
   return (
-    <header className="py-2">
+    <header className="py-4" ref={ref}>
       <Navbar
-        nav={<MainNav />}
+        nav={
+        <MainNav
+          onMobileNav={onMobileNav}
+          isMobileNavActive={isMobileNavActive}
+        />
+      }
         brand={<Logo />}
         className="layout"
       />
     </header>
   );
-}
-
-Header.propTypes = {};
+});
 
 export default Header;

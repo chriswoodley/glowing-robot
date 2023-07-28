@@ -9,12 +9,12 @@ const StyledUl = styled.ul`
 `;
 
 function Nav({
-  theme,
-  variant,
   children,
-  id,
   className,
-  type,
+  id,
+  theme = navTheme,
+  type = 'default',
+  variant = 'standard',
   ...props
 }) {
   const variantTheme = theme[variant];
@@ -64,12 +64,6 @@ Nav.propTypes = {
   ]),
   id: PropTypes.string,
   className: PropTypes.string
-};
-
-Nav.defaultProps = {
-  theme: navTheme,
-  variant: 'standard',
-  type: 'default'
 };
 
 export default Nav;

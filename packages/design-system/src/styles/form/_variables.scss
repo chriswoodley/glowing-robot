@@ -14,11 +14,3 @@ $button-hover-background-color: lang.map-deep-get(color.$grayscale, 100);
 $button-active-background-color: lang.map-deep-get(color.$grayscale, 200);
 $button-height: 3rem;
 $button-padding: 0 1.5rem;
-
-/* stylelint-disable selector-pseudo-class-no-unknown */
-/* stylelint-disable property-no-unknown */
-/* stylelint-disable property-case */
-:export {
-  buttonBorderSize: $button-border-size;
-}
-/* stylelint-enable */

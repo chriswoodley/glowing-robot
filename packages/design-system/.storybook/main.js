@@ -9,14 +9,17 @@ module.exports = {
     '../src/**/*.stories.@(js)'
   ],
   "addons": [
-    "@storybook/addon-links",
     "@storybook/addon-essentials", 
     "@storybook/addon-interactions",
     '@storybook/addon-a11y'
   ],
   "framework": {
     name: "@storybook/react-webpack5",
-    options: {}
+    options: {
+      fastRefresh: true,
+      strictMode: true,
+      legacyRootApi: false,
+    }
   },
   webpackFinal: async (config, {
     configType
@@ -42,20 +45,14 @@ module.exports = {
 
     // For our Icons
     config.module.rules.push({
-      test: /\.svg$/i,
-      include: path.resolve(__dirname, '../src/icons/'),
-      use: [{
-        loader: 'svg-sprite-loader',
-        options: {
-          symbolId: 'svg[contenthash:6]'
-        }
-      }]
+      test: /sprite.svg$/,
+      type: 'asset/source',
     });
 
     // For general svg imports
     config.module.rules.push({
       test: /\.svg$/,
-      exclude: path.resolve(__dirname, '../src/icons/'),
+      exclude: path.resolve(__dirname, '../src/icons/sprite.svg'),
       type: 'asset/resource',
       generator: {
         filename: 'static/media/[path][name][ext]'

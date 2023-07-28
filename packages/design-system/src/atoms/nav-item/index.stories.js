@@ -5,12 +5,14 @@ export default {
   title: 'Atoms/Nav Item',
   component: NavItem,
   tags: [ 'autodocs' ],
+  args: {
+    theme: navItemTheme,
+    variant: 'standard',
+  }
 };
 
 export const StandardNavItem = {
   args: {
-    variant: 'standard',
     children: 'Nav Item',
-    theme: navItemTheme
   }
 };

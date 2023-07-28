@@ -28,14 +28,18 @@
 .layout_row {
   display: block;
 
-  @include root.respond-to("sm") {
-    display: flex;
-    margin-left: math.div(layout.$layout-column-gap, -2);
-    margin-right: math.div(layout.$layout-column-gap, -2);
-    margin-top: math.div(layout.$layout-column-gap, -2);
+  @each $size, $width in root.$breakpoints {
+    @include root.respond-to($size) {
+      &--#{$size} {
+        display: flex;
+        margin-left: math.div(layout.$layout-column-gap, -2);
+        margin-right: math.div(layout.$layout-column-gap, -2);
+        margin-top: math.div(layout.$layout-column-gap, -2);
 
-    &:not(:last-child) {
-      margin-bottom: math.div(layout.$layout-column-gap, 2);
+        &:not(:last-child) {
+          margin-bottom: math.div(layout.$layout-column-gap, 2);
+        }
+      }
     }
   }
 

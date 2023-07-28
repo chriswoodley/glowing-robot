@@ -2,7 +2,6 @@ import 'styles/index.scss';
 import './styles.css';
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
 import { Title, Subtitle, Description, Primary, Controls, Stories } from '@storybook/blocks';
-import pretty from 'pretty';
 
 export const parameters = {
   actions: { argTypesRegex: "^on[A-Z].*" },
@@ -26,7 +25,6 @@ export const parameters = {
     },
   },
   docs: {
-    transformSource: input => pretty(input),
     page: () => (
       <>
         <Title />
