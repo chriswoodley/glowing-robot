@@ -8,7 +8,13 @@ const NavLink = styled(Link)`
 
   &:link,
   &:visited {
+    text-decoration: none;
     color: ${({ theme }) => theme.mainNavLink.standard.default.color};
+  }
+
+  &:hover,
+  &:active {
+    text-decoration: underline;
   }
 `;
 

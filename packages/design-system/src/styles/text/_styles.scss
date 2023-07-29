@@ -50,7 +50,6 @@ small,
 
 a {
   color: text.$link-color;
-  text-decoration: none;
 
   &:hover {
     color: text.$link-hover-color;
@@ -62,11 +61,6 @@ a {
 
   &:visited {
     color: text.$link-visited-color;
-  }
-
-  &:hover,
-  &:active {
-    text-decoration: underline;
   }
 }
 
