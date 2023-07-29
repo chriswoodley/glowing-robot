@@ -5,23 +5,33 @@ import {
   Image,
   AspectRatioContainer,
 } from '@cw/design-system';
+import Project from 'components/project';
+import ProjectTitle from 'components/project-title';
 
 function MyBpStationPage() {
   return (
-    <div>
-      <AspectRatioContainer
+    <Project
+      title={(
+        <ProjectTitle
+          title="My BP Station"
+          subtitle="mybpstation.com"
+        />
+      )}
+      image={(
+        <AspectRatioContainer
           size="xlg"
           ratio="2/1"
         >
-        <Image
-          src="../projects/mybpstation-com.jpg"
-          alt="My BP Station"
-          width="1263"
-          height="929"
-          fill
-        />
-      </AspectRatioContainer>
-
+          <Image
+            src="../projects/mybpstation-com.jpg"
+            alt="My BP Station"
+            width="1263"
+            height="929"
+            fill
+          />
+        </AspectRatioContainer>
+      )}
+    >
       <p>
         BP (British Petroleum) Driver Rewards website exist to help United States customers{' '}
         keep track of their driver reward discounts earned at the pump. Find the nearest gas{' '}
@@ -138,7 +148,7 @@ function MyBpStationPage() {
           code while seeing the changes live in multiple web browsers at once.
         </li>
       </ul>
-    </div>
+    </Project>
   );
 }
 

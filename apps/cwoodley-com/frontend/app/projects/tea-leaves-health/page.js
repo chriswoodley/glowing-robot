@@ -5,25 +5,35 @@ import {
   Image,
   AspectRatioContainer,
 } from '@cw/design-system';
+import Project from 'components/project';
+import ProjectTitle from 'components/project-title';
 
 function TeaLeavesHealthPage() {
   return (
-    <div>
-      <AspectRatioContainer
-        size="xlg"
-        ratio="2/1"
-      >
-        <Image
-          src="../projects/tealeaveshealth-com.jpg"
-          alt="Tea Leaves Health"
-          width="1263"
-          height="929"
-          fill
+    <Project
+      title={(
+        <ProjectTitle
+          title="Tea Leaves Health"
+          subtitle="tealeaveshealth.com"
         />
-      </AspectRatioContainer>
-
+      )}
+      image={(
+        <AspectRatioContainer
+          size="xlg"
+          ratio="2/1"
+        >
+          <Image
+            src="../projects/tealeaveshealth-com.jpg"
+            alt="Tea Leaves Health"
+            width="1263"
+            height="929"
+            fill
+          />
+        </AspectRatioContainer>
+      )}
+    >
       <p>
-        The tealeaveshealth.com website exist to promote the Tea Leaves business intelligence{' '}
+        The Tea Leaves Health website exist to promote the business intelligence{' '}
         solutions specifically for the healthcare industry.
       </p>
 
@@ -92,7 +102,7 @@ function TeaLeavesHealthPage() {
         applied to SVGs. SVG stands for Scalable Vector Graphic which means the graphic never{' '}
         loses quality as it scales up.
       </p>
-    </div>
+    </Project>
   );
 }
 

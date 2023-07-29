@@ -2,23 +2,33 @@
 
 import React from 'react';
 import { Image, AspectRatioContainer } from '@cw/design-system';
+import Project from 'components/project';
+import ProjectTitle from 'components/project-title';
 
 function AzpleaPage() {
   return (
-    <div>
-      <AspectRatioContainer
-        size="xlg"
-        ratio="2/1"
-      >
-        <Image
-          src="../projects/azplea-com.png"
-          alt="Phoenix Law Enforcement Association"
-          width="1263"
-          height="929"
-          fill
+    <Project
+      title={(
+        <ProjectTitle
+          title="Phoenix Law Enforcement Association"
+          subtitle="azplea.com"
         />
-      </AspectRatioContainer>
-
+      )}
+      image={(
+        <AspectRatioContainer
+          size="xlg"
+          ratio="2/1"
+        >
+          <Image
+            src="../projects/azplea-com.png"
+            alt="Phoenix Law Enforcement Association"
+            width="1263"
+            height="929"
+            fill
+          />
+        </AspectRatioContainer>
+      )}
+    >
       <p>
         The Phoenix Law Enforcement Association website aims to promote the positive role of{' '}
         the police profession by protecting and securing members’ rights.
@@ -89,7 +99,7 @@ function AzpleaPage() {
           There are always options/variations to provide clients based on their budget.
         </li>
       </ul>
-  </div>
+  </Project>
   );
 }
 
