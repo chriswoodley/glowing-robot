@@ -2,23 +2,33 @@
 
 import React from 'react';
 import { Image, AspectRatioContainer } from '@cw/design-system';
+import Project from 'components/project';
+import ProjectTitle from 'components/project-title';
 
 function SilverlandInnPage() {
   return (
-    <div>
-      <AspectRatioContainer
-        size="xlg"
-        ratio="2/1"
-      >
-        <Image
-          src="../projects/silverlandusa-com.png"
-          alt="Silverland Inn & Suites"
-          width="1263"
-          height="929"
-          fill
+    <Project
+      title={(
+        <ProjectTitle
+          title="Silverland Inn & Suites"
+          subtitle="silverlandusa.com"
         />
-      </AspectRatioContainer>
-
+      )}
+      image={(
+        <AspectRatioContainer
+          size="xlg"
+          ratio="2/1"
+        >
+          <Image
+            src="../projects/silverlandusa-com.png"
+            alt="Silverland Inn & Suites"
+            width="1263"
+            height="929"
+            fill
+          />
+        </AspectRatioContainer>
+      )}
+    >
       <p>
         Silverland Inn &amp; Suites website showcases Specials, Rooms and Suites, Hotel{' '}
         Amenities, Groups and Events, and a City Guide for the primary goal of generating{' '}
@@ -124,7 +134,7 @@ function SilverlandInnPage() {
           things and I learned to have an open mind.
         </li>
       </ul>
-  </div>
+  </Project>
   );
 }
 

@@ -2,23 +2,33 @@
 
 import React from 'react';
 import { Image, AspectRatioContainer } from '@cw/design-system';
+import Project from 'components/project';
+import ProjectTitle from 'components/project-title';
 
 function StraussnerAndShermanPage() {
   return (
-    <div>
-      <AspectRatioContainer
-        size="xlg"
-        ratio="2/1"
-      >
-        <Image
-          src="../projects/iodlawyers-com.png"
-          alt="Straussner & Sherman"
-          width="1263"
-          height="929"
-          fill
+    <Project
+      title={(
+        <ProjectTitle
+          title="Straussner & Sherman"
+          subtitle="iodlawyers.com"
         />
-      </AspectRatioContainer>
-
+      )}
+      image={(
+        <AspectRatioContainer
+          size="xlg"
+          ratio="2/1"
+        >
+          <Image
+            src="../projects/iodlawyers-com.png"
+            alt="Straussner & Sherman"
+            width="1263"
+            height="929"
+            fill
+          />
+        </AspectRatioContainer>
+      )}
+    >
       <p>
         Straussner Sherman website boasts capabilities of the Law Firm in providing legal{' '}
         services to safety members and their families.
@@ -92,7 +102,7 @@ function StraussnerAndShermanPage() {
           selectivizr, respond.js to make ie8 understand media queries.
         </li>
       </ul>
-  </div>
+  </Project>
   );
 }
 

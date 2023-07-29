@@ -5,23 +5,33 @@ import {
   Image,
   AspectRatioContainer,
 } from '@cw/design-system';
+import Project from 'components/project';
+import ProjectTitle from 'components/project-title';
 
 function GenetesisPage() {
   return (
-    <div>
-      <AspectRatioContainer
-        size="xlg"
-        ratio="2/1"
-      >
-        <Image
-          src="../projects/genetesis-com.png"
-          alt="Genetesis"
-          width="1761"
-          height="1307"
-          fill
+    <Project
+      title={(
+        <ProjectTitle
+          title="Genetesis"
+          subtitle="cardioflux.genetesis.com"
         />
-      </AspectRatioContainer>
-
+      )}
+      image={(
+        <AspectRatioContainer
+          size="xlg"
+          ratio="2/1"
+        >
+          <Image
+            src="../projects/genetesis-com.png"
+            alt="Genetesis"
+            width="1761"
+            height="1307"
+            fill
+          />
+        </AspectRatioContainer>
+      )}
+    >
       <p>
         Cardioflux Genetesis Portal exist to help physician’s create Magnetocardiography (MCG){' '}
         Scan orders that are available for Cardioflux Device Operators. Once the Operator{' '}
@@ -119,7 +129,7 @@ function GenetesisPage() {
           unit tests.
         </li>
       </ul>
-    </div>
+    </Project>
   );
 }
 

@@ -2,23 +2,33 @@
 
 import React from 'react';
 import { Image, AspectRatioContainer } from '@cw/design-system';
+import Project from 'components/project';
+import ProjectTitle from 'components/project-title';
 
 function FopConnectPage() {
   return (
-    <div>
-      <AspectRatioContainer
-        size="xlg"
-        ratio="2/1"
-      >
-        <Image
-          src="../projects/fopconnect-com.png"
-          alt="FOP Connect"
-          width="1263"
-          height="929"
-          fill
+    <Project
+      title={(
+        <ProjectTitle
+          title="FOP Connect"
+          subtitle="fopconnect.com"
         />
-      </AspectRatioContainer>
-
+      )}
+      image={(
+        <AspectRatioContainer
+          size="xlg"
+          ratio="2/1"
+        >
+          <Image
+            src="../projects/fopconnect-com.png"
+            alt="FOP Connect"
+            width="1263"
+            height="929"
+            fill
+          />
+        </AspectRatioContainer>
+      )}
+    >
       <p>
         FOPConnect features online content derived from the FOP Journal quarterly magazine{' '}
         intended for members of the National Fraternal Order of Police (NFOP).
@@ -140,14 +150,14 @@ function FopConnectPage() {
         <li>
           Twitter Bootstrap CSS Framework. After, I have finished the project I realized this{' '}
           framework included a lot of unused CSS which created a lot of bloat. This caused to{' '}
-          me learn what makes a website responsive and to build{' '}
+          me learn what makes a website responsive and to build my own responsive{' '}
           <a
             href="https://github.com/chriswoodley/style-guide"
             title="Chris Woodley Style Guide - GitHub"
             target="_blank"
             rel="noopener noreferrer"
           >
-            my own responsive pattern library
+            pattern library
           </a>.
         </li>
         <li>
@@ -168,7 +178,7 @@ function FopConnectPage() {
         library taking into account all of the things I have learned the first time I{' '}
         have developed it.
       </p>
-    </div>
+    </Project>
   );
 }
 
