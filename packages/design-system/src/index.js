@@ -11,5 +11,6 @@ export { default as Icon } from 'atoms/icon';
 export { default as Overlay } from 'atoms/overlay';
 export { default as ContentOverlay } from 'molecules/content-overlay';
 export { default as usePrevious } from 'hooks/use-previous';
+export { default as useViewportMatch } from 'hooks/use-viewport-match';
 export * from 'utils/device-helpers';
 export * from './theme';
