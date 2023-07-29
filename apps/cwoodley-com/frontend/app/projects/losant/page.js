@@ -3,7 +3,7 @@
 import React from 'react';
 import {
   Image,
-  AspectRatioContainer,
+  AspectRatioContainer
 } from '@cw/design-system';
 import Project from 'components/project';
 import ProjectTitle from 'components/project-title';
