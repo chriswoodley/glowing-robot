@@ -1,7 +1,8 @@
 'use client';
 
 import { styled } from 'styled-components';
-import FooterSection from './footer-section';
+import FooterSection from 'components/footer-section';
+import ObfuscateMailto from 'components/obfuscate-mailto';
 import { Icon } from '@cw/design-system';
 
 const StyledFooter = styled.footer`
@@ -25,13 +26,14 @@ function Footer() {
           <FooterSection
             title="Get In Touch"
           >
-            {/* TODO: HONEY POT; PREVENT SCRAPERS */}
-            <a href="mailto:chriswoodley@me.com" target="_blank">
+            <ObfuscateMailto
+              email="chriswoodley@me.com"
+            >
               <Icon
                 glyph="email"
                 title="Contact me by email"
               />
-            </a>
+            </ObfuscateMailto>
 
             <a href="https://www.linkedin.com/pub/chris-woodley/29/630/654" target="_blank">
               <Icon
