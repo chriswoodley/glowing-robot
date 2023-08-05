@@ -1,6 +1,14 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import classNames from "classnames";
+import styled from 'styled-components';
+
+const StyledSvg = styled.svg`
+  fill: ${({ $color }) => $color};
+  width: ${({ $size }) => $size}px;
+  height: ${({ $size }) => $size}px;
+  background-color: ${({ $backgroundColor }) => $backgroundColor};
+`;
 
 function Icon({
   glyph,
@@ -14,15 +22,17 @@ function Icon({
 
   if (glyph && title) {
     return (
-      <svg
+      <StyledSvg
         viewBox="0 0 24 24"
         xmlns="http://www.w3.org/2000/svg"
         className={classes}
-        style={{ fill: color, width: size, height: size, backgroundColor }}
+        $color={color}
+        $size={size}
+        $backgroundColor={backgroundColor}
       >
         <title>{title}</title>
         <use xlinkHref={`#${glyph}`}></use>
-      </svg>
+      </StyledSvg>
     );
   }
 
