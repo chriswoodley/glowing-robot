@@ -3,7 +3,7 @@ export function getIsTouchDevice() {
     return window.matchMedia('(hover: none)').matches;
   }
 
-  return false; // TODO: IS THERE A SERVER SIDE METHOD WE CAN USE HERE?
+  return false;
 }
 
 export function getShouldMatchViewportMaxWidth(maxWidth) {
