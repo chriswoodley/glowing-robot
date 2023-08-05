@@ -29,6 +29,8 @@ function AppShell({ children }) {
   const path = usePathname();
   const prevPath = usePrevious(path);
   const [ isMobileNavActive, setIsMobileNavActive ] = useState(false);
+  const [ isScrolling, setIsScrolling ] = useState(false);
+  const [ shouldBeSticky, setShouldBeSticky ] = useState(false);
   const [ overlayTopOffset, setOverlayTopOffset ] = useState(0);
   const headerRef = useRef();
 
@@ -42,6 +44,30 @@ function AppShell({ children }) {
       const offset = headerRef.current.getBoundingClientRect().height;
       setOverlayTopOffset(offset);
   }, [ isMobileNavActive ]);
+
+  useEffect(() => {
+      const handleScroll = (evt) => {
+        const tolerance = 1;
+        const scrollTop = evt.target.documentElement.scrollTop;
+        const clientHeight = evt.target.documentElement.clientHeight;
+        const scrollHeight = evt.target.documentElement.scrollHeight;
+        const scrollDiff = scrollHeight - clientHeight;
+        const headerHeight = headerRef.current.clientHeight;
+        const isSticky = scrollDiff > (headerHeight * tolerance);
+        setShouldBeSticky(isSticky);
+        setIsScrolling(isSticky && scrollTop !== 0);
+      };
+
+      if (typeof window !== 'undefined') {
+        window.addEventListener("scroll", handleScroll);
+      }
+
+      return () => {
+        if (typeof window !== 'undefined') {
+          window.removeEventListener("scroll", handleScroll);
+        }
+      };
+  }, []);
 
   const handleMobileNav = useCallback((event, isActive) => {
     setIsMobileNavActive(isActive);
@@ -88,6 +114,8 @@ function AppShell({ children }) {
         ref={headerRef}
         onMobileNav={handleMobileNav}
         isMobileNavActive={isMobileNavActive}
+        isScrolling={isScrolling}
+        isSticky={shouldBeSticky}
       />
 
       <main>

@@ -11,8 +11,13 @@ import { useViewportMatch } from '@cw/design-system';
 import { colors } from 'utils/app-theme';
 
 const StyledSwiper = styled(Swiper)`
+  .swiper-pagination-bullet {
+    width: 16px;
+    height: 16px;
+  }
   .swiper-pagination-bullet-active {
     background: ${colors.blueYonder[700]};
+    opacity: .9;
     border: solid 1px ${colors.blueYonder[400]};
   }
 
@@ -100,7 +105,7 @@ const StyledSwiper = styled(Swiper)`
         &::before,
         &::after {
           content: "";
-          width: 7%;
+          width: 10%;
           position: absolute;
           top: 0;
           bottom: 0;
@@ -122,7 +127,7 @@ const StyledSwiper = styled(Swiper)`
         }
 
         .swiper-slide {
-          width: 85%;
+          width: 80%;
           margin-left: 10px;
           margin-right: 10px;
         }

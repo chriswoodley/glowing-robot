@@ -19,7 +19,7 @@ const StyledFooter = styled.footer`
 
 function Footer() {
   return (
-    <StyledFooter className="py-2">
+    <StyledFooter className="pt-2 pb-4">
       <div className="flex flex--justify-content-space-between layout">
         <div className="flex_item flex_item--auto flex flex--wrap">
           <FooterSection

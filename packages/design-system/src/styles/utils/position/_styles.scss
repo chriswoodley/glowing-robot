@@ -1,4 +1,39 @@
-.position-sticky {
+@use "../../root/module" as root;
+
+.position-sticky-top {
   position: sticky;
   top: 0;
+
+  @each $size, $width in root.$breakpoints {
+    @include root.respond-to($size) {
+      &--#{$size} {
+        position: sticky;
+        top: 0;
+      }
+    }
+  }
+}
+
+.position-relative {
+  position: relative;
+
+  @each $size, $width in root.$breakpoints {
+    @include root.respond-to($size) {
+      &--#{$size} {
+        position: relative;
+      }
+    }
+  }
+}
+
+.position-absolute {
+  position: absolute;
+
+  @each $size, $width in root.$breakpoints {
+    @include root.respond-to($size) {
+      &--#{$size} {
+        position: absolute;
+      }
+    }
+  }
 }

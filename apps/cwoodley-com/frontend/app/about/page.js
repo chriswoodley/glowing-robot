@@ -2,35 +2,71 @@
 
 import React from 'react';
 import { Image } from '@cw/design-system';
+import classNames from 'classnames';
 
 function AboutPage() {
   return (
-    <div
-      className="layout_row layout_row--md"
-    >
+    <>
       <div
-        className="layout_column layout_column--md-7"
+        className={classNames(
+          'layout_row',
+          'layout_row--md',
+        )}
       >
-        <h1>About</h1>
-
-        <h2>Background</h2>
-        <p>I am a professional Software Engineer specializing in Front-end Web Development and Design. I offer a unique blend of technical expertise, creativity, and marketing experience that produce powerful user experience across a multitude of devices.</p>
-        <p>I am loyal, personable, and a dedicated individual with the ability to quickly establish strong working relationships. You may find more information about my years of Web Development experience by viewing my resumé.</p>
-
-        <h2>Hire Me</h2>
-        <p>Have questions? Please contact me.</p>
+        <div
+          className={classNames(
+            'layout_column',
+            'layout_column--md-11',
+            'layout_column--lg-offset-1'
+          )}
+        >
+          <h1 className="mb-0">About</h1>
+        </div>
       </div>
 
       <div
-        className="layout_column layout_column--md-5 display-none block--md"
+        className={classNames(
+          'layout_row',
+          'layout_row--md',
+          'mb-2'
+        )}
       >
-        <Image
-          src="/me@2x.jpg"
-          alt="Chris Woodley"
-          className="mb-3"
-        />
+        <div
+          className={classNames(
+            'layout_column',
+            'layout_column--md-7',
+            'layout_column--lg-6',
+            'layout_column--lg-offset-1'
+          )}
+        >
+          <h2>Background</h2>
+          <p>I am a professional Software Engineer specializing in Front-end Web Development and Design. I offer a unique blend of technical expertise, creativity, and marketing experience that produce powerful user experience across a multitude of devices.</p>
+          <p>I am loyal, personable, and a dedicated individual with the ability to quickly establish strong working relationships. You may find more information about my years of Web Development experience by viewing my resumé.</p>
+
+          <h2>Hire Me</h2>
+          <p className='pb-7'>Have questions? Please contact me.</p>
+        </div>
+
+        <div
+          className={classNames(
+            'layout_column',
+            'layout_column--md-4',
+            'layout_column--md-offset-1',
+            'layout_column--lg-3',
+            'layout_column--lg-offset-1',
+            'display-none',
+            'block--md',
+            'mt-1--md'
+          )}
+        >
+          <Image
+            src="/me@2x.jpg"
+            alt="Chris Woodley"
+            className="mb-3"
+          />
+        </div>
       </div>
-    </div>
+    </>
   );
 }
 

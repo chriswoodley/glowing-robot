@@ -10,9 +10,15 @@ const LogoText = styled.h1`
   color: ${colors.coolGrey[400]};
 `;
 
+const StyledNavLink =styled(NavLink)`
+  &:hover {
+    text-decoration: none;
+  }
+`;
+
 function Logo() {
   return (
-    <NavLink
+    <StyledNavLink
       href="/"
       className='flex flex--align-items-center text-decoration-none'
 
@@ -30,7 +36,7 @@ function Logo() {
       >
         Chris Woodley
       </LogoText>
-    </NavLink>
+    </StyledNavLink>
   );
 }
 
