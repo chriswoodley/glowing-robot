@@ -9,7 +9,7 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "@cw/design-system": "git+https://chriswoodley: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@github.com/chriswoodley/glowing-robot.git#master",
+    "@cw/design-system": "workspace:^",
     "classnames": "^2.3.2",
     "color": "^4.2.3",
     "eslint": "^8.45.0",
