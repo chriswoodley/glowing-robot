@@ -2304,6 +2304,7 @@ __metadata:
   version: 0.0.0-use.local
   resolution: "@cw/frontend@workspace:apps/cwoodley-com/frontend"
   dependencies:
+    "@cw/design-system": "workspace:^"
     classnames: ^2.3.2
     color: ^4.2.3
     eslint: ^8.45.0
