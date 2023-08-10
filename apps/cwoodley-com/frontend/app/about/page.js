@@ -16,8 +16,7 @@ function AboutPage() {
         <div
           className={classNames(
             'layout_column',
-            'layout_column--md-11',
-            'layout_column--lg-offset-1'
+            'layout_column--md-12',
           )}
         >
           <h1 className="mb-0">About</h1>
@@ -36,7 +35,6 @@ function AboutPage() {
             'layout_column',
             'layout_column--md-7',
             'layout_column--lg-6',
-            'layout_column--lg-offset-1'
           )}
         >
           <h2>Background</h2>
@@ -50,10 +48,9 @@ function AboutPage() {
         <div
           className={classNames(
             'layout_column',
-            'layout_column--md-4',
+            'layout_column--md-3',
             'layout_column--md-offset-1',
-            'layout_column--lg-3',
-            'layout_column--lg-offset-1',
+            'layout_column--lg-offset-2',
             'display-none',
             'block--md',
             'mt-1--md'
@@ -62,7 +59,7 @@ function AboutPage() {
           <Image
             src="/me@2x.jpg"
             alt="Chris Woodley"
-            className="mb-3"
+            className="mt-2"
           />
         </div>
       </div>

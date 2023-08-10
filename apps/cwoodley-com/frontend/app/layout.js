@@ -1,6 +1,7 @@
 import '@cw/design-system/dist/styles.css';
 
 import React from 'react';
+import { Analytics } from '@vercel/analytics/react';
 import StyledComponentsRegistry from 'lib/styled-component-registry';
 import AppShell from 'components/app-shell';
 import Theme from 'components/theme';
@@ -20,6 +21,7 @@ function RootLayout({ children }) {
               <AppShell>
                 {children}
               </AppShell>
+              <Analytics />
             </Theme>
           </StyledComponentsRegistry>
         </body>

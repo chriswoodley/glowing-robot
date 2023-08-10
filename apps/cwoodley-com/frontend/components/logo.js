@@ -32,7 +32,7 @@ function Logo() {
       />
 
       <LogoText
-        className="flex_item display-none block--md ml-3--md my-0--md"
+        className="flex_item display-none block--md ml-8--md my-0--md"
       >
         Chris Woodley
       </LogoText>

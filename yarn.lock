@@ -2305,6 +2305,7 @@ __metadata:
   resolution: "@cw/frontend@workspace:apps/cwoodley-com/frontend"
   dependencies:
     "@cw/design-system": "workspace:^"
+    "@vercel/analytics": ^1.0.2
     classnames: ^2.3.2
     color: ^4.2.3
     eslint: ^8.45.0
@@ -5865,6 +5866,13 @@ __metadata:
     "@typescript-eslint/types": 5.59.11
     eslint-visitor-keys: ^3.3.0
   checksum: 4894ec4b2b8da773b1f44398c836fcacb7f5a0c81f9404ecd193920e88d618091a7328659e0aa24697edda10479534db30bec7c8b0ba9fa0fce43f78222d5619
+  languageName: node
+  linkType: hard
+
+"@vercel/analytics@npm:^1.0.2":
+  version: 1.0.2
+  resolution: "@vercel/analytics@npm:1.0.2"
+  checksum: 5f596db6ed3c959057927985ffc6394ab12f9a5e9e9c65d00a33f1ffb3a7ced95d63f33b31e746939e50c0284d7999b90e9ed5d3d1e8b0d37a135219fd93a6e4
   languageName: node
   linkType: hard
 

@@ -1,0 +1,15 @@
+@use "sass:map";
+@use "variables" as v;
+
+/* stylelint-disable selector-pseudo-class-no-unknown */
+/* stylelint-disable property-no-unknown */
+/* stylelint-disable property-case */
+
+:export {
+  breakpointSmall: map.get(v.$breakpoints-in-px, sm);
+  breakpointMedium: map.get(v.$breakpoints-in-px, md);
+  breakpointLarge: map.get(v.$breakpoints-in-px, lg);
+  breakpointExtraLarge: map.get(v.$breakpoints-in-px, xl);
+};
+
+/* stylelint-enable */
