@@ -2,19 +2,25 @@
 
 import React from 'react';
 import styled from 'styled-components';
-import { ContentOverlay, Overlay, Image, AspectRatioContainer } from '@cw/design-system';
+import { ContentOverlay, Overlay, Image, AspectRatioContainer, styleVariables } from '@cw/design-system';
 import Link from 'next/link';
+
+const {
+  root: {
+    breakpoints
+  }
+} = styleVariables;
 
 const Grid = styled.div`
   display: grid;
-  gap: 1.5rem;
+  gap: 3rem;
   margin-bottom: 3rem;
 
-  @media (min-width: 816px) { // TODO: export breakpoint variables from design system and use that
+  @media (min-width: ${breakpoints.sm}px) {
     grid-template-columns: repeat(2, 1fr);
   }
 
-  @media (min-width: 1008px) {
+  @media (min-width: ${breakpoints.md}px) {
     grid-template-columns: repeat(3, 1fr);
   }
 `;
@@ -61,6 +67,7 @@ function ProjectsPage() {
           renderOverlay={({ isActive, isTouchDevice }) => {
             return (
               <Overlay
+                key="genetesis"
                 isActive={isTouchDevice || isActive}
                 type="content"
                 height="auto"
@@ -93,6 +100,7 @@ function ProjectsPage() {
           renderOverlay={({ isActive, isTouchDevice }) => {
             return (
               <Overlay
+                key="bp"
                 isActive={isTouchDevice || isActive}
                 type="content"
                 height="auto"
@@ -125,10 +133,11 @@ function ProjectsPage() {
           renderOverlay={({ isActive, isTouchDevice }) => {
             return (
               <Overlay
-              isActive={isTouchDevice || isActive}
-              type="content"
-              height="auto"
-              effect="slideUp"
+                key="tea"
+                isActive={isTouchDevice || isActive}
+                type="content"
+                height="auto"
+                effect="slideUp"
               >
                 <h4 className="mb-0">Tea Leaves Health</h4>
                 <p className="mb-0 mt-0">tealeaveshealth.com</p>
@@ -157,6 +166,7 @@ function ProjectsPage() {
           renderOverlay={({ isActive, isTouchDevice }) => {
             return (
               <Overlay
+                key="fop"
                 isActive={isTouchDevice || isActive}
                 type="content"
                 height="auto"
@@ -189,6 +199,7 @@ function ProjectsPage() {
           renderOverlay={({ isActive, isTouchDevice }) => {
             return (
               <Overlay
+                key="iod"
                 isActive={isTouchDevice || isActive}
                 type="content"
                 height="auto"
@@ -221,6 +232,7 @@ function ProjectsPage() {
           renderOverlay={({ isActive, isTouchDevice }) => {
             return (
               <Overlay
+                key="az"
                 isActive={isTouchDevice || isActive}
                 type="content"
                 height="auto"
@@ -253,6 +265,7 @@ function ProjectsPage() {
           renderOverlay={({ isActive, isTouchDevice }) => {
             return (
               <Overlay
+                key="cajon"
                 isActive={isTouchDevice || isActive}
                 type="content"
                 height="auto"
@@ -285,6 +298,7 @@ function ProjectsPage() {
           renderOverlay={({ isActive, isTouchDevice }) => {
             return (
               <Overlay
+                key="silverland"
                 isActive={isTouchDevice || isActive}
                 type="content"
                 height="auto"

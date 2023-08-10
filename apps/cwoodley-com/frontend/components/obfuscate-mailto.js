@@ -3,14 +3,14 @@ import PropTypes from 'prop-types';
 
 function ObfuscateMailto(props) {
   const {
-    element,
+    element = 'a',
     children,
     email,
     headers,
     obfuscate,
     obfuscateChildren,
     linkText,
-    style,
+    style = {},
     onClick,
     ...others
   } = props;
@@ -114,18 +114,6 @@ ObfuscateMailto.propTypes = {
   linkText: PropTypes.string,
   style: PropTypes.shape({}),
   onClick: PropTypes.func,
-};
-
-ObfuscateMailto.defaultProps = {
-  element: 'a',
-  children: undefined,
-  email: undefined,
-  headers: undefined,
-  obfuscate: undefined,
-  obfuscateChildren: undefined,
-  linkText: undefined,
-  style: {},
-  onClick: undefined,
 };
 
 export default ObfuscateMailto;
