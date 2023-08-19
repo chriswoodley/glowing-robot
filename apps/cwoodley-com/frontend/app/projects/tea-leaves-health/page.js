@@ -95,7 +95,7 @@ function TeaLeavesHealthPage() {
         What I Have Learned
       </h2>
 
-      <p>
+      <p className="mb-4">
         SVGs can be styled and animated through CSS. SVGs are easier to work with if optimized{' '}
         through the SVGO command line utility. SVGs have a subset of CSS properties that are{' '}
         only available to SVGs such as “fill” and “stroke”. JavaScript interactions can also be{' '}

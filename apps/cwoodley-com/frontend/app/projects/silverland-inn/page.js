@@ -112,7 +112,7 @@ function SilverlandInnPage() {
         What I Have Learned
       </h2>
 
-      <ul>
+      <ul className="mb-4">
         <li>
           I learned that incorporating frameworks into my workflow can cut development time{' '}
           down. I also learn that its important to know why and how the framework works so{' '}

@@ -92,7 +92,7 @@ function StraussnerAndShermanPage() {
         What I Have Learned
       </h2>
 
-      <ul>
+      <ul className="mb-4">
         <li>
           The math behind crafting responsive CSS code{' '}
           (target width / context width = relative width).

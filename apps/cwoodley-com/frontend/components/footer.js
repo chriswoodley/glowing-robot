@@ -76,7 +76,7 @@ function Footer() {
           </FooterSection>
         </div>
 
-        <div className="display-none flex--md flex_item--md flex--md-align-items-end">
+        <div className="display-none flex--md flex_item--md flex--md-align-items-flex-end">
           <FooterSection>
             <Icon
               glyph="react"

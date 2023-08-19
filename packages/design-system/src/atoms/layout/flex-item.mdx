@@ -1,0 +1,213 @@
+import { Meta, Unstyled, Source } from '@storybook/blocks';
+
+<Meta title="Atoms/Layout/Flex Item" />
+
+# Flex Item
+
+`.flex_item` as a child of `.flex` applies some inital flex properties to your elements. Each 
+`.flex_item` will grow and shink automatically to fill the remaining space. This is the default
+behavior.
+
+<Unstyled>
+  <div className="flex">
+    <div className="flex_item">
+      <div className="box">1</div>
+    </div>
+    <div className="flex_item">
+      <div className="box">2</div>
+    </div>
+    <div className="flex_item">
+      <div className="box">3</div>
+    </div>
+  </div>
+</Unstyled>
+
+<Source
+  code={`
+    <div class="flex">
+      <div class="flex_item">
+        <div class="box">1</div>
+      </div>
+      <div class="flex_item">
+        <div class="box">2</div>
+      </div>
+      <div class="flex_item">
+        <div class="box">3</div>
+      </div>
+    </div>
+  `}
+  language="html"
+  dark
+  format
+/>
+
+## Flex Grow, Shrink, None
+
+ A `.flex_item` element's amount of space it takes up can be configured by applying grow and shrink
+ class modifiers: 
+ 
+ `.flex_item--grow-0`, `.flex_item--grow`, `.flex_item--shrink-0`, `.flex_item--shrink`
+
+ In use, these classes are used alongside `.flex_item-basis-{1-12}` utility classes. As you can see
+ box #2 does not shrink to "fit" within the `.flex` container and keeps its orignal basis.
+
+ These modifiers can be applied to `sm`, `md`, `lg`, and `xl` screens.
+
+<Unstyled>
+  <div className="flex">
+    <div className="flex_item flex_item--basis-8">
+      <div className="box">1</div>
+    </div>
+    <div className="flex_item flex_item--basis-4 flex_item--shrink-0">
+      <div className="box">2</div>
+    </div>
+    <div className="flex_item flex_item--basis-4">
+      <div className="box">3</div>
+    </div>
+  </div>
+</Unstyled>
+
+<Source
+  code={`
+    <div class="flex">
+      <div class="flex_item flex_item--basis-8">
+        <div class="box">1</div>
+      </div>
+      <div class="flex_item flex_item--basis-4 flex_item--shrink-0">
+        <div class="box">2</div>
+      </div>
+      <div class="flex_item flex_item--basis-4">
+        <div class="box">3</div>
+      </div>
+    </div>
+  `}
+  language="html"
+  dark
+  format
+/>
+
+## Flex Basis
+
+For finer control on how much space a `.flex_item` can take up... use the `.flex_item-basis-{1-12}`,
+`.flex_item--basis-auto`, or `.flex_item--none` class modifiers.
+
+These modifiers can be applied to `sm`, `md`, `lg`, and `xl` screens.
+
+<Unstyled>
+  <div className="flex">
+    <div className="flex_item flex_item--basis-2">
+      <div className="box">1</div>
+    </div>
+    <div className="flex_item flex_item--basis-10">
+      <div className="box">2</div>
+    </div>
+    <div className="flex_item flex_item--basis-auto">
+      <div className="box">3</div>
+    </div>
+  </div>
+</Unstyled>
+
+<Source
+  code={`
+    <div class="flex">
+    <div class="flex_item flex_item--basis-2">
+      <div class="box">1</div>
+    </div>
+    <div class="flex_item flex_item--basis-10">
+      <div class="box">2</div>
+    </div>
+    <div class="flex_item flex_item--basis-auto">
+      <div class="box">3</div>
+    </div>
+  </div>
+  `}
+  language="html"
+  dark
+  format
+/>
+
+## Flex Order
+
+The `.flex_item--order-{1-12}` is used to lay the items out in ordinal groups. What this means
+is that items are assigned an integer that represents their group. The items are then placed in 
+the visual order according to that integer, lowest values first. If more than one item has the 
+same integer value, then within that group the items are laid out as per source order.
+
+The `.flex_item--order-first` and `.flex_item--order-last` classes assign items in the first or last
+ordinal group.
+
+These modifiers can be applied to `sm`, `md`, `lg`, and `xl` screens.
+
+<Unstyled>
+  <div className="flex">
+    <div className="flex_item flex_item--basis-4 flex_item--order-last">
+      <div className="box">1</div>
+    </div>
+    <div className="flex_item flex_item--basis-8 flex_item--order-first">
+      <div className="box">2</div>
+    </div>
+    <div className="flex_item flex_item--basis-2">
+      <div className="box">3</div>
+    </div>
+  </div>
+</Unstyled>
+
+<Source
+  code={`
+    <div class="flex">
+      <div class="flex_item flex_item--basis-4 flex_item--order-last">
+        <div class="box">1</div>
+      </div>
+      <div class="flex_item flex_item--basis-8 flex_item--order-first">
+        <div class="box">2</div>
+      </div>
+      <div class="flex_item flex_item--basis-2">
+        <div class="box">3</div>
+      </div>
+    </div>
+  `}
+  language="html"
+  dark
+  format
+/>
+
+# Alignment
+
+`.flex_item--align-self-flex-start`, `.flex_item--align-self-flex-end`, 
+`.flex_item--align-self-center`, and `.flex_item--align-self-stretch` can be used to align
+individual `.flex_item`.
+
+These modifiers can be applied to `sm`, `md`, `lg`, and `xl` screens.
+
+<Unstyled>
+  <div className="flex" style={{height: 200}}>
+    <div className="flex_item">
+      <div className="box">1</div>
+    </div>
+    <div className="flex_item flex_item--align-self-center">
+      <div className="box">2</div>
+    </div>
+    <div className="flex_item flex_item--align-self-flex-end">
+      <div className="box">3</div>
+    </div>
+  </div>
+</Unstyled>
+
+<Source
+  code={`
+    <div class="flex" style="height: 500px;">
+      <div class="flex_item">
+        <div class="box">1</div>
+      </div>
+      <div class="flex_item flex_item--align-self-center">
+        <div class="box">2</div>
+      </div>
+      <div class="flex_item flex_item--align-self-flex-end">
+        <div class="box">3</div>
+      </div>
+    </div>
+  `}
+  language="html"
+  dark
+  format
+/>

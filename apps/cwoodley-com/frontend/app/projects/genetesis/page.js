@@ -96,7 +96,7 @@ function GenetesisPage() {
         Challenges
       </h2>
 
-      <ul>
+      <ul className="mb-4">
         <li>
           The organization lacked an agile process. My previous experiences with working in{' '}
           an agile environment has allowed me to cultivate the agile process within the{' '}

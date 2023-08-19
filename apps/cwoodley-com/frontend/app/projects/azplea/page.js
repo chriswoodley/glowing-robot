@@ -94,7 +94,7 @@ function AzpleaPage() {
         What I Have Learned
       </h2>
 
-      <ul>
+      <ul className="mb-4">
         <li>
           There are always options/variations to provide clients based on their budget.
         </li>

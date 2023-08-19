@@ -90,7 +90,7 @@ function RootPage() {
         >
           <h1>Services</h1>
 
-          <ul className="pl-5">
+          <ul className="pl-5 mb-4">
             <li>Single Page Web Applications (Vue.js, React, Angular)</li>
             <li>Responsive Mobile First Front-End Development</li>
             <li>Wireframes / HTML Mockups</li>

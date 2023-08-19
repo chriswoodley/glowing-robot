@@ -147,7 +147,7 @@ function LosantPage() {
         User Interface. My role as Senior Front-end Software Engineer:
       </p>
 
-      <ul>
+      <ul className="mb-4">
         <li>
           Become knowledgeable of the IoT platform that combines the collection and{' '}
           visualization of data with edge computing and integration of connected devices{' '}
