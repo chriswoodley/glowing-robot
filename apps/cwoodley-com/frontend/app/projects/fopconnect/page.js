@@ -171,7 +171,7 @@ function FopConnectPage() {
         </li>
       </ul>
 
-      <p>
+      <p className="mb-4">
         In closing, this was one of my favorite projects to work on since I was able to level{' '}
         up my skills by diving deep into real world problems surrounding mobile and desktop{' '}
         experience. In the end, I ended up re-developing the website using my own pattern{' '}

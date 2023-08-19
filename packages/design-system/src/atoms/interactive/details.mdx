@@ -5,19 +5,20 @@ import { Meta, Unstyled, Source } from '@storybook/blocks';
 # Details
 
 <Unstyled>
-   <details>
+  <details>
+    <summary>Details</summary>
+    Something small enough to escape casual notice.
+  </details>
+</Unstyled>
+
+<Source
+  code={`
+    <details>
       <summary>Details</summary>
       Something small enough to escape casual notice.
     </details>
-  <Source
-    code={`
-      <details>
-        <summary>Details</summary>
-        Something small enough to escape casual notice.
-      </details>
-    `}
-    language="html"
-    dark
-    format
-  />
-</Unstyled>
+  `}
+  language="html"
+  dark
+  format
+/>

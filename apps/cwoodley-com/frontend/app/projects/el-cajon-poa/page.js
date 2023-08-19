@@ -94,7 +94,7 @@ function ElCajonPoaPage() {
         What I Have Learned
       </h2>
 
-      <p>
+      <p className="mb-4">
         I have discovered the respond.js and selectivizr.js polyfill. These polyfills made{' '}
         media queries and CSS3 selector support possible in less capable browsers such as IE8.
       </p>

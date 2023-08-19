@@ -124,7 +124,7 @@ function MyBpStationPage() {
         What I Have Learned
       </h3>
 
-      <ul>
+      <ul className="mb-4">
         <li>
           I understood the importance of a Functional Design Document and written use cases.{' '}
           They were detrimental in the success of this project and would never recommend{' '}

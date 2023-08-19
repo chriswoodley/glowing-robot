@@ -30,8 +30,12 @@
   margin-left: math.div(layout.$layout-column-gap, -2);
   margin-right: math.div(layout.$layout-column-gap, -2);
   
-  &:not(:last-child) {
+  &:first-child {
     margin-top: math.div(layout.$layout-column-gap, -2);
+  }
+
+  &:last-child {
+    margin-bottom: math.div(layout.$layout-column-gap, -2);
   }
 
   @each $size, $width in root.$breakpoints {
@@ -85,18 +89,18 @@
 
 .layout_column {
   padding: math.div(layout.$layout-column-gap, 2);
-
-  // equal widths by default
-  @include root.respond-to("sm") {
-    flex: 1 1 0;
-  }
+  flex: 1 1 0;
 
   @each $size, $width in root.$breakpoints {
     // conforms to content width
-    &--#{$size}-auto {
-      flex: none;
+    @include root.respond-to($size) {
+      &--#{$size}-auto {
+        flex: none;
+      }
     }
+  }
 
+  @each $size, $width in root.$breakpoints {
     @for $index from 1 through layout.$layout-columns {
       @include root.respond-to($size) {
         // specific column widths
@@ -173,9 +177,9 @@
   }
 
   $alignments: (
-    start,
-    end,
-    center
+    flex-start,
+    flex-end,
+    center,
   );
 
   @each $alignment in $alignments {
@@ -195,6 +199,18 @@
 
         &--#{$size}-align-items-#{$alignment} {
           align-items: $alignment;
+        }
+      }
+    }
+  }
+
+  &--align-items-stretch {
+    align-items: stretch;
+
+    @each $size, $width in root.$breakpoints {
+      @include root.respond-to($size) {
+        &--#{$size}-align-items-stretch {
+          align-items: stretch;
         }
       }
     }
@@ -338,6 +354,27 @@
         @include root.respond-to($size) {
           &--#{$size}-order-#{$index} {
             order: $index;
+          }
+        }
+      }
+    }
+
+    $alignments: (
+      flex-start,
+      flex-end,
+      center,
+      stretch
+    );
+
+    @each $alignment in $alignments {
+      &--align-self-#{$alignment} {
+        align-self: $alignment;
+
+        @each $size, $width in root.$breakpoints {
+          @include root.respond-to($size) {
+            &--#{$size}-align-self-#{$alignment} {
+              align-self: $alignment;
+            }
           }
         }
       }

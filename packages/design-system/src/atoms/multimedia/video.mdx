@@ -6,9 +6,9 @@ import { Meta, Unstyled, Source } from '@storybook/blocks';
 
 <Unstyled>
   <video
-      controls
-      width="250"
-    >
+    controls
+    width="250"
+  >
     <source
       src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm"
       type="video/webm"
@@ -24,30 +24,31 @@ import { Meta, Unstyled, Source } from '@storybook/blocks';
       video.
     </p>
   </video>
-  <Source
-    code={`
-      <video
-        controls
-        width="250"
-      >
-        <source
-          src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm"
-          type="video/webm"
-        />
-        <source
-          src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4"
-          type="video/mp4"
-        />
-        <p>
-          Download the 
-          <a href="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm">WEBM</a>
-          or <a href="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4">MP4</a>
-          video.
-        </p>
-      </video>
-    `}
-    language="html"
-    dark
-    format
-  />
 </Unstyled>
+
+<Source
+  code={`
+    <video
+      controls
+      width="250"
+    >
+      <source
+        src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm"
+        type="video/webm"
+      />
+      <source
+        src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4"
+        type="video/mp4"
+      />
+      <p>
+        Download the 
+        <a href="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm">WEBM</a>
+        or <a href="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4">MP4</a>
+        video.
+      </p>
+    </video>
+  `}
+  language="html"
+  dark
+  format
+/>
