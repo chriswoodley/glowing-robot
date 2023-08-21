@@ -48,13 +48,13 @@ function Footer() {
             title="Resumé"
             className="ml-6"
           >
-            <a href="/resume/chris-wooodley.pdf" download>
+            <a href="/resume/chris-woodley.pdf" download>
               <Icon
                 glyph="pdf"
                 title="Download my Resumé as a PDF Document"
               />
             </a>
-            <a href="/resume/chris-wooodley.docx" download>
+            <a href="/resume/chris-woodley.docx" download>
               <Icon
                 glyph="word"
                 title="Download my Resumé as a Word Document"
