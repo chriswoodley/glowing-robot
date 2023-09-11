@@ -1,0 +1,15 @@
+{
+  "name": "@cw/backend",
+  "version": "0.1.0",
+  "private": true,
+  "dependencies": {
+    "@keystone-6/auth": "^7.0.2",
+    "@keystone-6/cloudinary": "^7.0.1",
+    "@keystone-6/core": "^5.5.1",
+    "@keystone-6/fields-document": "^8.0.1",
+    "typescript": "^5.2.2"
+  },
+  "scripts": {
+    "dev": "keystone dev"
+  }
+}
