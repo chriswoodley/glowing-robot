@@ -10,6 +10,8 @@
     "typescript": "^5.2.2"
   },
   "scripts": {
-    "dev": "keystone dev"
+    "dev": "keystone dev",
+    "build": "keystone build",
+    "start": "keystone start"
   }
 }
