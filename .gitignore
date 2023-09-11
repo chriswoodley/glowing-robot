@@ -1,4 +1,7 @@
 node_modules
+.env
+.keystone
+.next
 apps/**/dist
 storybook-static
 yarn-error.log
