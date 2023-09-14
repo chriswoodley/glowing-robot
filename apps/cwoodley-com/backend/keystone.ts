@@ -3,7 +3,7 @@ import { config } from '@keystone-6/core';
 import { withAuth, session } from './auth';
 import { User } from './schemas/user'
 import { Post } from './schemas/post'
-import { DatabaseConfig, ServerConfig } from '@keystone-6/core/types';
+import { DatabaseConfig, ServerConfig, GraphQLConfig } from '@keystone-6/core/types';
 
 dotenv.config();
 
@@ -18,11 +18,11 @@ const ui = {
 
 const db: DatabaseConfig<any> = {
   provider: 'postgresql',
-  url: process.env.DB_URL || '',
+  url: process.env.DB_LOCAL_URL || process.env.DB_URL || '',
   onConnect: async context => { /* ... */ },
 };
 
-const frontEndUrl = process.env.FRONTEND_URL || 'http://localhost:3000';
+const frontEndUrl = process.env.LOCAL_FRONTEND_URL || process.env.FRONTEND_URL || '';
 
 const server: ServerConfig<any> = {
   cors: { 
@@ -35,6 +35,13 @@ const server: ServerConfig<any> = {
   maxFileSize: 200 * 1024 * 1024,
 };
 
+const graphql: GraphQLConfig = {
+  playground: true,
+  apolloConfig: {
+    introspection: true,
+  }
+}
+
 export default config(
   withAuth({
     server,
@@ -42,5 +49,6 @@ export default config(
     lists,
     session,
     ui,
+    graphql
   })
 );

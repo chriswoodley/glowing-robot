@@ -10,8 +10,12 @@
     "typescript": "^5.2.2"
   },
   "scripts": {
-    "dev": "keystone dev",
     "build": "keystone build",
+    "deploy": "keystone build && keystone prisma migrate deploy",
+    "dev": "keystone dev",
+    "generate": "keystone prisma migrate dev",
+    "postinstall": "keystone postinstall",
+    "start:migrations": "keystone start --with-migrations",
     "start": "keystone start"
   }
 }

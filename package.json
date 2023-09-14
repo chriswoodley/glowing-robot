@@ -14,6 +14,12 @@
     "cwoodley:fe:dev": "yarn workspace @cw/frontend run dev",
     "cwoodley:fe:lint": "yarn workspace @cw/frontend run lint",
     "cwoodley:be:dev": "yarn workspace @cw/backend run dev",
+    "cwoodley:be:build": "yarn workspace @cw/backend run build",
+    "cwoodley:be:deploy": "yarn workspace @cw/backend run deploy",
+    "cwoodley:be:start": "yarn workspace @cw/backend run start",
+    "cwoodley:be:start:migrations": "yarn workspace @cw/backend run start:migrations",
+    "cwoodley:be:generate": "yarn workspace @cw/backend run generate",
+    "cwoodley:be:postinstall": "yarn workspace @cw/backend run postinstall",
     "design-system:start": "yarn workspace @cw/design-system run start",
     "design-system:storybook": "yarn workspace @cw/design-system run storybook",
     "dev:custom": "npm-run-all --parallel design-system:start design-system:storybook custom:start",
@@ -22,5 +28,8 @@
   "devDependencies": {
     "npm-run-all": "^4.1.5"
   },
-  "packageManager": "yarn@3.5.0"
+  "packageManager": "yarn@3.5.0",
+  "resolutions": {
+    "next": "^13.4.12"
+  }
 }
