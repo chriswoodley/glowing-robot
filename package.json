@@ -6,6 +6,9 @@
     "packages/*",
     "apps/**/*"
   ],
+  "engines": {
+    "node": ">=19 <20"
+  },
   "scripts": {
     "custom:start": "yarn workspace @cw/app run start",
     "custom:build": "yarn workspace @cw/app run build",
