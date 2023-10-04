@@ -38,6 +38,14 @@ function MainNav({
         </NavItem>
         <NavItem>
           <NavLink
+            href="/blog"
+            className="py-1 px-3 text-large"
+          >
+            Blog
+          </NavLink>
+        </NavItem>
+        <NavItem>
+          <NavLink
             href="/about"
             className="py-1 pl-3 text-large"
           >
