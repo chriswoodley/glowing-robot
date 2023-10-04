@@ -25,6 +25,17 @@ const MainNavOverlay = styled.div`
   overflow: hidden;
 `;
 
+const AppShellContainer = styled.div`
+  height: 100%;
+  ${({ $isOverlayActive }) => {
+    if ($isOverlayActive) {
+      return `
+        overflow: hidden;
+      `;
+    }
+  }}
+`;
+
 function AppShell({ children }) {
   const path = usePathname();
   const prevPath = usePrevious(path);
@@ -72,9 +83,12 @@ function AppShell({ children }) {
   const handleMobileNav = useCallback((event, isActive) => {
     setIsMobileNavActive(isActive);
   }, []);
-
+  console.log(isMobileNavActive);
   return (
-    <>
+    <AppShellContainer
+      className="flex flex--column"
+      $isOverlayActive={isMobileNavActive}
+    >
       <MainNavOverlay
         $isActive={isMobileNavActive}
         $offset={overlayTopOffset}
@@ -95,6 +109,15 @@ function AppShell({ children }) {
                 className="text-large block"
               >
                 Projects
+              </NavLink>
+            </NavItem>
+
+            <NavItem>
+              <NavLink
+                href="/blog"
+                className="text-large block"
+              >
+                Blog
               </NavLink>
             </NavItem>
 
@@ -125,7 +148,7 @@ function AppShell({ children }) {
       </main>
 
       <Footer />
-    </>
+    </AppShellContainer>
   );
 }
 

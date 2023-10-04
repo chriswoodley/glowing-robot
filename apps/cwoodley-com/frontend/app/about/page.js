@@ -42,7 +42,7 @@ function AboutPage() {
           <p>I am loyal, personable, and a dedicated individual with the ability to quickly establish strong working relationships. You may find more information about my years of Web Development experience by viewing my resumé.</p>
 
           <h2>Hire Me</h2>
-          <p className="mb-10">Have questions? Please contact me.</p>
+          <p className="mb-4">Have questions? Please contact me.</p>
         </div>
 
         <div
