@@ -1,5 +1,3 @@
-`use client`;
-
 import fs from 'fs';
 import * as matter from 'gray-matter';
 import BlogPost from 'components/blog-post';
