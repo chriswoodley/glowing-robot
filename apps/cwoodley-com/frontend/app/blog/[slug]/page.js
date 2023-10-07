@@ -17,6 +17,7 @@ const getPost = (slug) => {
       content
     };
   } catch (error) {
+    console.log(error);
     // TODO: log error
     notFound();
   }
