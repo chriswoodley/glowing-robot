@@ -24,10 +24,12 @@ const getPost = (slug) => {
 };
 
 // this tells next.js to build these routes as static pages
-export const generateStaticParams = async() => {
+export async function generateStaticParams() {
   const postsMetadata = getPostsMetadata();
-  return postsMetadata.map((({ slug }) => slug));
-};
+  return postsMetadata.map((({ slug }) => ({
+    slug
+  })));
+}
 
 const BlogPostPage = ({ params: { slug } }) => {
   const post = getPost(slug);
