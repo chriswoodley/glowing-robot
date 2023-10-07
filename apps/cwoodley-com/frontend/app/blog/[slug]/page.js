@@ -19,7 +19,7 @@ const getPost = (slug) => {
   } catch (error) {
     console.log(error);
     // TODO: log error
-    notFound();
+    // notFound();
   }
 };
 

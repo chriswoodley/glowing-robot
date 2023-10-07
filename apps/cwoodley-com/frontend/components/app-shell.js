@@ -83,7 +83,6 @@ function AppShell({ children }) {
   const handleMobileNav = useCallback((event, isActive) => {
     setIsMobileNavActive(isActive);
   }, []);
-  console.log(isMobileNavActive);
   return (
     <AppShellContainer
       className="flex flex--column"
