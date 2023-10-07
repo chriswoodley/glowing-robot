@@ -3,13 +3,11 @@
 /* stylelint-disable selector-pseudo-class-no-unknown */
 /* stylelint-disable property-no-unknown */
 /* stylelint-disable property-case */
-@each $index, $value in v.$border-sizes {
-  :export {
-    borderSize#{$index}: $value;
-  }
-}
 
-:export {
-  borderRadius: v.$border-radius;
-}
+// @each $index, $value in v.$elevations {
+//   :export {
+//     elevation#{$index}: $value;
+//   }
+// }
+
 /* stylelint-enable */

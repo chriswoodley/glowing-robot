@@ -149,13 +149,33 @@ const headings = {
   }
 };
 
+const card = {
+  light: {
+    standard: {
+      default: {
+        backgroundColor: colors.white,
+        color: colors.black
+      }
+    }
+  },
+  dark: {
+    standard: {
+      default: {
+        backgroundColor: colors.coolGrey[800],
+        color: colors.white
+      }
+    }
+  }
+};
+
 const appTheme = {
   body,
   mainNavLink,
   mainNavOverlay,
   headings,
   hamburgerButton,
-  footer
+  footer,
+  card
 };
 
 export { colors };
