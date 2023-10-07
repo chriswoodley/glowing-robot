@@ -1,0 +1,37 @@
+@use "sass:map";
+@use "sass:math";
+@use "../../root/module" as root;
+
+$elevations: (
+  0: none,
+  1: (
+    0 1px 1px 0 rgb(0 0 0 / 20%), // umbra
+   -5px 5px 5px 0 rgb(0 0 0 / 10%), // penumbra left
+    5px 5px 5px 0 rgb(0 0 0 / 10%), // penumbra right
+    0 5px 5px 0 rgb(0 0 0 / 10%) // antumbra
+  ),
+  2: (
+    0 4px 4px 0 rgb(0 0 0 / 18%), // umbra
+   -8px 8px 8px 0 rgb(0 0 0 / 8%), // penumbra left
+    8px 8px 8px 0 rgb(0 0 0 / 8%), // penumbra right
+    0 8px 8px 0 rgb(0 0 0 / 8%) // antumbra
+  ),
+  3: (
+    0 8px 8px 0 rgb(0 0 0 / 16%), // umbra
+   -12px 12px 12px 0 rgb(0 0 0 / 6%), // penumbra left
+    12px 12px 12px 0 rgb(0 0 0 / 6%), // penumbra right
+    0 12px 12px 0 rgb(0 0 0 / 6%) // antumbra
+  ),
+  4: (
+    0 12px 12px 0 rgb(0 0 0 / 14%), // umbra
+   -16px 16px 16px 0 rgb(0 0 0 / 5%), // penumbra left
+    16px 16px 16px 0 rgb(0 0 0 / 5%), // penumbra right
+    0 16px 16px 0 rgb(0 0 0 / 5%) // antumbra
+  ),
+  5: (
+    0 16px 20px 0 rgb(0 0 0 / 13%), // umbra
+   -20px 20px 20px 0 rgb(0 0 0 / 4%), // penumbra left
+    20px 20px 20px 0 rgb(0 0 0 / 4%), // penumbra right
+    0 20px 20px 0 rgb(0 0 0 / 4%) // antumbra
+  )
+);

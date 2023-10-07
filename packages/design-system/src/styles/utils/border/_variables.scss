@@ -10,10 +10,11 @@ $border-sizes: ();
   $border-sizes: map.merge($border-sizes, ($key: $size));
 }
 
-$border-radius: ();
-
-@for $index from 3 through 8 {
-  $size: $index * 1px;
-  $key: $index * 100;
-  $border-radius: map.merge($border-radius, ($key: $size));
-}
+$border-radius: 3px;
+$border-radius-sides: (
+  border-radius,
+  border-top-left-radius,
+  border-top-right-radius,
+  border-bottom-right-radius,
+  border-bottom-left-radius,
+);

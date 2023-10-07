@@ -7,7 +7,7 @@ $button-border-size: lang.map-deep-get(border.$border-sizes, 100);
 $button-border-color: color.$black;
 $button-border-style: solid;
 $button-background-color: color.$white;
-$button-border-radius: lang.map-deep-get(border.$border-radius, 200);
+$button-border-radius: border.$border-radius;
 $button-border: $button-border-size $button-border-style $button-border-color;
 $button-text-color: color.$black;
 $button-hover-background-color: lang.map-deep-get(color.$grayscale, 100);

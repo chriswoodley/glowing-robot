@@ -1,30 +1,10 @@
 'use client';
 
 import React from 'react';
-import styled from 'styled-components';
-import { ContentOverlay, Overlay, Image, AspectRatioContainer, styleVariables } from '@cw/design-system';
+import { ContentOverlay, Overlay, Image, AspectRatioContainer } from '@cw/design-system';
 import Link from 'next/link';
 import classNames from 'classnames';
-
-const {
-  root: {
-    breakpoints
-  }
-} = styleVariables;
-
-const Grid = styled.div`
-  display: grid;
-  gap: 3rem;
-  margin-bottom: 3rem;
-
-  @media (min-width: ${breakpoints.sm}px) {
-    grid-template-columns: repeat(2, 1fr);
-  }
-
-  @media (min-width: ${breakpoints.md}px) {
-    grid-template-columns: repeat(3, 1fr);
-  }
-`;
+import Grid from 'components/grid';
 
 function ProjectsPage() {
   return (
