@@ -2,9 +2,12 @@ import 'styles/index.scss';
 import './styles.css';
 import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
 import { Title, Subtitle, Description, Primary, Controls, Stories } from '@storybook/blocks';
+import { applyTheme } from '../src/theme';
+import { ThemeProvider } from 'styled-components';
 
-export const parameters = {
-  actions: { argTypesRegex: "^on[A-Z].*" },
+const theme = applyTheme();
+
+const parameters = {
   controls: {
     matchers: {
       color: /(background|color)$/i,
@@ -36,4 +39,17 @@ export const parameters = {
       </>
     ),
   }
+}
+
+const decorators = [
+  (Story) => (
+    <ThemeProvider theme={theme}>
+      <Story />
+    </ThemeProvider>
+  )
+];
+
+export default {
+  parameters,
+  decorators
 }

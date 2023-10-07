@@ -1,27 +1,29 @@
 @use "sass:math";
 @use "module" as m;
 @use "../../root/module" as root;
+@use "../lang/module" as lang;
 
 // space all around
 @for $index from 0 through m.$num-of-space-units {
-  $size: math.div($index * root.$line-height, 2) * 1rem;
+  $vertical-space: lang.map-deep-get(m.$vertical-space-sizes, $index);
+  $horizontal-space: lang.map-deep-get(m.$horizontal-space-sizes, $index * 2);
 
   .m-#{$index} {
-    margin: $size;
+    margin: $vertical-space $horizontal-space;
   }
 
   .p-#{$index} {
-    padding: $size;
+    padding: $vertical-space $horizontal-space;
   }
 
   @each $bp, $width in root.$breakpoints {
     @include root.respond-to($bp) {
       .m-#{$index}--#{$bp} {
-        margin: $size;
+        margin: $vertical-space;
       }
 
       .p-#{$index}--#{$bp} {
-        padding: $size;
+        padding: $vertical-space;
       }
     }
   }

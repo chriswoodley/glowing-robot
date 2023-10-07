@@ -15,13 +15,15 @@ function Theme({ children }) {
     setShouldRender(true);
   }, []);
 
-  return (
-    <ThemeProvider theme={theme}>
-      <AppStyles />
-      <Icons />
-      {shouldRender ? children : null}
-    </ThemeProvider>
-  );
+  if (shouldRender) {
+    return (
+      <ThemeProvider theme={theme}>
+        <AppStyles />
+        <Icons />
+        {children}
+      </ThemeProvider>
+    );
+  }
 }
 
 export default Theme;

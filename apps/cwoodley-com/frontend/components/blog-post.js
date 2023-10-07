@@ -40,11 +40,11 @@ function BlogPost({ post }) {
         )}
       >
         <AspectRatioContainer
-          size="xlg"
+          size="xl"
           ratio="1/1"
+          className="mt-2"
         >
           <Image
-            className="mt-2"
             src={post.metaData.image.src}
             alt={post.metaData.image.alt}
             width={post.metaData.image.width}

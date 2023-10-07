@@ -14,7 +14,7 @@ export default {
 
 export const Default = {
   args: {
-    src: 'https://cwoodley.com/img/mybpstation-com.jpg',
+    src: 'https://www.cwoodley.com/projects/mybpstation-com.jpg',
     width: '805',
     height: '592',
     alt: 'My BP Station'
@@ -23,7 +23,7 @@ export const Default = {
 
 export const ColorPlaceholder = {
   args: {
-    src: 'https://cwoodley.com/img/mybpstation-com.jpg',
+    src: 'https://www.cwoodley.com/projects/mybpstation-com.jpg',
     width: '805',
     height: '592',
     alt: 'My BP Station',
@@ -35,7 +35,7 @@ export const ColorPlaceholder = {
 
 export const URLplaceholder = {
   args: {
-    src: 'https://cwoodley.com/img/mybpstation-com.jpg',
+    src: 'https://www.cwoodley.com/projects/mybpstation-com.jpg',
     width: '805',
     height: '592',
     alt: 'My BP Station',
@@ -49,7 +49,7 @@ const dataURL = 'data:image/jpeg;base64,/9j/4AAQSkZJRgABAQEAYABgAAD//gA7Q1JFQVRP
 
 export const DataURLPlaceholder = {
   args: {
-    src: 'https://cwoodley.com/img/mybpstation-com.jpg',
+    src: 'https://www.cwoodley.com/projects/mybpstation-com.jpg',
     width: '805',
     height: '592',
     alt: 'My BP Station',

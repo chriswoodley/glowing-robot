@@ -1,0 +1,18 @@
+@use "sass:math";
+@use "module" as m;
+@use "../../root/module" as root;
+
+@each $key, $value in m.$elevations {
+  .elevation-#{$key} {
+    box-shadow: $value;
+  }
+  
+  .elevation-hover-#{$key} {
+    transition: box-shadow 0.2s ease-in-out;
+    cursor: pointer;
+
+    &:hover {
+      box-shadow: $value;
+    }
+  }
+}
