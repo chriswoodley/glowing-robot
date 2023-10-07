@@ -6,7 +6,7 @@ image:
   width: 800
   height: 533
 status: published
-publishedAt: October 7, 2023 11:02am EST
+publishedAt: "2023-10-07T16:22:11.287Z"
 author: Chris Woodley
 readDuration: 5 minutes
 ---

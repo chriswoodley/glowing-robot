@@ -3,12 +3,14 @@ import * as matter from 'gray-matter';
 import BlogPost from 'components/blog-post';
 import classNames from 'classnames';
 import { notFound } from 'next/navigation';
+import getPostsMetadata from 'utils/get-posts-metadata';
 
 const getPost = (slug) => {
   try {
-    const folder = 'content/posts';
-    const file = fs.readFileSync(`${folder}/${slug}.md`, 'utf-8');
-    const frontMatter = matter(file);
+    const folder = 'posts/';
+    const file = `${folder}${slug}.md`;
+    const fileContent = fs.readFileSync(file, 'utf-8');
+    const frontMatter = matter(fileContent);
     const metaData = frontMatter.data;
     const content = frontMatter.content;
 
@@ -17,10 +19,14 @@ const getPost = (slug) => {
       content
     };
   } catch (error) {
-    console.log(error);
-    // TODO: log error
-    // notFound();
+    notFound();
   }
+};
+
+// this tells next.js to build these routes as static pages
+export const generateStaticParams = async() => {
+  const postsMetadata = getPostsMetadata();
+  return postsMetadata.map((({ slug }) => slug));
 };
 
 const BlogPostPage = ({ params: { slug } }) => {

@@ -4,6 +4,10 @@ import { Card } from '@cw/design-system';
 import { useRouter } from 'next/navigation';
 import { useCallback } from 'react';
 import { useTheme } from 'styled-components';
+import dayjs from 'dayjs';
+
+const localizedFormat = require('dayjs/plugin/localizedFormat');
+dayjs.extend(localizedFormat);
 
 function BlogPostExcerpt({ data }) {
   const theme = useTheme();
@@ -29,7 +33,7 @@ function BlogPostExcerpt({ data }) {
       />
 
         <Card.Section>
-          <p>{data.publishedAt}</p>
+          <p>{dayjs(data.publishedAt).format('LLLL')}</p>
           <h2 className="mb-0">{data.title}</h2>
           <p className="mt-0">{data.readDuration}</p>
         </Card.Section>

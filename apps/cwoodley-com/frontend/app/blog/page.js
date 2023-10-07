@@ -1,23 +1,6 @@
 import classNames from 'classnames';
 import BlogPosts from 'components/blog-posts';
-import fs from 'fs';
-import matter from 'gray-matter';
-
-const getPostsMetadata = () => {
-  const folder = 'content/posts';
-  const files = fs.readdirSync('content/posts');
-  const data = files.map((file) => {
-    const slug = file.replace('.md', '');
-    const content = fs.readFileSync(`${folder}/${file}`, 'utf-8');
-    const frontMatter = matter(content).data;
-    return {
-      ...frontMatter,
-      slug
-    };
-  });
-
-  return data;
-};
+import getPostsMetadata from 'utils/get-posts-metadata';
 
 function BlogPage() {
   const postMetaData = getPostsMetadata();
