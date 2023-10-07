@@ -13,9 +13,6 @@ export default {
     theme: contentOverlayTheme,
     triggerType: 'click',
     variant: 'standard'
-  },
-  parameters: {
-    interactions: { autoPlay: false },
   }
 };
 

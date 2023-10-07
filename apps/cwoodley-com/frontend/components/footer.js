@@ -7,6 +7,7 @@ import { Icon } from '@cw/design-system';
 
 const StyledFooter = styled.footer`
   background-color: ${({ theme }) => theme.footer.standard.default.backgroundColor};
+  height: 100%;
   
   h5 {
     color: ${({ theme }) => theme.footer.standard.default.color};

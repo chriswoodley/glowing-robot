@@ -9,9 +9,7 @@
   }
 }
 
-@each $index, $value in v.$border-radius {
-  :export {
-    borderRadius#{$index}: $value;
-  }
+:export {
+  borderRadius: v.$border-radius;
 }
 /* stylelint-enable */

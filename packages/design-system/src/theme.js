@@ -5,6 +5,7 @@ import navItem from 'atoms/nav-item/theme';
 import navLink from 'atoms/nav-link/theme';
 import overlay from 'atoms/overlay/theme';
 import contentOverlay from 'molecules/content-overlay/theme';
+import card from 'molecules/card/theme';
 
 const designSystemTheme = {
   hamburgerButton,
@@ -12,7 +13,8 @@ const designSystemTheme = {
   navItem,
   navLink,
   overlay,
-  contentOverlay
+  contentOverlay,
+  card
 };
 
 export function applyTheme(theme = {}) {

@@ -4,6 +4,16 @@
 /* stylelint-disable property-no-unknown */
 /* stylelint-disable property-case */
 
-// exports here...
+@each $index, $value in v.$horizontal-space-sizes {
+  :export {
+    horizontal#{$index}: $value;
+  }
+}
+
+@each $index, $value in v.$vertical-space-sizes {
+  :export {
+    vertical#{$index}: $value;
+  }
+}
 
 /* stylelint-enable */
