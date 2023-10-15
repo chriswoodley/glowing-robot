@@ -44,6 +44,10 @@ dl {
 // inline text
 
 small,
+pre,
+code,
+kbd,
+samp
 .text-small {
   @include text.typography(text.$step-small);
 }
