@@ -97,6 +97,8 @@ export class BlogPostsPageComponent {
 }
 ```
 
+### Angular CLI
+
 When creating a new application with the Angular CLI you can opt into using Standalone Components for the entire application. For an existing application where NgModules are used, you can use the Angular CLI to generate new Standalone Components. Both NgModules and Standalone Components can be used side by side. The Angular team is encouraging that we adopt the use of Standalone Components instead of NgModules.
 
-I think this is a great step forward for Angular. In my opinion, it makes the Angular framework easier to use and a lot more flexible.
+In closing, I think this is a great step forward for Angular. In my opinion, it makes the Angular framework easier to use and a lot more flexible.
