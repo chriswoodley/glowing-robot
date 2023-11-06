@@ -38,11 +38,21 @@ function AboutPage() {
           )}
         >
           <h2>Background</h2>
-          <p>I am a professional Software Engineer specializing in Front-end Web Development and Design. I offer a unique blend of technical expertise, creativity, and marketing experience that produce powerful user experience across a multitude of devices.</p>
-          <p>I am loyal, personable, and a dedicated individual with the ability to quickly establish strong working relationships. You may find more information about my years of Web Development experience by viewing my resumé.</p>
 
-          <h2>Hire Me</h2>
-          <p className="mb-4">Have questions? Please contact me.</p>
+          <p>With 18 years of web development experience, I have spent the last
+          decade specializing in front-end development, mastering JavaScript,
+          HTML, CSS, React, Vue.js, and more. My expertise is on creating
+          exceptional user interfaces and design systems for Software as a
+          Service applications across a multitude of devices.</p>
+
+          <p>I am passionate about creating scalable, reliable, and efficient
+          code that enhances the user experience and meets business
+          requirements.</p>
+
+          <p className="mb-4">I am loyal, personable, and a dedicated individual
+          with the ability to quickly establish strong working relationships.
+          You may find more information about experience by viewing
+          my resumé.</p>
         </div>
 
         <div
