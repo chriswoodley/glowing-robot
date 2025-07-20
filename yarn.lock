@@ -3308,8 +3308,8 @@ __metadata:
     postcss: ^8.5.6
     postcss-loader: ^7.3.4
     postcss-preset-env: ^7.8.3
-    react: ^18.2.0
-    react-dom: ^18.2.0
+    react: ^18.3.1
+    react-dom: ^18.3.1
     react-refresh: ^0.14.2
     sass: ^1.89.2
     sass-loader: ^13.3.3
@@ -3330,8 +3330,8 @@ __metadata:
     "@keystone-6/cloudinary": ^7.0.3
     "@keystone-6/core": ^5.8.0
     "@keystone-6/fields-document": ^8.0.2
-    react: ^18.2.0
-    react-dom: ^18.2.0
+    react: ^18.3.1
+    react-dom: ^18.3.1
     typescript: ^5.2.2
   languageName: unknown
   linkType: soft
@@ -3370,9 +3370,9 @@ __metadata:
     postcss-loader: ^7.3.4
     postcss-sort-media-queries: ^5.2.0
     prop-types: ^15.8.1
-    react: ^18.2.0
-    react-dom: ^18.2.0
-    react-is: ^18.2.0
+    react: ^18.3.1
+    react-dom: ^18.3.1
+    react-is: ^18.3.1
     sanitize.css: ^13.0.0
     sass: ^1.89.2
     sass-loader: ^13.3.3
@@ -3409,9 +3409,9 @@ __metadata:
     markdown-to-jsx: ^7.7.12
     next: ^13.4.12
     prop-types: ^15.8.1
-    react: ^18.2.0
-    react-dom: ^18.2.0
-    react-is: ^18.2.0
+    react: ^18.3.1
+    react-dom: ^18.3.1
+    react-is: ^18.3.1
     styled-components: ^6.1.19
     swiper: ^10.3.1
   languageName: unknown
@@ -22454,6 +22454,18 @@ __metadata:
   languageName: node
   linkType: hard
 
+"react-dom@npm:^18.3.1":
+  version: 18.3.1
+  resolution: "react-dom@npm:18.3.1"
+  dependencies:
+    loose-envify: ^1.1.0
+    scheduler: ^0.23.2
+  peerDependencies:
+    react: ^18.3.1
+  checksum: 298954ecd8f78288dcaece05e88b570014d8f6dce5db6f66e6ee91448debeb59dcd31561dddb354eee47e6c1bb234669459060deb238ed0213497146e555a0b9
+  languageName: node
+  linkType: hard
+
 "react-element-to-jsx-string@npm:^15.0.0":
   version: 15.0.0
   resolution: "react-element-to-jsx-string@npm:15.0.0"
@@ -22516,10 +22528,17 @@ __metadata:
   languageName: node
   linkType: hard
 
-"react-is@npm:^18.0.0, react-is@npm:^18.2.0":
+"react-is@npm:^18.0.0":
   version: 18.2.0
   resolution: "react-is@npm:18.2.0"
   checksum: e72d0ba81b5922759e4aff17e0252bd29988f9642ed817f56b25a3e217e13eea8a7f2322af99a06edb779da12d5d636e9fda473d620df9a3da0df2a74141d53e
+  languageName: node
+  linkType: hard
+
+"react-is@npm:^18.3.1":
+  version: 18.3.1
+  resolution: "react-is@npm:18.3.1"
+  checksum: e20fe84c86ff172fc8d898251b7cc2c43645d108bf96d0b8edf39b98f9a2cae97b40520ee7ed8ee0085ccc94736c4886294456033304151c3f94978cec03df21
   languageName: node
   linkType: hard
 
@@ -22663,6 +22682,15 @@ __metadata:
   dependencies:
     loose-envify: ^1.1.0
   checksum: 88e38092da8839b830cda6feef2e8505dec8ace60579e46aa5490fc3dc9bba0bd50336507dc166f43e3afc1c42939c09fe33b25fae889d6f402721dcd78fca1b
+  languageName: node
+  linkType: hard
+
+"react@npm:^18.3.1":
+  version: 18.3.1
+  resolution: "react@npm:18.3.1"
+  dependencies:
+    loose-envify: ^1.1.0
+  checksum: a27bcfa8ff7c15a1e50244ad0d0c1cb2ad4375eeffefd266a64889beea6f6b64c4966c9b37d14ee32d6c9fcd5aa6ba183b6988167ab4d127d13e7cb5b386a376
   languageName: node
   linkType: hard
 
@@ -23555,6 +23583,15 @@ __metadata:
   dependencies:
     loose-envify: ^1.1.0
   checksum: d79192eeaa12abef860c195ea45d37cbf2bbf5f66e3c4dcd16f54a7da53b17788a70d109ee3d3dde1a0fd50e6a8fc171f4300356c5aee4fc0171de526bf35f8a
+  languageName: node
+  linkType: hard
+
+"scheduler@npm:^0.23.2":
+  version: 0.23.2
+  resolution: "scheduler@npm:0.23.2"
+  dependencies:
+    loose-envify: ^1.1.0
+  checksum: 3e82d1f419e240ef6219d794ff29c7ee415fbdc19e038f680a10c067108e06284f1847450a210b29bbaf97b9d8a97ced5f624c31c681248ac84c80d56ad5a2c4
   languageName: node
   linkType: hard
 
