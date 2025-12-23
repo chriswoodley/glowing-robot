@@ -31,7 +31,13 @@ export async function generateStaticParams() {
   })));
 }
 
-const BlogPostPage = ({ params: { slug } }) => {
+const BlogPostPage = async props => {
+  const params = await props.params;
+
+  const {
+    slug
+  } = params;
+
   const post = getPost(slug);
 
   return (
