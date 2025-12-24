@@ -33,6 +33,6 @@
   },
   "packageManager": "yarn@3.5.0",
   "resolutions": {
-    "next": "next-14"
+    "next": "16.1.1"
   }
 }
