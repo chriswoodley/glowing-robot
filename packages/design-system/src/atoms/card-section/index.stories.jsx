@@ -1,13 +1,12 @@
-import React from 'react';
-import { within } from '@storybook/testing-library';
-import Card from 'molecules/card';
-import CardSection from 'atoms/card-section';
-import cardSectionTheme from 'atoms/card-section/theme';
+import React from "react";
+import Card from "molecules/card";
+import CardSection from "atoms/card-section";
+import cardSectionTheme from "atoms/card-section/theme";
 
 export default {
-  title: 'Atoms/Card/Card Section',
+  title: "Atoms/Card/Card Section",
   component: CardSection,
-  tags: [ 'autodocs' ],
+  tags: ["autodocs"],
   args: {
     theme: cardSectionTheme,
   },
@@ -17,7 +16,7 @@ export default {
         <Story />
       </Card>
     ),
-  ]
+  ],
 };
 
 export const Default = {
@@ -27,5 +26,5 @@ export const Default = {
         <p>Some content here...</p>
       </CardSection>
     );
-  }
+  },
 };

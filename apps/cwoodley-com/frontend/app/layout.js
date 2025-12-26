@@ -1,4 +1,4 @@
-import '@cw/design-system/dist/styles.css';
+import '@cw/design-system/dist/main.css';
 
 import React from 'react';
 import { Analytics } from '@vercel/analytics/react';

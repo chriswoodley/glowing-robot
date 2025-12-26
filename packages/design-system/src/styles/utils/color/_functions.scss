@@ -18,9 +18,9 @@
 /* https://www.w3.org/TR/WCAG22/#dfn-relative-luminance */
 @function luminance($color) {
   $max-light: 255;
-  $r: linear-channel-value(math.div(color.red($color), $max-light));
-  $g: linear-channel-value(math.div(color.green($color), $max-light));
-  $b: linear-channel-value(math.div(color.blue($color), $max-light));
+  $r: linear-channel-value(math.div(color.channel($color, "red", $space: rgb), $max-light));
+  $g: linear-channel-value(math.div(color.channel($color, "green", $space: rgb), $max-light));
+  $b: linear-channel-value(math.div(color.channel($color, "blue", $space: rgb), $max-light));
 
   @return 0.2126 * $r + 0.7152 * $g + 0.0722 * $b;
 }
@@ -55,9 +55,9 @@
 }
 
 @function tint($hue, $amount: 50%) {
-  @return mix($hue, v.$white, $amount);
+  @return color.mix($hue, v.$white, $amount);
 }
 
 @function shade($hue, $amount: 50%) {
-  @return mix($hue, v.$black, $amount);
+  @return color.mix($hue, v.$black, $amount);
 }
