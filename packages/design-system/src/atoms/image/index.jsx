@@ -1,6 +1,5 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
 const StyledImage = styled.img`
   ${({ $fill, $placeholder }) => {
@@ -20,7 +19,7 @@ const StyledImage = styled.img`
         background-image: url(${$placeholder});
       `;
     }
-  }} 
+  }}
 `;
 
 /**
@@ -29,11 +28,11 @@ const StyledImage = styled.img`
  * @returns a Base64 string
  */
 const convertToBase64 = (data) => {
-  if (typeof window !== 'undefined') {
+  if (typeof window !== "undefined") {
     return window.btoa(data);
   }
 
-  return Buffer.from(data, 'utf-8').toString('base64');
+  return Buffer.from(data, "utf-8").toString("base64");
 };
 
 const colorPlaceholderImageCache = new Map();
@@ -41,11 +40,14 @@ const generateColorPlaceholder = ({ width, height, color }) => {
   const key = `${width},${width},${color}`;
 
   if (!colorPlaceholderImageCache.has(key)) {
-    colorPlaceholderImageCache.set(key, `data:image/svg+xml;base64,${convertToBase64(
-      `<svg viewBox="0 0 ${width} ${height}" xmlns="http://www.w3.org/2000/svg">
+    colorPlaceholderImageCache.set(
+      key,
+      `data:image/svg+xml;base64,${convertToBase64(
+        `<svg viewBox="0 0 ${width} ${height}" xmlns="http://www.w3.org/2000/svg">
         <rect width="${width}" height="${height}" fill="${color}"></rect>
-      </svg>`)
-    }`);
+      </svg>`
+      )}`
+    );
   }
 
   return colorPlaceholderImageCache.get(key);
@@ -55,27 +57,27 @@ function Image({
   alt,
   className,
   crossOrigin,
-  decoding = 'async',
+  decoding = "async",
   fill = false,
   height,
-  loading = 'lazy',
+  loading = "lazy",
   placeholder = {},
   sizes,
   src,
   srcSet,
   width,
 }) {
-  let fallback = generateColorPlaceholder({ width, height, color: '#eeeeee' });
+  let fallback = generateColorPlaceholder({ width, height, color: "#eeeeee" });
 
   Object.keys(placeholder).forEach((key) => {
     const data = placeholder[key];
 
     if (data) {
-      if (key === 'color') {
+      if (key === "color") {
         fallback = generateColorPlaceholder({ width, height, color: data });
       }
 
-      if ([ 'dataURL', 'URL' ].includes(key)) {
+      if (["dataURL", "URL"].includes(key)) {
         fallback = data;
       }
     }
@@ -98,24 +100,5 @@ function Image({
     />
   );
 }
-
-Image.propTypes = {
-  className: PropTypes.string,
-  alt: PropTypes.string.isRequired,
-  crossOrigin: PropTypes.string,
-  height: PropTypes.string.isRequired,
-  sizes: PropTypes.string,
-  src: PropTypes.string.isRequired,
-  srcSet: PropTypes.string,
-  width: PropTypes.string.isRequired,
-  decoding: PropTypes.string,
-  loading: PropTypes.string,
-  placeholder: PropTypes.shape({
-    color: PropTypes.string,
-    dataURL: PropTypes.string,
-    URL: PropTypes.string,
-  }),
-  fill: PropTypes.bool
-};
 
 export default Image;

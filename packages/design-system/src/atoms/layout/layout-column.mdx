@@ -1,4 +1,4 @@
-import { Meta, Unstyled, Source } from '@storybook/blocks';
+import { Meta, Unstyled, Source } from "@storybook/addon-docs/blocks";
 
 <Meta title="Atoms/Layout/Layout Columns" />
 
@@ -9,7 +9,7 @@ By default `.layout_column` will be stacked for mobile within a `.layout_row`.
 
 ## Equal Width Columns
 
-When applying `.layout_row--{sm, md, lg, xl}`...`.layout_column` will implicitly allocate width based 
+When applying `.layout_row--{sm, md, lg, xl}`...`.layout_column` will implicitly allocate width based
 on remaining space of the `.layout_row` for small screens and up.
 
 <Unstyled>
@@ -21,9 +21,10 @@ on remaining space of the `.layout_row` for small screens and up.
     </div>
     <div className="layout_column">
       <div className="box">
-        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Numquam, repellat illo ex 
-        reprehenderit officiis commodi asperiores laborum deserunt fugit, rem facere quas sapiente 
-        delectus neque id consequuntur eligendi atque odio!
+        Lorem ipsum dolor sit amet consectetur, adipisicing elit. Numquam,
+        repellat illo ex reprehenderit officiis commodi asperiores laborum
+        deserunt fugit, rem facere quas sapiente delectus neque id consequuntur
+        eligendi atque odio!
       </div>
     </div>
     <div className="layout_column">
@@ -71,9 +72,7 @@ control when this behavior happens for `md`, `lg`, or `xl` screen sizes.
       </div>
     </div>
     <div className="layout_column layout_column--sm-auto">
-      <div className="box">
-        Lorem ipsum dolor!
-      </div>
+      <div className="box">Lorem ipsum dolor!</div>
     </div>
     <div className="layout_column layout_column--sm-auto">
       <div className="box">Column</div>
@@ -123,14 +122,14 @@ small screens and up.
 A simple 2 column layout may look something like:
 
 <Unstyled>
-<div className="layout_row layout_row--sm">
-  <div className="layout_column layout_column--sm-4">
-    <div className="box">aside content</div>
+  <div className="layout_row layout_row--sm">
+    <div className="layout_column layout_column--sm-4">
+      <div className="box">aside content</div>
+    </div>
+    <div className="layout_column layout_column--sm-8">
+      <div className="box">main content</div>
+    </div>
   </div>
-  <div className="layout_column layout_column--sm-8">
-    <div className="box">main content</div>
-  </div>
-</div>
 </Unstyled>
 
 <Source
@@ -232,194 +231,203 @@ The example below demonstrates the 12 column grid.
     </div>
   </div>
 
-  <div className="layout_row layout_row--sm">
-    <div className="layout_column layout_column--sm-3">
-      <div className="box">3</div>
-    </div>
-    <div className="layout_column layout_column--sm-1">
-      <div className="box">1</div>
-    </div>
-    <div className="layout_column layout_column--sm-1">
-      <div className="box">1</div>
-    </div>
-    <div className="layout_column layout_column--sm-1">
-      <div className="box">1</div>
-    </div>
-    <div className="layout_column layout_column--sm-1">
-      <div className="box">1</div>
-    </div>
-    <div className="layout_column layout_column--sm-1">
-      <div className="box">1</div>
-    </div>
-    <div className="layout_column layout_column--sm-1">
-      <div className="box">1</div>
-    </div>
-    <div className="layout_column layout_column--sm-1">
-      <div className="box">1</div>
-    </div>
-    <div className="layout_column layout_column--sm-1">
-      <div className="box">1</div>
-    </div>
-    <div className="layout_column layout_column--sm-1">
-      <div className="box">1</div>
-    </div>
+{" "}
+<div className="layout_row layout_row--sm">
+  <div className="layout_column layout_column--sm-3">
+    <div className="box">3</div>
   </div>
+  <div className="layout_column layout_column--sm-1">
+    <div className="box">1</div>
+  </div>
+  <div className="layout_column layout_column--sm-1">
+    <div className="box">1</div>
+  </div>
+  <div className="layout_column layout_column--sm-1">
+    <div className="box">1</div>
+  </div>
+  <div className="layout_column layout_column--sm-1">
+    <div className="box">1</div>
+  </div>
+  <div className="layout_column layout_column--sm-1">
+    <div className="box">1</div>
+  </div>
+  <div className="layout_column layout_column--sm-1">
+    <div className="box">1</div>
+  </div>
+  <div className="layout_column layout_column--sm-1">
+    <div className="box">1</div>
+  </div>
+  <div className="layout_column layout_column--sm-1">
+    <div className="box">1</div>
+  </div>
+  <div className="layout_column layout_column--sm-1">
+    <div className="box">1</div>
+  </div>
+</div>
 
-  <div className="layout_row layout_row--sm">
-    <div className="layout_column layout_column--sm-4">
-      <div className="box">4</div>
-    </div>
-    <div className="layout_column layout_column--sm-1">
-      <div className="box">1</div>
-    </div>
-    <div className="layout_column layout_column--sm-1">
-      <div className="box">1</div>
-    </div>
-    <div className="layout_column layout_column--sm-1">
-      <div className="box">1</div>
-    </div>
-    <div className="layout_column layout_column--sm-1">
-      <div className="box">1</div>
-    </div>
-    <div className="layout_column layout_column--sm-1">
-      <div className="box">1</div>
-    </div>
-    <div className="layout_column layout_column--sm-1">
-      <div className="box">1</div>
-    </div>
-    <div className="layout_column layout_column--sm-1">
-      <div className="box">1</div>
-    </div>
-    <div className="layout_column layout_column--sm-1">
-      <div className="box">1</div>
-    </div>
+{" "}
+<div className="layout_row layout_row--sm">
+  <div className="layout_column layout_column--sm-4">
+    <div className="box">4</div>
   </div>
+  <div className="layout_column layout_column--sm-1">
+    <div className="box">1</div>
+  </div>
+  <div className="layout_column layout_column--sm-1">
+    <div className="box">1</div>
+  </div>
+  <div className="layout_column layout_column--sm-1">
+    <div className="box">1</div>
+  </div>
+  <div className="layout_column layout_column--sm-1">
+    <div className="box">1</div>
+  </div>
+  <div className="layout_column layout_column--sm-1">
+    <div className="box">1</div>
+  </div>
+  <div className="layout_column layout_column--sm-1">
+    <div className="box">1</div>
+  </div>
+  <div className="layout_column layout_column--sm-1">
+    <div className="box">1</div>
+  </div>
+  <div className="layout_column layout_column--sm-1">
+    <div className="box">1</div>
+  </div>
+</div>
 
-  <div className="layout_row layout_row--sm">
-    <div className="layout_column layout_column--sm-5">
-      <div className="box">5</div>
-    </div>
-    <div className="layout_column layout_column--sm-1">
-      <div className="box">1</div>
-    </div>
-    <div className="layout_column layout_column--sm-1">
-      <div className="box">1</div>
-    </div>
-    <div className="layout_column layout_column--sm-1">
-      <div className="box">1</div>
-    </div>
-    <div className="layout_column layout_column--sm-1">
-      <div className="box">1</div>
-    </div>
-    <div className="layout_column layout_column--sm-1">
-      <div className="box">1</div>
-    </div>
-    <div className="layout_column layout_column--sm-1">
-      <div className="box">1</div>
-    </div>
-    <div className="layout_column layout_column--sm-1">
-      <div className="box">1</div>
-    </div>
+{" "}
+<div className="layout_row layout_row--sm">
+  <div className="layout_column layout_column--sm-5">
+    <div className="box">5</div>
   </div>
+  <div className="layout_column layout_column--sm-1">
+    <div className="box">1</div>
+  </div>
+  <div className="layout_column layout_column--sm-1">
+    <div className="box">1</div>
+  </div>
+  <div className="layout_column layout_column--sm-1">
+    <div className="box">1</div>
+  </div>
+  <div className="layout_column layout_column--sm-1">
+    <div className="box">1</div>
+  </div>
+  <div className="layout_column layout_column--sm-1">
+    <div className="box">1</div>
+  </div>
+  <div className="layout_column layout_column--sm-1">
+    <div className="box">1</div>
+  </div>
+  <div className="layout_column layout_column--sm-1">
+    <div className="box">1</div>
+  </div>
+</div>
 
-  <div className="layout_row layout_row--sm">
-    <div className="layout_column layout_column--sm-6">
-      <div className="box">6</div>
-    </div>
-    <div className="layout_column layout_column--sm-1">
-      <div className="box">1</div>
-    </div>
-    <div className="layout_column layout_column--sm-1">
-      <div className="box">1</div>
-    </div>
-    <div className="layout_column layout_column--sm-1">
-      <div className="box">1</div>
-    </div>
-    <div className="layout_column layout_column--sm-1">
-      <div className="box">1</div>
-    </div>
-    <div className="layout_column layout_column--sm-1">
-      <div className="box">1</div>
-    </div>
-    <div className="layout_column layout_column--sm-1">
-      <div className="box">1</div>
-    </div>
+{" "}
+<div className="layout_row layout_row--sm">
+  <div className="layout_column layout_column--sm-6">
+    <div className="box">6</div>
   </div>
+  <div className="layout_column layout_column--sm-1">
+    <div className="box">1</div>
+  </div>
+  <div className="layout_column layout_column--sm-1">
+    <div className="box">1</div>
+  </div>
+  <div className="layout_column layout_column--sm-1">
+    <div className="box">1</div>
+  </div>
+  <div className="layout_column layout_column--sm-1">
+    <div className="box">1</div>
+  </div>
+  <div className="layout_column layout_column--sm-1">
+    <div className="box">1</div>
+  </div>
+  <div className="layout_column layout_column--sm-1">
+    <div className="box">1</div>
+  </div>
+</div>
 
-  <div className="layout_row layout_row--sm">
-    <div className="layout_column layout_column--sm-7">
-      <div className="box">7</div>
-    </div>
-    <div className="layout_column layout_column--sm-1">
-      <div className="box">1</div>
-    </div>
-    <div className="layout_column layout_column--sm-1">
-      <div className="box">1</div>
-    </div>
-    <div className="layout_column layout_column--sm-1">
-      <div className="box">1</div>
-    </div>
-    <div className="layout_column layout_column--sm-1">
-      <div className="box">1</div>
-    </div>
-    <div className="layout_column layout_column--sm-1">
-      <div className="box">1</div>
-    </div>
+{" "}
+<div className="layout_row layout_row--sm">
+  <div className="layout_column layout_column--sm-7">
+    <div className="box">7</div>
   </div>
+  <div className="layout_column layout_column--sm-1">
+    <div className="box">1</div>
+  </div>
+  <div className="layout_column layout_column--sm-1">
+    <div className="box">1</div>
+  </div>
+  <div className="layout_column layout_column--sm-1">
+    <div className="box">1</div>
+  </div>
+  <div className="layout_column layout_column--sm-1">
+    <div className="box">1</div>
+  </div>
+  <div className="layout_column layout_column--sm-1">
+    <div className="box">1</div>
+  </div>
+</div>
 
-  <div className="layout_row layout_row--sm">
-    <div className="layout_column layout_column--sm-8">
-      <div className="box">8</div>
-    </div>
-    <div className="layout_column layout_column--sm-1">
-      <div className="box">1</div>
-    </div>
-    <div className="layout_column layout_column--sm-1">
-      <div className="box">1</div>
-    </div>
-    <div className="layout_column layout_column--sm-1">
-      <div className="box">1</div>
-    </div>
-    <div className="layout_column layout_column--sm-1">
-      <div className="box">1</div>
-    </div>
+{" "}
+<div className="layout_row layout_row--sm">
+  <div className="layout_column layout_column--sm-8">
+    <div className="box">8</div>
   </div>
+  <div className="layout_column layout_column--sm-1">
+    <div className="box">1</div>
+  </div>
+  <div className="layout_column layout_column--sm-1">
+    <div className="box">1</div>
+  </div>
+  <div className="layout_column layout_column--sm-1">
+    <div className="box">1</div>
+  </div>
+  <div className="layout_column layout_column--sm-1">
+    <div className="box">1</div>
+  </div>
+</div>
 
-  <div className="layout_row layout_row--sm">
-    <div className="layout_column layout_column--sm-9">
-      <div className="box">9</div>
-    </div>
-    <div className="layout_column layout_column--sm-1">
-      <div className="box">1</div>
-    </div>
-    <div className="layout_column layout_column--sm-1">
-      <div className="box">1</div>
-    </div>
-    <div className="layout_column layout_column--sm-1">
-      <div className="box">1</div>
-    </div>
+{" "}
+<div className="layout_row layout_row--sm">
+  <div className="layout_column layout_column--sm-9">
+    <div className="box">9</div>
   </div>
+  <div className="layout_column layout_column--sm-1">
+    <div className="box">1</div>
+  </div>
+  <div className="layout_column layout_column--sm-1">
+    <div className="box">1</div>
+  </div>
+  <div className="layout_column layout_column--sm-1">
+    <div className="box">1</div>
+  </div>
+</div>
 
-  <div className="layout_row layout_row--sm">
-    <div className="layout_column layout_column--sm-10">
-      <div className="box">10</div>
-    </div>
-    <div className="layout_column layout_column--sm-1">
-      <div className="box">1</div>
-    </div>
-    <div className="layout_column layout_column--sm-1">
-      <div className="box">1</div>
-    </div>
+{" "}
+<div className="layout_row layout_row--sm">
+  <div className="layout_column layout_column--sm-10">
+    <div className="box">10</div>
   </div>
+  <div className="layout_column layout_column--sm-1">
+    <div className="box">1</div>
+  </div>
+  <div className="layout_column layout_column--sm-1">
+    <div className="box">1</div>
+  </div>
+</div>
 
-  <div className="layout_row layout_row--sm">
-    <div className="layout_column layout_column--sm-11">
-      <div className="box">11</div>
-    </div>
-    <div className="layout_column layout_column--sm-1">
-      <div className="box">1</div>
-    </div>
+{" "}
+<div className="layout_row layout_row--sm">
+  <div className="layout_column layout_column--sm-11">
+    <div className="box">11</div>
   </div>
+  <div className="layout_column layout_column--sm-1">
+    <div className="box">1</div>
+  </div>
+</div>
 
   <div className="layout_row layout_row--sm">
     <div className="layout_column layout_column--sm-12">
@@ -699,16 +707,17 @@ The example below demonstrates the 12 column grid.
         <div class="box">12</div>
       </div>
     </div>
-  `}
-  language="html"
-  dark
-  format
+
+`}
+language="html"
+dark
+format
 />
 
 # Column Order
 
 We can order the column from 1 to 12. For instance we may need to display content in a different
-order based on screen size. For example: 
+order based on screen size. For example:
 
 `.layout_column .layout_column--sm-3 .layout_column--sm-order-4`. Keep in mind that **you will need
 to apply order modifiers to all columns** to get the desired order of columns.
@@ -716,19 +725,13 @@ to apply order modifiers to all columns** to get the desired order of columns.
 <Unstyled>
   <div className="layout_row">
     <div className="layout_column layout_column--sm-4 layout_column--sm-order-3">
-      <div className="box">
-        1
-      </div>
+      <div className="box">1</div>
     </div>
     <div className="layout_column layout_column--sm-4 layout_column--sm-order-2">
-      <div className="box">
-        2
-      </div>
+      <div className="box">2</div>
     </div>
     <div className="layout_column layout_column--sm-4 layout_column--sm-order-1">
-      <div className="box">
-        3
-      </div>
+      <div className="box">3</div>
     </div>
   </div>
 </Unstyled>
@@ -766,14 +769,10 @@ column by 4 grid column units by adding a left margin to it.
 <Unstyled>
   <div className="layout_row">
     <div className="layout_column layout_column--sm-4 layout_column--sm-offset-4">
-      <div className="box">
-        1
-      </div>
+      <div className="box">1</div>
     </div>
     <div className="layout_column layout_column--sm-4">
-      <div className="box">
-        2
-      </div>
+      <div className="box">2</div>
     </div>
   </div>
 </Unstyled>

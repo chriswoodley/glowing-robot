@@ -47,8 +47,7 @@ small,
 pre,
 code,
 kbd,
-samp
-.text-small {
+samp .text-small {
   @include text.typography(text.$step-small);
 }
 
@@ -65,6 +64,12 @@ a {
 
   &:visited {
     color: text.$link-visited-color;
+  }
+}
+
+q {
+  & > :last-child {
+    margin-bottom: 0;
   }
 }
 

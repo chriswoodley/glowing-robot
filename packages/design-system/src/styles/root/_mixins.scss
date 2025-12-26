@@ -2,7 +2,7 @@
 @use "sass:map";
 
 @mixin respond-to($breakpoint) {
-  @if map-has-key(variables.$breakpoints, $breakpoint) {
+  @if map.has-key(variables.$breakpoints, $breakpoint) {
     $min-width: map.get(variables.$breakpoints-in-px, $breakpoint) * 1px;
 
     @media (min-width: $min-width) {

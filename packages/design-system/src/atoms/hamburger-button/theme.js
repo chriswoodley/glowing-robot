@@ -1,9 +1,9 @@
-import colors from 'styles/utils/color/_export.scss';
+import colors from "styles/utils/color/_export.module.scss";
 
 export default {
   standard: {
     default: {
-      color: colors.black
-    }
-  }
+      color: colors.black,
+    },
+  },
 };

@@ -1,14 +1,12 @@
-import { Meta, Unstyled, Source } from '@storybook/blocks';
+import { Meta, Unstyled, Source } from "@storybook/addon-docs/blocks";
 
 <Meta title="Atoms/Multimedia/Video" />
 
 # Video
 
 <Unstyled>
-  <video
-    controls
-    width="250"
-  >
+  <video controls width="250">
+    <track kind="captions" />
     <source
       src="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm"
       type="video/webm"
@@ -18,9 +16,14 @@ import { Meta, Unstyled, Source } from '@storybook/blocks';
       type="video/mp4"
     />
     <p>
-      Download the 
-      <a href="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm">WEBM</a>
-      or <a href="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4">MP4</a>
+      Download the
+      <a href="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.webm">
+        WEBM
+      </a>
+      or{" "}
+      <a href="https://interactive-examples.mdn.mozilla.net/media/cc0-videos/flower.mp4">
+        MP4
+      </a>
       video.
     </p>
   </video>

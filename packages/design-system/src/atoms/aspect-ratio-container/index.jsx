@@ -1,9 +1,8 @@
-import React from 'react';
-import PropTypes from 'prop-types';
-import styled from 'styled-components';
-import useVerticalRhythmUnit from 'hooks/use-vertical-rhythm-unit';
-import useMaxHeight from 'hooks/use-max-height';
-import colors from 'styles/utils/color/_export.scss';
+import React from "react";
+import styled from "styled-components";
+import useVerticalRhythmUnit from "hooks/use-vertical-rhythm-unit";
+import useMaxHeight from "hooks/use-max-height";
+import colors from "styles/utils/color/_export.module.scss";
 
 const StyledAspectRatioContainer = styled.div`
   aspect-ratio: ${({ $ratio }) => $ratio};
@@ -18,7 +17,7 @@ function AspectRatioContainer({
   style,
   size,
   children,
-  ratio = '1/1'
+  ratio = "1/1",
 }) {
   const unit = useVerticalRhythmUnit();
   const maxHeight = useMaxHeight({ unit, size });
@@ -34,17 +33,5 @@ function AspectRatioContainer({
     </StyledAspectRatioContainer>
   );
 }
-
-AspectRatioContainer.propTypes = {
-  className: PropTypes.string,
-  style: PropTypes.object,
-  ratio: PropTypes.string,
-  size: PropTypes.oneOf([ 'xs', 'sm', 'md', 'lg', 'xl' ]),
-  variant: PropTypes.oneOf([ 'standard' ]),
-  children: PropTypes.oneOfType([
-    PropTypes.node,
-    PropTypes.arrayOf(PropTypes.node)
-  ])
-};
 
 export default AspectRatioContainer;
