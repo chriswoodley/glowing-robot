@@ -1,6 +1,6 @@
 import { jsx as s } from "react/jsx-runtime";
 import "react";
-import { clsx as a } from "../../node_modules/clsx/dist/clsx.js";
+import { clsx as a } from "clsx";
 import e from "./styles.module.css.js";
 function i({ className: o, children: r }) {
   const t = a(e.root, o, "p-2");

@@ -1,6 +1,6 @@
 import { jsxs as l, jsx as s } from "react/jsx-runtime";
 import "react";
-import { clsx as m } from "../../node_modules/clsx/dist/clsx.js";
+import { clsx as m } from "clsx";
 import x from "./styles.module.css.js";
 function w({ glyph: o, title: r, size: n = 48, color: c, backgroundColor: i, className: e }) {
   if (o && r) {

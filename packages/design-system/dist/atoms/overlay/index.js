@@ -1,6 +1,6 @@
 import { jsx as c } from "react/jsx-runtime";
 import "react";
-import { clsx as f } from "../../node_modules/clsx/dist/clsx.js";
+import f from "clsx";
 import e from "./styles.module.css.js";
 function x({
   children: s,

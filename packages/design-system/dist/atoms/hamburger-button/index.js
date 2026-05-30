@@ -3,7 +3,7 @@ import { useCallback as m } from "react";
 import u from "../../styles/utils/motion/_export.module.scss.js";
 import a from "./styles.module.css.js";
 import c from "../../styles/utils/color/_export.module.scss.js";
-import { clsx as b } from "../../node_modules/clsx/dist/clsx.js";
+import { clsx as b } from "clsx";
 const {
   transitionNormalDuration: f,
   transitionNormalEaseInOutBack: d,

@@ -1,6 +1,6 @@
 import { jsx as w } from "react/jsx-runtime";
 import "react";
-import { clsx as x } from "../../node_modules/clsx/dist/clsx.js";
+import { clsx as x } from "clsx";
 import i from "./styles.module.css.js";
 const b = (e) => typeof window < "u" ? window.btoa(e) : Buffer.from(e, "utf-8").toString("base64"), f = /* @__PURE__ */ new Map(), u = ({ width: e, height: r, color: t }) => {
   const o = `${e},${e},${t}`;
