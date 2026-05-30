@@ -1,18 +1,18 @@
-import React from "react";
-import CardCover from "atoms/card-cover";
-import cardCoverTheme from "atoms/card-cover/theme";
-import Card from "molecules/card";
+import React from 'react';
+import CardCover from 'atoms/card-cover';
+import Card from 'molecules/card';
 
 export default {
-  title: "Atoms/Card/Card Cover",
+  title: 'Atoms/Card/Card Cover',
   component: CardCover,
-  tags: ["autodocs"],
+  tags: ['autodocs'],
   args: {
-    theme: cardCoverTheme,
-    src: "https://www.cwoodley.com/projects/mybpstation-com.jpg",
-    width: "1263",
-    height: "929",
-    alt: "Example image",
+    src: 'https://www.cwoodley.com/projects/mybpstation-com.jpg',
+    width: '1263',
+    height: '929',
+    alt: 'Example image',
+    ratio: '2:1',
+    size: 'xl',
   },
   decorators: [
     (Story) => (

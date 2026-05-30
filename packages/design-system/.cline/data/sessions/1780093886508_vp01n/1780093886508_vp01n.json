@@ -1,0 +1,65 @@
+{
+  "version": 1,
+  "session_id": "1780093886508_vp01n",
+  "source": "cli",
+  "pid": 124573,
+  "started_at": "2026-05-29T22:31:26.508Z",
+  "exit_code": null,
+  "status": "idle",
+  "interactive": true,
+  "provider": "cline",
+  "model": "xiaomi/mimo-v2.5",
+  "cwd": "/home/chris/sites/glowing-robot/packages/design-system",
+  "workspace_root": "/home/chris/sites/glowing-robot",
+  "team_name": "team-e1k7J",
+  "enable_tools": true,
+  "enable_spawn": true,
+  "enable_teams": true,
+  "metadata": {
+    "checkpoint": {
+      "latest": {
+        "ref": "041e17284e221cef74d244c2f936cd286a07f072",
+        "createdAt": 1780097259488,
+        "runCount": 22,
+        "kind": "stash"
+      },
+      "history": [
+        {
+          "ref": "bd3ae2ba1ecd0c00d6ef2fae71bf6e147cba5b7f",
+          "createdAt": 1780093939484,
+          "runCount": 20,
+          "kind": "stash"
+        },
+        {
+          "ref": "41ec8ffd291ec92d4347fb9efcc63728ee92dd8d",
+          "createdAt": 1780097134908,
+          "runCount": 21,
+          "kind": "stash"
+        },
+        {
+          "ref": "041e17284e221cef74d244c2f936cd286a07f072",
+          "createdAt": 1780097259488,
+          "runCount": 22,
+          "kind": "stash"
+        }
+      ]
+    },
+    "totalCost": 0.017245563999999998,
+    "aggregatedAgentsCost": 0.017245563999999998,
+    "usage": {
+      "inputTokens": 1135221,
+      "outputTokens": 9696,
+      "cacheReadTokens": 1052480,
+      "cacheWriteTokens": 0,
+      "totalCost": 0.017245563999999998
+    },
+    "aggregateUsage": {
+      "inputTokens": 1135221,
+      "outputTokens": 9696,
+      "cacheReadTokens": 1052480,
+      "cacheWriteTokens": 0,
+      "totalCost": 0.017245563999999998
+    }
+  },
+  "messages_path": "/home/chris/sites/glowing-robot/packages/design-system/.cline/data/sessions/1780093886508_vp01n/1780093886508_vp01n.messages.json"
+}

@@ -1,0 +1,62 @@
+{
+  "version": 1,
+  "session_id": "1780074763763_uynwi",
+  "source": "cli",
+  "pid": 116795,
+  "started_at": "2026-05-29T17:12:43.763Z",
+  "ended_at": "2026-05-29T17:16:15.889Z",
+  "exit_code": 0,
+  "status": "completed",
+  "interactive": true,
+  "provider": "cline",
+  "model": "xiaomi/mimo-v2.5",
+  "cwd": "/home/chris/sites/glowing-robot/packages/design-system",
+  "workspace_root": "/home/chris/sites/glowing-robot",
+  "team_name": "team--s7MI",
+  "enable_tools": true,
+  "enable_spawn": true,
+  "enable_teams": true,
+  "prompt": "<user_input mode=\"act\">what mcp servers are running?</user_input>",
+  "metadata": {
+    "checkpoint": {
+      "latest": {
+        "ref": "a658d2c521737add066e63c60b88f6de4d42fddb",
+        "createdAt": 1780074811263,
+        "runCount": 2,
+        "kind": "stash"
+      },
+      "history": [
+        {
+          "ref": "2518238dcdf3997f1a7b09009975d3ed155f8d2e",
+          "createdAt": 1780074787291,
+          "runCount": 1,
+          "kind": "stash"
+        },
+        {
+          "ref": "a658d2c521737add066e63c60b88f6de4d42fddb",
+          "createdAt": 1780074811263,
+          "runCount": 2,
+          "kind": "stash"
+        }
+      ]
+    },
+    "title": "what mcp servers are running?",
+    "totalCost": 0.00074844,
+    "aggregatedAgentsCost": 0.00074844,
+    "usage": {
+      "inputTokens": 47020,
+      "outputTokens": 1115,
+      "cacheReadTokens": 44800,
+      "cacheWriteTokens": 0,
+      "totalCost": 0.00074844
+    },
+    "aggregateUsage": {
+      "inputTokens": 47020,
+      "outputTokens": 1115,
+      "cacheReadTokens": 44800,
+      "cacheWriteTokens": 0,
+      "totalCost": 0.00074844
+    }
+  },
+  "messages_path": "/home/chris/sites/glowing-robot/packages/design-system/.cline/data/sessions/1780074763763_uynwi/1780074763763_uynwi.messages.json"
+}

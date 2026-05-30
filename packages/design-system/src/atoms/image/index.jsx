@@ -1,26 +1,6 @@
-import React from "react";
-import styled from "styled-components";
-
-const StyledImage = styled.img`
-  ${({ $fill, $placeholder }) => {
-    if ($fill) {
-      return `
-        height: 100%;
-        width: 100%;
-        object-fit: cover;
-        object-position: top;
-        position: absolute;
-        background-size: cover;
-        background-image: url(${$placeholder});
-      `;
-    } else {
-      return `
-        background-size: cover;
-        background-image: url(${$placeholder});
-      `;
-    }
-  }}
-`;
+import React from 'react';
+import { clsx } from 'clsx';
+import styles from './styles.module.css';
 
 /**
  * Converts a string in both client and server side to Base64 string
@@ -28,11 +8,11 @@ const StyledImage = styled.img`
  * @returns a Base64 string
  */
 const convertToBase64 = (data) => {
-  if (typeof window !== "undefined") {
+  if (typeof window !== 'undefined') {
     return window.btoa(data);
   }
 
-  return Buffer.from(data, "utf-8").toString("base64");
+  return Buffer.from(data, 'utf-8').toString('base64');
 };
 
 const colorPlaceholderImageCache = new Map();
@@ -57,34 +37,34 @@ function Image({
   alt,
   className,
   crossOrigin,
-  decoding = "async",
+  decoding = 'async',
   fill = false,
   height,
-  loading = "lazy",
+  loading = 'lazy',
   placeholder = {},
   sizes,
   src,
   srcSet,
   width,
 }) {
-  let fallback = generateColorPlaceholder({ width, height, color: "#eeeeee" });
+  let fallback = generateColorPlaceholder({ width, height, color: '#eeeeee' });
 
   Object.keys(placeholder).forEach((key) => {
     const data = placeholder[key];
 
     if (data) {
-      if (key === "color") {
+      if (key === 'color') {
         fallback = generateColorPlaceholder({ width, height, color: data });
       }
 
-      if (["dataURL", "URL"].includes(key)) {
+      if (['dataURL', 'URL'].includes(key)) {
         fallback = data;
       }
     }
   });
 
   return (
-    <StyledImage
+    <img
       alt={alt}
       crossOrigin={crossOrigin}
       decoding={decoding}
@@ -94,9 +74,10 @@ function Image({
       src={src}
       srcSet={srcSet}
       width={width}
-      className={className}
-      $placeholder={fallback}
-      $fill={fill}
+      className={clsx(styles.root, { [styles.fill]: fill }, className)}
+      style={{
+        '--placeholder': `url(${fallback})`,
+      }}
     />
   );
 }

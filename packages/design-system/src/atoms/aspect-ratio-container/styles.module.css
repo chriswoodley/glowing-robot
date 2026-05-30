@@ -1,0 +1,7 @@
+.aspect-ratio-container {
+  aspect-ratio: var(--aspect-ratio);
+  background-color: var(--bg-color);
+  max-height: var(--max-height, none);
+  overflow: hidden;
+  position: relative;
+}

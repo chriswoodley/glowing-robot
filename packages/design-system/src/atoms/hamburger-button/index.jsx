@@ -1,65 +1,17 @@
-import React, { useCallback } from "react";
-import styled from "styled-components";
-import motion from "styles/utils/motion/_export.module.scss";
-import hamburgerButtonTheme from "atoms/hamburger-button/theme";
+import React, { useCallback } from 'react';
+import motion from 'styles/utils/motion/_export.module.scss';
+import styles from './styles.module.css';
+import colors from 'styles/utils/color/_export.module.scss';
+import { clsx } from 'clsx';
 
+// TODO: Replace with design system tokens when they are available.
 const {
   transitionNormalDuration,
   transitionNormalEaseInOutBack,
   transitionFastDuration,
 } = motion;
 
-const StyledLine = styled.div`
-  height: 3px;
-  width: 100%;
-  transform-origin: center;
-`;
-
-const StyledButton = styled.button`
-  border: 0;
-  background-color: transparent;
-  padding: 0;
-  width: 64px;
-
-  &:hover,
-  &:active {
-    background-color: transparent;
-  }
-
-  & > * {
-    background: ${({ theme }) => theme.default.color};
-  }
-
-  & > :nth-child(1) {
-    transition: all ${transitionNormalDuration} ${transitionNormalEaseInOutBack};
-    transform: ${({ $isActive }) =>
-      $isActive ? "rotate(45deg)" : "rotate(0deg)"};
-  }
-
-  & > :nth-child(2) {
-    transition: all ${transitionFastDuration} ease-in-out;
-    margin-top: ${({ $isActive }) => ($isActive ? "0" : "20px")};
-    opacity: ${({ $isActive }) => ($isActive ? 0 : 1)};
-  }
-
-  & > :nth-child(3) {
-    transition: all ${transitionNormalDuration} ${transitionNormalEaseInOutBack};
-    margin-top: ${({ $isActive }) => ($isActive ? "-5px" : "20px")};
-    transform: ${({ $isActive }) =>
-      $isActive ? "rotate(-45deg)" : "rotate(0deg)"};
-  }
-`;
-
-function HamburgerButton({
-  onClick,
-  theme = hamburgerButtonTheme,
-  variant = "standard",
-  className,
-  isActive = false,
-  ...props
-}) {
-  const variantTheme = theme[variant];
-
+function HamburgerButton({ onClick, className, isActive = false, ...props }) {
   const handleOnClick = useCallback(
     (event) => {
       event.preventDefault();
@@ -72,18 +24,23 @@ function HamburgerButton({
   );
 
   return (
-    <StyledButton
+    <button
       type="button"
       onClick={handleOnClick}
-      $isActive={isActive}
-      theme={variantTheme}
-      aria-label={props["aria-label"]}
-      className={className}
+      style={{
+        '--hamburger-transition-duration': transitionNormalDuration,
+        '--hamburger-transition-ease': transitionNormalEaseInOutBack,
+        '--hamburger-transition-duration-fast': transitionFastDuration,
+        '--hamburger-background-color': colors.black,
+      }}
+      data-active={isActive}
+      aria-label={props['aria-label']}
+      className={clsx(styles.button, className)}
     >
-      <StyledLine />
-      <StyledLine />
-      <StyledLine />
-    </StyledButton>
+      <div className={styles.line} />
+      <div className={styles.line} />
+      <div className={styles.line} />
+    </button>
   );
 }
 

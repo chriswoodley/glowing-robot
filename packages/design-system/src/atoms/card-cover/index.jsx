@@ -1,11 +1,12 @@
+import React from 'react';
 import AspectRatioContainer from 'atoms/aspect-ratio-container';
-import CardCoverContainer from 'atoms/card-cover/styles';
-import classNames from 'classnames';
 import Image from 'atoms/image';
-import React, { useMemo } from 'react';
-import theme from 'atoms/card-cover/theme';
-import useCardContext from 'molecules/card/use-card-context';
+import { clsx } from 'clsx';
 
+// TODO: should this component live in molecules instead of atoms? It is a bit
+// more complex than a typical atom, but it is also very specific to the
+// card component. Maybe it should be a subcomponent of the card
+// component instead?
 function CardCover({
   src,
   width,
@@ -16,9 +17,8 @@ function CardCover({
   size = 'xl',
   ratio = '2/1',
 }) {
-  const { mode, variant } = useCardContext();
-  const variantTheme = useMemo(() => theme[mode][variant], [mode, variant]);
-  const classes = classNames(
+  // TODO: needs to use design tokens in a custom css class
+  const classes = clsx(
     className,
     'border-top-left-radius',
     'border-top-right-radius',
@@ -26,7 +26,7 @@ function CardCover({
   );
 
   return (
-    <CardCoverContainer theme={variantTheme} className={classes}>
+    <div className={classes}>
       <AspectRatioContainer ratio={ratio} size={size}>
         <Image
           src={src}
@@ -37,7 +37,7 @@ function CardCover({
           fill
         />
       </AspectRatioContainer>
-    </CardCoverContainer>
+    </div>
   );
 }
 

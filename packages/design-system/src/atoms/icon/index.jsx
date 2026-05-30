@@ -1,30 +1,26 @@
-import React from "react";
-import classNames from "classnames";
-import styled from "styled-components";
-
-const StyledSvg = styled.svg`
-  fill: ${({ $color }) => $color};
-  width: ${({ $size }) => $size}px;
-  height: ${({ $size }) => $size}px;
-  background-color: ${({ $backgroundColor }) => $backgroundColor};
-`;
+import React from 'react';
+import { clsx } from 'clsx';
+import styles from './styles.module.css';
 
 function Icon({ glyph, title, size = 48, color, backgroundColor, className }) {
-  const classes = classNames("icon", className);
-
   if (glyph && title) {
+    const classes = clsx(styles.icon, className);
+
     return (
-      <StyledSvg
+      <svg
         viewBox="0 0 24 24"
         xmlns="http://www.w3.org/2000/svg"
         className={classes}
-        $color={color}
-        $size={size}
-        $backgroundColor={backgroundColor}
+        // TODO: replace with design token variables
+        style={{
+          '--icon-color': color,
+          '--icon-size': `${size}px`,
+          '--icon-background-color': backgroundColor,
+        }}
       >
         <title>{title}</title>
         <use xlinkHref={`#${glyph}`}></use>
-      </StyledSvg>
+      </svg>
     );
   }
 

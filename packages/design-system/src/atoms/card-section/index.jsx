@@ -1,21 +1,14 @@
-import React, { useMemo } from "react";
-import CardSectionContainer from "atoms/card-section/styles";
-import useCardContext from "molecules/card/use-card-context";
-import theme from "atoms/card-section/theme";
-import classNames from "classnames";
+import React from 'react';
+import { clsx } from 'clsx';
+import styles from './styles.module.css';
 
 function CardSection({ className, children }) {
-  const { mode, variant } = useCardContext();
-  const variantTheme = useMemo(() => theme[mode][variant], [mode, variant]);
-  const classes = classNames(className, "p-2");
+  // TODO: The `p-2` should be a design token and referenced in the styles.module.css file
+  const classes = clsx(styles.root, className, 'p-2');
 
-  return (
-    <CardSectionContainer theme={variantTheme} className={classes}>
-      {children}
-    </CardSectionContainer>
-  );
+  return <div className={classes}>{children}</div>;
 }
 
-CardSection.displayName = "Card.Section";
+CardSection.displayName = 'Card.Section';
 
 export default CardSection;

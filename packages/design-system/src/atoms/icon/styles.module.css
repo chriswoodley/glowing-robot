@@ -1,0 +1,7 @@
+/* TODO: replace with design token variables */
+.icon {
+  fill: var(--icon-color, currentColor);
+  width: var(--icon-size, 48px);
+  height: var(--icon-size, 48px);
+  background-color: var(--icon-background-color, transparent);
+}
