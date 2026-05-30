@@ -33,7 +33,9 @@ function I({
       "data-testid": "content",
       children: [
         a,
-        typeof c == "function" && c({ isActive: e, containerRef: i, isTouchDevice: r })
+        typeof c == "function" && // Passing ref object (not .current) to consumer render function
+        // eslint-disable-next-line react-hooks/refs
+        c({ isActive: e, containerRef: i, isTouchDevice: r })
       ]
     }
   );

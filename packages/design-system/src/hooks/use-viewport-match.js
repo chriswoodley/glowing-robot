@@ -4,8 +4,18 @@ import {
   getShouldMatchViewportMinWidth
 } from "utils/device-helpers";
 
+function getInitialMatch(type, value) {
+  if (typeof window !== 'undefined') {
+    return type === 'max'
+      ? getShouldMatchViewportMaxWidth(value)
+      : getShouldMatchViewportMinWidth(value);
+  }
+
+  return false;
+}
+
 export default function useViewportMatch({ type, value }) {
-  const [ result, setResult ] = useState(false);
+  const [ result, setResult ] = useState(() => getInitialMatch(type, value));
 
   const handleResize = useCallback(() => {
     if (type === 'max') {
@@ -13,12 +23,10 @@ export default function useViewportMatch({ type, value }) {
     } else {
       setResult(getShouldMatchViewportMinWidth(value));
     }
-  }, [ value, type, setResult ]);
+  }, [ value, type ]);
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
-      handleResize(value);
-
       window.addEventListener('resize', handleResize);
     }
 
@@ -27,7 +35,7 @@ export default function useViewportMatch({ type, value }) {
         window.removeEventListener('resize', handleResize);
       }
     };
-  }, [ value, setResult, handleResize ]);
+  }, [ handleResize ]);
 
   return result;
 }

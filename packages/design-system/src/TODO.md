@@ -1,6 +1,5 @@
 # TODO List
 
-1. replace usage of styled components and sass with plain old CSS.
 2. Create and use design tokens for consistent styling
 3. Add lint-staged git commit hooks to format and lint code on commit
 4. Replace theme layer with design tokens

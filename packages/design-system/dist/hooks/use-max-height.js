@@ -1,25 +1,25 @@
-import { useState as u, useEffect as c } from "react";
-const n = {
+import { useMemo as i } from "react";
+const l = {
   xs: 6,
   sm: 12,
   md: 18,
   lg: 24,
   xl: 30
 };
-function r(t, e, a) {
-  if (t && e && a) {
-    const o = e[t];
-    return `${a * o}px`;
-  }
-  return "auto";
+function s(e, n, r) {
+  if (!e || !n || r == null || Number.isNaN(r))
+    return;
+  const u = n[e];
+  if (u == null)
+    return;
+  const t = r * u;
+  if (!(Number.isNaN(t) || !Number.isFinite(t)))
+    return `${t}px`;
 }
-function l({ unit: t, size: e }) {
-  const [a, o] = u();
-  return c(() => {
-    const s = r(e, n, t);
-    o(s);
-  }, [t, e]), a;
+function f({ unit: e, size: n }) {
+  return i(() => s(n, l, e), [e, n]);
 }
 export {
-  l as default
+  s as calcMaxHeight,
+  f as default
 };

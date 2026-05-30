@@ -1,22 +1,28 @@
-import { useState as u, useEffect as f } from "react";
-function r(e) {
-  if (typeof window < "u" && e) {
-    const t = e.querySelector(":root"), n = window.getComputedStyle(t);
-    return Number(n.lineHeight.replace("px", ""));
-  }
+import { useState as u, useEffect as d } from "react";
+function o() {
+  if (typeof document > "u")
+    return;
+  const t = document.querySelector(":root");
+  if (!t)
+    return;
+  const e = window.getComputedStyle(t).lineHeight;
+  if (!(!e || !e.endsWith("px")))
+    return Number(e.replace("px", ""));
 }
-function c() {
-  const e = typeof window < "u" ? document : void 0, [t, n] = u(r(e));
-  return f(() => {
-    const i = (d) => {
-      const o = r(d?.target?.document);
-      o !== void 0 && n(o);
+function f() {
+  const [t, n] = u(void 0);
+  return d(() => {
+    const e = o();
+    e !== void 0 && n(e);
+    const i = () => {
+      const r = o();
+      r !== void 0 && n(r);
     };
-    return typeof window < "u" && window.addEventListener("resize", i), () => {
-      typeof window < "u" && window.removeEventListener("resize", i);
+    return window.addEventListener("resize", i), () => {
+      window.removeEventListener("resize", i);
     };
   }, []), t;
 }
 export {
-  c as default
+  f as default
 };

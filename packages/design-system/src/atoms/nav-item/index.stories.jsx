@@ -1,4 +1,3 @@
-import React from 'react';
 import NavItem from 'atoms/nav-item';
 
 export default {
