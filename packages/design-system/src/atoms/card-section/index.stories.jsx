@@ -1,4 +1,3 @@
-import React from 'react';
 import Card from 'molecules/card';
 import CardSection from 'atoms/card-section';
 

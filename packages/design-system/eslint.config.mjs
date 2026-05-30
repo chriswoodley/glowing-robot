@@ -1,7 +1,7 @@
 import js from '@eslint/js';
+import eslintReact from '@eslint-react/eslint-plugin';
 import jsxA11y from 'eslint-plugin-jsx-a11y';
 import * as mdx from 'eslint-plugin-mdx';
-import react from 'eslint-plugin-react';
 import reactHooks from 'eslint-plugin-react-hooks';
 import reactRefresh from 'eslint-plugin-react-refresh';
 import storybook from 'eslint-plugin-storybook';
@@ -21,19 +21,9 @@ export default defineConfig([
     },
   },
   {
-    ...react.configs.flat.recommended,
-    settings: {
-      ...react.configs.flat.recommended.settings,
-      react: {
-        version: 'detect',
-      },
-    },
+    ...eslintReact.configs['recommended'],
     files: ['**/*.{jsx,mjsx,tsx,mtsx}'],
     ignores: ['node_modules', 'dist'],
-    rules: {
-      ...react.configs.flat.recommended.rules,
-      'react/prop-types': 'off',
-    },
   },
   {
     ...reactHooks.configs.flat.recommended,

@@ -1,5 +1,4 @@
 import { jsx as w } from "react/jsx-runtime";
-import "react";
 import { clsx as x } from "clsx";
 import i from "./styles.module.css.js";
 const b = (e) => typeof window < "u" ? window.btoa(e) : Buffer.from(e, "utf-8").toString("base64"), f = /* @__PURE__ */ new Map(), u = ({ width: e, height: r, color: t }) => {
@@ -13,7 +12,7 @@ const b = (e) => typeof window < "u" ? window.btoa(e) : Buffer.from(e, "utf-8").
     )}`
   ), f.get(o);
 };
-function I({
+function C({
   alt: e,
   className: r,
   crossOrigin: t,
@@ -51,5 +50,5 @@ function I({
   );
 }
 export {
-  I as default
+  C as default
 };
