@@ -4,8 +4,9 @@
   "source": "cli",
   "pid": 174802,
   "started_at": "2026-05-29T23:35:37.410Z",
-  "exit_code": null,
-  "status": "idle",
+  "ended_at": "2026-05-30T19:40:18.633Z",
+  "exit_code": 1,
+  "status": "failed",
   "interactive": true,
   "provider": "cline",
   "model": "xiaomi/mimo-v2.5",
@@ -55,7 +56,11 @@
       "cacheReadTokens": 147136,
       "cacheWriteTokens": 0,
       "totalCost": 0.0043269408
-    }
+    },
+    "terminal_marker": "failed_external_process_exit",
+    "terminal_marker_at": "2026-05-30T19:40:18.633Z",
+    "terminal_marker_pid": 174802,
+    "terminal_marker_source": "stale_session_reconciler"
   },
   "messages_path": "/home/chris/sites/glowing-robot/apps/cwoodley-com/frontend/.cline/data/sessions/1780097737410_bn3uc/1780097737410_bn3uc.messages.json"
 }
