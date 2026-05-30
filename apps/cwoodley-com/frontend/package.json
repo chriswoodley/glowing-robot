@@ -21,16 +21,16 @@
     "gray-matter": "^4.0.3",
     "highlight.js": "^11.11.1",
     "markdown-to-jsx": "^7.7.12",
-    "next": "16.1.0",
-    "react": "19.2.3",
-    "react-dom": "19.2.3",
+    "next": "16.2.6",
+    "react": "19.2.6",
+    "react-dom": "19.2.6",
     "styled-components": "^6.1.19",
     "swiper": "^10.3.1"
   },
   "devDependencies": {
     "@babel/eslint-parser": "^7.28.5",
     "eslint": "^9.39.2",
-    "eslint-config-next": "16.1.1",
+    "eslint-config-next": "16.2.6",
     "react-is": "^19.2.3"
   }
 }
