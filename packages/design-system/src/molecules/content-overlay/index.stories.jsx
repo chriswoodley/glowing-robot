@@ -1,17 +1,14 @@
-import React from "react";
-import { within, userEvent, waitFor, expect } from "storybook/test";
-import Overlay from "atoms/overlay";
-import ContentOverlay from "molecules/content-overlay";
-import contentOverlayTheme from "molecules/content-overlay/theme";
+import React from 'react';
+import { within, userEvent, waitFor, expect } from 'storybook/test';
+import Overlay from 'atoms/overlay';
+import ContentOverlay from 'molecules/content-overlay';
 
 export default {
-  title: "Molecules/Content Overlay",
+  title: 'Molecules/Content Overlay',
   component: ContentOverlay,
-  tags: ["autodocs"],
+  tags: ['autodocs'],
   args: {
-    theme: contentOverlayTheme,
-    triggerType: "click",
-    variant: "standard",
+    triggerType: 'click',
   },
 };
 
@@ -31,14 +28,14 @@ export const DefaultWithDefaultOverlay = {
   async play({ canvasElement }) {
     const canvas = within(canvasElement);
 
-    const content = canvas.getByTestId("content");
-    const overlay = canvas.getByTestId("overlay");
+    const content = canvas.getByTestId('content');
+    const overlay = canvas.getByTestId('overlay');
 
-    await expect(overlay).toHaveStyle("display: none; position: fixed;");
+    await expect(overlay).toHaveStyle('display: none; position: fixed;');
     await userEvent.click(content);
-    await expect(overlay).toHaveStyle("display: block; position: fixed;");
+    await expect(overlay).toHaveStyle('display: block; position: fixed;');
     await userEvent.click(content);
-    await expect(overlay).toHaveStyle("display: none; position: fixed;");
+    await expect(overlay).toHaveStyle('display: none; position: fixed;');
   },
 };
 
@@ -60,20 +57,20 @@ export const DefaultWithContentOverlay = {
   async play({ canvasElement }) {
     const canvas = within(canvasElement);
 
-    const content = canvas.getByTestId("content");
-    const overlay = canvas.getByTestId("overlay");
+    const content = canvas.getByTestId('content');
+    const overlay = canvas.getByTestId('overlay');
 
-    await expect(overlay).toHaveStyle("display: none; position: absolute;");
+    await expect(overlay).toHaveStyle('display: none; position: absolute;');
     await userEvent.click(content);
-    await expect(overlay).toHaveStyle("display: block; position: absolute;");
+    await expect(overlay).toHaveStyle('display: block; position: absolute;');
     await userEvent.click(content);
-    await expect(overlay).toHaveStyle("display: none; position: absolute;");
+    await expect(overlay).toHaveStyle('display: none; position: absolute;');
   },
 };
 
 export const DefaultWithContentOverlayOnHover = {
   args: {
-    triggerType: "hover",
+    triggerType: 'hover',
   },
   render(args) {
     return (
@@ -92,20 +89,20 @@ export const DefaultWithContentOverlayOnHover = {
   async play({ canvasElement }) {
     const canvas = within(canvasElement);
 
-    const content = canvas.getByTestId("content");
-    const overlay = canvas.getByTestId("overlay");
+    const content = canvas.getByTestId('content');
+    const overlay = canvas.getByTestId('overlay');
 
-    await expect(overlay).toHaveStyle("display: none; position: absolute;");
+    await expect(overlay).toHaveStyle('display: none; position: absolute;');
     await userEvent.hover(content);
-    await expect(overlay).toHaveStyle("display: block; position: absolute;");
+    await expect(overlay).toHaveStyle('display: block; position: absolute;');
     await userEvent.unhover(content);
-    await expect(overlay).toHaveStyle("display: none; position: absolute;");
+    await expect(overlay).toHaveStyle('display: none; position: absolute;');
   },
 };
 
 export const DefaultWithContentOverlayOnHoverSlideUp = {
   args: {
-    triggerType: "hover",
+    triggerType: 'hover',
   },
   render(args) {
     return (
@@ -123,8 +120,8 @@ export const DefaultWithContentOverlayOnHoverSlideUp = {
   },
   async play({ canvasElement }) {
     const canvas = within(canvasElement);
-    const content = canvas.getByTestId("content");
-    const overlay = canvas.getByTestId("overlay");
+    const content = canvas.getByTestId('content');
+    const overlay = canvas.getByTestId('overlay');
     const height = overlay.getBoundingClientRect().height;
 
     await expect(overlay).toHaveStyle(
@@ -133,7 +130,7 @@ export const DefaultWithContentOverlayOnHoverSlideUp = {
     await userEvent.hover(content);
     await waitFor(function transition() {
       return expect(overlay).toHaveStyle(
-        "display: block; position: absolute; bottom: 0px;"
+        'display: block; position: absolute; bottom: 0px;'
       );
     });
     await userEvent.unhover(content);
@@ -147,7 +144,7 @@ export const DefaultWithContentOverlayOnHoverSlideUp = {
 
 export const DefaultWithContentOverlayOnHoverSlideUpAutoHeight = {
   args: {
-    triggerType: "hover",
+    triggerType: 'hover',
   },
   render(args) {
     return (
@@ -171,8 +168,8 @@ export const DefaultWithContentOverlayOnHoverSlideUpAutoHeight = {
   },
   async play({ canvasElement }) {
     const canvas = within(canvasElement);
-    const content = canvas.getByTestId("content");
-    const overlay = canvas.getByTestId("overlay");
+    const content = canvas.getByTestId('content');
+    const overlay = canvas.getByTestId('overlay');
     const overlayHeight = overlay.getBoundingClientRect().height;
     const contentHeight = content.getBoundingClientRect().height;
 

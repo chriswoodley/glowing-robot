@@ -1,15 +1,12 @@
-import React from "react";
-import Card from "molecules/card";
-import CardSection from "atoms/card-section";
-import cardSectionTheme from "atoms/card-section/theme";
+import React from 'react';
+import Card from 'molecules/card';
+import CardSection from 'atoms/card-section';
 
 export default {
-  title: "Atoms/Card/Card Section",
+  title: 'Atoms/Card/Card Section',
   component: CardSection,
-  tags: ["autodocs"],
-  args: {
-    theme: cardSectionTheme,
-  },
+  tags: ['autodocs'],
+  args: {},
   decorators: [
     (Story) => (
       <Card>

@@ -1,36 +1,34 @@
-import React from "react";
-import styled from "styled-components";
-import useVerticalRhythmUnit from "hooks/use-vertical-rhythm-unit";
-import useMaxHeight from "hooks/use-max-height";
-import colors from "styles/utils/color/_export.module.scss";
-
-const StyledAspectRatioContainer = styled.div`
-  aspect-ratio: ${({ $ratio }) => $ratio};
-  background-color: ${colors.gray100};
-  max-height: ${({ $maxHeight }) => $maxHeight};
-  overflow: hidden;
-  position: relative;
-`;
+import React from 'react';
+import useVerticalRhythmUnit from 'hooks/use-vertical-rhythm-unit';
+import useMaxHeight from 'hooks/use-max-height';
+import colors from 'styles/utils/color/_export.module.scss';
+import styles from './styles.module.css';
+import { clsx } from 'clsx';
 
 function AspectRatioContainer({
   className,
   style,
   size,
   children,
-  ratio = "1/1",
+  ratio = '1/1',
 }) {
   const unit = useVerticalRhythmUnit();
   const maxHeight = useMaxHeight({ unit, size });
 
   return (
-    <StyledAspectRatioContainer
-      style={style}
-      className={className}
-      $maxHeight={maxHeight}
-      $ratio={ratio}
+    <div
+      style={{
+        ...style,
+        '--aspect-ratio': ratio,
+        '--max-height': maxHeight ? `${maxHeight}` : undefined,
+        '--bg-color': colors['gray-100'], // TODO: replace with design token in css file
+      }}
+      className={clsx(styles['aspect-ratio-container'], className)}
+      data-max-height={maxHeight}
+      data-ratio={ratio}
     >
       {children}
-    </StyledAspectRatioContainer>
+    </div>
   );
 }
 

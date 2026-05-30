@@ -5,12 +5,12 @@ import Icon from 'atoms/icon';
 export default {
   title: 'Atoms/Icon',
   component: Icon,
-  tags: [ 'autodocs' ],
+  tags: ['autodocs'],
   args: {
     glyph: 'github',
     title: 'My title',
-    size: 48
-  }
+    size: 48,
+  },
 };
 
 export const Default = {
@@ -21,5 +21,5 @@ export const Default = {
         <Icon {...args} />
       </>
     );
-  }
+  },
 };

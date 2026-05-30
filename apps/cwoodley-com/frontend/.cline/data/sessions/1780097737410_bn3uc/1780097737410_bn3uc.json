@@ -1,0 +1,61 @@
+{
+  "version": 1,
+  "session_id": "1780097737410_bn3uc",
+  "source": "cli",
+  "pid": 174802,
+  "started_at": "2026-05-29T23:35:37.410Z",
+  "exit_code": null,
+  "status": "idle",
+  "interactive": true,
+  "provider": "cline",
+  "model": "xiaomi/mimo-v2.5",
+  "cwd": "/home/chris/sites/glowing-robot/apps/cwoodley-com/frontend",
+  "workspace_root": "/home/chris/sites/glowing-robot",
+  "team_name": "team-_6w5C",
+  "enable_tools": true,
+  "enable_spawn": true,
+  "enable_teams": true,
+  "prompt": "<user_input mode=\"act\">this app project is in a mono repo. i have my design system package in this mono repo as well.\n\nimport {\r  Nav,\r  NavItem,\r  usePrevious,\r} from '@cw/design-system';\n\nwhen i run the app it cannot find my design system package\n\nthe package.json file list the dependency as: \n\n    \"@cw/design-system\": \"workspace:^\",\n\nany ideas why it cannot find it?</user_input>",
+  "metadata": {
+    "checkpoint": {
+      "latest": {
+        "ref": "f9867924ae71c15d876d5d881adc61538e1199ec",
+        "createdAt": 1780098165777,
+        "runCount": 2,
+        "kind": "stash"
+      },
+      "history": [
+        {
+          "ref": "4777899467f00f25fb781c99322c6d3d2d747048",
+          "createdAt": 1780097915975,
+          "runCount": 1,
+          "kind": "stash"
+        },
+        {
+          "ref": "f9867924ae71c15d876d5d881adc61538e1199ec",
+          "createdAt": 1780098165777,
+          "runCount": 2,
+          "kind": "stash"
+        }
+      ]
+    },
+    "title": "this app project is in a mono repo. i have my design system package in this mono repo as well.",
+    "totalCost": 0.0043269408,
+    "aggregatedAgentsCost": 0.0043269408,
+    "usage": {
+      "inputTokens": 168558,
+      "outputTokens": 3271,
+      "cacheReadTokens": 147136,
+      "cacheWriteTokens": 0,
+      "totalCost": 0.0043269408
+    },
+    "aggregateUsage": {
+      "inputTokens": 168558,
+      "outputTokens": 3271,
+      "cacheReadTokens": 147136,
+      "cacheWriteTokens": 0,
+      "totalCost": 0.0043269408
+    }
+  },
+  "messages_path": "/home/chris/sites/glowing-robot/apps/cwoodley-com/frontend/.cline/data/sessions/1780097737410_bn3uc/1780097737410_bn3uc.messages.json"
+}

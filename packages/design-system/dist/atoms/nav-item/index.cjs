@@ -1,0 +1,1 @@
+"use strict";Object.defineProperties(exports,{__esModule:{value:!0},[Symbol.toStringTag]:{value:"Module"}});const u=require("react/jsx-runtime");require("react");const l=require("./styles.module.css.cjs"),o=require("clsx");function i({children:e,className:t,id:s}){const r=o(l.default.root,"flex_item",t);return u.jsx("li",{id:s,className:r,children:e})}exports.default=i;

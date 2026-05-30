@@ -1,0 +1,62 @@
+.root {
+  background-color: rgb(0 0 0 / 90%);
+
+  /* screen overlay */
+
+  &.screen {
+    position: fixed;
+    z-index: 100;
+    display: none;
+
+    &.is-active {
+      display: block;
+
+      &.effect-none {
+        inset: 0;
+      }
+    }
+
+    &.effect-slideUp {
+      inset: 100% 0 -100%;
+      transition: all 0.3s ease;
+
+      &.is-active {
+        inset: 0;
+      }
+    }
+  }
+
+  /* content overlay */
+
+  &.content {
+    position: absolute;
+    z-index: 10;
+    display: none;
+
+    &.effect-slideUp {
+      display: block;
+      bottom: -100%;
+      transition: bottom 0.3s ease;
+
+      &.is-active {
+        bottom: 0%;
+      }
+    }
+
+    &.effect-none {
+      &.is-active {
+        display: block;
+
+        &.position-bottom {
+          bottom: 0;
+          left: 0;
+        }
+
+        &:not(.position-bottom) {
+          top: 0;
+          left: 0;
+        }
+      }
+    }
+  }
+}

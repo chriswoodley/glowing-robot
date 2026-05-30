@@ -1,0 +1,56 @@
+{
+  "version": 1,
+  "session_id": "1780102102018_6w380",
+  "source": "cli",
+  "pid": 217395,
+  "started_at": "2026-05-30T00:48:22.018Z",
+  "ended_at": "2026-05-30T00:51:45.841Z",
+  "exit_code": 0,
+  "status": "completed",
+  "interactive": true,
+  "provider": "cline",
+  "model": "xiaomi/mimo-v2.5",
+  "cwd": "/home/chris/sites/glowing-robot/packages/design-system",
+  "workspace_root": "/home/chris/sites/glowing-robot",
+  "team_name": "team-wHNpo",
+  "enable_tools": true,
+  "enable_spawn": true,
+  "enable_teams": true,
+  "prompt": "<user_input mode=\"plan\">vercel deployment is failing for this reason:\n\nModule not found: Can't resolve '../../node_modules/clsx/dist/clsx.js'\r  3 | import p from \"../aspect-ratio-container/index.js\";\r  4 | import f from \"../image/index.js\";\r> 5 | import { clsx as n } from \"../../node_modules/clsx/dist/clsx.js\";\r    | ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^\r  6 | function c({\r  7 |   src: o,\r  8 |   width: e,</user_input>",
+  "metadata": {
+    "checkpoint": {
+      "latest": {
+        "ref": "e99a8ed4eb083c699db3ef9ec441788f6bcbd11c",
+        "createdAt": 1780102116601,
+        "runCount": 1,
+        "kind": "stash"
+      },
+      "history": [
+        {
+          "ref": "e99a8ed4eb083c699db3ef9ec441788f6bcbd11c",
+          "createdAt": 1780102116601,
+          "runCount": 1,
+          "kind": "stash"
+        }
+      ]
+    },
+    "title": "vercel deployment is failing for this reason:",
+    "totalCost": 0.0023795912,
+    "aggregatedAgentsCost": 0.0023795912,
+    "usage": {
+      "inputTokens": 93861,
+      "outputTokens": 1897,
+      "cacheReadTokens": 82304,
+      "cacheWriteTokens": 0,
+      "totalCost": 0.0023795912
+    },
+    "aggregateUsage": {
+      "inputTokens": 93861,
+      "outputTokens": 1897,
+      "cacheReadTokens": 82304,
+      "cacheWriteTokens": 0,
+      "totalCost": 0.0023795912
+    }
+  },
+  "messages_path": "/home/chris/sites/glowing-robot/packages/design-system/.cline/data/sessions/1780102102018_6w380/1780102102018_6w380.messages.json"
+}
