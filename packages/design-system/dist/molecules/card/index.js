@@ -2,7 +2,7 @@ import { jsx as l } from "react/jsx-runtime";
 import { useCallback as d } from "react";
 import p from "../../atoms/card-cover/index.js";
 import c from "../../atoms/card-section/index.js";
-import { clsx as u } from "../../node_modules/clsx/dist/clsx.js";
+import u from "clsx";
 import o from "./styles.module.css.js";
 function r({ children: t, className: a, mode: s = "light", onClick: e, width: i }) {
   const n = u(

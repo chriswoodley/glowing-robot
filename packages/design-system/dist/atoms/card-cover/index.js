@@ -2,7 +2,7 @@ import { jsx as r } from "react/jsx-runtime";
 import "react";
 import p from "../aspect-ratio-container/index.js";
 import f from "../image/index.js";
-import { clsx as n } from "../../node_modules/clsx/dist/clsx.js";
+import { clsx as n } from "clsx";
 function c({
   src: o,
   width: e,

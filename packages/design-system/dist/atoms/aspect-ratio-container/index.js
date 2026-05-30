@@ -4,7 +4,7 @@ import c from "../../hooks/use-vertical-rhythm-unit.js";
 import n from "../../hooks/use-max-height.js";
 import p from "../../styles/utils/color/_export.module.scss.js";
 import f from "./styles.module.css.js";
-import { clsx as h } from "../../node_modules/clsx/dist/clsx.js";
+import { clsx as h } from "clsx";
 function H({
   className: r,
   style: i,

@@ -27,7 +27,7 @@ export default defineConfig({
     rollupOptions: {
       external: (id) =>
         /^lodash/.test(id) ||
-        ['react', 'react-dom', 'react/jsx-runtime'].includes(id),
+        ['react', 'react-dom', 'react/jsx-runtime', 'clsx', 'classnames'].includes(id),
 
       output: [
         {

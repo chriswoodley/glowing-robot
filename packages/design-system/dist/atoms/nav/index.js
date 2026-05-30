@@ -1,6 +1,6 @@
 import { jsx as c } from "react/jsx-runtime";
 import "react";
-import { clsx as f } from "../../node_modules/clsx/dist/clsx.js";
+import { clsx as f } from "clsx";
 import m from "./styles.module.css.js";
 function p({ children: o, className: a, id: r, type: e = "default", ...s }) {
   const i = e === "default", l = e === "horizontal", t = e === "vertical center", n = f(

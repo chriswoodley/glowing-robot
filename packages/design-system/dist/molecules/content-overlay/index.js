@@ -1,7 +1,7 @@
 import { jsxs as d } from "react/jsx-runtime";
 import { useRef as p, useState as h, useCallback as n } from "react";
 import { getIsTouchDevice as k } from "../../utils/device-helpers.js";
-import { clsx as O } from "../../node_modules/clsx/dist/clsx.js";
+import O from "clsx";
 import C from "./styles.module.css.js";
 function I({
   children: a,
