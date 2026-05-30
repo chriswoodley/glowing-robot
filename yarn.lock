@@ -959,7 +959,7 @@ __metadata:
     react-dom: 19.2.6
     react-is: ^19.2.3
     styled-components: ^6.1.19
-    swiper: ^10.3.1
+    swiper: ^12.2.0
   languageName: unknown
   linkType: soft
 
@@ -11501,10 +11501,10 @@ __metadata:
   languageName: node
   linkType: hard
 
-"swiper@npm:^10.3.1":
-  version: 10.3.1
-  resolution: "swiper@npm:10.3.1"
-  checksum: 9a785930ca0ab0683d7e5e116c25a38e1f8818d6f9e93848125bdf3e1874e12a6c3b9f4e9c54668e4accc2440a6f031de98cfc01a1b0068c77f8de4115034e4d
+"swiper@npm:^12.2.0":
+  version: 12.2.0
+  resolution: "swiper@npm:12.2.0"
+  checksum: fceb3d2233430a8f9fff37e5b4abe51768366064b1037cb151c5f2e5a76e0b0446e570ebf71f39ceea97c250daaeb2b5f1a4928b439158103e01c5d874548f74
   languageName: node
   linkType: hard
 
