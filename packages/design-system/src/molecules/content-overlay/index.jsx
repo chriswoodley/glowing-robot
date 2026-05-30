@@ -1,25 +1,15 @@
-import React, { useCallback, useRef, useState } from "react";
-import { styled } from "styled-components";
-import contentOverlayTheme from "molecules/content-overlay/theme";
-import { getIsTouchDevice } from "utils/device-helpers";
-
-const ContentOverlayContainer = styled.div`
-  position: relative;
-  overflow: hidden;
-  background-color: ${({ theme }) => theme.default.backgroundColor};
-  cursor: ${({ $triggerType }) =>
-    $triggerType === "click" ? "pointer" : "inherit"};
-`;
+import React, { useCallback, useRef, useState } from 'react';
+import { getIsTouchDevice } from 'utils/device-helpers';
+import clsx from 'clsx';
+import styles from './styles.module.css';
 
 function ContentOverlay({
   children,
   renderOverlay,
-  theme = contentOverlayTheme,
-  triggerType = "click",
-  variant = "standard",
+  className,
+  triggerType = 'click',
 }) {
   const isTouchDevice = getIsTouchDevice();
-  const variantTheme = theme[variant];
   const containerRef = useRef();
   const [isActive, setIsActive] = useState(false);
 
@@ -42,21 +32,25 @@ function ContentOverlay({
     [isActive]
   );
 
+  const customProps = {
+    onMouseEnter: triggerType === 'hover' ? handleOnMouseOver : undefined,
+    onMouseLeave: triggerType === 'hover' ? handleOnMouseOut : undefined,
+    onClick: triggerType === 'click' ? handleOnClick : undefined,
+    role: triggerType === 'click' ? 'button' : undefined,
+  };
+
   return (
-    <ContentOverlayContainer
+    <div
       ref={containerRef}
-      theme={variantTheme}
-      onMouseEnter={triggerType === "hover" ? handleOnMouseOver : undefined}
-      onMouseLeave={triggerType === "hover" ? handleOnMouseOut : undefined}
-      onClick={triggerType === "click" ? handleOnClick : undefined}
-      $triggerType={triggerType}
+      className={clsx(styles.root, className)}
+      {...customProps}
       data-testid="content"
     >
       {children}
 
-      {typeof renderOverlay === "function" &&
+      {typeof renderOverlay === 'function' &&
         renderOverlay({ isActive, containerRef, isTouchDevice })}
-    </ContentOverlayContainer>
+    </div>
   );
 }
 

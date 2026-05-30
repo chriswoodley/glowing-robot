@@ -1,35 +1,27 @@
-import CardContainer from "molecules/card/styles";
-import CardContext from "./card-context";
-import CardCover from "atoms/card-cover";
-import CardSection from "atoms/card-section";
-import classNames from "classnames";
-import React, { useCallback, useMemo } from "react";
+import React, { useCallback } from 'react';
+import CardCover from 'atoms/card-cover';
+import CardSection from 'atoms/card-section';
+import clsx from 'clsx';
+import styles from './styles.module.css';
 
-function Card({
-  children,
-  className,
-  mode = "light",
-  onClick,
-  variant = "standard",
-  width,
-  theme,
-}) {
-  const classes = classNames(className, "elevation-1", "border-radius", {
-    "elevation-hover-3": !!onClick,
-  });
-  const cardContextValue = useMemo(() => {
-    const isClickable = typeof onClick === "function";
-
-    return {
-      isClickable,
-      mode,
-      variant,
-    };
-  }, [onClick, mode, variant]);
+function Card({ children, className, mode = 'light', onClick, width }) {
+  const classes = clsx(
+    styles.root,
+    styles[mode],
+    {
+      [styles['is-clickable']]: onClick === 'function',
+    },
+    'elevation-1',
+    'border-radius',
+    {
+      'elevation-hover-3': !!onClick,
+    },
+    className
+  );
 
   const handleKeyDown = useCallback(
     (event) => {
-      if (event.key === "Enter" && typeof onClick === "function") {
+      if (event.key === 'Enter' && typeof onClick === 'function') {
         onClick();
       }
     },
@@ -37,25 +29,20 @@ function Card({
   );
 
   return (
-    <CardContext.Provider value={cardContextValue}>
-      <CardContainer
-        theme={theme}
-        className={classes}
-        onClick={onClick}
-        $width={width}
-        $variant={variant}
-        $mode={mode}
-        {...(onClick
-          ? {
-              onKeyDown: handleKeyDown,
-              role: "link",
-              tabIndex: "0",
-            }
-          : {})}
-      >
-        {children}
-      </CardContainer>
-    </CardContext.Provider>
+    <div
+      className={classes}
+      style={{ width }}
+      {...(onClick
+        ? {
+            onKeyDown: handleKeyDown,
+            role: 'link',
+            tabIndex: '0',
+            onClick,
+          }
+        : {})}
+    >
+      {children}
+    </div>
   );
 }
 

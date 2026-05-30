@@ -1,0 +1,2 @@
+{"prompt":"this app project is in a mono repo. i have my design system package in this mono repo as well.\n\n[import { Nav, NavItem, usePrevious, } from '@cw/... Pasted +5 lines]\n\nwhen i run the app it cannot find my design system package\n\nthe package.json file list the dependency as: \n\n    \"@cw/design-system\": \"workspace:^\",\n\nany ideas why it cannot find it?","ts":1780098165750}
+{"prompt":"[⨯ ./apps/cwoodley-com/frontend/app/layout.js:1:1... Pasted +7 lines]","ts":1780098165750}

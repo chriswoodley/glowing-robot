@@ -1,0 +1,16 @@
+.root {
+  &.light {
+    background-color: #fff;
+    color: #000;
+  }
+
+  &.dark {
+    background-color: #000;
+    color: #fff;
+  }
+
+  &.is-clickable {
+    cursor: pointer;
+    user-select: none;
+  }
+}

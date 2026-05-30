@@ -1,0 +1,56 @@
+{
+  "version": 1,
+  "session_id": "1780074247898_b4zkf",
+  "source": "cli",
+  "pid": 107520,
+  "started_at": "2026-05-29T17:04:07.898Z",
+  "ended_at": "2026-05-29T17:04:57.898Z",
+  "exit_code": 0,
+  "status": "completed",
+  "interactive": true,
+  "provider": "cline",
+  "model": "xiaomi/mimo-v2.5",
+  "cwd": "/home/chris/sites/glowing-robot/packages/design-system",
+  "workspace_root": "/home/chris/sites/glowing-robot",
+  "team_name": "team-MgKE4",
+  "enable_tools": true,
+  "enable_spawn": true,
+  "enable_teams": true,
+  "prompt": "<user_input mode=\"act\">what is this workspace rules?</user_input>",
+  "metadata": {
+    "checkpoint": {
+      "latest": {
+        "ref": "b86f3fa415d33d6584e305435c6655e60396cbe5",
+        "createdAt": 1780074257645,
+        "runCount": 1,
+        "kind": "stash"
+      },
+      "history": [
+        {
+          "ref": "b86f3fa415d33d6584e305435c6655e60396cbe5",
+          "createdAt": 1780074257645,
+          "runCount": 1,
+          "kind": "stash"
+        }
+      ]
+    },
+    "title": "what is this workspace rules?",
+    "totalCost": 0.0005419176,
+    "aggregatedAgentsCost": 0.0005419176,
+    "usage": {
+      "inputTokens": 32217,
+      "outputTokens": 817,
+      "cacheReadTokens": 30592,
+      "cacheWriteTokens": 0,
+      "totalCost": 0.0005419176
+    },
+    "aggregateUsage": {
+      "inputTokens": 32217,
+      "outputTokens": 817,
+      "cacheReadTokens": 30592,
+      "cacheWriteTokens": 0,
+      "totalCost": 0.0005419176
+    }
+  },
+  "messages_path": "/home/chris/sites/glowing-robot/packages/design-system/.cline/data/sessions/1780074247898_b4zkf/1780074247898_b4zkf.messages.json"
+}

@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "lastUsedProvider": "cline",
+  "providers": {
+    "cline": {
+      "settings": {
+        "provider": "cline",
+        "auth": {
+          "accessToken": "workos:eyJhbGciOiJSUzI1NiIsImtpZCI6InNzb19vaWRjX2tleV9wYWlyXzAxSzNBNTQxREZLR1FaRjE1R0Y4UkZNUDBWIn0.eyJleHRlcm5hbF9pZCI6InVzci0wMUszSjRIU1lXMVJCSDEwRTIySjlLOE5IMCIsImxhc3ROYW1lIjoiV29vZGxleSIsImZpcnN0TmFtZSI6IkNocmlzIiwiZW1haWwiOiJjaHJpc3dvb2RsZXlAbWUuY29tIiwiaXNzIjoiaHR0cHM6Ly9hcGkud29ya29zLmNvbS91c2VyX21hbmFnZW1lbnQvY2xpZW50XzAxSzNBNTQxRk44VEEzRVBQSFREMjMyNUFSIiwic3ViIjoidXNlcl8wMUtTUlJFWUQyR1FCNlZQQ1pFUFY3REtDRiIsInNpZCI6InNlc3Npb25fMDFLU1YxRkdCMkg1MVBSNjhQNzk0Q1lRMVkiLCJqdGkiOiIwMUtTVjFGR05ZR0Y5NVJRRzJLRFJIQlE1QiIsImNsaWVudF9pZCI6ImNsaWVudF8wMUszQTU0MUZOOFRBM0VQUEhURDIzMjVBUiIsImV4cCI6MTc4MDEwMTMyOSwiaWF0IjoxNzgwMDk3NzI5fQ.afuYiBzGngiFH45X2LsHgWY4DCJiLzu54RVP_Ll5Binae-4V6JAO2CJmbzWrKTAdybXkJSMRVw4OIdQ011cEb1tRqiaLwo3AyDT8UwE6b-5TfKijbsQ0WCZPc-_927wFrioD72KHZyLsmoiu1om7vD6Vw_hdafQG_eUz2BUGeWNw7Gq3KQzcpjYYXjINzNRHiZkMJvzOCSE4KqbKaPm9hzc5ndvuFmjnz238qflbgsnkzv9up2ZvTnEZ9FVvHZ96evk9wjTJTclEOyzF8ZM71rsU5BI55YUVsEDx9dbI2EKREuTtqt4JX9nSD-UqsMKlkFgsUBzSZ2cFgy3C8hYQ3g",
+          "refreshToken": "wFZy1fWiGPtBfw2KYxZ6ACXsM",
+          "expiresAt": 1780101329000,
+          "accountId": "usr-01K3J4HSYW1RBH10E22J9K8NH0"
+        },
+        "model": "xiaomi/mimo-v2.5",
+        "reasoning": {
+          "enabled": true,
+          "effort": "high"
+        }
+      },
+      "updatedAt": "2026-05-29T23:35:37.353Z",
+      "tokenSource": "oauth"
+    }
+  }
+}

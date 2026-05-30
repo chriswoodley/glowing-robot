@@ -1,0 +1,1 @@
+"use strict";Object.defineProperties(exports,{__esModule:{value:!0},[Symbol.toStringTag]:{value:"Module"}});const e="816",a="1008",t="1200",r="1440",o={breakpointSmall:e,breakpointMedium:a,breakpointLarge:t,breakpointExtraLarge:r};exports.breakpointExtraLarge=r;exports.breakpointLarge=t;exports.breakpointMedium=a;exports.breakpointSmall=e;exports.default=o;

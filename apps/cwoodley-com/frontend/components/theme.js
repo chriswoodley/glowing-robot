@@ -1,19 +1,15 @@
-'use client';
+"use client";
 
-import React, { useEffect, useState } from 'react';
-import { applyTheme, Icons } from '@cw/design-system';
-import { ThemeProvider } from 'styled-components';
-import AppStyles from './app-styles';
-import appTheme from 'utils/app-theme';
+import React, { useState } from "react";
+import { Icons } from "@cw/design-system";
+import { ThemeProvider } from "styled-components";
+import AppStyles from "./app-styles";
+import appTheme from "utils/app-theme";
 
-const theme = applyTheme(appTheme);
+const theme = appTheme;
 
 function Theme({ children }) {
-  const [ shouldRender, setShouldRender ] = useState(false);
-
-  useEffect(() => {
-    setShouldRender(true);
-  }, []);
+  const [shouldRender] = useState(() => true);
 
   if (shouldRender) {
     return (
