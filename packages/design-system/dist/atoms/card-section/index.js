@@ -1,10 +1,9 @@
-import { jsx as s } from "react/jsx-runtime";
-import "react";
+import { jsx as t } from "react/jsx-runtime";
 import { clsx as a } from "clsx";
 import e from "./styles.module.css.js";
 function i({ className: o, children: r }) {
-  const t = a(e.root, o, "p-2");
-  return /* @__PURE__ */ s("div", { className: t, children: r });
+  const s = a(e.root, o, "p-2");
+  return /* @__PURE__ */ t("div", { className: s, children: r });
 }
 i.displayName = "Card.Section";
 export {

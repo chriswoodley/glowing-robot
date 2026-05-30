@@ -1,8 +1,7 @@
 import { jsx as c } from "react/jsx-runtime";
-import "react";
 import { clsx as f } from "clsx";
 import m from "./styles.module.css.js";
-function p({ children: o, className: a, id: r, type: e = "default", ...s }) {
+function b({ children: a, className: o, id: r, type: e = "default", ...s }) {
   const i = e === "default", l = e === "horizontal", t = e === "vertical center", n = f(
     m.root,
     {
@@ -13,10 +12,10 @@ function p({ children: o, className: a, id: r, type: e = "default", ...s }) {
       "flex--align-items-center": l || t,
       "flex--align-items-end": l
     },
-    a
+    o
   );
-  return /* @__PURE__ */ c("ul", { "aria-label": s["aria-label"], id: r, className: n, children: o });
+  return /* @__PURE__ */ c("ul", { "aria-label": s["aria-label"], id: r, className: n, children: a });
 }
 export {
-  p as default
+  b as default
 };

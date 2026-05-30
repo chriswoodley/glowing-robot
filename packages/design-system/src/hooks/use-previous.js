@@ -7,5 +7,7 @@ export default function usePrevious(value) {
     ref.current = value;
   }, [ value ]);
 
+  // Accessing ref.current during render is intentional for this pattern
+  // eslint-disable-next-line react-hooks/refs
   return ref.current;
 }

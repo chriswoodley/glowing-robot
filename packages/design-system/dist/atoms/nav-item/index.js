@@ -1,11 +1,10 @@
-import { jsx as m } from "react/jsx-runtime";
-import "react";
-import e from "./styles.module.css.js";
-import i from "clsx";
-function p({ children: t, className: o, id: r }) {
-  const s = i(e.root, "flex_item", o);
-  return /* @__PURE__ */ m("li", { id: r, className: s, children: t });
+import { jsx as e } from "react/jsx-runtime";
+import m from "./styles.module.css.js";
+import l from "clsx";
+function c({ children: t, className: o, id: s }) {
+  const r = l(m.root, "flex_item", o);
+  return /* @__PURE__ */ e("li", { id: s, className: r, children: t });
 }
 export {
-  p as default
+  c as default
 };

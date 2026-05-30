@@ -1,4 +1,3 @@
-import React from 'react';
 import AspectRatioContainer from 'atoms/aspect-ratio-container';
 import Image from 'atoms/image';
 import { clsx } from 'clsx';

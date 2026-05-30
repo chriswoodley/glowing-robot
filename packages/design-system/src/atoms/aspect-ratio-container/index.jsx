@@ -1,4 +1,3 @@
-import React from 'react';
 import useVerticalRhythmUnit from 'hooks/use-vertical-rhythm-unit';
 import useMaxHeight from 'hooks/use-max-height';
 import colors from 'styles/utils/color/_export.module.scss';
@@ -20,11 +19,11 @@ function AspectRatioContainer({
       style={{
         ...style,
         '--aspect-ratio': ratio,
-        '--max-height': maxHeight ? `${maxHeight}` : undefined,
+        ...(maxHeight ? { '--max-height': maxHeight } : {}),
         '--bg-color': colors['gray-100'], // TODO: replace with design token in css file
       }}
       className={clsx(styles['aspect-ratio-container'], className)}
-      data-max-height={maxHeight}
+      {...(maxHeight ? { 'data-max-height': maxHeight } : {})}
       data-ratio={ratio}
     >
       {children}

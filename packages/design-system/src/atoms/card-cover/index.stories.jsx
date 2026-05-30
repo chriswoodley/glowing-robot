@@ -1,4 +1,3 @@
-import React from 'react';
 import CardCover from 'atoms/card-cover';
 import Card from 'molecules/card';
 

@@ -1,4 +1,4 @@
-import React, { useCallback, useRef, useState } from 'react';
+import { useCallback, useRef, useState } from 'react';
 import { getIsTouchDevice } from 'utils/device-helpers';
 import clsx from 'clsx';
 import styles from './styles.module.css';
@@ -49,6 +49,8 @@ function ContentOverlay({
       {children}
 
       {typeof renderOverlay === 'function' &&
+        // Passing ref object (not .current) to consumer render function
+        // eslint-disable-next-line react-hooks/refs
         renderOverlay({ isActive, containerRef, isTouchDevice })}
     </div>
   );

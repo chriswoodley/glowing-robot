@@ -1,4 +1,3 @@
-import React from 'react';
 import { within, userEvent, waitFor, expect } from 'storybook/test';
 import Overlay from 'atoms/overlay';
 import ContentOverlay from 'molecules/content-overlay';
