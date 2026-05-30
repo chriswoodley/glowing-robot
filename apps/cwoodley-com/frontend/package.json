@@ -3,13 +3,14 @@
   "version": "0.1.0",
   "private": true,
   "engines": {
-    "node": ">=22.0.0"
+    "node": ">=24.16.0"
   },
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint ."
+    "lint": "eslint .",
+    "ai": "cline --config=/home/chris/sites/glowing-robot/apps/cwoodley-com/frontend/.cline"
   },
   "dependencies": {
     "@cw/design-system": "workspace:^",

@@ -1,0 +1,19 @@
+.root {
+  color: #000;
+  text-decoration: none;
+
+  &:hover {
+    color: #000;
+    text-decoration: underline;
+  }
+
+  &:active {
+    color: #000;
+    text-decoration: underline;
+  }
+
+  &:visited {
+    color: #000;
+    text-decoration: none;
+  }
+}

@@ -12,7 +12,7 @@ export default defineConfig([
   globalIgnores(['node_modules/', 'storybook-static/', 'dist/']),
   {
     ...js.configs.recommended,
-    files: ['**/*.{js,mjs,jsx,mjsx,ts,mtw,tsx,mtsx}'],
+    files: ['**/*.{js,mjs,jsx,ts,tsx}'],
     languageOptions: {
       globals: {
         ...globals.browser,

@@ -1,26 +1,14 @@
-import React from "react";
-import styled from "styled-components";
-import navItemTheme from "atoms/nav-item/theme";
-import classNames from "classnames";
+import React from 'react';
+import styles from './styles.module.css';
+import clsx from 'clsx';
 
-const StyledLi = styled.li`
-  display: block;
-`;
-
-function NavItem({
-  children,
-  className,
-  id,
-  theme = navItemTheme,
-  variant = "standard",
-}) {
-  const variantTheme = theme[variant];
-  const classes = classNames("flex_item", className);
+function NavItem({ children, className, id }) {
+  const classes = clsx(styles.root, 'flex_item', className);
 
   return (
-    <StyledLi theme={variantTheme} id={id} className={classes}>
+    <li id={id} className={classes}>
       {children}
-    </StyledLi>
+    </li>
   );
 }
 

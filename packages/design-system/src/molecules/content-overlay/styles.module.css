@@ -1,0 +1,9 @@
+.root {
+  position: relative;
+  overflow: hidden;
+  background-color: #fff;
+
+  &[role='button'] {
+    cursor: pointer;
+  }
+}

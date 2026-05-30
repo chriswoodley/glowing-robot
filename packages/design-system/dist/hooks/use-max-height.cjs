@@ -1,0 +1,1 @@
+"use strict";Object.defineProperties(exports,{__esModule:{value:!0},[Symbol.toStringTag]:{value:"Module"}});const a=require("react"),c={xs:6,sm:12,md:18,lg:24,xl:30};function o(e,t,u){if(e&&t&&u){const r=t[e];return`${u*r}px`}return"auto"}function l({unit:e,size:t}){const[u,r]=a.useState();return a.useEffect(()=>{const s=o(t,c,e);r(s)},[e,t]),u}exports.default=l;
