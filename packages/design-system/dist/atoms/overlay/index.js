@@ -1,22 +1,21 @@
 import { jsx as c } from "react/jsx-runtime";
-import "react";
 import f from "clsx";
 import e from "./styles.module.css.js";
-function x({
-  children: s,
+function u({
+  children: o,
   className: i,
   effect: t = "none",
   height: n = "100%",
   isActive: l = !1,
   positionY: r = "top",
-  type: o = "screen",
+  type: s = "screen",
   width: d = "100%"
 }) {
   const a = f(
     e.root,
     {
-      [e.screen]: o === "screen",
-      [e.content]: o === "content",
+      [e.screen]: s === "screen",
+      [e.content]: s === "content",
       [e["is-active"]]: l,
       [e["effect-slideUp"]]: t === "slideUp",
       [e["effect-slideDown"]]: t === "slideDown",
@@ -38,10 +37,10 @@ function x({
         height: n
       },
       "data-testid": "overlay",
-      children: s
+      children: o
     }
   );
 }
 export {
-  x as default
+  u as default
 };

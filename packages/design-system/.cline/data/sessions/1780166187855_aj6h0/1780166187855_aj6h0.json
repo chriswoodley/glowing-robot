@@ -1,0 +1,62 @@
+{
+  "version": 1,
+  "session_id": "1780166187855_aj6h0",
+  "source": "cli",
+  "pid": 265382,
+  "started_at": "2026-05-30T18:36:27.855Z",
+  "ended_at": "2026-05-30T18:54:01.847Z",
+  "exit_code": 1,
+  "status": "failed",
+  "interactive": true,
+  "provider": "cline",
+  "model": "xiaomi/mimo-v2.5",
+  "cwd": "/home/chris/sites/glowing-robot/packages/design-system",
+  "workspace_root": "/home/chris/sites/glowing-robot",
+  "team_name": "team-lX7Jp",
+  "enable_tools": true,
+  "enable_spawn": true,
+  "enable_teams": true,
+  "prompt": "<user_input mode=\"act\">can you help me migrate from eslint 9 to 10? https://eslint.org/docs/latest/use/migrate-to-10.0.0</user_input>",
+  "metadata": {
+    "checkpoint": {
+      "latest": {
+        "ref": "c4f185fa15d400c79e6478ce64dce158f49952de",
+        "createdAt": 1780166540993,
+        "runCount": 2,
+        "kind": "stash"
+      },
+      "history": [
+        {
+          "ref": "8e78f73f25cee006f8a6d6fad124e93851a60fab",
+          "createdAt": 1780166212654,
+          "runCount": 1,
+          "kind": "stash"
+        },
+        {
+          "ref": "c4f185fa15d400c79e6478ce64dce158f49952de",
+          "createdAt": 1780166540993,
+          "runCount": 2,
+          "kind": "stash"
+        }
+      ]
+    },
+    "title": "can you help me migrate from eslint 9 to 10? https://eslint.org/docs/latest/use/migrate-to-10.0.0",
+    "totalCost": 0.3649863784000001,
+    "aggregatedAgentsCost": 0.3649863784000001,
+    "usage": {
+      "inputTokens": 15175609,
+      "outputTokens": 11301,
+      "cacheReadTokens": 12848128,
+      "cacheWriteTokens": 0,
+      "totalCost": 0.3649863784000001
+    },
+    "aggregateUsage": {
+      "inputTokens": 15175609,
+      "outputTokens": 11301,
+      "cacheReadTokens": 12848128,
+      "cacheWriteTokens": 0,
+      "totalCost": 0.3649863784000001
+    }
+  },
+  "messages_path": "/home/chris/sites/glowing-robot/packages/design-system/.cline/data/sessions/1780166187855_aj6h0/1780166187855_aj6h0.messages.json"
+}

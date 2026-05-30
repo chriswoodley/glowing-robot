@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useMemo } from 'react';
 
 const sizeMultipliers = {
   xs: 6,
@@ -8,24 +8,30 @@ const sizeMultipliers = {
   xl: 30
 };
 
-function calcMaxHeight(size, multipliers, unit) {
-  if (size && multipliers && unit) {
-    const multiplier = multipliers[size];
-    const value = unit * multiplier;
-
-    return `${value}px`;
+export function calcMaxHeight(size, multipliers, unit) {
+  if (!size || !multipliers || unit == null || Number.isNaN(unit)) {
+    return undefined;
   }
 
-  return 'auto';
+  const multiplier = multipliers[size];
+
+  if (multiplier == null) {
+    return undefined;
+  }
+
+  const value = unit * multiplier;
+
+  if (Number.isNaN(value) || !Number.isFinite(value)) {
+    return undefined;
+  }
+
+  return `${value}px`;
 }
 
 function useMaxHeight({ unit, size }) {
-  const [ maxHeight, setMaxHeight ] = useState();
-
-  useEffect(() => {
-    const height = calcMaxHeight(size, sizeMultipliers, unit);
-    setMaxHeight(height);
-  }, [ unit, size ]);
+  const maxHeight = useMemo(() => {
+    return calcMaxHeight(size, sizeMultipliers, unit);
+  }, [unit, size]);
 
   return maxHeight;
 }

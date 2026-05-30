@@ -1,35 +1,52 @@
 import { useState, useEffect } from 'react';
 
-function getRootElementLineHeight(element) {
-  if (typeof window !== 'undefined' && element) {
-    const rootEl = element.querySelector(':root');
-    const styles = window.getComputedStyle(rootEl);
-
-    return Number(styles.lineHeight.replace('px', ''));
+function getRootLineHeight() {
+  if (typeof document === 'undefined') {
+    return undefined;
   }
+
+  const rootEl = document.querySelector(':root');
+
+  if (!rootEl) {
+    return undefined;
+  }
+
+  const styles = window.getComputedStyle(rootEl);
+  const lineHeight = styles.lineHeight;
+
+  // lineHeight can be "normal" (non-px) which would produce NaN
+  if (!lineHeight || !lineHeight.endsWith('px')) {
+    return undefined;
+  }
+
+  return Number(lineHeight.replace('px', ''));
 }
 
 export default function useVerticalRhythmUnit() {
-  const theDocument = typeof window !== 'undefined' ? document : undefined;
-  const [ verticalRhythmUnit, setVerticalRhythmUnit ] = useState(getRootElementLineHeight(theDocument));
+  // Always initialize to undefined for SSR/hydration consistency.
+  // The effect will compute the actual value on the client.
+  const [ verticalRhythmUnit, setVerticalRhythmUnit ] = useState(undefined);
 
   useEffect(() => {
-    const resizeListener = (event) => {
-      const lineHeight = getRootElementLineHeight(event?.target?.document);
+    // Set the initial value on the client
+    const lineHeight = getRootLineHeight();
 
-      if (lineHeight !== undefined) {
-        setVerticalRhythmUnit(lineHeight);
+    if (lineHeight !== undefined) {
+      setVerticalRhythmUnit(lineHeight);
+    }
+
+    const resizeListener = () => {
+      const currentLineHeight = getRootLineHeight();
+
+      if (currentLineHeight !== undefined) {
+        setVerticalRhythmUnit(currentLineHeight);
       }
     };
 
-    if (typeof window !== 'undefined') {
-      window.addEventListener('resize', resizeListener);
-    }
+    window.addEventListener('resize', resizeListener);
 
     return () => {
-      if (typeof window !== 'undefined') {
-        window.removeEventListener('resize', resizeListener);
-      }
+      window.removeEventListener('resize', resizeListener);
     };
   }, []);
 

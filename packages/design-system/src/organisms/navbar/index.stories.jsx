@@ -1,4 +1,3 @@
-import React from 'react';
 import Nav from 'atoms/nav';
 import NavItem from 'atoms/nav-item';
 import NavLink from 'atoms/nav-link';

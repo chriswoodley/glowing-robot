@@ -1,4 +1,4 @@
-import React, { useCallback } from 'react';
+import { useCallback } from 'react';
 import motion from 'styles/utils/motion/_export.module.scss';
 import styles from './styles.module.css';
 import colors from 'styles/utils/color/_export.module.scss';

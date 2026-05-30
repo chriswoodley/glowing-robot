@@ -1,0 +1,55 @@
+{
+  "version": 1,
+  "session_id": "1780168208600_6apj8",
+  "source": "cli",
+  "pid": 289592,
+  "started_at": "2026-05-30T19:10:08.600Z",
+  "exit_code": null,
+  "status": "idle",
+  "interactive": true,
+  "provider": "cline",
+  "model": "deepseek/deepseek-v4-flash",
+  "cwd": "/home/chris/sites/glowing-robot/packages/design-system",
+  "workspace_root": "/home/chris/sites/glowing-robot",
+  "team_name": "team-MNqD_",
+  "enable_tools": true,
+  "enable_spawn": true,
+  "enable_teams": true,
+  "prompt": "<user_input mode=\"act\">## Error Type\rConsole Error\r\r## Error Message\rA tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:\r\r- A server/client branch `if (typeof window !== 'undefined')`.\r- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.\r- Date formatting in a user's locale which doesn't match the server.\r- External changing data without sending a snapshot of it along with the HTML.\r- Invalid HTML tag nesting.\r\rIt can also happen if the client has a browser extension installed which messes with the HTML before React loaded.\r\rhttps://react.dev/link/hydration-mismatch\r\r  ...\r    <HTTPAccessFallbackBoundary notFound={<SegmentViewNode>} forbidden={undefined} unauthorized={undefined}>\r      <HTTPAccessFallbackErrorBoundary pathname=\"/\" notFound={<SegmentViewNode>} forbidden={undefined} ...>\r        <RedirectBoundary>\r          <RedirectErrorBoundary router={{...}}>\r            <InnerLayoutRouter url=\"/\" tree={[...]} params={{}} cacheNode={{rsc:<Fragment>, ...}} segmentPath={[...]} ...>\r              <SegmentViewNode type=\"page\" pagePath=\"/apps/cwoo...\">\r                <SegmentTrieNode>\r                <ClientPageRoot Component={function RootPage} serverProvidedParams={{...}}>\r                  <RootPage params={Promise} searchParams={Promise}>\r                    <div className=\"layout_row...\">\r                      <div className=\"layout_col...\">\r                        <Carousel>\r                          <carousel__StyledSwiper className={undefined} direction=\"vertical\" slidesPerView=\"auto\" ...>\r                            <Swiper direction=\"vertical\" slidesPerView=\"auto\" centeredSlides={true} loop={true} ...>\r                              <div\r                                ref={{current:null}}\r+                               className=\"swiper carousel__StyledSwiper-sc-aad91469-0 bQzCXy\"\r-                               className=\"swiper carousel__StyledSwiper-sc-aad91469-0 fJLzBq\"\r                              >\r                                ...\r                                  <SwiperSlide swiper={{...}} swiperSlideIndex={0}>\r                                    <div ref={{current:null}} className=\"swiper-slide\" ...>\r                                      <v size=\"xlg\" ratio=\"3/2\">\r                                        <div\r                                          style={{\r+                                           --aspect-ratio: \"3/2\"\r-                                           --aspect-ratio: \"3/2\"\r+                                           --max-height: \"NaNpx\"\r-                                           --max-height: \"auto\"\r+                                           --bg-color: undefined\r                                          }}\r                                          className=\"_aspect-ratio-container_1ip0b_1\"\r+                                         data-max-height=\"NaNpx\"\r-                                         data-max-height=\"auto\"\r                                          data-ratio=\"3/2\"\r                                        >\r                                  <SwiperSlide swiper={{...}} swiperSlideIndex={1}>\r                                    <div ref={{current:null}} className=\"swiper-slide\" ...>\r                                      <v size=\"xlg\" ratio=\"3/2\">\r                                        <div\r                                          style={{\r+                                           --aspect-ratio: \"3/2\"\r-                                           --aspect-ratio: \"3/2\"\r+                                           --max-height: \"NaNpx\"\r-                                           --max-height: \"auto\"\r+                                           --bg-color: undefined\r                                          }}\r                                          className=\"_aspect-ratio-container_1ip0b_1\"\r+                                         data-max-height=\"NaNpx\"\r-                                         data-max-height=\"auto\"\r                                          data-ratio=\"3/2\"\r                                        >\r                                  <SwiperSlide swiper={{...}} swiperSlideIndex={2}>\r                                    <div ref={{current:null}} className=\"swiper-slide\" ...>\r                                      <v size=\"xlg\" ratio=\"3/2\">\r                                        <div\r                                          style={{\r+                                           --aspect-ratio: \"3/2\"\r-                                           --aspect-ratio: \"3/2\"\r+                                           --max-height: \"NaNpx\"\r-                                           --max-height: \"auto\"\r+                                           --bg-color: undefined\r                                          }}\r                                          className=\"_aspect-ratio-container_1ip0b_1\"\r+                                         data-max-height=\"NaNpx\"\r-                                         data-max-height=\"auto\"\r                                          data-ratio=\"3/2\"\r                                        >\r                                  <SwiperSlide swiper={{...}} swiperSlideIndex={3}>\r                                    <div ref={{current:null}} className=\"swiper-slide\" ...>\r                                      <v size=\"xlg\" ratio=\"3/2\">\r                                        <div\r                                          style={{\r+                                           --aspect-ratio: \"3/2\"\r-                                           --aspect-ratio: \"3/2\"\r+                                           --max-height: \"NaNpx\"\r-                                           --max-height: \"auto\"\r+                                           --bg-color: undefined\r                                          }}\r                                          className=\"_aspect-ratio-container_1ip0b_1\"\r+                                         data-max-height=\"NaNpx\"\r-                                         data-max-height=\"auto\"\r                                          data-ratio=\"3/2\"\r                                        >\r                      ...\r              ...\r            ...\r\r\r\r    at div (<anonymous>:null:null)\r    at v (../../../packages/design-system/dist/atoms/aspect-ratio-container/index.js:15:27)\r    at RootPage (app/page.js:27:15)\r\r## Code Frame\r  13 | }) {\r  14 |   const m = c(), t = n({ unit: m, size: i });\r> 15 |   return /* @__PURE__ */ s(\r     |                           ^\r  16 |     \"div\",\r  17 |     {\r  18 |       style: {\r\rNext.js version: 16.1.1 (Turbopack)</user_input>",
+  "metadata": {
+    "checkpoint": {
+      "latest": {
+        "ref": "e6980f231d02a943e44d0d9645fc498235065006",
+        "createdAt": 1780168215707,
+        "runCount": 1,
+        "kind": "stash"
+      },
+      "history": [
+        {
+          "ref": "e6980f231d02a943e44d0d9645fc498235065006",
+          "createdAt": 1780168215707,
+          "runCount": 1,
+          "kind": "stash"
+        }
+      ]
+    },
+    "title": "## Error Type\rConsole Error\r\r## Error Message\rA tree hydrated but some attributes of the server rendered HTML didn't mat",
+    "totalCost": 0.0342806576,
+    "aggregatedAgentsCost": 0.0342806576,
+    "usage": {
+      "inputTokens": 1204466,
+      "outputTokens": 7156,
+      "cacheReadTokens": 993792,
+      "cacheWriteTokens": 0,
+      "totalCost": 0.0342806576
+    },
+    "aggregateUsage": {
+      "inputTokens": 1204466,
+      "outputTokens": 7156,
+      "cacheReadTokens": 993792,
+      "cacheWriteTokens": 0,
+      "totalCost": 0.0342806576
+    }
+  },
+  "messages_path": "/home/chris/sites/glowing-robot/packages/design-system/.cline/data/sessions/1780168208600_6apj8/1780168208600_6apj8.messages.json"
+}

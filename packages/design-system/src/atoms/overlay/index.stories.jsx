@@ -1,4 +1,3 @@
-import React from 'react';
 import { within, expect } from 'storybook/test';
 import Overlay from 'atoms/overlay';
 

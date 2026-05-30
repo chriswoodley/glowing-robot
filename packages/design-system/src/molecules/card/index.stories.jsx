@@ -1,4 +1,3 @@
-import React from 'react';
 import Card from 'molecules/card';
 
 export default {
