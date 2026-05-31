@@ -23,9 +23,14 @@
     "cwoodley:be:postinstall": "yarn workspace @cw/backend run postinstall",
     "design-system:start": "yarn workspace @cw/design-system run start",
     "design-system:storybook": "yarn workspace @cw/design-system run storybook",
-    "dev:cwoodley": "npm-run-all --parallel design-system:start design-system:storybook cwoodley:fe:dev"
+    "dev:cwoodley": "npm-run-all --parallel design-system:start design-system:storybook cwoodley:fe:dev",
+    "ai": "cline --config .cline",
+    "prepare": "husky",
+    "lint-staged": "lint-staged"
   },
   "devDependencies": {
+    "husky": "^9.1.7",
+    "lint-staged": "^17.0.6",
     "npm-run-all": "^4.1.5",
     "typescript": "^6.0.3"
   },
