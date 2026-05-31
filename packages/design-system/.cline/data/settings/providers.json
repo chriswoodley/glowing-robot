@@ -1,0 +1,24 @@
+{
+  "version": 1,
+  "lastUsedProvider": "cline",
+  "providers": {
+    "cline": {
+      "settings": {
+        "provider": "cline",
+        "auth": {
+          "accessToken": "workos:eyJhbGciOiJSUzI1NiIsImtpZCI6InNzb19vaWRjX2tleV9wYWlyXzAxSzNBNTQxREZLR1FaRjE1R0Y4UkZNUDBWIn0.eyJleHRlcm5hbF9pZCI6InVzci0wMUszSjRIU1lXMVJCSDEwRTIySjlLOE5IMCIsImxhc3ROYW1lIjoiV29vZGxleSIsImZpcnN0TmFtZSI6IkNocmlzIiwiZW1haWwiOiJjaHJpc3dvb2RsZXlAbWUuY29tIiwiaXNzIjoiaHR0cHM6Ly9hcGkud29ya29zLmNvbS91c2VyX21hbmFnZW1lbnQvY2xpZW50XzAxSzNBNTQxRk44VEEzRVBQSFREMjMyNUFSIiwic3ViIjoidXNlcl8wMUtTUlJFWUQyR1FCNlZQQ1pFUFY3REtDRiIsInNpZCI6InNlc3Npb25fMDFLU1lXUjREN1cwN1RCNldIWUM5SDlKQU0iLCJqdGkiOiIwMUtTWVpYWDJQNkVUOE5OUzRRNlc3NE5URSIsImNsaWVudF9pZCI6ImNsaWVudF8wMUszQTU0MUZOOFRBM0VQUEhURDIzMjVBUiIsImV4cCI6MTc4MDIzMzkyMSwiaWF0IjoxNzgwMjMwMzIxfQ.b17o7RjonmTRTJteFz1YSc04L-PJdL4PMN_Imox1LRn4VYD7WPk030IFVrC_eRpG7lHEbjgKXUYAKV6CWUuhWxobvk2hRIJTQzBdkpuYJAN0sjZb-ZVUBcE38I3ScVXM745Xo_AY4VNtueR05arLOycP-JWIUHjQDRYTPeJq3ltDYiIKg61mXVzX0pYNyUJSXKLpTMxVDr5j1rGbO1YPjMZtsZoFau27sMIa3E7laU9H821yJOf1u8BDX5A251-XMNJIhFXc2OWBRoCw4-AQ3lmY_h7Q-DnOIX_93tashHFRcph3Q5Q90VGhEIUeNVCdAwuYYmch6I-uepLMyhPR6w",
+          "refreshToken": "2fRUnFeSa14NQMWkKoaGAnkyR",
+          "expiresAt": 1780233921000,
+          "accountId": "usr-01K3J4HSYW1RBH10E22J9K8NH0"
+        },
+        "model": "openai/gpt-oss-120b:free",
+        "reasoning": {
+          "enabled": true,
+          "effort": "medium"
+        }
+      },
+      "updatedAt": "2026-05-31T12:32:13.346Z",
+      "tokenSource": "oauth"
+    }
+  }
+}

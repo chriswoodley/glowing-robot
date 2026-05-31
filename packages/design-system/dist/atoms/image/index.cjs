@@ -1,3 +1,61 @@
-"use strict";Object.defineProperties(exports,{__esModule:{value:!0},[Symbol.toStringTag]:{value:"Module"}});const x=require("react/jsx-runtime"),w=require("clsx"),i=require("./styles.module.css.cjs"),y=e=>typeof window<"u"?window.btoa(e):Buffer.from(e,"utf-8").toString("base64"),u=new Map,d=({width:e,height:t,color:r})=>{const o=`${e},${e},${r}`;return u.has(o)||u.set(o,`data:image/svg+xml;base64,${y(`<svg viewBox="0 0 ${e} ${t}" xmlns="http://www.w3.org/2000/svg">
+'use strict';
+Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+const x = require('react/jsx-runtime'),
+  y = require('clsx'),
+  i = require('./styles.module.css.cjs'),
+  w = (e) =>
+    typeof window < 'u'
+      ? window.btoa(e)
+      : Buffer.from(e, 'utf-8').toString('base64'),
+  f = new Map(),
+  g = ({ width: e, height: t, color: r }) => {
+    const o = `${e},${e},${r}`;
+    return (
+      f.has(o) ||
+        f.set(
+          o,
+          `data:image/svg+xml;base64,${w(`<svg viewBox="0 0 ${e} ${t}" xmlns="http://www.w3.org/2000/svg">
         <rect width="${e}" height="${t}" fill="${r}"></rect>
-      </svg>`)}`),u.get(o)};function j({alt:e,className:t,crossOrigin:r,decoding:o="async",fill:g=!1,height:l,loading:m="lazy",placeholder:f={},sizes:$,src:v,srcSet:b,width:s}){let a=d({width:s,height:l,color:"#eeeeee"});return Object.keys(f).forEach(c=>{const n=f[c];n&&(c==="color"&&(a=d({width:s,height:l,color:n})),["dataURL","URL"].includes(c)&&(a=n))}),x.jsx("img",{alt:e,crossOrigin:r,decoding:o,height:l,loading:m,sizes:$,src:v,srcSet:b,width:s,className:w.clsx(i.default.root,{[i.default.fill]:g},t),style:{"--placeholder":`url(${a})`}})}exports.default=j;
+      </svg>`)}`
+        ),
+      f.get(o)
+    );
+  };
+function j({
+  alt: e,
+  className: t,
+  crossOrigin: r,
+  decoding: o = 'async',
+  fill: m = !1,
+  height: s,
+  loading: d = 'lazy',
+  placeholder: u = {},
+  sizes: $,
+  src: b,
+  srcSet: v,
+  width: l,
+}) {
+  let a = g({ width: l, height: s, color: '#eeeeee' });
+  return (
+    Object.keys(u).forEach((c) => {
+      const n = u[c];
+      n &&
+        (c === 'color' && (a = g({ width: l, height: s, color: n })),
+        ['dataURL', 'URL'].includes(c) && (a = n));
+    }),
+    x.jsx('img', {
+      alt: e,
+      crossOrigin: r,
+      decoding: o,
+      height: s,
+      loading: d,
+      sizes: $,
+      src: b,
+      srcSet: v,
+      width: l,
+      className: y.clsx(i.default.root, { [i.default.fill]: m }, t),
+      style: { '--placeholder': `url(${a})` },
+    })
+  );
+}
+exports.Image = j;

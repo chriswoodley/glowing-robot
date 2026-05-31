@@ -1,1 +1,10 @@
-"use strict";Object.defineProperties(exports,{__esModule:{value:!0},[Symbol.toStringTag]:{value:"Module"}});const l=require("react/jsx-runtime"),r=require("./styles.module.css.cjs"),o=require("clsx");function i({children:e,className:t,id:s}){const u=o(r.default.root,"flex_item",t);return l.jsx("li",{id:s,className:u,children:e})}exports.default=i;
+'use strict';
+Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+const o = require('react/jsx-runtime'),
+  l = require('./styles.module.css.cjs'),
+  u = require('clsx');
+function c({ children: e, className: t, id: s }) {
+  const r = u(l.default.root, 'flex_item', t);
+  return o.jsx('li', { id: s, className: r, children: e });
+}
+exports.NavItem = c;

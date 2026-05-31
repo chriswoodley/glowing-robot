@@ -1,5 +1,5 @@
-import Card from 'molecules/card';
-import CardSection from 'atoms/card-section';
+import { Card } from 'molecules/card';
+import { CardSection } from 'atoms/card-section';
 
 export default {
   title: 'Atoms/Card/Card Section',

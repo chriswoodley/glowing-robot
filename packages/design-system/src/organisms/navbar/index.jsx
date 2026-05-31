@@ -21,4 +21,4 @@ function Navbar({ brand, className, id, nav }) {
   return null;
 }
 
-export default Navbar;
+export { Navbar };

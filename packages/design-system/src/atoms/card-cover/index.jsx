@@ -1,5 +1,5 @@
-import AspectRatioContainer from 'atoms/aspect-ratio-container';
-import Image from 'atoms/image';
+import { AspectRatioContainer } from 'atoms/aspect-ratio-container';
+import { Image } from 'atoms/image';
 import { clsx } from 'clsx';
 
 // TODO: should this component live in molecules instead of atoms? It is a bit
@@ -42,4 +42,4 @@ function CardCover({
 
 CardCover.displayName = 'Card.Cover';
 
-export default CardCover;
+export { CardCover };

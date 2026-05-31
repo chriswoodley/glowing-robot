@@ -1,5 +1,5 @@
-import CardCover from 'atoms/card-cover';
-import Card from 'molecules/card';
+import { CardCover } from 'atoms/card-cover';
+import { Card } from 'molecules/card';
 
 export default {
   title: 'Atoms/Card/Card Cover',

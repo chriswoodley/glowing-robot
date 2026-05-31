@@ -1,4 +1,4 @@
-import NavItem from 'atoms/nav-item';
+import { NavItem } from 'atoms/nav-item';
 
 export default {
   title: 'Atoms/Nav Item',

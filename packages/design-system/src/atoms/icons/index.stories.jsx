@@ -1,9 +1,9 @@
-import Icons from 'atoms/icons';
+import { Icons } from 'atoms/icons';
 
 export default {
   title: 'Atoms/Icons',
   component: Icons,
-  tags: [ 'autodocs' ]
+  tags: ['autodocs'],
 };
 
 export const Default = {};

@@ -1,11 +1,11 @@
-import AspectRatioContainer from 'atoms/aspect-ratio-container';
+import { AspectRatioContainer } from 'atoms/aspect-ratio-container';
 
 export default {
   title: 'Atoms/Aspect Ratio Container',
   component: AspectRatioContainer,
-  tags: [ 'autodocs' ],
+  tags: ['autodocs'],
   args: {
-    ratio: '1/1'
+    ratio: '1/1',
   },
 };
 

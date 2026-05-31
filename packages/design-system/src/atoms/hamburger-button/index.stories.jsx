@@ -1,4 +1,4 @@
-import HamburgerButton from 'atoms/hamburger-button';
+import { HamburgerButton } from 'atoms/hamburger-button';
 
 export default {
   title: 'Atoms/Hamburger Button',

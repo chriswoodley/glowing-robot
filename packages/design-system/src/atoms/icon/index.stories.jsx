@@ -1,5 +1,5 @@
-import Icons from 'atoms/icons';
-import Icon from 'atoms/icon';
+import { Icons } from 'atoms/icons';
+import { Icon } from 'atoms/icon';
 
 export default {
   title: 'Atoms/Icon',

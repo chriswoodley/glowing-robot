@@ -1,8 +1,8 @@
-import { useCallback, useEffect, useState } from "react";
+import { useCallback, useEffect, useState } from 'react';
 import {
   getShouldMatchViewportMaxWidth,
-  getShouldMatchViewportMinWidth
-} from "utils/device-helpers";
+  getShouldMatchViewportMinWidth,
+} from 'utils/device-helpers';
 
 function getInitialMatch(type, value) {
   if (typeof window !== 'undefined') {
@@ -14,8 +14,8 @@ function getInitialMatch(type, value) {
   return false;
 }
 
-export default function useViewportMatch({ type, value }) {
-  const [ result, setResult ] = useState(() => getInitialMatch(type, value));
+export function useViewportMatch({ type, value }) {
+  const [result, setResult] = useState(() => getInitialMatch(type, value));
 
   const handleResize = useCallback(() => {
     if (type === 'max') {
@@ -23,7 +23,7 @@ export default function useViewportMatch({ type, value }) {
     } else {
       setResult(getShouldMatchViewportMinWidth(value));
     }
-  }, [ value, type ]);
+  }, [value, type]);
 
   useEffect(() => {
     if (typeof window !== 'undefined') {
@@ -35,7 +35,7 @@ export default function useViewportMatch({ type, value }) {
         window.removeEventListener('resize', handleResize);
       }
     };
-  }, [ handleResize ]);
+  }, [handleResize]);
 
   return result;
 }

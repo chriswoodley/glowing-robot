@@ -1,1 +1,33 @@
-"use strict";Object.defineProperties(exports,{__esModule:{value:!0},[Symbol.toStringTag]:{value:"Module"}});const e=require("react/jsx-runtime"),i=require("clsx"),u=require("./styles.module.css.cjs");function x({glyph:s,title:o,size:n=48,color:r,backgroundColor:c,className:l}){if(s&&o){const t=i.clsx(u.default.icon,l);return e.jsxs("svg",{viewBox:"0 0 24 24",xmlns:"http://www.w3.org/2000/svg",className:t,style:{"--icon-color":r,"--icon-size":`${n}px`,"--icon-background-color":c},children:[e.jsx("title",{children:o}),e.jsx("use",{xlinkHref:`#${s}`})]})}return null}exports.default=x;
+'use strict';
+Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+const e = require('react/jsx-runtime'),
+  l = require('clsx'),
+  u = require('./styles.module.css.cjs');
+function x({
+  glyph: s,
+  title: n,
+  size: o = 48,
+  color: c,
+  backgroundColor: r,
+  className: t,
+}) {
+  if (s && n) {
+    const i = l.clsx(u.default.icon, t);
+    return e.jsxs('svg', {
+      viewBox: '0 0 24 24',
+      xmlns: 'http://www.w3.org/2000/svg',
+      className: i,
+      style: {
+        '--icon-color': c,
+        '--icon-size': `${o}px`,
+        '--icon-background-color': r,
+      },
+      children: [
+        e.jsx('title', { children: n }),
+        e.jsx('use', { xlinkHref: `#${s}` }),
+      ],
+    });
+  }
+  return null;
+}
+exports.Icon = x;

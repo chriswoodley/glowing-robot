@@ -1,1 +1,11 @@
-"use strict";Object.defineProperties(exports,{__esModule:{value:!0},[Symbol.toStringTag]:{value:"Module"}});const o=require("react/jsx-runtime"),u=require("clsx"),l=require("./styles.module.css.cjs");function e({className:s,children:t}){const r=u.clsx(l.default.root,s,"p-2");return o.jsx("div",{className:r,children:t})}e.displayName="Card.Section";exports.default=e;
+'use strict';
+Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+const o = require('react/jsx-runtime'),
+  c = require('clsx'),
+  i = require('./styles.module.css.cjs');
+function e({ className: t, children: s }) {
+  const r = c.clsx(i.default.root, t, 'p-2');
+  return o.jsx('div', { className: r, children: s });
+}
+e.displayName = 'Card.Section';
+exports.CardSection = e;
