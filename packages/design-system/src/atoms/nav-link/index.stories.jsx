@@ -1,4 +1,4 @@
-import NavLink from 'atoms/nav-link';
+import { NavLink } from 'atoms/nav-link';
 
 export default {
   title: 'Atoms/Nav Link',

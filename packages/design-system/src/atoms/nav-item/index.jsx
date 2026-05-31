@@ -11,4 +11,4 @@ function NavItem({ children, className, id }) {
   );
 }
 
-export default NavItem;
+export { NavItem };

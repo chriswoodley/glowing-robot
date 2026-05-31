@@ -5,7 +5,7 @@ const sizeMultipliers = {
   sm: 12,
   md: 18,
   lg: 24,
-  xl: 30
+  xl: 30,
 };
 
 export function calcMaxHeight(size, multipliers, unit) {
@@ -36,4 +36,4 @@ function useMaxHeight({ unit, size }) {
   return maxHeight;
 }
 
-export default useMaxHeight;
+export { useMaxHeight };

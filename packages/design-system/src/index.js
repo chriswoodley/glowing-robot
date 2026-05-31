@@ -1,19 +1,19 @@
 import 'styles/index.scss';
 import rootVars from 'styles/root/_export.module.scss';
-export { default as AspectRatioContainer } from 'atoms/aspect-ratio-container';
-export { default as HamburgerButton } from 'atoms/hamburger-button';
-export { default as Image } from 'atoms/image';
-export { default as Nav } from 'atoms/nav';
-export { default as Navbar } from 'organisms/navbar';
-export { default as NavItem } from 'atoms/nav-item';
-export { default as NavLink } from 'atoms/nav-link';
-export { default as Icons } from 'atoms/icons';
-export { default as Icon } from 'atoms/icon';
-export { default as Overlay } from 'atoms/overlay';
-export { default as ContentOverlay } from 'molecules/content-overlay';
-export { default as Card } from 'molecules/card';
-export { default as usePrevious } from 'hooks/use-previous';
-export { default as useViewportMatch } from 'hooks/use-viewport-match';
+export { AspectRatioContainer } from 'atoms/aspect-ratio-container';
+export { HamburgerButton } from 'atoms/hamburger-button';
+export { Image } from 'atoms/image';
+export { Nav } from 'atoms/nav';
+export { Navbar } from 'organisms/navbar';
+export { NavItem } from 'atoms/nav-item';
+export { NavLink } from 'atoms/nav-link';
+export { Icons } from 'atoms/icons';
+export { Icon } from 'atoms/icon';
+export { Overlay } from 'atoms/overlay';
+export { ContentOverlay } from 'molecules/content-overlay';
+export { Card } from 'molecules/card';
+export { usePrevious } from 'hooks/use-previous';
+export { useViewportMatch } from 'hooks/use-viewport-match';
 export * from 'utils/device-helpers';
 
 export const styleVariables = {

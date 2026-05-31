@@ -1,1 +1,25 @@
-"use strict";Object.defineProperties(exports,{__esModule:{value:!0},[Symbol.toStringTag]:{value:"Module"}});const o=require("react/jsx-runtime"),c=require("../../hooks/use-vertical-rhythm-unit.cjs"),n=require("../../hooks/use-max-height.cjs"),l=require("../../styles/utils/color/_export.module.scss.cjs"),d=require("./styles.module.css.cjs"),m=require("clsx");function x({className:a,style:r,size:s,children:i,ratio:t="1/1"}){const u=c.default(),e=n.default({unit:u,size:s});return o.jsx("div",{style:{...r,"--aspect-ratio":t,...e?{"--max-height":e}:{},"--bg-color":l.default["gray-100"]},className:m.clsx(d.default["aspect-ratio-container"],a),...e?{"data-max-height":e}:{},"data-ratio":t,children:i})}exports.default=x;
+'use strict';
+Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+const n = require('react/jsx-runtime'),
+  c = require('../../hooks/use-vertical-rhythm-unit.cjs'),
+  u = require('../../hooks/use-max-height.cjs'),
+  l = require('../../styles/utils/color/_export.module.scss.cjs'),
+  h = require('./styles.module.css.cjs'),
+  m = require('clsx');
+function x({ className: i, style: r, size: a, children: s, ratio: t = '1/1' }) {
+  const o = c.useVerticalRhythmUnit(),
+    e = u.useMaxHeight({ unit: o, size: a });
+  return n.jsx('div', {
+    style: {
+      ...r,
+      '--aspect-ratio': t,
+      ...(e ? { '--max-height': e } : {}),
+      '--bg-color': l.default['gray-100'],
+    },
+    className: m.clsx(h.default['aspect-ratio-container'], i),
+    ...(e ? { 'data-max-height': e } : {}),
+    'data-ratio': t,
+    children: s,
+  });
+}
+exports.AspectRatioContainer = x;

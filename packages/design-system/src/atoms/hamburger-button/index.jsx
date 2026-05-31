@@ -44,4 +44,4 @@ function HamburgerButton({ onClick, className, isActive = false, ...props }) {
   );
 }
 
-export default HamburgerButton;
+export { HamburgerButton };

@@ -1,1 +1,40 @@
-"use strict";Object.defineProperties(exports,{__esModule:{value:!0},[Symbol.toStringTag]:{value:"Module"}});const e=require("react/jsx-runtime"),c=require("../aspect-ratio-container/index.cjs"),x=require("../image/index.cjs"),f=require("clsx");function r({src:s,width:t,height:i,alt:d,placeholder:l,className:o,size:u="xl",ratio:n="2/1"}){const a=f.clsx(o,"border-top-left-radius","border-top-right-radius","overflow-hidden");return e.jsx("div",{className:a,children:e.jsx(c.default,{ratio:n,size:u,children:e.jsx(x.default,{src:s,width:t,height:i,alt:d,placeholder:l,fill:!0})})})}r.displayName="Card.Cover";exports.default=r;
+'use strict';
+Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+const e = require('react/jsx-runtime'),
+  u = require('../aspect-ratio-container/index.cjs'),
+  x = require('../image/index.cjs'),
+  C = require('clsx');
+function r({
+  src: i,
+  width: s,
+  height: t,
+  alt: o,
+  placeholder: n,
+  className: d,
+  size: a = 'xl',
+  ratio: c = '2/1',
+}) {
+  const l = C.clsx(
+    d,
+    'border-top-left-radius',
+    'border-top-right-radius',
+    'overflow-hidden'
+  );
+  return e.jsx('div', {
+    className: l,
+    children: e.jsx(u.AspectRatioContainer, {
+      ratio: c,
+      size: a,
+      children: e.jsx(x.Image, {
+        src: i,
+        width: s,
+        height: t,
+        alt: o,
+        placeholder: n,
+        fill: !0,
+      }),
+    }),
+  });
+}
+r.displayName = 'Card.Cover';
+exports.CardCover = r;

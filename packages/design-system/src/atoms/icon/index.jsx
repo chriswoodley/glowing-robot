@@ -26,4 +26,4 @@ function Icon({ glyph, title, size = 48, color, backgroundColor, className }) {
   return null;
 }
 
-export default Icon;
+export { Icon };

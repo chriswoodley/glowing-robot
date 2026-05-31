@@ -1,1 +1,40 @@
-"use strict";Object.defineProperties(exports,{__esModule:{value:!0},[Symbol.toStringTag]:{value:"Module"}});const d=require("react/jsx-runtime"),c=require("react"),f=require("../../atoms/card-cover/index.cjs"),v=require("../../atoms/card-section/index.cjs"),y=require("clsx"),t=require("./styles.module.css.cjs");function r({children:s,className:u,mode:n="light",onClick:e,width:o}){const a=y(t.default.root,t.default[n],{[t.default["is-clickable"]]:e==="function"},"elevation-1","border-radius",{"elevation-hover-3":!!e},u),l=c.useCallback(i=>{i.key==="Enter"&&typeof e=="function"&&e()},[e]);return d.jsx("div",{className:a,style:{width:o},...e?{onKeyDown:l,role:"link",tabIndex:"0",onClick:e}:{},children:s})}r.Section=v.default;r.Cover=f.default;exports.default=r;
+'use strict';
+Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+const c = require('react/jsx-runtime'),
+  l = require('react'),
+  f = require('../../atoms/card-cover/index.cjs'),
+  y = require('../../atoms/card-section/index.cjs'),
+  v = require('clsx'),
+  t = require('./styles.module.css.cjs');
+function r({
+  children: n,
+  className: o,
+  mode: s = 'light',
+  onClick: e,
+  width: a,
+}) {
+  const i = v(
+      t.default.root,
+      t.default[s],
+      { [t.default['is-clickable']]: e === 'function' },
+      'elevation-1',
+      'border-radius',
+      { 'elevation-hover-3': !!e },
+      o
+    ),
+    u = l.useCallback(
+      (d) => {
+        d.key === 'Enter' && typeof e == 'function' && e();
+      },
+      [e]
+    );
+  return c.jsx('div', {
+    className: i,
+    style: { width: a },
+    ...(e ? { onKeyDown: u, role: 'link', tabIndex: '0', onClick: e } : {}),
+    children: n,
+  });
+}
+r.Section = y.CardSection;
+r.Cover = f.CardCover;
+exports.Card = r;

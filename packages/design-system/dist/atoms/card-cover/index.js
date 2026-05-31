@@ -1,36 +1,38 @@
-import { jsx as r } from "react/jsx-runtime";
-import f from "../aspect-ratio-container/index.js";
-import n from "../image/index.js";
-import { clsx as p } from "clsx";
-function c({
+import { jsx as r } from 'react/jsx-runtime';
+import { AspectRatioContainer as n } from '../aspect-ratio-container/index.js';
+import { Image as p } from '../image/index.js';
+import { clsx as c } from 'clsx';
+function f({
   src: o,
   width: e,
-  height: t,
-  alt: i,
+  height: i,
+  alt: t,
   placeholder: a,
   className: d,
-  size: s = "xl",
-  ratio: l = "2/1"
+  size: s = 'xl',
+  ratio: l = '2/1',
 }) {
-  const m = p(
+  const m = c(
     d,
-    "border-top-left-radius",
-    "border-top-right-radius",
-    "overflow-hidden"
+    'border-top-left-radius',
+    'border-top-right-radius',
+    'overflow-hidden'
   );
-  return /* @__PURE__ */ r("div", { className: m, children: /* @__PURE__ */ r(f, { ratio: l, size: s, children: /* @__PURE__ */ r(
-    n,
-    {
-      src: o,
-      width: e,
-      height: t,
-      alt: i,
-      placeholder: a,
-      fill: !0
-    }
-  ) }) });
+  return /* @__PURE__ */ r('div', {
+    className: m,
+    children: /* @__PURE__ */ r(n, {
+      ratio: l,
+      size: s,
+      children: /* @__PURE__ */ r(p, {
+        src: o,
+        width: e,
+        height: i,
+        alt: t,
+        placeholder: a,
+        fill: !0,
+      }),
+    }),
+  });
 }
-c.displayName = "Card.Cover";
-export {
-  c as default
-};
+f.displayName = 'Card.Cover';
+export { f as CardCover };

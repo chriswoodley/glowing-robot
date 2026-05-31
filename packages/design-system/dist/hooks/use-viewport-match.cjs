@@ -1,1 +1,34 @@
-"use strict";Object.defineProperties(exports,{__esModule:{value:!0},[Symbol.toStringTag]:{value:"Module"}});const r=require("react"),i=require("../utils/device-helpers.cjs");function u(t,e){return typeof window<"u"?t==="max"?i.getShouldMatchViewportMaxWidth(e):i.getShouldMatchViewportMinWidth(e):!1}function s({type:t,value:e}){const[d,o]=r.useState(()=>u(t,e)),n=r.useCallback(()=>{o(t==="max"?i.getShouldMatchViewportMaxWidth(e):i.getShouldMatchViewportMinWidth(e))},[e,t]);return r.useEffect(()=>(typeof window<"u"&&window.addEventListener("resize",n),()=>{typeof window<"u"&&window.removeEventListener("resize",n)}),[n]),d}exports.default=s;
+'use strict';
+Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+const r = require('react'),
+  i = require('../utils/device-helpers.cjs');
+function s(t, e) {
+  return typeof window < 'u'
+    ? t === 'max'
+      ? i.getShouldMatchViewportMaxWidth(e)
+      : i.getShouldMatchViewportMinWidth(e)
+    : !1;
+}
+function u({ type: t, value: e }) {
+  const [d, o] = r.useState(() => s(t, e)),
+    n = r.useCallback(() => {
+      o(
+        t === 'max'
+          ? i.getShouldMatchViewportMaxWidth(e)
+          : i.getShouldMatchViewportMinWidth(e)
+      );
+    }, [e, t]);
+  return (
+    r.useEffect(
+      () => (
+        typeof window < 'u' && window.addEventListener('resize', n),
+        () => {
+          typeof window < 'u' && window.removeEventListener('resize', n);
+        }
+      ),
+      [n]
+    ),
+    d
+  );
+}
+exports.useViewportMatch = u;

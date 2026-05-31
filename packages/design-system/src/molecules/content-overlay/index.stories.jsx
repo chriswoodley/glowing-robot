@@ -1,6 +1,6 @@
 import { within, userEvent, waitFor, expect } from 'storybook/test';
-import Overlay from 'atoms/overlay';
-import ContentOverlay from 'molecules/content-overlay';
+import { Overlay } from 'atoms/overlay';
+import { ContentOverlay } from 'molecules/content-overlay';
 
 export default {
   title: 'Molecules/Content Overlay',
