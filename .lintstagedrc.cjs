@@ -13,15 +13,12 @@
 module.exports = {
   // --- JavaScript / TypeScript -------------------------------------------------
   // ESLint (flat config auto-resolves per workspace) then Prettier
-  "*.{js,mjs,cjs,jsx,ts,tsx,mts,cts}": [
-    "eslint --fix --ignore-pattern 'dist/*'",
-    'prettier --write . "!**/dist/**"',
-  ],
+  "*.{js,mjs,cjs,jsx,ts,tsx,mts,cts}": ["eslint --fix", "prettier --write"],
 
   // --- Styles ------------------------------------------------------------------
   // Stylelint (only relevant for files under packages/design-system) then Prettier
-  "*.{css,scss}": ["stylelint --fix", 'prettier --write . "!**/dist/**"'],
+  "*.{css,scss}": ["stylelint --fix", "prettier --write"],
 
   // --- JSON / Markdown / YAML / other -----------------------------------------
-  "*.{json,jsonc,md,yaml,yml}": ['prettier --write . "!**/dist/**"'],
+  "*.{json,jsonc,md,yaml,yml}": ["prettier --write"],
 };
