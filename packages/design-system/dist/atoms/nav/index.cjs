@@ -1,1 +1,29 @@
-"use strict";Object.defineProperties(exports,{__esModule:{value:!0},[Symbol.toStringTag]:{value:"Module"}});const c=require("react/jsx-runtime"),u=require("clsx"),f=require("./styles.module.css.cjs");function d({children:s,className:a,id:r,type:l="default",...o}){const i=l==="default",e=l==="horizontal",t=l==="vertical center",n=u.clsx(f.default.root,{block:i,flex:e||t,"flex--row":e,"flex--column":t,"flex--align-items-center":e||t,"flex--align-items-end":e},a);return c.jsx("ul",{"aria-label":o["aria-label"],id:r,className:n,children:s})}exports.default=d;
+'use strict';
+Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+const c = require('react/jsx-runtime'),
+  u = require('clsx'),
+  f = require('./styles.module.css.cjs');
+function x({ children: s, className: a, id: r, type: l = 'default', ...n }) {
+  const o = l === 'default',
+    e = l === 'horizontal',
+    t = l === 'vertical center',
+    i = u.clsx(
+      f.default.root,
+      {
+        block: o,
+        flex: e || t,
+        'flex--row': e,
+        'flex--column': t,
+        'flex--align-items-center': e || t,
+        'flex--align-items-end': e,
+      },
+      a
+    );
+  return c.jsx('ul', {
+    'aria-label': n['aria-label'],
+    id: r,
+    className: i,
+    children: s,
+  });
+}
+exports.Nav = x;

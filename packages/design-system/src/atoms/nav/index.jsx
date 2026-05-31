@@ -25,4 +25,4 @@ function Nav({ children, className, id, type = 'default', ...props }) {
   );
 }
 
-export default Nav;
+export { Nav };

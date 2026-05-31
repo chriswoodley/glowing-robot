@@ -1,1 +1,31 @@
-"use strict";Object.defineProperties(exports,{__esModule:{value:!0},[Symbol.toStringTag]:{value:"Module"}});const c=require("react/jsx-runtime"),n=require("clsx"),i=require("./styles.module.css.cjs");function d({children:e,className:t,href:s,id:l,rel:r,size:u="default",target:o}){const a=n(i.default.root,"block","py-1 px-10",{"text-large":u==="large"},t);return c.jsx("a",{href:s,rel:r,target:o,id:l,className:a,children:e})}exports.default=d;
+'use strict';
+Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+const u = require('react/jsx-runtime'),
+  c = require('clsx'),
+  i = require('./styles.module.css.cjs');
+function d({
+  children: e,
+  className: t,
+  href: s,
+  id: r,
+  rel: l,
+  size: o = 'default',
+  target: a,
+}) {
+  const n = c(
+    i.default.root,
+    'block',
+    'py-1 px-10',
+    { 'text-large': o === 'large' },
+    t
+  );
+  return u.jsx('a', {
+    href: s,
+    rel: l,
+    target: a,
+    id: r,
+    className: n,
+    children: e,
+  });
+}
+exports.NavLink = d;

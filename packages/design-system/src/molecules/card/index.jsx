@@ -1,6 +1,6 @@
 import { useCallback } from 'react';
-import CardCover from 'atoms/card-cover';
-import CardSection from 'atoms/card-section';
+import { CardCover } from 'atoms/card-cover';
+import { CardSection } from 'atoms/card-section';
 import clsx from 'clsx';
 import styles from './styles.module.css';
 
@@ -49,4 +49,4 @@ function Card({ children, className, mode = 'light', onClick, width }) {
 Card.Section = CardSection;
 Card.Cover = CardCover;
 
-export default Card;
+export { Card };

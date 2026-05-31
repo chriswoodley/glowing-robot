@@ -1,5 +1,5 @@
 import { within, expect } from 'storybook/test';
-import Overlay from 'atoms/overlay';
+import { Overlay } from 'atoms/overlay';
 
 export default {
   title: 'Atoms/Overlay',

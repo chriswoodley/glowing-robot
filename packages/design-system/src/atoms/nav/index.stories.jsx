@@ -1,6 +1,6 @@
-import Nav from 'atoms/nav';
-import NavItem from 'atoms/nav-item';
-import NavLink from 'atoms/nav-link';
+import { Nav } from 'atoms/nav';
+import { NavItem } from 'atoms/nav-item';
+import { NavLink } from 'atoms/nav-link';
 import { StandardNavItem } from 'atoms/nav-item/index.stories';
 import { StandardNavLink } from 'atoms/nav-link/index.stories';
 

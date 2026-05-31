@@ -1,4 +1,4 @@
-import Card from 'molecules/card';
+import { Card } from 'molecules/card';
 
 export default {
   title: 'Molecules/Card',

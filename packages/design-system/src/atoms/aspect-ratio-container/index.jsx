@@ -1,5 +1,5 @@
-import useVerticalRhythmUnit from 'hooks/use-vertical-rhythm-unit';
-import useMaxHeight from 'hooks/use-max-height';
+import { useVerticalRhythmUnit } from 'hooks/use-vertical-rhythm-unit';
+import { useMaxHeight } from 'hooks/use-max-height';
 import colors from 'styles/utils/color/_export.module.scss';
 import styles from './styles.module.css';
 import { clsx } from 'clsx';
@@ -31,4 +31,4 @@ function AspectRatioContainer({
   );
 }
 
-export default AspectRatioContainer;
+export { AspectRatioContainer };

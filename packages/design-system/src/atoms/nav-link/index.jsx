@@ -25,4 +25,4 @@ function NavLink({
   );
 }
 
-export default NavLink;
+export { NavLink };

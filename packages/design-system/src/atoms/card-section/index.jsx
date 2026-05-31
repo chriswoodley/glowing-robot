@@ -10,4 +10,4 @@ function CardSection({ className, children }) {
 
 CardSection.displayName = 'Card.Section';
 
-export default CardSection;
+export { CardSection };

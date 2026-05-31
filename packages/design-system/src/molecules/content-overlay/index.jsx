@@ -56,4 +56,4 @@ function ContentOverlay({
   );
 }
 
-export default ContentOverlay;
+export { ContentOverlay };

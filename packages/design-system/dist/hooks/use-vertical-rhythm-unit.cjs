@@ -1,1 +1,31 @@
-"use strict";Object.defineProperties(exports,{__esModule:{value:!0},[Symbol.toStringTag]:{value:"Module"}});const u=require("react");function o(){if(typeof document>"u")return;const t=document.querySelector(":root");if(!t)return;const e=window.getComputedStyle(t).lineHeight;if(!(!e||!e.endsWith("px")))return Number(e.replace("px",""))}function d(){const[t,n]=u.useState(void 0);return u.useEffect(()=>{const e=o();e!==void 0&&n(e);const i=()=>{const r=o();r!==void 0&&n(r)};return window.addEventListener("resize",i),()=>{window.removeEventListener("resize",i)}},[]),t}exports.default=d;
+'use strict';
+Object.defineProperty(exports, Symbol.toStringTag, { value: 'Module' });
+const o = require('react');
+function u() {
+  if (typeof document > 'u') return;
+  const t = document.querySelector(':root');
+  if (!t) return;
+  const e = window.getComputedStyle(t).lineHeight;
+  if (!(!e || !e.endsWith('px'))) return Number(e.replace('px', ''));
+}
+function s() {
+  const [t, n] = o.useState(void 0);
+  return (
+    o.useEffect(() => {
+      const e = u();
+      e !== void 0 && setTimeout(() => n(e), 0);
+      const i = () => {
+        const r = u();
+        r !== void 0 && setTimeout(() => n(r), 0);
+      };
+      return (
+        window.addEventListener('resize', i),
+        () => {
+          window.removeEventListener('resize', i);
+        }
+      );
+    }, []),
+    t
+  );
+}
+exports.useVerticalRhythmUnit = s;

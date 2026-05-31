@@ -71,4 +71,4 @@ function Icons({ children }) {
   );
 }
 
-export default Icons;
+export { Icons };
