@@ -1,0 +1,11 @@
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
+*storybook.log
+*:Zone.Identifier
+
+dist/
+node_modules/

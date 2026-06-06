@@ -5,6 +5,9 @@
      - reset css
      - generated css tokens
 6. Go back and use tokens in components
+7. Create and use design tokens for consistent styling
+8. use compound component pattern
+9. write about design tokens for the blog...take notes as you go along so i can refer to them later when writting the article.
 
 ## Linting pre-conversion checklist
 
