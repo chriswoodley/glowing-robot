@@ -72,7 +72,7 @@
     "start": "",
     "lint:js": "eslint .",
     "lint:styles": "stylelint \"**/*.scss\"",
-    "ai": "cline --config /home/chris/sites/glowing-robot/packages/design-system/.cline"
+    "ai": "cline --config=../../.cline"
   },
   "dependencies": {
     "classnames": "^2.5.1",

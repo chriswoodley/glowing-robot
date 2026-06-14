@@ -10,7 +10,7 @@
     "build": "next build",
     "start": "next start",
     "lint": "eslint .",
-    "ai": "cline --config=/home/chris/sites/glowing-robot/apps/cwoodley-com/frontend/.cline"
+    "ai": "cline --config=../../.cline"
   },
   "dependencies": {
     "@cw/design-system": "workspace:^",
