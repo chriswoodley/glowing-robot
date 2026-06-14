@@ -40,7 +40,4 @@ yarn-error.log*
 !.yarn/versions
 
 # cline cache
-.cline/data/cache
-.cline/data/db
-.cline/data/sessions
-.cline/data/logs
+.cline

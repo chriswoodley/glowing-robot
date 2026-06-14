@@ -16,7 +16,4 @@ yarn-error.log
 *:Zone.Identifier
 
 # cline cache
-.cline/data/cache
-.cline/data/db
-.cline/data/sessions
-.cline/data/logs
+.cline
