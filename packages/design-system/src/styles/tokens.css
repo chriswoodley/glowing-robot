@@ -1,0 +1,54 @@
+/* Design tokens as CSS custom properties */
+
+/* Base colors */
+:root {
+  /* Colors */
+  --color-black: #000;
+  --color-white: #fff;
+
+  /* Grayscale scale (10% black, 90% white → 80% black, 20% white) */
+  --color-gray-100: #e6e6e6;
+  --color-gray-200: #ccc;
+  --color-gray-300: #b3b3b3;
+  --color-gray-400: #999;
+  --color-gray-500: #808080;
+  --color-gray-600: #666;
+  --color-gray-700: #4d4d4d;
+  --color-gray-800: #333;
+
+  /* Breakpoints (in pixels) */
+  --breakpoint-sm: 816px;
+  --breakpoint-md: 1008px;
+  --breakpoint-lg: 1200px;
+  --breakpoint-xl: 1440px;
+
+  /* Transition durations */
+  --transition-duration-none: 0s;
+  --transition-duration-fast: 0.15s;
+  --transition-duration-normal: 0.25s;
+  --transition-duration-slow: 0.35s;
+
+  /* Transition delays */
+  --transition-delay-none: 0s;
+  --transition-delay-short: 0.1s;
+  --transition-delay-normal: 0.2s;
+  --transition-delay-long: 0.3s;
+
+  /* Transition timing functions — weak */
+  --transition-ease-weak-in: cubic-bezier(0.55, 0.085, 0.68, 0.53);
+  --transition-ease-weak-out: cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  --transition-ease-weak-in-out: cubic-bezier(0.455, 0.03, 0.515, 0.955);
+  --transition-ease-weak-in-out-back: cubic-bezier(0.56, -0.22, 0.47, 1.235);
+
+  /* Transition timing functions — normal */
+  --transition-ease-normal-in: cubic-bezier(0.55, 0.055, 0.675, 0.19);
+  --transition-ease-normal-out: cubic-bezier(0.215, 0.61, 0.355, 1);
+  --transition-ease-normal-in-out: cubic-bezier(0.645, 0.045, 0.355, 1);
+  --transition-ease-normal-in-out-back: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+
+  /* Transition timing functions — strong */
+  --transition-ease-strong-in: cubic-bezier(0.895, 0.03, 0.685, 0.22);
+  --transition-ease-strong-out: cubic-bezier(0.165, 0.84, 0.44, 1);
+  --transition-ease-strong-in-out: cubic-bezier(0.77, 0, 0.175, 1);
+  --transition-ease-strong-in-out-back: cubic-bezier(0.83, -0.6, 0.145, 1.645);
+}

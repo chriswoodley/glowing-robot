@@ -110,7 +110,7 @@ Each style category follows a consistent file pattern:
 - **Vite Library Mode**: Bundles into `dist/` with both ESM (`main.es.js`) and CJS (`main.cjs.js`) outputs
 - **Preserve Modules**: Output preserves directory structure for tree-shaking
 - **CSS Output**: Global styles compiled to `dist/design-system.css`
-- **External Dependencies**: React, ReactDOM, clsx, classnames, lodash marked as external
+- **External Dependencies**: React, ReactDOM, clsx, lodash marked as external
 
 ## Naming Conventions
 

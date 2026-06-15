@@ -1,4 +1,4 @@
-import 'styles/index.scss';
+import 'styles/main.css';
 import './styles.css';
 import { INITIAL_VIEWPORTS } from 'storybook/viewport';
 

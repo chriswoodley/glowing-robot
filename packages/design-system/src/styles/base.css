@@ -1,0 +1,222 @@
+/* stylelint-disable max-line-length */
+
+:root {
+  /*
+   * Fluid typography scale:
+   * min font-size: 1rem (16px) at 816px (51rem) viewport
+   * max font-size: 1.125rem (18px) at 1440px (90rem) viewport
+   * slope: 0.125rem / 39rem = 0.003205
+   */
+  font-size: clamp(1rem, calc(1rem + 0.125 * (100vw - 51rem) / 39), 1.125rem);
+  line-height: 1.5;
+  text-rendering: optimizelegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+
+  /* Safari resize fix */
+  min-height: 0;
+}
+
+/*
+ * Global focus ring styles.
+ * Provides a basic, accessible focus indicator for all elements.
+ */
+*:focus {
+  outline: 2px solid Highlight;
+  outline: 2px solid -webkit-focus-ring-color;
+  outline-offset: 2px;
+}
+
+*:focus-visible {
+  outline: 2px solid Highlight;
+  outline: 2px solid -webkit-focus-ring-color;
+  outline-offset: 2px;
+}
+
+*:focus:not(:focus-visible) {
+  outline: none;
+}
+
+/* Headings */
+h1 {
+  font-size: 2.4883rem;
+  line-height: 1.2056;
+  margin-top: 0.5117rem;
+  margin-bottom: 1.5rem;
+}
+
+h2 {
+  font-size: 2.0736rem;
+  line-height: 1.4468;
+  margin-top: 0.9264rem;
+  margin-bottom: 1.5rem;
+}
+
+h3 {
+  font-size: 1.728rem;
+  line-height: 1.7361;
+  margin-top: 1.272rem;
+  margin-bottom: 1.5rem;
+}
+
+h4 {
+  font-size: 1.44rem;
+  line-height: 1.0417;
+  margin-top: 1.0417rem;
+  margin-bottom: 1.5rem;
+}
+
+h5,
+.text-large {
+  font-size: 1.2rem;
+  line-height: 1.25;
+  margin-top: 1.25rem;
+  margin-bottom: 1.5rem;
+}
+
+h6 {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Body */
+p,
+ul,
+ol,
+dl {
+  font-size: 1rem;
+  line-height: 1.5;
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+p:first-child,
+ul:first-child,
+ol:first-child,
+dl:first-child {
+  margin-top: 0;
+}
+
+/* Inline text */
+small,
+pre,
+code,
+kbd,
+samp .text-small {
+  font-size: 0.8333rem;
+  line-height: 1.8;
+  margin-top: 1.8rem;
+  margin-bottom: 1.5rem;
+}
+
+/* Links */
+a,
+a:hover,
+a:active,
+a:visited {
+  color: inherit;
+}
+
+/* Quotes */
+q > :last-child {
+  margin-bottom: 0;
+}
+
+/* Text alignment */
+.text-center {
+  text-align: center;
+}
+
+.text-right {
+  text-align: right;
+}
+
+.text-left {
+  text-align: left;
+}
+
+/* Responsive text alignment */
+@media (width >= 816px) {
+  .text-center--sm {
+    text-align: center;
+  }
+
+  .text-right--sm {
+    text-align: right;
+  }
+
+  .text-left--sm {
+    text-align: left;
+  }
+}
+
+@media (width >= 1008px) {
+  .text-center--md {
+    text-align: center;
+  }
+
+  .text-right--md {
+    text-align: right;
+  }
+
+  .text-left--md {
+    text-align: left;
+  }
+}
+
+@media (width >= 1200px) {
+  .text-center--lg {
+    text-align: center;
+  }
+
+  .text-right--lg {
+    text-align: right;
+  }
+
+  .text-left--lg {
+    text-align: left;
+  }
+}
+
+@media (width >= 1440px) {
+  .text-center--xl {
+    text-align: center;
+  }
+
+  .text-right--xl {
+    text-align: right;
+  }
+
+  .text-left--xl {
+    text-align: left;
+  }
+}
+
+img,
+svg {
+  display: block;
+  vertical-align: middle;
+}
+
+button {
+  background-color: #fff;
+  border-radius: 3px;
+  border: 1px solid #000;
+  color: #000;
+  cursor: pointer;
+  height: 3rem;
+  padding: 0 1.5rem;
+  text-align: center;
+  user-select: none;
+  vertical-align: middle;
+}
+
+button:hover {
+  background-color: #e6e6e6;
+}
+
+button:active {
+  background-color: #ccc;
+}

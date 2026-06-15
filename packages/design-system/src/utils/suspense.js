@@ -5,16 +5,16 @@
  * @returns {{read: function}} object with a read method to handle async status
  */
 export function createResource(asyncFn) {
-  let status = "pending";
+  let status = 'pending';
   let result;
 
   const promise = asyncFn().then(
     (r) => {
-      status = "success";
+      status = 'success';
       result = r;
     },
     (e) => {
-      status = "error";
+      status = 'error';
       result = e;
     }
   );
@@ -22,11 +22,11 @@ export function createResource(asyncFn) {
   return {
     read() {
       switch (status) {
-        case "pending":
+        case 'pending':
           throw promise;
-        case "error":
+        case 'error':
           throw result;
-        case "success":
+        case 'success':
           return result;
       }
     },
