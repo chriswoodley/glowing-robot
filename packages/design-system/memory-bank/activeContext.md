@@ -58,7 +58,7 @@ Initial memory bank creation and project documentation setup.
 
 ## Known Patterns & Preferences
 
-- Use `clsx` for class composition (not `classnames` directly, though both are available)
+- Use `clsx` for class composition
 - CSS Modules are preferred over global styles for component-specific styling
 - Inline `style` props with CSS custom properties for dynamic values
 - Components are function declarations with named exports

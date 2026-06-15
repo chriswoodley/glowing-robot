@@ -1,7 +1,0 @@
-@use "module" as m;
-
-@each $side in m.$border-radius-sides {
-  .#{$side} {
-    #{$side}: m.$border-radius
-  }
-}

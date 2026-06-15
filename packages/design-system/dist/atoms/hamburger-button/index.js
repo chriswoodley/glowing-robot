@@ -1,18 +1,11 @@
-import { jsxs as l, jsx as o } from "react/jsx-runtime";
+import { jsxs as l, jsx as n } from "react/jsx-runtime";
 import { useCallback as m } from "react";
-import u from "../../styles/utils/motion/_export.module.scss.js";
 import a from "./styles.module.css.js";
-import c from "../../styles/utils/color/_export.module.scss.js";
-import { clsx as b } from "clsx";
-const {
-  transitionNormalDuration: f,
-  transitionNormalEaseInOutBack: d,
-  transitionFastDuration: p
-} = u;
-function D({ onClick: r, className: i, isActive: t = !1, ...s }) {
-  const e = m(
-    (n) => {
-      n.preventDefault(), r && r(n, !t);
+import { clsx as u } from "clsx";
+function p({ onClick: r, className: i, isActive: t = !1, ...e }) {
+  const s = m(
+    (o) => {
+      o.preventDefault(), r && r(o, !t);
     },
     [r, t]
   );
@@ -20,24 +13,24 @@ function D({ onClick: r, className: i, isActive: t = !1, ...s }) {
     "button",
     {
       type: "button",
-      onClick: e,
+      onClick: s,
       style: {
-        "--hamburger-transition-duration": f,
-        "--hamburger-transition-ease": d,
-        "--hamburger-transition-duration-fast": p,
-        "--hamburger-background-color": c.black
+        "--hamburger-transition-duration": "var(--transition-duration-normal)",
+        "--hamburger-transition-ease": "var(--transition-ease-normal-in-out-back)",
+        "--hamburger-transition-duration-fast": "var(--transition-duration-fast)",
+        "--hamburger-background-color": "var(--color-black)"
       },
       "data-active": t,
-      "aria-label": s["aria-label"],
-      className: b(a.button, i),
+      "aria-label": e["aria-label"],
+      className: u(a.button, i),
       children: [
-        /* @__PURE__ */ o("div", { className: a.line }),
-        /* @__PURE__ */ o("div", { className: a.line }),
-        /* @__PURE__ */ o("div", { className: a.line })
+        /* @__PURE__ */ n("div", { className: a.line }),
+        /* @__PURE__ */ n("div", { className: a.line }),
+        /* @__PURE__ */ n("div", { className: a.line })
       ]
     }
   );
 }
 export {
-  D as HamburgerButton
+  p as HamburgerButton
 };

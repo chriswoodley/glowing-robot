@@ -26,7 +26,6 @@
 
 ### Runtime Dependencies
 
-- `classnames`: ^2.5.1
 - `clsx`: ^2.1.1
 - `lodash`: ^4.17.21
 

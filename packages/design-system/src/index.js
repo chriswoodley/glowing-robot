@@ -1,5 +1,4 @@
-import 'styles/index.scss';
-import rootVars from 'styles/root/_export.module.scss';
+import 'styles/main.css';
 export { AspectRatioContainer } from 'atoms/aspect-ratio-container';
 export { HamburgerButton } from 'atoms/hamburger-button';
 export { Image } from 'atoms/image';
@@ -19,10 +18,10 @@ export * from 'utils/device-helpers';
 export const styleVariables = {
   root: {
     breakpoints: {
-      sm: Number(rootVars.breakpointSmall),
-      md: Number(rootVars.breakpointMedium),
-      lg: Number(rootVars.breakpointLarge),
-      xl: Number(rootVars.breakpointExtraLarge),
+      sm: 816,
+      md: 1008,
+      lg: 1200,
+      xl: 1440,
     },
   },
 };
