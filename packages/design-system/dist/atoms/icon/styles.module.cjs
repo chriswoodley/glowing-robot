@@ -1,0 +1,1 @@
+var e={icon:`_icon_13394_2`};exports.default=e;

@@ -1,17 +1,19 @@
-import { jsxs as n, jsx as s } from "react/jsx-runtime";
-import r from "clsx";
-function x({ brand: e, className: i, id: t, nav: l }) {
-  const c = r(
-    "flex",
-    "flex--align-items-center",
-    "flex--justify-content-space-between",
-    i
-  );
-  return e || l ? /* @__PURE__ */ n("div", { id: t, className: c, children: [
-    e ? /* @__PURE__ */ s("div", { className: "flex_item", children: e }) : null,
-    l ? /* @__PURE__ */ s("div", { className: "flex_item", children: l }) : null
-  ] }) : null;
+import e from "clsx";
+import { jsx as t, jsxs as n } from "react/jsx-runtime";
+//#region src/organisms/navbar/index.jsx
+function r({ brand: r, className: i, id: a, nav: o }) {
+	let s = e("flex", "flex--align-items-center", "flex--justify-content-space-between", i);
+	return r || o ? /* @__PURE__ */ n("div", {
+		id: a,
+		className: s,
+		children: [r ? /* @__PURE__ */ t("div", {
+			className: "flex_item",
+			children: r
+		}) : null, o ? /* @__PURE__ */ t("div", {
+			className: "flex_item",
+			children: o
+		}) : null]
+	}) : null;
 }
-export {
-  x as Navbar
-};
+//#endregion
+export { r as Navbar };

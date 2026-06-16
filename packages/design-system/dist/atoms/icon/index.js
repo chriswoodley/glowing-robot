@@ -1,29 +1,19 @@
-import { jsxs as t, jsx as s } from "react/jsx-runtime";
-import { clsx as m } from "clsx";
-import x from "./styles.module.css.js";
-function w({ glyph: o, title: r, size: n = 48, color: c, backgroundColor: i, className: e }) {
-  if (o && r) {
-    const l = m(x.icon, e);
-    return /* @__PURE__ */ t(
-      "svg",
-      {
-        viewBox: "0 0 24 24",
-        xmlns: "http://www.w3.org/2000/svg",
-        className: l,
-        style: {
-          "--icon-color": c,
-          "--icon-size": `${n}px`,
-          "--icon-background-color": i
-        },
-        children: [
-          /* @__PURE__ */ s("title", { children: r }),
-          /* @__PURE__ */ s("use", { xlinkHref: `#${o}` })
-        ]
-      }
-    );
-  }
-  return null;
+import e from "./styles.module.js";
+import { clsx as t } from "clsx";
+import { jsx as n, jsxs as r } from "react/jsx-runtime";
+//#region src/atoms/icon/index.jsx
+function i({ glyph: i, title: a, size: o = 48, color: s, backgroundColor: c, className: l }) {
+	return i && a ? /* @__PURE__ */ r("svg", {
+		viewBox: "0 0 24 24",
+		xmlns: "http://www.w3.org/2000/svg",
+		className: t(e.icon, l),
+		style: {
+			"--icon-color": s,
+			"--icon-size": `${o}px`,
+			"--icon-background-color": c
+		},
+		children: [/* @__PURE__ */ n("title", { children: a }), /* @__PURE__ */ n("use", { xlinkHref: `#${i}` })]
+	}) : null;
 }
-export {
-  w as Icon
-};
+//#endregion
+export { i as Icon };

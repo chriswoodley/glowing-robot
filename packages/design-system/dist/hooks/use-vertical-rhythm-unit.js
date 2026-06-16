@@ -1,28 +1,25 @@
-import { useState as u, useEffect as s } from "react";
-function o() {
-  if (typeof document > "u")
-    return;
-  const t = document.querySelector(":root");
-  if (!t)
-    return;
-  const e = window.getComputedStyle(t).lineHeight;
-  if (!(!e || !e.endsWith("px")))
-    return Number(e.replace("px", ""));
+import { useEffect as e, useState as t } from "react";
+//#region src/hooks/use-vertical-rhythm-unit.js
+function n() {
+	if (typeof document > "u") return;
+	let e = document.querySelector(":root");
+	if (!e) return;
+	let t = window.getComputedStyle(e).lineHeight;
+	if (!(!t || !t.endsWith("px"))) return Number(t.replace("px", ""));
 }
-function c() {
-  const [t, n] = u(void 0);
-  return s(() => {
-    const e = o();
-    e !== void 0 && setTimeout(() => n(e), 0);
-    const i = () => {
-      const r = o();
-      r !== void 0 && setTimeout(() => n(r), 0);
-    };
-    return window.addEventListener("resize", i), () => {
-      window.removeEventListener("resize", i);
-    };
-  }, []), t;
+function r() {
+	let [r, i] = t(void 0);
+	return e(() => {
+		let e = n();
+		e !== void 0 && setTimeout(() => i(e), 0);
+		let t = () => {
+			let e = n();
+			e !== void 0 && setTimeout(() => i(e), 0);
+		};
+		return window.addEventListener("resize", t), () => {
+			window.removeEventListener("resize", t);
+		};
+	}, []), r;
 }
-export {
-  c as useVerticalRhythmUnit
-};
+//#endregion
+export { r as useVerticalRhythmUnit };

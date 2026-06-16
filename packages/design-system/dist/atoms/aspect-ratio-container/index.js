@@ -1,32 +1,26 @@
-import { jsx as s } from "react/jsx-runtime";
-import { useVerticalRhythmUnit as c } from "../../hooks/use-vertical-rhythm-unit.js";
-import { useMaxHeight as n } from "../../hooks/use-max-height.js";
-import p from "./styles.module.css.js";
-import { clsx as h } from "clsx";
-function y({
-  className: r,
-  style: a,
-  size: i,
-  children: e,
-  ratio: o = "1/1"
-}) {
-  const m = c(), t = n({ unit: m, size: i });
-  return /* @__PURE__ */ s(
-    "div",
-    {
-      style: {
-        ...a,
-        "--aspect-ratio": o,
-        ...t ? { "--max-height": t } : {},
-        "--bg-color": "var(--color-gray-100)"
-      },
-      className: h(p["aspect-ratio-container"], r),
-      ...t ? { "data-max-height": t } : {},
-      "data-ratio": o,
-      children: e
-    }
-  );
+import { useVerticalRhythmUnit as e } from "../../hooks/use-vertical-rhythm-unit.js";
+import { useMaxHeight as t } from "../../hooks/use-max-height.js";
+import n from "./styles.module.js";
+import { clsx as r } from "clsx";
+import { jsx as i } from "react/jsx-runtime";
+//#region src/atoms/aspect-ratio-container/index.jsx
+function a({ className: a, style: o, size: s, children: c, ratio: l = "1/1" }) {
+	let u = t({
+		unit: e(),
+		size: s
+	});
+	return /* @__PURE__ */ i("div", {
+		style: {
+			...o,
+			"--aspect-ratio": l,
+			...u ? { "--max-height": u } : {},
+			"--bg-color": "var(--color-gray-100)"
+		},
+		className: r(n["aspect-ratio-container"], a),
+		...u ? { "data-max-height": u } : {},
+		"data-ratio": l,
+		children: c
+	});
 }
-export {
-  y as AspectRatioContainer
-};
+//#endregion
+export { a as AspectRatioContainer };
