@@ -1,21 +1,22 @@
-import { jsx as c } from "react/jsx-runtime";
-import { clsx as f } from "clsx";
-import m from "./styles.module.css.js";
-function d({ children: o, className: r, id: a, type: e = "default", ...s }) {
-  const i = e === "default", l = e === "horizontal", t = e === "vertical center", n = f(
-    m.root,
-    {
-      block: i,
-      flex: l || t,
-      "flex--row": l,
-      "flex--column": t,
-      "flex--align-items-center": l || t,
-      "flex--align-items-end": l
-    },
-    r
-  );
-  return /* @__PURE__ */ c("ul", { "aria-label": s["aria-label"], id: a, className: n, children: o });
+import e from "./styles.module.js";
+import { clsx as t } from "clsx";
+import { jsx as n } from "react/jsx-runtime";
+//#region src/atoms/nav/index.jsx
+function r({ children: r, className: i, id: a, type: o = "default", ...s }) {
+	let c = o === "default", l = o === "horizontal", u = o === "vertical center", d = t(e.root, {
+		block: c,
+		flex: l || u,
+		"flex--row": l,
+		"flex--column": u,
+		"flex--align-items-center": l || u,
+		"flex--align-items-end": l
+	}, i);
+	return /* @__PURE__ */ n("ul", {
+		"aria-label": s["aria-label"],
+		id: a,
+		className: d,
+		children: r
+	});
 }
-export {
-  d as Nav
-};
+//#endregion
+export { r as Nav };

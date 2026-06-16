@@ -1,36 +1,29 @@
-import { jsxs as l, jsx as n } from "react/jsx-runtime";
-import { useCallback as m } from "react";
-import a from "./styles.module.css.js";
-import { clsx as u } from "clsx";
-function p({ onClick: r, className: i, isActive: t = !1, ...e }) {
-  const s = m(
-    (o) => {
-      o.preventDefault(), r && r(o, !t);
-    },
-    [r, t]
-  );
-  return /* @__PURE__ */ l(
-    "button",
-    {
-      type: "button",
-      onClick: s,
-      style: {
-        "--hamburger-transition-duration": "var(--transition-duration-normal)",
-        "--hamburger-transition-ease": "var(--transition-ease-normal-in-out-back)",
-        "--hamburger-transition-duration-fast": "var(--transition-duration-fast)",
-        "--hamburger-background-color": "var(--color-black)"
-      },
-      "data-active": t,
-      "aria-label": e["aria-label"],
-      className: u(a.button, i),
-      children: [
-        /* @__PURE__ */ n("div", { className: a.line }),
-        /* @__PURE__ */ n("div", { className: a.line }),
-        /* @__PURE__ */ n("div", { className: a.line })
-      ]
-    }
-  );
+import e from "./styles.module.js";
+import { useCallback as t } from "react";
+import { clsx as n } from "clsx";
+import { jsx as r, jsxs as i } from "react/jsx-runtime";
+//#region src/atoms/hamburger-button/index.jsx
+function a({ onClick: a, className: o, isActive: s = !1, ...c }) {
+	return /* @__PURE__ */ i("button", {
+		type: "button",
+		onClick: t((e) => {
+			e.preventDefault(), a && a(e, !s);
+		}, [a, s]),
+		style: {
+			"--hamburger-transition-duration": "var(--transition-duration-normal)",
+			"--hamburger-transition-ease": "var(--transition-ease-normal-in-out-back)",
+			"--hamburger-transition-duration-fast": "var(--transition-duration-fast)",
+			"--hamburger-background-color": "var(--color-black)"
+		},
+		"data-active": s,
+		"aria-label": c["aria-label"],
+		className: n(e.button, o),
+		children: [
+			/* @__PURE__ */ r("div", { className: e.line }),
+			/* @__PURE__ */ r("div", { className: e.line }),
+			/* @__PURE__ */ r("div", { className: e.line })
+		]
+	});
 }
-export {
-  p as HamburgerButton
-};
+//#endregion
+export { a as HamburgerButton };

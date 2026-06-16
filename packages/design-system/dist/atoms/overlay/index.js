@@ -1,46 +1,28 @@
-import { jsx as a } from "react/jsx-runtime";
-import f from "clsx";
-import e from "./styles.module.css.js";
-function x({
-  children: s,
-  className: i,
-  effect: t = "none",
-  height: n = "100%",
-  isActive: l = !1,
-  positionY: r = "top",
-  type: o = "screen",
-  width: d = "100%"
-}) {
-  const c = f(
-    e.root,
-    {
-      [e.screen]: o === "screen",
-      [e.content]: o === "content",
-      [e["is-active"]]: l,
-      [e["effect-slideUp"]]: t === "slideUp",
-      [e["effect-slideDown"]]: t === "slideDown",
-      [e["effect-slideLeft"]]: t === "slideLeft",
-      [e["effect-slideRight"]]: t === "slideRight",
-      [e["effect-fade"]]: t === "fade",
-      [e["effect-none"]]: t === "none",
-      [e["position-bottom"]]: r === "bottom"
-    },
-    "p-2",
-    i
-  );
-  return /* @__PURE__ */ a(
-    "div",
-    {
-      className: c,
-      style: {
-        width: d,
-        height: n
-      },
-      "data-testid": "overlay",
-      children: s
-    }
-  );
+import e from "./styles.module.js";
+import t from "clsx";
+import { jsx as n } from "react/jsx-runtime";
+//#region src/atoms/overlay/index.jsx
+function r({ children: r, className: i, effect: a = "none", height: o = "100%", isActive: s = !1, positionY: c = "top", type: l = "screen", width: u = "100%" }) {
+	return /* @__PURE__ */ n("div", {
+		className: t(e.root, {
+			[e.screen]: l === "screen",
+			[e.content]: l === "content",
+			[e["is-active"]]: s,
+			[e["effect-slideUp"]]: a === "slideUp",
+			[e["effect-slideDown"]]: a === "slideDown",
+			[e["effect-slideLeft"]]: a === "slideLeft",
+			[e["effect-slideRight"]]: a === "slideRight",
+			[e["effect-fade"]]: a === "fade",
+			[e["effect-none"]]: a === "none",
+			[e["position-bottom"]]: c === "bottom"
+		}, "p-2", i),
+		style: {
+			width: u,
+			height: o
+		},
+		"data-testid": "overlay",
+		children: r
+	});
 }
-export {
-  x as Overlay
-};
+//#endregion
+export { r as Overlay };

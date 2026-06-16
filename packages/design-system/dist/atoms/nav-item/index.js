@@ -1,10 +1,13 @@
-import { jsx as m } from "react/jsx-runtime";
-import e from "./styles.module.css.js";
-import i from "clsx";
-function a({ children: o, className: t, id: r }) {
-  const s = i(e.root, "flex_item", t);
-  return /* @__PURE__ */ m("li", { id: r, className: s, children: o });
+import e from "./styles.module.js";
+import t from "clsx";
+import { jsx as n } from "react/jsx-runtime";
+//#region src/atoms/nav-item/index.jsx
+function r({ children: r, className: i, id: a }) {
+	return /* @__PURE__ */ n("li", {
+		id: a,
+		className: t(e.root, "flex_item", i),
+		children: r
+	});
 }
-export {
-  a as NavItem
-};
+//#endregion
+export { r as NavItem };

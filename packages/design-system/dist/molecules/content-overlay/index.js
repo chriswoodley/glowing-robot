@@ -1,45 +1,33 @@
-import { jsxs as d } from "react/jsx-runtime";
-import { useRef as p, useState as h, useCallback as n } from "react";
-import { getIsTouchDevice as k } from "../../utils/device-helpers.js";
-import O from "clsx";
-import C from "./styles.module.css.js";
-function I({
-  children: l,
-  renderOverlay: c,
-  className: r,
-  triggerType: o = "click"
-}) {
-  const a = k(), i = p(), [e, s] = h(!1), u = n((t) => {
-    t.stopPropagation(), t.preventDefault(), s(!0);
-  }, []), f = n(() => {
-    s(!1);
-  }, []), v = n(
-    (t) => {
-      t.preventDefault(), s(!e);
-    },
-    [e]
-  ), m = {
-    onMouseEnter: o === "hover" ? u : void 0,
-    onMouseLeave: o === "hover" ? f : void 0,
-    onClick: o === "click" ? v : void 0,
-    role: o === "click" ? "button" : void 0
-  };
-  return /* @__PURE__ */ d(
-    "div",
-    {
-      ref: i,
-      className: O(C.root, r),
-      ...m,
-      "data-testid": "content",
-      children: [
-        l,
-        typeof c == "function" && // Passing ref object (not .current) to consumer render function
-        // eslint-disable-next-line react-hooks/refs
-        c({ isActive: e, containerRef: i, isTouchDevice: a })
-      ]
-    }
-  );
+import { getIsTouchDevice as e } from "../../utils/device-helpers.js";
+import t from "./styles.module.js";
+import { useCallback as n, useRef as r, useState as i } from "react";
+import a from "clsx";
+import { jsxs as o } from "react/jsx-runtime";
+//#region src/molecules/content-overlay/index.jsx
+function s({ children: s, renderOverlay: c, className: l, triggerType: u = "click" }) {
+	let d = e(), f = r(), [p, m] = i(!1), h = n((e) => {
+		e.stopPropagation(), e.preventDefault(), m(!0);
+	}, []), g = n(() => {
+		m(!1);
+	}, []), _ = n((e) => {
+		e.preventDefault(), m(!p);
+	}, [p]), v = {
+		onMouseEnter: u === "hover" ? h : void 0,
+		onMouseLeave: u === "hover" ? g : void 0,
+		onClick: u === "click" ? _ : void 0,
+		role: u === "click" ? "button" : void 0
+	};
+	return /* @__PURE__ */ o("div", {
+		ref: f,
+		className: a(t.root, l),
+		...v,
+		"data-testid": "content",
+		children: [s, typeof c == "function" && c({
+			isActive: p,
+			containerRef: f,
+			isTouchDevice: d
+		})]
+	});
 }
-export {
-  I as ContentOverlay
-};
+//#endregion
+export { s as ContentOverlay };

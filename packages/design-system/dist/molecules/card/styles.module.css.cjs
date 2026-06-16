@@ -1,1 +1,0 @@
-"use strict";Object.defineProperties(exports,{__esModule:{value:!0},[Symbol.toStringTag]:{value:"Module"}});const t="_root_dplge_1",e="_light_dplge_2",l="_dark_dplge_7",o={root:t,light:e,dark:l,"is-clickable":"_is-clickable_dplge_12"};exports.dark=l;exports.default=o;exports.light=e;exports.root=t;

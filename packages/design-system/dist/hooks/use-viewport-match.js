@@ -1,16 +1,16 @@
-import { useState as f, useCallback as s, useEffect as u } from "react";
-import { getShouldMatchViewportMaxWidth as o, getShouldMatchViewportMinWidth as r } from "../utils/device-helpers.js";
-function w(t, e) {
-  return typeof window < "u" ? t === "max" ? o(e) : r(e) : !1;
+import { getShouldMatchViewportMaxWidth as e, getShouldMatchViewportMinWidth as t } from "../utils/device-helpers.js";
+import { useCallback as n, useEffect as r, useState as i } from "react";
+//#region src/hooks/use-viewport-match.js
+function a(n, r) {
+	return typeof window < "u" ? n === "max" ? e(r) : t(r) : !1;
 }
-function h({ type: t, value: e }) {
-  const [d, n] = f(() => w(t, e)), i = s(() => {
-    n(t === "max" ? o(e) : r(e));
-  }, [e, t]);
-  return u(() => (typeof window < "u" && window.addEventListener("resize", i), () => {
-    typeof window < "u" && window.removeEventListener("resize", i);
-  }), [i]), d;
+function o({ type: o, value: s }) {
+	let [c, l] = i(() => a(o, s)), u = n(() => {
+		l(o === "max" ? e(s) : t(s));
+	}, [s, o]);
+	return r(() => (typeof window < "u" && window.addEventListener("resize", u), () => {
+		typeof window < "u" && window.removeEventListener("resize", u);
+	}), [u]), c;
 }
-export {
-  h as useViewportMatch
-};
+//#endregion
+export { o as useViewportMatch };
