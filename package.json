@@ -7,7 +7,7 @@
     "apps/**/*"
   ],
   "engines": {
-    "node": ">=22.12.0"
+    "node": ">=24.16.0"
   },
   "scripts": {
     "cwoodley:fe:start": "yarn workspace @cw/frontend run start",
