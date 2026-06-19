@@ -54,6 +54,17 @@ component-name/
 - **Processing**: Style Dictionary (planned) to transform tokens into usable formats
 - **Current State**: Primitive tokens exist for light theme; semantic tokens and dark mode are upcoming
 
+### Style Dictionary Transforms
+
+Custom transforms in `scripts/sd.config.js` handle token formatting:
+
+- **`ds/radius-full`**: Converts `radius-full` tokens to `percentage value` for pill shapes
+- **`ds/duration-ms`**: Converts duration tokens from milliseconds to CSS `ms` strings
+- **`ds/dimension`**: Converts pixel values to `rem` units (handles Figma's unitless numbers)
+- **`ds/opacity`**: Rounds opacity values to 4 decimal places to avoid floating-point artifacts
+- **`ds/font-weight`**: Converts Figma weight names (e.g., "Semi Bold") to CSS numeric values
+- **`ds/color-rgba-to-rgb`**: Converts legacy `rgba()` to modern `rgb()` with alpha
+
 ## Global Styles Architecture
 
 ```

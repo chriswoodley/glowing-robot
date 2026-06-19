@@ -70,7 +70,10 @@
     "lint:js": "eslint .",
     "lint:styles": "stylelint \"**/*.css\"",
     "format": "prettier --write ./src/**/*.{js,jsx,css}",
-    "ai": "cline --config=../../.cline"
+    "ai": "cline --config=../../.cline",
+    "dtcg": "node ./scripts/convert-to-dtcg.js",
+    "build:tokens": "node ./scripts/build-tokens.js",
+    "lint:tokens": "node ./scripts/token-linter/cli.js src/tokens/**/*.tokens.json"
   },
   "dependencies": {
     "clsx": "^2.1.1",

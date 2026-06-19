@@ -50,6 +50,13 @@
 
 - ✅ Primitive light theme tokens in DTCG format (exported from Figma)
 - ✅ Covers: color, font, lineHeight, letterSpacing, opacity, breakpoint, zindex, timing, radius, duration, dimension
+- ✅ Style Dictionary pipeline (`scripts/sd.config.js` + `scripts/build-tokens.js`)
+  - Light theme CSS custom properties generated (602 lines, 596 CSS vars)
+  - Semantic tokens correctly reference primitives via `var()`
+  - Dark mode ready — builds automatically when `dark.tokens.json` files are added
+  - Custom `ds/font-weight` transform: Figma weight names → CSS numeric values
+  - Normalisation preprocessor bridges Figma export inconsistencies
+  - `npm run build:tokens` script
 
 ### Build & Testing
 
@@ -63,10 +70,10 @@
 
 ### Design Tokens Pipeline (High Priority)
 
-1. Create Style Dictionary configuration and build scripts
+1. ~~Create Style Dictionary configuration and build scripts~~ ✅
 2. Set up token linting scripts for pre-conversion validation
-3. Generate CSS custom properties from tokens
-4. Create dark mode tokens
+3. ~~Generate CSS custom properties from tokens~~ ✅
+4. Create dark mode tokens (files are ready, dark.tokens.json needs to be created)
 
 ### Component Refinements
 

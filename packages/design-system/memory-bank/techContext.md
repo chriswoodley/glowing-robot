@@ -11,7 +11,7 @@
 | Playwright       | ^1.57.0  | Browser provider for testing          |
 | Sass             | ^1.97.1  | CSS preprocessor                      |
 | PostCSS          | ^8.5.6   | CSS post-processing                   |
-| Style Dictionary | ^5.3.3   | Design token transformation           |
+| Style Dictionary | ^5.4.4   | Design token transformation           |
 | ESLint           | ^10.0.0  | JavaScript linting                    |
 | Stylelint        | ^16.26.1 | SCSS linting                          |
 | Prettier         | 3.7.4    | Code formatting                       |
@@ -45,7 +45,7 @@
 | `npm run test-storybook`  | Run Storybook tests via Vitest          |
 | `npm run build`           | Build library (ESM + CJS + CSS)         |
 | `npm run lint:js`         | ESLint across all JS files              |
-| `npm run lint:styles`     | Stylelint for SCSS files                |
+| `npm run build:tokens`    | Build CSS design tokens from DTCG source |
 
 ### Vite Configuration
 
@@ -82,10 +82,16 @@
 ## Design Tokens
 
 - **Format**: DTCG (Design Tokens Community Group) JSON format
-- **Location**: `src/tokens/primitive/light.tokens.json`
+- **Location**: `src/tokens/primitive/<theme>.tokens.json` and `src/tokens/semantic/<theme>.tokens.json`
 - **Categories**: color, font, lineHeight, letterSpacing, opacity, breakpoint, zindex, timing, radius, duration, dimension
 - **Figma Integration**: Each token includes `com.figma.variableId` and `com.figma.scopes` extensions
-- **Planned**: Style Dictionary scripts for token transformation; dark mode tokens
+- **Pipeline**: `scripts/sd.config.js` (config) → `scripts/build-tokens.js` (runner) → `src/styles/<theme>.css`
+- **Status**: Light theme CSS generated (~580 lines, 596 CSS vars). Dark mode auto-detected when dark.tokens.json files are added.
+- **Key features**:
+  - `outputReferences: true` — semantic tokens emit `var(--ref)` preserving the design token hierarchy
+  - `ds/font-weight` transform — converts Figma weight names ("Regular", "Semi Bold") to CSS numeric values
+  - `ds/normalise-tokens` preprocessor — bridges Figma export inconsistencies (dimension.scale mapping, letterSpacing.normal, paleTranslucent fallback)
+  - `ds/opacity` transform — rounds opacity values to 4 decimal places to avoid floating-point artifacts
 
 ## Build Output
 
