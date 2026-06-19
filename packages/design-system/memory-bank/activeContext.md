@@ -54,7 +54,18 @@ The design system has a solid foundation with:
 
 ## Current Focus
 
-Initial memory bank creation and project documentation setup.
+Design token pipeline is operational. Next steps involve integrating generated CSS tokens into the build and component system.
+
+## Recent Changes
+
+- Created `scripts/sd.config.js` — Style Dictionary configuration definitions
+- Created `scripts/build-tokens.js` — runner that builds CSS for each theme
+- Added `npm run build:tokens` script
+- Generated `src/styles/light.css` (~580 lines, 596 CSS custom properties)
+- Custom `ds/font-weight` transform converts Figma weight names to CSS numeric values
+- `normaliseTokenData` preprocessor bridges Figma export inconsistencies (dimension scale mapping, letterSpacing.normal, paleTranslucent fallback)
+- Dark mode auto-detects when `dark.tokens.json` files are added — zero config changes needed
+- Fixed `ds/opacity` transform documentation to accurately describe 4 decimal place rounding
 
 ## Known Patterns & Preferences
 
